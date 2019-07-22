@@ -6,23 +6,14 @@ import { prisma as prisma } from './generated/prisma-client';
 
 import Query from "./resolvers/Query";
 import Mutation from "./resolvers/Mutation";
-
-
-
-import Person from "./schema/person";
-import Project from "./schema/project";
-import Tag from "./schema/tag";
-import Count from "./schema/count";
+import Schema from "./schema/Schema";
 
 const schema = makePrismaSchema({
   // Provide all the GraphQL types we've implemented
   types: [
     Query,
     Mutation,
-    Person,
-    Project,
-    Tag,
-    Count
+    Schema
   ],
 
   // Configure the interface to Prisma
