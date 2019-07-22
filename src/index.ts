@@ -2,10 +2,12 @@ import { ApolloServer, gql } from 'apollo-server';
 import { makePrismaSchema } from 'nexus-prisma';
 import * as path from 'path';
 import datamodelInfo from './generated/nexus-prisma';
-import { prisma } from './generated/prisma-client';
+import { prisma as prisma } from './generated/prisma-client';
 
 import Query from "./resolvers/Query";
 import Mutation from "./resolvers/Mutation";
+
+
 
 import Person from "./schema/person";
 import Project from "./schema/project";
@@ -15,9 +17,9 @@ import Count from "./schema/count";
 const schema = makePrismaSchema({
   // Provide all the GraphQL types we've implemented
   types: [
-    Query, 
+    Query,
     Mutation,
-    Person, 
+    Person,
     Project,
     Tag,
     Count

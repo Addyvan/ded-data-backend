@@ -78,7 +78,7 @@ export interface NexusGenFieldTypes {
   }
   Query: { // field return type
     counts: NexusGenRootTypes['Count'] | null; // Count
-    people: NexusGenRootTypes['Person'][] | null; // [Person!]
+    people: NexusGenRootTypes['Person'] | null; // Person
     projects: NexusGenRootTypes['Project'][] | null; // [Project!]
     tags: NexusGenRootTypes['Tag'][] | null; // [Tag!]
   }
