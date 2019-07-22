@@ -7,10 +7,10 @@ const people = queryField('people', {
   },
   resolve: async (parent, args : any, ctx, info) => {
     if (args.id) {
-      return ctx.prisma.persons({where: {id: args.id}});
+      return ctx.mappingPrisma.persons({where: {id: args.id}});
     } else {
-      console.log(await ctx.prisma.persons(args));
-      return ctx.prisma.persons(args);
+      console.log(await ctx.mappingPrisma.persons(args));
+      return ctx.mappingPrisma.persons(args);
     }
   },
 });

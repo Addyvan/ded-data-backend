@@ -1,50 +1,12 @@
 import { ApolloServer, gql } from 'apollo-server';
-import { makePrismaSchema } from 'nexus-prisma';
-import * as path from 'path';
-import datamodelInfo from './generated/nexus-prisma';
-import { prisma as prisma } from './generated/prisma-client';
 
-import Query from "./resolvers/Query";
-import Mutation from "./resolvers/Mutation";
-import Schema from "./schema/Schema";
+import { prisma as MappingPrisma } from './generated/mapping/prisma-client';
+import { prisma as ReportingPrisma } from './generated/reporting/prisma-client';
 
-const schema = makePrismaSchema({
-  // Provide all the GraphQL types we've implemented
-  types: [
-    Query,
-    Mutation,
-    Schema
-  ],
+import schema from "./schema";
 
-  // Configure the interface to Prisma
-  prisma: {
-    datamodelInfo,
-    client: prisma,
-  },
 
-  // Specify where Nexus should put the generated files
-  outputs: {
-    schema: path.join(__dirname, './generated/schema.graphql'),
-    typegen: path.join(__dirname, './generated/nexus.ts'),
-  },
-
-  // Configure nullability of input arguments: All arguments are non-nullable by default
-  nonNullDefaults: {
-    input: false,
-    output: false,
-  },
-
-  // Configure automatic type resolution for the TS representations of the associated types
-  typegenAutoConfig: {
-    sources: [
-      {
-        source: path.join(__dirname, './types.ts'),
-        alias: 'types',
-      },
-    ],
-    contextType: 'types.Context',
-  },
-})
+// MAKE A FUNCTION WHICH OUTPUTS A SCHEMA
 
 const server = new ApolloServer({
   schema,
@@ -58,12 +20,14 @@ const server = new ApolloServer({
   },*/
   context: async (req) => ({
     ...req,
-    prisma: prisma,
+    mappingPrisma: MappingPrisma,
+    reportingPrisma: ReportingPrisma
     /*
     token: await introspect.verifyToken(req),
     defaults: await getDefaults()*/
   })
 })
+
 
 server.listen({ port: 4000 }, () =>
   console.log(`🚀 Server ready at http://localhost:4000`),

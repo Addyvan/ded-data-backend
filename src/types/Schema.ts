@@ -1,0 +1,39 @@
+
+// Mapping Digital Government
+import Person from "./mapping/person";
+import Project from "./mapping/project";
+import Tag from "./mapping/tag";
+import Count from "./mapping/count";
+
+// Reporting
+import gcAccountData from "./reporting/gcAccountData";
+import gcCollabData from "./reporting/gcCollabData";
+import gcConnexData from "./reporting/gcConnexData";
+import gcMessageData from "./reporting/gcMessageData";
+import gcPediaData from "./reporting/gcPediaData";
+import gcWikiData from "./reporting/gcWikiData";
+import period from "./reporting/period";
+import report from "./reporting/report";
+
+const Mapping = {
+  Person,
+  Project,
+  Tag, 
+  Count
+}
+
+const Reporting = {
+  gcAccountData,
+  gcCollabData,
+  gcConnexData,
+  gcMessageData,
+  gcPediaData,
+  gcWikiData,
+  period,
+  report
+};
+
+export {
+  Mapping,
+  Reporting
+};

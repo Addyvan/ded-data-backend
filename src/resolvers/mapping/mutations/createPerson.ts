@@ -7,7 +7,7 @@ const createPerson = mutationField('createPerson', {
     gcId: intArg(),
   },
   resolve: (_parent, { name, gcId }, ctx) => {
-    return ctx.prisma.createPerson({
+    return ctx.mappingPrisma.createPerson({
       name,
       gcId,
     })

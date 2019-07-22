@@ -7,9 +7,9 @@ const tags = queryField('tags', {
   },
   resolve: (parent, args : any, ctx) => {
     if (args.id) {
-      return ctx.prisma.tags({where: {id: args.id}});
+      return ctx.mappingPrisma.tags({where: {id: args.id}});
     } else {
-      return ctx.prisma.tags(args);
+      return ctx.mappingPrisma.tags(args);
     }
   },
 });

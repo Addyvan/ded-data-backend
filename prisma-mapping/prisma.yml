@@ -3,9 +3,9 @@ datamodel: datamodel.graphql
 
 generate:
   - generator: typescript-client
-    output: ../src/generated/prisma-client/
+    output: ../src/generated/mapping/prisma-client/
 
 hooks:
   post-deploy:
     - prisma generate
-    - npx nexus-prisma-generate --client ./src/generated/prisma-client --output ./src/generated/nexus-prisma # Runs the codegen tool from nexus-prisma
+    - npx nexus-prisma-generate --client ./src/generated/mapping/prisma-client --output ./src/generated/mapping/nexus-prisma # Runs the codegen tool from nexus-prisma

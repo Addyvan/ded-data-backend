@@ -1,0 +1,115 @@
+
+interface GeneralData {
+  id: ID! @id
+  period: Period!
+  totalNumAccounts: Int
+  numNewAccounts: Int
+  #helpDeskStat: HelpDeskStats 
+}
+
+type Period {
+  id: ID! @id
+  month: Int!
+  year: Int!
+  account: gcAccountData @relation(name: "AccountDataPeriod", link: TABLE)
+  collab: gcCollabData! @relation(name:"CollabDataPeriod", link: TABLE)
+  connex: gcConnexData! @relation(name:"ConnexDataPeriod", link: TABLE)
+  message: gcMessageData! @relation(name:"MessageDataPeriod", link: TABLE)
+  pedia: gcPediaData! @relation(name:"PediaDataPeriod", link: TABLE)
+  wiki: gcWikiData! @relation(name: "WikiDataPeriod", link: TABLE)
+}
+
+#type HelpDeskStats {
+#   id: ID! @id
+#}
+
+type gaStats {
+  id: ID! @id
+  numSessions: Int
+  avgPageviewsPerSession: Float
+  avgSessionDuration: Float
+  avgPageLoadTime: Float
+  bounceRate: Float
+}
+
+type gcAccountData implements GeneralData {
+  id: ID! @id
+  period: Period! @relation(name:"AccountDataPeriod")
+  totalNumAccounts: Int
+  numNewAccounts: Int
+  #helpDeskStat: HelpDeskStats 
+  
+  #TODO rest
+}
+
+type gcCollabData implements GeneralData {
+  id: ID! @id
+  period: Period! @relation(name:"CollabDataPeriod")
+  totalNumAccounts: Int
+  numNewAccounts: Int
+  #helpDeskStat: HelpDeskStats
+  gaData: gaStats @relation(name: "CollabGAStats")
+
+  totalNumGroups: Int
+  numNewGroups: Int
+  mostActiveDepartments: [String!]! @scalarList(strategy: RELATION) #Alternatively could do type Departments
+  mostActiveGroups: [String!]! @scalarList(strategy: RELATION) #Alternatively could do type Groups
+}
+
+type gcConnexData implements GeneralData {
+  id: ID! @id
+  period: Period! @relation(name:"ConnexDataPeriod")
+  totalNumAccounts: Int
+  numNewAccounts: Int
+  #helpDeskStat: HelpDeskStats
+  gaData: gaStats @relation(name: "ConnexGAStats")
+
+  totalNumGroups: Int
+  numNewGroups: Int
+  mostActiveDepartments: [String!]! @scalarList(strategy: RELATION) #Alternatively could do type Departments
+  mostActiveGroups: [String!]! @scalarList(strategy: RELATION) #Alternatively could do type Groups
+}
+
+type gcMessageData implements GeneralData {
+  id: ID! @id
+  period: Period! @relation(name:"MessageDataPeriod")
+  totalNumAccounts: Int
+  numNewAccounts: Int
+  #helpDeskStat: HelpDeskStats 
+
+  totalNumChannelMessages: Int
+  numNewChannelMessages: Int
+  totalNumPrivateGroupMessages: Int
+  numNewPrivateGroupMessages: Int
+  totalNumDirectMessages: Int
+  numNewDirectMessages: Int
+  totalNumFileUploads: Int
+  numNewFileUploads: Int
+}
+
+type gcPediaData implements GeneralData {
+  id: ID! @id
+  period: Period! @relation(name:"PediaDataPeriod")
+  totalNumAccounts: Int
+  numNewAccounts: Int
+  #helpDeskStat: HelpDeskStats 
+
+  totalNumArticles: Int
+  numNewArticles: Int
+  totalNumEdits: Int
+  numNewEdits: Int 
+}
+
+type gcWikiData implements GeneralData {
+  id: ID! @id
+  period: Period! @relation(name:"WikiDataPeriod")
+  totalNumAccounts: Int
+  numNewAccounts: Int
+  #helpDeskStat: HelpDeskStats 
+  gaData: gaStats @unique
+
+  totalNumArticles: Int
+  numNewArticles: Int
+  totalNumEdits: Int
+  numNewEdits: Int 
+}

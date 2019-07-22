@@ -10,7 +10,7 @@ export default {
     Tag: ['id', 'name']
   },
   embeddedTypes: [],
-  clientPath: 'src\\generated\\prisma-client',
+  clientPath: 'src\\generated\\mapping\\prisma-client',
   schema: {
   "__schema": {
     "queryType": {

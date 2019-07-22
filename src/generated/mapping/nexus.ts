@@ -3,7 +3,7 @@
  * Do not make changes to this file directly
  */
 
-import * as types from "../types"
+import * as types from "../../typegenAutoConfig/mapping"
 
 
 
@@ -20,9 +20,9 @@ export interface NexusGenEnums {
 
 export interface NexusGenRootTypes {
   Count: { // root type
-    people?: number | null; // Int
-    projects?: number | null; // Int
-    tags?: number | null; // Int
+    people: number; // Int!
+    projects: number; // Int!
+    tags: number; // Int!
   }
   Mutation: {};
   Person: { // root type
@@ -52,16 +52,16 @@ export interface NexusGenAllTypes extends NexusGenRootTypes {
 
 export interface NexusGenFieldTypes {
   Count: { // field return type
-    people: number | null; // Int
-    projects: number | null; // Int
-    tags: number | null; // Int
+    people: number; // Int!
+    projects: number; // Int!
+    tags: number; // Int!
   }
   Mutation: { // field return type
-    createPerson: NexusGenRootTypes['Person'] | null; // Person
-    createProject: NexusGenRootTypes['Project'] | null; // Project
-    createTag: NexusGenRootTypes['Tag'] | null; // Tag
-    linkPersonProject: NexusGenRootTypes['Tag'] | null; // Tag
-    tagProject: NexusGenRootTypes['Project'] | null; // Project
+    createPerson: NexusGenRootTypes['Person']; // Person!
+    createProject: NexusGenRootTypes['Project']; // Project!
+    createTag: NexusGenRootTypes['Tag']; // Tag!
+    linkPersonProject: NexusGenRootTypes['Person']; // Person!
+    tagProject: NexusGenRootTypes['Project']; // Project!
   }
   Person: { // field return type
     gcId: number | null; // Int
@@ -77,10 +77,10 @@ export interface NexusGenFieldTypes {
     tags: NexusGenRootTypes['Tag'][] | null; // [Tag!]
   }
   Query: { // field return type
-    counts: NexusGenRootTypes['Count'] | null; // Count
-    people: NexusGenRootTypes['Person'] | null; // Person
-    projects: NexusGenRootTypes['Project'][] | null; // [Project!]
-    tags: NexusGenRootTypes['Tag'][] | null; // [Tag!]
+    counts: NexusGenRootTypes['Count']; // Count!
+    people: NexusGenRootTypes['Person']; // Person!
+    projects: NexusGenRootTypes['Project']; // Project!
+    tags: NexusGenRootTypes['Tag']; // Tag!
   }
   Tag: { // field return type
     id: string; // ID!
@@ -92,37 +92,37 @@ export interface NexusGenFieldTypes {
 export interface NexusGenArgTypes {
   Mutation: {
     createPerson: { // args
-      gcId?: number | null; // Int
-      name?: string | null; // String
+      gcId: number; // Int!
+      name: string; // String!
     }
     createProject: { // args
-      description?: string | null; // String
-      name?: string | null; // String
+      description: string; // String!
+      name: string; // String!
     }
     createTag: { // args
-      name?: string | null; // String
+      name: string; // String!
     }
     linkPersonProject: { // args
-      personId?: string | null; // ID
-      projectId?: string | null; // ID
+      personId: string; // ID!
+      projectId: string; // ID!
     }
     tagProject: { // args
-      projectId?: string | null; // ID
-      tagId?: string | null; // ID
+      projectId: string; // ID!
+      tagId: string; // ID!
     }
   }
   Query: {
     counts: { // args
-      id?: string | null; // String
+      id: string; // String!
     }
     people: { // args
-      id?: string | null; // String
+      id: string; // String!
     }
     projects: { // args
-      id?: string | null; // String
+      id: string; // String!
     }
     tags: { // args
-      id?: string | null; // String
+      id: string; // String!
     }
   }
 }

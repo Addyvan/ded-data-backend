@@ -4,21 +4,21 @@
 
 type Count {
   """Total number of people"""
-  people: Int
+  people: Int!
 
   """Total number of projects"""
-  projects: Int
+  projects: Int!
 
   """Total number of tags"""
-  tags: Int
+  tags: Int!
 }
 
 type Mutation {
-  createPerson(gcId: Int, name: String): Person
-  createProject(description: String, name: String): Project
-  createTag(name: String): Tag
-  linkPersonProject(personId: ID, projectId: ID): Tag
-  tagProject(projectId: ID, tagId: ID): Project
+  createPerson(gcId: Int!, name: String!): Person!
+  createProject(description: String!, name: String!): Project!
+  createTag(name: String!): Tag!
+  linkPersonProject(personId: ID!, projectId: ID!): Person!
+  tagProject(projectId: ID!, tagId: ID!): Project!
 }
 
 type Person {
@@ -37,10 +37,10 @@ type Project {
 }
 
 type Query {
-  counts(id: String): Count
-  people(id: String): Person
-  projects(id: String): [Project!]
-  tags(id: String): [Tag!]
+  counts(id: String!): Count!
+  people(id: String!): Person!
+  projects(id: String!): Project!
+  tags(id: String!): Tag!
 }
 
 type Tag {

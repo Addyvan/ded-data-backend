@@ -8,7 +8,7 @@ const tagProject = mutationField('tagProject', {
   },
   resolve: (_parent, { projectId, tagId }, ctx) => {
     
-    return ctx.prisma.updateProject({
+    return ctx.mappingPrisma.updateProject({
       data: {
         tags: {
           connect: [{id: tagId}]

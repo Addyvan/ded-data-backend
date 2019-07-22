@@ -7,9 +7,9 @@ const counts = queryField('counts', {
   },
   resolve: async (parent, args : any, ctx) => {
     
-    const peopleCount : Number = await ctx.prisma.personsConnection().aggregate().count();
-    const projectsCount : Number = await ctx.prisma.projectsConnection().aggregate().count();
-    const tagsCount : Number = await ctx.prisma.tagsConnection().aggregate().count();
+    const peopleCount : Number = await ctx.mappingPrisma.personsConnection().aggregate().count();
+    const projectsCount : Number = await ctx.mappingPrisma.projectsConnection().aggregate().count();
+    const tagsCount : Number = await ctx.mappingPrisma.tagsConnection().aggregate().count();
     
     return {
       people: peopleCount,

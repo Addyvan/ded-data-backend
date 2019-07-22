@@ -7,9 +7,9 @@ const projects = queryField('projects', {
   },
   resolve: (parent, args : any, ctx) => {
     if (args.id) {
-      return ctx.prisma.projects({where: {id: args.id}});
+      return ctx.mappingPrisma.projects({where: {id: args.id}});
     } else {
-      return ctx.prisma.projects(args);
+      return ctx.mappingPrisma.projects(args);
     }
   },
 });

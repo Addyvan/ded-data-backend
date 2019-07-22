@@ -6,7 +6,7 @@ const createTag = mutationField('createTag', {
     name: stringArg()
   },
   resolve: (_parent, { name }, ctx) => {
-    return ctx.prisma.createTag({
+    return ctx.mappingPrisma.createTag({
       name
     })
   },

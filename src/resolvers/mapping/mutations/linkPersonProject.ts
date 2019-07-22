@@ -8,7 +8,7 @@ const linkPersonProject = mutationField('linkPersonProject', {
   },
   resolve: (_parent, { personId, projectId }, ctx) => {
     
-    return ctx.prisma.updatePerson({
+    return ctx.mappingPrisma.updatePerson({
       data: {
         projects: {
           connect: [{id: projectId}]

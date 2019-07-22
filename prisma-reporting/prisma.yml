@@ -1,0 +1,11 @@
+endpoint: http://localhost:4466/reporting
+datamodel: datamodel.graphql
+
+generate:
+  - generator: typescript-client
+    output: ../src/generated/reporting/prisma-client/
+
+hooks:
+  post-deploy:
+    - prisma generate
+    - npx nexus-prisma-generate --client ./src/generated/reporting/prisma-client --output ./src/generated/reporting/nexus-prisma # Runs the codegen tool from nexus-prisma

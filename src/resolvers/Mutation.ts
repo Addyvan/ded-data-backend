@@ -6,7 +6,7 @@ import createTag from "./mapping/mutations/createTag";
 import linkPersonProject from "./mapping/mutations/linkPersonProject";
 import tagProject from "./mapping/mutations/tagProject";
 
-const Mutation = {
+const Mapping = {
   createPerson,
   createProject,
   createTag,
@@ -14,4 +14,6 @@ const Mutation = {
   tagProject
 }
 
-export default Mutation;
+export {
+  Mapping
+};
