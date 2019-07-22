@@ -38,7 +38,7 @@ type Project {
 
 type Query {
   counts(id: String!): Count!
-  people(id: String!): Person!
+  people(id: String): [Person!]!
   projects(id: String!): Project!
   tags(id: String!): Tag!
 }

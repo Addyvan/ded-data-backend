@@ -94,7 +94,7 @@ type Query {
   gcPediaData: gcPediaData!
   gcWikiData: gcWikiData!
   period(id: String!): Period!
-  periods: Period!
+  periods: [Period!]!
   report(month: Int!, year: Int!): report!
 }
 

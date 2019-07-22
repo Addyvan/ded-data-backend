@@ -112,7 +112,7 @@ export interface NexusGenFieldTypes {
     gcPediaData: NexusGenRootTypes['gcPediaData']; // gcPediaData!
     gcWikiData: NexusGenRootTypes['gcWikiData']; // gcWikiData!
     period: NexusGenRootTypes['Period']; // Period!
-    periods: NexusGenRootTypes['Period']; // Period!
+    periods: NexusGenRootTypes['Period'][]; // [Period!]!
     report: NexusGenRootTypes['report']; // report!
   }
   gaStats: { // field return type

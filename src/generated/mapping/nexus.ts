@@ -78,7 +78,7 @@ export interface NexusGenFieldTypes {
   }
   Query: { // field return type
     counts: NexusGenRootTypes['Count']; // Count!
-    people: NexusGenRootTypes['Person']; // Person!
+    people: NexusGenRootTypes['Person'][]; // [Person!]!
     projects: NexusGenRootTypes['Project']; // Project!
     tags: NexusGenRootTypes['Tag']; // Tag!
   }
@@ -116,7 +116,7 @@ export interface NexusGenArgTypes {
       id: string; // String!
     }
     people: { // args
-      id: string; // String!
+      id?: string | null; // String
     }
     projects: { // args
       id: string; // String!
