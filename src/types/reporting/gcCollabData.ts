@@ -1,7 +1,7 @@
 import { prismaObjectType } from "nexus-prisma";
 
 const GCcollabData = prismaObjectType({
-  name: 'GCcollabData',
+  name: 'gcCollabData',
   definition(t : any) {
     t.prismaFields([
       "id",

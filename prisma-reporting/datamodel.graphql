@@ -52,8 +52,8 @@ type gcCollabData implements GeneralData {
 
   totalNumGroups: Int
   numNewGroups: Int
-  mostActiveDepartments: [String!]! @scalarList(strategy: RELATION) #Alternatively could do type Departments
-  mostActiveGroups: [String!]! @scalarList(strategy: RELATION) #Alternatively could do type Groups
+  #mostActiveDepartments: [String!]! @scalarList(strategy: RELATION) #Alternatively could do type Departments
+  #mostActiveGroups: [String!]! @scalarList(strategy: RELATION) #Alternatively could do type Groups
 }
 
 type gcConnexData implements GeneralData {
@@ -66,8 +66,8 @@ type gcConnexData implements GeneralData {
 
   totalNumGroups: Int
   numNewGroups: Int
-  mostActiveDepartments: [String!]! @scalarList(strategy: RELATION) #Alternatively could do type Departments
-  mostActiveGroups: [String!]! @scalarList(strategy: RELATION) #Alternatively could do type Groups
+  #mostActiveDepartments: [String!]! @scalarList(strategy: RELATION) #Alternatively could do type Departments
+  #mostActiveGroups: [String!]! @scalarList(strategy: RELATION) #Alternatively could do type Groups
 }
 
 type gcMessageData implements GeneralData {

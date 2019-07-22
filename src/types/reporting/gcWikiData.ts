@@ -1,7 +1,7 @@
 import { prismaObjectType } from "nexus-prisma";
 
 const GCwikiData = prismaObjectType({
-  name: 'GCwikiData',
+  name: 'gcWikiData',
   definition(t : any) {
     t.prismaFields([
       "id",

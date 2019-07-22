@@ -1,7 +1,7 @@
 import { prismaObjectType } from "nexus-prisma";
 
 const GCconnexData = prismaObjectType({
-  name: 'GCconnexData',
+  name: 'gcConnexData',
   definition(t : any) {
     t.prismaFields([
       "id",

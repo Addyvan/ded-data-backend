@@ -1,7 +1,7 @@
 import { prismaObjectType } from "nexus-prisma";
 
 const GCmessageData = prismaObjectType({
-  name: 'GCmessageData',
+  name: 'gcMessageData',
   definition(t : any) {
     t.prismaFields([
       "id",

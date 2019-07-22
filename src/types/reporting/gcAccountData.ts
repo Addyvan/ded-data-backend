@@ -1,7 +1,7 @@
 import { prismaObjectType } from "nexus-prisma";
 
 const GCaccountData = prismaObjectType({
-  name: 'GCaccountData',
+  name: 'gcAccountData',
   definition(t : any) {
     t.prismaFields([
       "id",

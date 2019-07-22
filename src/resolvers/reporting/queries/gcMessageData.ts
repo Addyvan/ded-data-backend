@@ -1,7 +1,7 @@
 import { queryField } from "nexus";
 
 const gcMessageData = queryField('gcMessageData', {
-  type: 'GCmessageData',
+  type: 'gcMessageData',
   resolve: (parent, args, ctx, info) => {
     return ctx.reportingPrisma.gcMessageDatas();
   },

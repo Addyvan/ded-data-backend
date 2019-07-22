@@ -1,7 +1,7 @@
 import { queryField } from "nexus";
 
 const gcPediaData = queryField('gcPediaData', {
-  type: 'GCpediaData',
+  type: 'gcPediaData',
   resolve: (parent, args, ctx, info) => {
     return ctx.reportingPrisma.gcPediaDatas();
   },

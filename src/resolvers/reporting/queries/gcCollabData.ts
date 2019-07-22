@@ -1,7 +1,7 @@
 import { queryField } from "nexus";
 
 const gcCollabData = queryField('gcCollabData', {
-  type: 'GCcollabData',
+  type: 'gcCollabData',
   resolve: (parent, args, ctx, info) => {
     return ctx.reportingPrisma.gcCollabDatas();
   },

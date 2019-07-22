@@ -2,7 +2,7 @@
 ### Do not make changes to this file directly
 
 
-type GAstats {
+type gaStats {
   avgPageLoadTime: Float
   avgPageviewsPerSession: Float
   avgSessionDuration: Float
@@ -11,27 +11,15 @@ type GAstats {
   numSessions: Int
 }
 
-type GCaccountData {
+type gcAccountData {
   id: ID!
   numNewAccounts: Int
   period: Period!
   totalNumAccounts: Int
 }
 
-type GCcollabData {
-  gaData: GAstats
-  id: ID!
-  mostActiveDepartments: [String!]!
-  mostActiveGroups: [String!]!
-  numNewAccounts: Int
-  numNewGroups: Int
-  period: Period!
-  totalNumAccounts: Int
-  totalNumGroups: Int
-}
-
-type GCconnexData {
-  gaData: GAstats
+type gcCollabData {
+  gaData: gaStats
   id: ID!
   mostActiveDepartments: [String!]!
   mostActiveGroups: [String!]!
@@ -42,7 +30,19 @@ type GCconnexData {
   totalNumGroups: Int
 }
 
-type GCmessageData {
+type gcConnexData {
+  gaData: gaStats
+  id: ID!
+  mostActiveDepartments: [String!]!
+  mostActiveGroups: [String!]!
+  numNewAccounts: Int
+  numNewGroups: Int
+  period: Period!
+  totalNumAccounts: Int
+  totalNumGroups: Int
+}
+
+type gcMessageData {
   id: ID!
   numNewAccounts: Int
   numNewChannelMessages: Int
@@ -57,7 +57,7 @@ type GCmessageData {
   totalNumPrivateGroupMessages: Int
 }
 
-type GCpediaData {
+type gcPediaData {
   id: ID!
   numNewAccounts: Int
   numNewArticles: Int
@@ -68,8 +68,8 @@ type GCpediaData {
   totalNumEdits: Int
 }
 
-type GCwikiData {
-  gaData: GAstats
+type gcWikiData {
+  gaData: gaStats
   id: ID!
   numNewAccounts: Int
   numNewArticles: Int
@@ -87,12 +87,12 @@ type Period {
 }
 
 type Query {
-  gcAccountData: GCaccountData!
-  gcCollabData: GCcollabData!
-  gcConnexData: GCconnexData!
-  gcMessageData: GCmessageData!
-  gcPediaData: GCpediaData!
-  gcWikiData: GCwikiData!
+  gcAccountData: gcAccountData!
+  gcCollabData: gcCollabData!
+  gcConnexData: gcConnexData!
+  gcMessageData: gcMessageData!
+  gcPediaData: gcPediaData!
+  gcWikiData: gcWikiData!
   period(id: String!): Period!
   periods: Period!
   report(month: Int!, year: Int!): report!
