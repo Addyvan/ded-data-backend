@@ -1,0 +1,21 @@
+type Person {
+  id: ID! @id
+  gcId: Int @unique
+  name: String!
+  projects: [Project!]! @relation(name: "PeopleDoingProjects")
+}
+
+type Project {
+  id: ID! @id
+  name: String! @unique
+  description: String!
+  lead: [Person!]! @relation(name: "LeadsOnProject")
+  tags: [Tag!]! @relation(name: "ProjectTypeTag")
+  people: [Person!]! @relation(name: "PeopleDoingProjects")
+}
+
+type Tag {
+  id: ID! @id
+  name: String! @unique
+  projects: [Project!]! @relation(name: "ProjectTypeTag")
+}
