@@ -112,17 +112,14 @@ export interface NexusGenArgTypes {
     }
   }
   Query: {
-    counts: { // args
-      id: string; // String!
-    }
     people: { // args
       id?: string | null; // String
     }
     projects: { // args
-      id: string; // String!
+      id?: string | null; // String
     }
     tags: { // args
-      id: string; // String!
+      id?: string | null; // String
     }
   }
 }

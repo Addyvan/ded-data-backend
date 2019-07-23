@@ -6,7 +6,13 @@ const Period = prismaObjectType({
     t.prismaFields([
       "id",
       "month",
-      "year"
+      "year",
+      "account",
+      "collab",
+      "connex",
+      "message",
+      "pedia",
+      "wiki"
     ])
   },
 });

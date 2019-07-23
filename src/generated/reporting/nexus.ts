@@ -100,8 +100,14 @@ export interface NexusGenAllTypes extends NexusGenRootTypes {
 
 export interface NexusGenFieldTypes {
   Period: { // field return type
+    account: NexusGenRootTypes['gcAccountData'] | null; // gcAccountData
+    collab: NexusGenRootTypes['gcCollabData']; // gcCollabData!
+    connex: NexusGenRootTypes['gcConnexData']; // gcConnexData!
     id: string; // ID!
+    message: NexusGenRootTypes['gcMessageData']; // gcMessageData!
     month: number; // Int!
+    pedia: NexusGenRootTypes['gcPediaData']; // gcPediaData!
+    wiki: NexusGenRootTypes['gcWikiData']; // gcWikiData!
     year: number; // Int!
   }
   Query: { // field return type

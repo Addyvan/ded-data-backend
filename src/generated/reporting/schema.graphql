@@ -81,8 +81,14 @@ type gcWikiData {
 }
 
 type Period {
+  account: gcAccountData
+  collab: gcCollabData!
+  connex: gcConnexData!
   id: ID!
+  message: gcMessageData!
   month: Int!
+  pedia: gcPediaData!
+  wiki: gcWikiData!
   year: Int!
 }
 

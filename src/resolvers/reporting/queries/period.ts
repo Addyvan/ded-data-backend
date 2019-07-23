@@ -9,7 +9,6 @@ const period = queryField('period', {
     console.log (args.id);
     const periods: any = await ctx.reportingPrisma.periods({where: {id: args.id}});
     return periods;
-
 }});
 
 export default period;
