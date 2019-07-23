@@ -202,6 +202,10 @@ export interface NexusGenArgTypes {
     period: { // args
       id: string; // String!
     }
+    periods: { // args
+      month?: number | null; // Int
+      year?: number | null; // Int
+    }
     report: { // args
       month: number; // Int!
       year: number; // Int!

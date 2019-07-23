@@ -6,7 +6,6 @@ const period = queryField('period', {
     id: stringArg(),
   },
   resolve: async (parent, args : any, ctx, info) => {
-    console.log (args.id);
     const periods: any = await ctx.reportingPrisma.periods({where: {id: args.id}});
     return periods;
 }});
