@@ -59,7 +59,7 @@ async function seed() {
     }
   });
 
-  console.log(period);
+
 }
 
 seed();

@@ -12,7 +12,6 @@ const people = extendType({
         if (args.id) {
           return ctx.mappingPrisma.persons({where: {id: args.id}});
         } else {
-          console.log(await ctx.mappingPrisma.persons(args));
           return ctx.mappingPrisma.persons(args);
         }
       },

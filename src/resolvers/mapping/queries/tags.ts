@@ -3,7 +3,7 @@ import { stringArg, queryField } from "nexus";
 const tags = queryField('tags', {
   type: 'Tag',
   args: {
-    id: stringArg()
+    id: stringArg({required: false})
   },
   resolve: (parent, args : any, ctx) => {
     if (args.id) {

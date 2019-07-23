@@ -1,10 +1,7 @@
-import { stringArg, queryField } from "nexus";
+import { queryField } from "nexus";
 
 const counts = queryField('counts', {
   type: 'Count',
-  args: {
-    id: stringArg()
-  },
   resolve: async (parent, args : any, ctx) => {
     
     const peopleCount : Number = await ctx.mappingPrisma.personsConnection().aggregate().count();
