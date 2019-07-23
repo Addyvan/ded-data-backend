@@ -12,8 +12,8 @@ const GCcollabData = prismaObjectType({
 
       "totalNumGroups",
       "numNewGroups",
-      "mostActiveDepartments",
-      "mostActiveGroups"
+      //"mostActiveDepartments",
+      //"mostActiveGroups"
 
     ])
   },

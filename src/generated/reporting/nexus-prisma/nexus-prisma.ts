@@ -149,12 +149,8 @@ export interface NexusPrismaTypes {
       gcCollabDataCreateWithoutPeriodInput: gcCollabDataCreateWithoutPeriodInputInputObject
       gaStatsCreateOneInput: gaStatsCreateOneInputInputObject
       gaStatsCreateInput: gaStatsCreateInputInputObject
-      gcCollabDataCreatemostActiveDepartmentsInput: gcCollabDataCreatemostActiveDepartmentsInputInputObject
-      gcCollabDataCreatemostActiveGroupsInput: gcCollabDataCreatemostActiveGroupsInputInputObject
       gcConnexDataCreateOneWithoutPeriodInput: gcConnexDataCreateOneWithoutPeriodInputInputObject
       gcConnexDataCreateWithoutPeriodInput: gcConnexDataCreateWithoutPeriodInputInputObject
-      gcConnexDataCreatemostActiveDepartmentsInput: gcConnexDataCreatemostActiveDepartmentsInputInputObject
-      gcConnexDataCreatemostActiveGroupsInput: gcConnexDataCreatemostActiveGroupsInputInputObject
       gcMessageDataCreateOneWithoutPeriodInput: gcMessageDataCreateOneWithoutPeriodInputInputObject
       gcMessageDataCreateWithoutPeriodInput: gcMessageDataCreateWithoutPeriodInputInputObject
       gcPediaDataCreateOneWithoutPeriodInput: gcPediaDataCreateOneWithoutPeriodInputInputObject
@@ -170,13 +166,9 @@ export interface NexusPrismaTypes {
       gaStatsUpdateOneInput: gaStatsUpdateOneInputInputObject
       gaStatsUpdateDataInput: gaStatsUpdateDataInputInputObject
       gaStatsUpsertNestedInput: gaStatsUpsertNestedInputInputObject
-      gcCollabDataUpdatemostActiveDepartmentsInput: gcCollabDataUpdatemostActiveDepartmentsInputInputObject
-      gcCollabDataUpdatemostActiveGroupsInput: gcCollabDataUpdatemostActiveGroupsInputInputObject
       gcCollabDataUpsertWithoutPeriodInput: gcCollabDataUpsertWithoutPeriodInputInputObject
       gcConnexDataUpdateOneRequiredWithoutPeriodInput: gcConnexDataUpdateOneRequiredWithoutPeriodInputInputObject
       gcConnexDataUpdateWithoutPeriodDataInput: gcConnexDataUpdateWithoutPeriodDataInputInputObject
-      gcConnexDataUpdatemostActiveDepartmentsInput: gcConnexDataUpdatemostActiveDepartmentsInputInputObject
-      gcConnexDataUpdatemostActiveGroupsInput: gcConnexDataUpdatemostActiveGroupsInputInputObject
       gcConnexDataUpsertWithoutPeriodInput: gcConnexDataUpsertWithoutPeriodInputInputObject
       gcMessageDataUpdateOneRequiredWithoutPeriodInput: gcMessageDataUpdateOneRequiredWithoutPeriodInputInputObject
       gcMessageDataUpdateWithoutPeriodDataInput: gcMessageDataUpdateWithoutPeriodDataInputInputObject
@@ -985,8 +977,6 @@ type gcCollabDataObject =
   | { name: 'gaData', args?: [] | false, alias?: string  } 
   | { name: 'totalNumGroups', args?: [] | false, alias?: string  } 
   | { name: 'numNewGroups', args?: [] | false, alias?: string  } 
-  | { name: 'mostActiveDepartments', args?: [] | false, alias?: string  } 
-  | { name: 'mostActiveGroups', args?: [] | false, alias?: string  } 
 
 type gcCollabDataFields =
   | 'id'
@@ -996,8 +986,6 @@ type gcCollabDataFields =
   | 'gaData'
   | 'totalNumGroups'
   | 'numNewGroups'
-  | 'mostActiveDepartments'
-  | 'mostActiveGroups'
 
 
 
@@ -1068,22 +1056,6 @@ export interface gcCollabDataFieldDetails {
     description: string
     list: undefined
     nullable: true
-    resolve: undefined
-  }
-  mostActiveDepartments: {
-    type: 'String'
-    args: {}
-    description: string
-    list: true
-    nullable: false
-    resolve: undefined
-  }
-  mostActiveGroups: {
-    type: 'String'
-    args: {}
-    description: string
-    list: true
-    nullable: false
     resolve: undefined
   }
 }
@@ -1175,8 +1147,6 @@ type gcConnexDataObject =
   | { name: 'gaData', args?: [] | false, alias?: string  } 
   | { name: 'totalNumGroups', args?: [] | false, alias?: string  } 
   | { name: 'numNewGroups', args?: [] | false, alias?: string  } 
-  | { name: 'mostActiveDepartments', args?: [] | false, alias?: string  } 
-  | { name: 'mostActiveGroups', args?: [] | false, alias?: string  } 
 
 type gcConnexDataFields =
   | 'id'
@@ -1186,8 +1156,6 @@ type gcConnexDataFields =
   | 'gaData'
   | 'totalNumGroups'
   | 'numNewGroups'
-  | 'mostActiveDepartments'
-  | 'mostActiveGroups'
 
 
 
@@ -1258,22 +1226,6 @@ export interface gcConnexDataFieldDetails {
     description: string
     list: undefined
     nullable: true
-    resolve: undefined
-  }
-  mostActiveDepartments: {
-    type: 'String'
-    args: {}
-    description: string
-    list: true
-    nullable: false
-    resolve: undefined
-  }
-  mostActiveGroups: {
-    type: 'String'
-    args: {}
-    description: string
-    list: true
-    nullable: false
     resolve: undefined
   }
 }
@@ -4180,8 +4132,6 @@ type gcCollabDataPreviousValuesObject =
   | { name: 'numNewAccounts', args?: [] | false, alias?: string  } 
   | { name: 'totalNumGroups', args?: [] | false, alias?: string  } 
   | { name: 'numNewGroups', args?: [] | false, alias?: string  } 
-  | { name: 'mostActiveDepartments', args?: [] | false, alias?: string  } 
-  | { name: 'mostActiveGroups', args?: [] | false, alias?: string  } 
 
 type gcCollabDataPreviousValuesFields =
   | 'id'
@@ -4189,8 +4139,6 @@ type gcCollabDataPreviousValuesFields =
   | 'numNewAccounts'
   | 'totalNumGroups'
   | 'numNewGroups'
-  | 'mostActiveDepartments'
-  | 'mostActiveGroups'
 
 
 
@@ -4235,22 +4183,6 @@ export interface gcCollabDataPreviousValuesFieldDetails {
     description: string
     list: undefined
     nullable: true
-    resolve: undefined
-  }
-  mostActiveDepartments: {
-    type: 'String'
-    args: {}
-    description: string
-    list: true
-    nullable: false
-    resolve: undefined
-  }
-  mostActiveGroups: {
-    type: 'String'
-    args: {}
-    description: string
-    list: true
-    nullable: false
     resolve: undefined
   }
 }
@@ -4335,8 +4267,6 @@ type gcConnexDataPreviousValuesObject =
   | { name: 'numNewAccounts', args?: [] | false, alias?: string  } 
   | { name: 'totalNumGroups', args?: [] | false, alias?: string  } 
   | { name: 'numNewGroups', args?: [] | false, alias?: string  } 
-  | { name: 'mostActiveDepartments', args?: [] | false, alias?: string  } 
-  | { name: 'mostActiveGroups', args?: [] | false, alias?: string  } 
 
 type gcConnexDataPreviousValuesFields =
   | 'id'
@@ -4344,8 +4274,6 @@ type gcConnexDataPreviousValuesFields =
   | 'numNewAccounts'
   | 'totalNumGroups'
   | 'numNewGroups'
-  | 'mostActiveDepartments'
-  | 'mostActiveGroups'
 
 
 
@@ -4390,22 +4318,6 @@ export interface gcConnexDataPreviousValuesFieldDetails {
     description: string
     list: undefined
     nullable: true
-    resolve: undefined
-  }
-  mostActiveDepartments: {
-    type: 'String'
-    args: {}
-    description: string
-    list: true
-    nullable: false
-    resolve: undefined
-  }
-  mostActiveGroups: {
-    type: 'String'
-    args: {}
-    description: string
-    list: true
-    nullable: false
     resolve: undefined
   }
 }
@@ -5998,8 +5910,6 @@ export interface gcCollabDataCreateWithoutPeriodInput {
   gaData?: gaStatsCreateOneInput | null
   totalNumGroups?: number | null
   numNewGroups?: number | null
-  mostActiveDepartments?: gcCollabDataCreatemostActiveDepartmentsInput | null
-  mostActiveGroups?: gcCollabDataCreatemostActiveGroupsInput | null
 }
 export type gcCollabDataCreateWithoutPeriodInputInputObject =
   | Extract<keyof gcCollabDataCreateWithoutPeriodInput, string>
@@ -6009,8 +5919,6 @@ export type gcCollabDataCreateWithoutPeriodInputInputObject =
   | { name: 'gaData', alias?: string  } 
   | { name: 'totalNumGroups', alias?: string  } 
   | { name: 'numNewGroups', alias?: string  } 
-  | { name: 'mostActiveDepartments', alias?: string  } 
-  | { name: 'mostActiveGroups', alias?: string  } 
   
 export interface gaStatsCreateOneInput {
   create?: gaStatsCreateInput | null
@@ -6038,20 +5946,6 @@ export type gaStatsCreateInputInputObject =
   | { name: 'avgPageLoadTime', alias?: string  } 
   | { name: 'bounceRate', alias?: string  } 
   
-export interface gcCollabDataCreatemostActiveDepartmentsInput {
-  set?: string[]
-}
-export type gcCollabDataCreatemostActiveDepartmentsInputInputObject =
-  | Extract<keyof gcCollabDataCreatemostActiveDepartmentsInput, string>
-  | { name: 'set', alias?: string  } 
-  
-export interface gcCollabDataCreatemostActiveGroupsInput {
-  set?: string[]
-}
-export type gcCollabDataCreatemostActiveGroupsInputInputObject =
-  | Extract<keyof gcCollabDataCreatemostActiveGroupsInput, string>
-  | { name: 'set', alias?: string  } 
-  
 export interface gcConnexDataCreateOneWithoutPeriodInput {
   create?: gcConnexDataCreateWithoutPeriodInput | null
   connect?: gcConnexDataWhereUniqueInput | null
@@ -6068,8 +5962,6 @@ export interface gcConnexDataCreateWithoutPeriodInput {
   gaData?: gaStatsCreateOneInput | null
   totalNumGroups?: number | null
   numNewGroups?: number | null
-  mostActiveDepartments?: gcConnexDataCreatemostActiveDepartmentsInput | null
-  mostActiveGroups?: gcConnexDataCreatemostActiveGroupsInput | null
 }
 export type gcConnexDataCreateWithoutPeriodInputInputObject =
   | Extract<keyof gcConnexDataCreateWithoutPeriodInput, string>
@@ -6079,22 +5971,6 @@ export type gcConnexDataCreateWithoutPeriodInputInputObject =
   | { name: 'gaData', alias?: string  } 
   | { name: 'totalNumGroups', alias?: string  } 
   | { name: 'numNewGroups', alias?: string  } 
-  | { name: 'mostActiveDepartments', alias?: string  } 
-  | { name: 'mostActiveGroups', alias?: string  } 
-  
-export interface gcConnexDataCreatemostActiveDepartmentsInput {
-  set?: string[]
-}
-export type gcConnexDataCreatemostActiveDepartmentsInputInputObject =
-  | Extract<keyof gcConnexDataCreatemostActiveDepartmentsInput, string>
-  | { name: 'set', alias?: string  } 
-  
-export interface gcConnexDataCreatemostActiveGroupsInput {
-  set?: string[]
-}
-export type gcConnexDataCreatemostActiveGroupsInputInputObject =
-  | Extract<keyof gcConnexDataCreatemostActiveGroupsInput, string>
-  | { name: 'set', alias?: string  } 
   
 export interface gcMessageDataCreateOneWithoutPeriodInput {
   create?: gcMessageDataCreateWithoutPeriodInput | null
@@ -6265,8 +6141,6 @@ export interface gcCollabDataUpdateWithoutPeriodDataInput {
   gaData?: gaStatsUpdateOneInput | null
   totalNumGroups?: number | null
   numNewGroups?: number | null
-  mostActiveDepartments?: gcCollabDataUpdatemostActiveDepartmentsInput | null
-  mostActiveGroups?: gcCollabDataUpdatemostActiveGroupsInput | null
 }
 export type gcCollabDataUpdateWithoutPeriodDataInputInputObject =
   | Extract<keyof gcCollabDataUpdateWithoutPeriodDataInput, string>
@@ -6275,8 +6149,6 @@ export type gcCollabDataUpdateWithoutPeriodDataInputInputObject =
   | { name: 'gaData', alias?: string  } 
   | { name: 'totalNumGroups', alias?: string  } 
   | { name: 'numNewGroups', alias?: string  } 
-  | { name: 'mostActiveDepartments', alias?: string  } 
-  | { name: 'mostActiveGroups', alias?: string  } 
   
 export interface gaStatsUpdateOneInput {
   create?: gaStatsCreateInput | null
@@ -6319,20 +6191,6 @@ export type gaStatsUpsertNestedInputInputObject =
   | { name: 'update', alias?: string  } 
   | { name: 'create', alias?: string  } 
   
-export interface gcCollabDataUpdatemostActiveDepartmentsInput {
-  set?: string[]
-}
-export type gcCollabDataUpdatemostActiveDepartmentsInputInputObject =
-  | Extract<keyof gcCollabDataUpdatemostActiveDepartmentsInput, string>
-  | { name: 'set', alias?: string  } 
-  
-export interface gcCollabDataUpdatemostActiveGroupsInput {
-  set?: string[]
-}
-export type gcCollabDataUpdatemostActiveGroupsInputInputObject =
-  | Extract<keyof gcCollabDataUpdatemostActiveGroupsInput, string>
-  | { name: 'set', alias?: string  } 
-  
 export interface gcCollabDataUpsertWithoutPeriodInput {
   update?: gcCollabDataUpdateWithoutPeriodDataInput
   create?: gcCollabDataCreateWithoutPeriodInput
@@ -6361,8 +6219,6 @@ export interface gcConnexDataUpdateWithoutPeriodDataInput {
   gaData?: gaStatsUpdateOneInput | null
   totalNumGroups?: number | null
   numNewGroups?: number | null
-  mostActiveDepartments?: gcConnexDataUpdatemostActiveDepartmentsInput | null
-  mostActiveGroups?: gcConnexDataUpdatemostActiveGroupsInput | null
 }
 export type gcConnexDataUpdateWithoutPeriodDataInputInputObject =
   | Extract<keyof gcConnexDataUpdateWithoutPeriodDataInput, string>
@@ -6371,22 +6227,6 @@ export type gcConnexDataUpdateWithoutPeriodDataInputInputObject =
   | { name: 'gaData', alias?: string  } 
   | { name: 'totalNumGroups', alias?: string  } 
   | { name: 'numNewGroups', alias?: string  } 
-  | { name: 'mostActiveDepartments', alias?: string  } 
-  | { name: 'mostActiveGroups', alias?: string  } 
-  
-export interface gcConnexDataUpdatemostActiveDepartmentsInput {
-  set?: string[]
-}
-export type gcConnexDataUpdatemostActiveDepartmentsInputInputObject =
-  | Extract<keyof gcConnexDataUpdatemostActiveDepartmentsInput, string>
-  | { name: 'set', alias?: string  } 
-  
-export interface gcConnexDataUpdatemostActiveGroupsInput {
-  set?: string[]
-}
-export type gcConnexDataUpdatemostActiveGroupsInputInputObject =
-  | Extract<keyof gcConnexDataUpdatemostActiveGroupsInput, string>
-  | { name: 'set', alias?: string  } 
   
 export interface gcConnexDataUpsertWithoutPeriodInput {
   update?: gcConnexDataUpdateWithoutPeriodDataInput
@@ -6675,8 +6515,6 @@ export interface gcCollabDataCreateInput {
   gaData?: gaStatsCreateOneInput | null
   totalNumGroups?: number | null
   numNewGroups?: number | null
-  mostActiveDepartments?: gcCollabDataCreatemostActiveDepartmentsInput | null
-  mostActiveGroups?: gcCollabDataCreatemostActiveGroupsInput | null
 }
 export type gcCollabDataCreateInputInputObject =
   | Extract<keyof gcCollabDataCreateInput, string>
@@ -6687,8 +6525,6 @@ export type gcCollabDataCreateInputInputObject =
   | { name: 'gaData', alias?: string  } 
   | { name: 'totalNumGroups', alias?: string  } 
   | { name: 'numNewGroups', alias?: string  } 
-  | { name: 'mostActiveDepartments', alias?: string  } 
-  | { name: 'mostActiveGroups', alias?: string  } 
   
 export interface PeriodCreateOneWithoutCollabInput {
   create?: PeriodCreateWithoutCollabInput | null
@@ -6727,8 +6563,6 @@ export interface gcCollabDataUpdateInput {
   gaData?: gaStatsUpdateOneInput | null
   totalNumGroups?: number | null
   numNewGroups?: number | null
-  mostActiveDepartments?: gcCollabDataUpdatemostActiveDepartmentsInput | null
-  mostActiveGroups?: gcCollabDataUpdatemostActiveGroupsInput | null
 }
 export type gcCollabDataUpdateInputInputObject =
   | Extract<keyof gcCollabDataUpdateInput, string>
@@ -6738,8 +6572,6 @@ export type gcCollabDataUpdateInputInputObject =
   | { name: 'gaData', alias?: string  } 
   | { name: 'totalNumGroups', alias?: string  } 
   | { name: 'numNewGroups', alias?: string  } 
-  | { name: 'mostActiveDepartments', alias?: string  } 
-  | { name: 'mostActiveGroups', alias?: string  } 
   
 export interface PeriodUpdateOneRequiredWithoutCollabInput {
   create?: PeriodCreateWithoutCollabInput | null
@@ -6787,8 +6619,6 @@ export interface gcCollabDataUpdateManyMutationInput {
   numNewAccounts?: number | null
   totalNumGroups?: number | null
   numNewGroups?: number | null
-  mostActiveDepartments?: gcCollabDataUpdatemostActiveDepartmentsInput | null
-  mostActiveGroups?: gcCollabDataUpdatemostActiveGroupsInput | null
 }
 export type gcCollabDataUpdateManyMutationInputInputObject =
   | Extract<keyof gcCollabDataUpdateManyMutationInput, string>
@@ -6796,8 +6626,6 @@ export type gcCollabDataUpdateManyMutationInputInputObject =
   | { name: 'numNewAccounts', alias?: string  } 
   | { name: 'totalNumGroups', alias?: string  } 
   | { name: 'numNewGroups', alias?: string  } 
-  | { name: 'mostActiveDepartments', alias?: string  } 
-  | { name: 'mostActiveGroups', alias?: string  } 
   
 export interface gcConnexDataCreateInput {
   id?: string | null
@@ -6807,8 +6635,6 @@ export interface gcConnexDataCreateInput {
   gaData?: gaStatsCreateOneInput | null
   totalNumGroups?: number | null
   numNewGroups?: number | null
-  mostActiveDepartments?: gcConnexDataCreatemostActiveDepartmentsInput | null
-  mostActiveGroups?: gcConnexDataCreatemostActiveGroupsInput | null
 }
 export type gcConnexDataCreateInputInputObject =
   | Extract<keyof gcConnexDataCreateInput, string>
@@ -6819,8 +6645,6 @@ export type gcConnexDataCreateInputInputObject =
   | { name: 'gaData', alias?: string  } 
   | { name: 'totalNumGroups', alias?: string  } 
   | { name: 'numNewGroups', alias?: string  } 
-  | { name: 'mostActiveDepartments', alias?: string  } 
-  | { name: 'mostActiveGroups', alias?: string  } 
   
 export interface PeriodCreateOneWithoutConnexInput {
   create?: PeriodCreateWithoutConnexInput | null
@@ -6859,8 +6683,6 @@ export interface gcConnexDataUpdateInput {
   gaData?: gaStatsUpdateOneInput | null
   totalNumGroups?: number | null
   numNewGroups?: number | null
-  mostActiveDepartments?: gcConnexDataUpdatemostActiveDepartmentsInput | null
-  mostActiveGroups?: gcConnexDataUpdatemostActiveGroupsInput | null
 }
 export type gcConnexDataUpdateInputInputObject =
   | Extract<keyof gcConnexDataUpdateInput, string>
@@ -6870,8 +6692,6 @@ export type gcConnexDataUpdateInputInputObject =
   | { name: 'gaData', alias?: string  } 
   | { name: 'totalNumGroups', alias?: string  } 
   | { name: 'numNewGroups', alias?: string  } 
-  | { name: 'mostActiveDepartments', alias?: string  } 
-  | { name: 'mostActiveGroups', alias?: string  } 
   
 export interface PeriodUpdateOneRequiredWithoutConnexInput {
   create?: PeriodCreateWithoutConnexInput | null
@@ -6919,8 +6739,6 @@ export interface gcConnexDataUpdateManyMutationInput {
   numNewAccounts?: number | null
   totalNumGroups?: number | null
   numNewGroups?: number | null
-  mostActiveDepartments?: gcConnexDataUpdatemostActiveDepartmentsInput | null
-  mostActiveGroups?: gcConnexDataUpdatemostActiveGroupsInput | null
 }
 export type gcConnexDataUpdateManyMutationInputInputObject =
   | Extract<keyof gcConnexDataUpdateManyMutationInput, string>
@@ -6928,8 +6746,6 @@ export type gcConnexDataUpdateManyMutationInputInputObject =
   | { name: 'numNewAccounts', alias?: string  } 
   | { name: 'totalNumGroups', alias?: string  } 
   | { name: 'numNewGroups', alias?: string  } 
-  | { name: 'mostActiveDepartments', alias?: string  } 
-  | { name: 'mostActiveGroups', alias?: string  } 
   
 export interface gcMessageDataCreateInput {
   id?: string | null

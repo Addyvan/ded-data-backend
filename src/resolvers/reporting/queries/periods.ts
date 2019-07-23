@@ -1,6 +1,6 @@
-import { intArg, extendType } from "nexus";
+import { extendType, intArg } from "nexus";
 
-const periods = extendType({
+const periods = extendType( {
   type: "Query",
   definition(t) {
     t.list.field('periods', {
@@ -9,11 +9,13 @@ const periods = extendType({
         month: intArg({required: false}),
         year: intArg({required: false})
       },
-      resolve: (parent, args : any, ctx, info) => {
-        return ctx.reportingPrisma.periods({where: args});
+    resolve: async (parent, args : any, ctx, info) => {
+      return ctx.reportingPrisma.periods({where: args});
       },
     })
   }
 });
 
 export default periods;
+
+

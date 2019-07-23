@@ -1,10 +1,18 @@
-import { queryField } from "nexus";
+import { extendType } from "nexus";
 
-const gcWikiData = queryField('gcWikiData', {
-  type: 'gcWikiData',
-  resolve: (parent, args, ctx, info) => {
-    return ctx.reportingPrisma.gcWikiDatas(args);
-  },
+const gcWikiData = extendType( {
+  type: "Query",
+  definition(t) {
+    t.list.field('gcWikiDatas', {
+      type: 'gcWikiData',
+
+    resolve: async (parent, args : any, ctx, info) => {
+      return ctx.reportingPrisma.gcWikiDatas(args);
+      },
+    })
+  }
 });
 
 export default gcWikiData;
+
+

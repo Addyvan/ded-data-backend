@@ -2061,54 +2061,6 @@ export default {
             },
             "isDeprecated": false,
             "deprecationReason": null
-          },
-          {
-            "name": "mostActiveDepartments",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  }
-                }
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "mostActiveGroups",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  }
-                }
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
           }
         ],
         "inputFields": null,
@@ -2214,16 +2166,6 @@ export default {
         "possibleTypes": null
       },
       {
-        "kind": "SCALAR",
-        "name": "String",
-        "description": "The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.",
-        "fields": null,
-        "inputFields": null,
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
         "kind": "OBJECT",
         "name": "gcConnexData",
         "description": null,
@@ -2316,54 +2258,6 @@ export default {
               "kind": "SCALAR",
               "name": "Int",
               "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "mostActiveDepartments",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  }
-                }
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "mostActiveGroups",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  }
-                }
-              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -8513,6 +8407,16 @@ export default {
         "possibleTypes": null
       },
       {
+        "kind": "SCALAR",
+        "name": "String",
+        "description": "The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.",
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
         "kind": "OBJECT",
         "name": "PeriodConnection",
         "description": null,
@@ -12716,26 +12620,6 @@ export default {
               "ofType": null
             },
             "defaultValue": null
-          },
-          {
-            "name": "mostActiveDepartments",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "gcCollabDataCreatemostActiveDepartmentsInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "mostActiveGroups",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "gcCollabDataCreatemostActiveGroupsInput",
-              "ofType": null
-            },
-            "defaultValue": null
           }
         ],
         "interfaces": null,
@@ -12846,64 +12730,6 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "gcCollabDataCreatemostActiveDepartmentsInput",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "set",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              }
-            },
-            "defaultValue": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "gcCollabDataCreatemostActiveGroupsInput",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "set",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              }
-            },
-            "defaultValue": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
         "name": "gcConnexDataCreateOneWithoutPeriodInput",
         "description": null,
         "fields": null,
@@ -12996,84 +12822,6 @@ export default {
               "kind": "SCALAR",
               "name": "Int",
               "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "mostActiveDepartments",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "gcConnexDataCreatemostActiveDepartmentsInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "mostActiveGroups",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "gcConnexDataCreatemostActiveGroupsInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "gcConnexDataCreatemostActiveDepartmentsInput",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "set",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              }
-            },
-            "defaultValue": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "gcConnexDataCreatemostActiveGroupsInput",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "set",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              }
             },
             "defaultValue": null
           }
@@ -13806,26 +13554,6 @@ export default {
               "ofType": null
             },
             "defaultValue": null
-          },
-          {
-            "name": "mostActiveDepartments",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "gcCollabDataUpdatemostActiveDepartmentsInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "mostActiveGroups",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "gcCollabDataUpdatemostActiveGroupsInput",
-              "ofType": null
-            },
-            "defaultValue": null
           }
         ],
         "interfaces": null,
@@ -14005,64 +13733,6 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "gcCollabDataUpdatemostActiveDepartmentsInput",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "set",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              }
-            },
-            "defaultValue": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "gcCollabDataUpdatemostActiveGroupsInput",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "set",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              }
-            },
-            "defaultValue": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
         "name": "gcCollabDataUpsertWithoutPeriodInput",
         "description": null,
         "fields": null,
@@ -14204,84 +13874,6 @@ export default {
               "kind": "SCALAR",
               "name": "Int",
               "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "mostActiveDepartments",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "gcConnexDataUpdatemostActiveDepartmentsInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "mostActiveGroups",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "gcConnexDataUpdatemostActiveGroupsInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "gcConnexDataUpdatemostActiveDepartmentsInput",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "set",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              }
-            },
-            "defaultValue": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "gcConnexDataUpdatemostActiveGroupsInput",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "set",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              }
             },
             "defaultValue": null
           }
@@ -15579,26 +15171,6 @@ export default {
               "ofType": null
             },
             "defaultValue": null
-          },
-          {
-            "name": "mostActiveDepartments",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "gcCollabDataCreatemostActiveDepartmentsInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "mostActiveGroups",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "gcCollabDataCreatemostActiveGroupsInput",
-              "ofType": null
-            },
-            "defaultValue": null
           }
         ],
         "interfaces": null,
@@ -15813,26 +15385,6 @@ export default {
             "type": {
               "kind": "SCALAR",
               "name": "Int",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "mostActiveDepartments",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "gcCollabDataUpdatemostActiveDepartmentsInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "mostActiveGroups",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "gcCollabDataUpdatemostActiveGroupsInput",
               "ofType": null
             },
             "defaultValue": null
@@ -16058,26 +15610,6 @@ export default {
               "ofType": null
             },
             "defaultValue": null
-          },
-          {
-            "name": "mostActiveDepartments",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "gcCollabDataUpdatemostActiveDepartmentsInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "mostActiveGroups",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "gcCollabDataUpdatemostActiveGroupsInput",
-              "ofType": null
-            },
-            "defaultValue": null
           }
         ],
         "interfaces": null,
@@ -16160,26 +15692,6 @@ export default {
             "type": {
               "kind": "SCALAR",
               "name": "Int",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "mostActiveDepartments",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "gcConnexDataCreatemostActiveDepartmentsInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "mostActiveGroups",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "gcConnexDataCreatemostActiveGroupsInput",
               "ofType": null
             },
             "defaultValue": null
@@ -16397,26 +15909,6 @@ export default {
             "type": {
               "kind": "SCALAR",
               "name": "Int",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "mostActiveDepartments",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "gcConnexDataUpdatemostActiveDepartmentsInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "mostActiveGroups",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "gcConnexDataUpdatemostActiveGroupsInput",
               "ofType": null
             },
             "defaultValue": null
@@ -16639,26 +16131,6 @@ export default {
             "type": {
               "kind": "SCALAR",
               "name": "Int",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "mostActiveDepartments",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "gcConnexDataUpdatemostActiveDepartmentsInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "mostActiveGroups",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "gcConnexDataUpdatemostActiveGroupsInput",
               "ofType": null
             },
             "defaultValue": null
@@ -19829,54 +19301,6 @@ export default {
             },
             "isDeprecated": false,
             "deprecationReason": null
-          },
-          {
-            "name": "mostActiveDepartments",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  }
-                }
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "mostActiveGroups",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  }
-                }
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
           }
         ],
         "inputFields": null,
@@ -20159,54 +19583,6 @@ export default {
               "kind": "SCALAR",
               "name": "Int",
               "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "mostActiveDepartments",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  }
-                }
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "mostActiveGroups",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  }
-                }
-              }
             },
             "isDeprecated": false,
             "deprecationReason": null

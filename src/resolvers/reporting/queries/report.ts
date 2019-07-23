@@ -1,18 +1,24 @@
-import { intArg, queryField } from "nexus";
+//Unused currently, may be useful later depending on frontend
 
-const report = queryField('report', {
-  type: "report",
-  args: {
-    year: intArg(),
-    month: intArg()
-  },
+/*import { extendType, intArg } from "nexus";
 
-  resolve: async (parent, args : any, ctx, info) => {
-    console.log("executing");
-    const periods : any = await ctx.reportingPrisma.periods({where: {month: args.month, year: args.year }})[0];
-    console.log(periods);
-    return periods;
+const report = extendType( {
+  type: "Query",
+  definition(t) {
+    t.list.field('reports', {
+      type: 'report',
+      args: {
+        year: intArg(),
+        month: intArg()
+      },
+    resolve: async (parent, args : any, ctx, info) => {
+      const report : any = await ctx.reportingPrisma.periods({where: {month: args.month, year: args.year }})[0];
+      return report;
+      },
+    })
   }
 });
 
 export default report;
+*/
+

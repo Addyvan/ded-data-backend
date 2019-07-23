@@ -21,8 +21,6 @@ type gcAccountData {
 type gcCollabData {
   gaData: gaStats
   id: ID!
-  mostActiveDepartments: [String!]!
-  mostActiveGroups: [String!]!
   numNewAccounts: Int
   numNewGroups: Int
   period: Period!
@@ -33,8 +31,6 @@ type gcCollabData {
 type gcConnexData {
   gaData: gaStats
   id: ID!
-  mostActiveDepartments: [String!]!
-  mostActiveGroups: [String!]!
   numNewAccounts: Int
   numNewGroups: Int
   period: Period!
@@ -92,18 +88,19 @@ type Period {
   year: Int!
 }
 
-type Query {
-  gcAccountData: gcAccountData!
-  gcCollabData: gcCollabData!
-  gcConnexData: gcConnexData!
-  gcMessageData: gcMessageData!
-  gcPediaData: gcPediaData!
-  gcWikiData: gcWikiData!
-  period(id: String!): Period!
-  periods(month: Int, year: Int): [Period!]!
-  report(month: Int!, year: Int!): report!
+type quarter {
+  endPeriod: Period!
+  startPeriod: Period!
 }
 
-type report {
-  period(month: Int!, year: Int!): [Period!]!
+type Query {
+  gcAccountDatas: [gcAccountData!]!
+  gcCollabDatas: [gcCollabData!]!
+  gcConnexDatas: [gcConnexData!]!
+  gcMessageDatas: [gcMessageData!]!
+  gcPediaDatas: [gcPediaData!]!
+  gcWikiDatas: [gcWikiData!]!
+  period(id: String!): [Period!]!
+  periods(month: Int, year: Int): [Period!]!
+  quarter(month: Int!, year: Int!): quarter!
 }

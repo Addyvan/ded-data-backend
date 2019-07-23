@@ -13,7 +13,8 @@ import gcMessageData from "./reporting/gcMessageData";
 import gcPediaData from "./reporting/gcPediaData";
 import gcWikiData from "./reporting/gcWikiData";
 import period from "./reporting/period";
-import report from "./reporting/report";
+import quarter from "./reporting/quarter";
+//import report from "./reporting/report";
 
 const Mapping = {
   Person,
@@ -30,7 +31,8 @@ const Reporting = {
   gcPediaData,
   gcWikiData,
   period,
-  report
+  quarter
+  //report
 };
 
 export {

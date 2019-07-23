@@ -12,8 +12,8 @@ const GCconnexData = prismaObjectType({
 
       "totalNumGroups",
       "numNewGroups",
-      "mostActiveDepartments",
-      "mostActiveGroups"
+      //"mostActiveDepartments",
+      //"mostActiveGroups"
     ])
   },
 });

@@ -1,3 +1,5 @@
+//Unused currently, may be useful later depending on frontend
+
 import { objectType, intArg, idArg } from "nexus";
 import gcAccountData from "./gcAccountData";
 import Period from "./period";

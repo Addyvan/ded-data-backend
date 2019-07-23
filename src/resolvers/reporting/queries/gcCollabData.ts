@@ -1,10 +1,15 @@
-import { queryField } from "nexus";
+import { extendType } from "nexus";
 
-const gcCollabData = queryField('gcCollabData', {
-  type: 'gcCollabData',
-  resolve: (parent, args, ctx, info) => {
-    return ctx.reportingPrisma.gcCollabDatas(args);
-  },
+const gcCollabData = extendType( {
+  type: "Query",
+  definition(t) {
+    t.list.field('gcCollabDatas', {
+      type: 'gcCollabData',
+      resolve: (parent, args, ctx, info) => {
+        return ctx.reportingPrisma.gcCollabDatas(args);
+      },
+    })
+  }
 });
 
 export default gcCollabData;
