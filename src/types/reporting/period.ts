@@ -7,12 +7,13 @@ const Period = prismaObjectType({
       "id",
       "month",
       "year",
-      "account",
-      "collab",
-      "connex",
-      "message",
-      "pedia",
-      "wiki"
+      "gcAccount",
+      "gcCollab",
+      "gcConnex",
+      "gcMessage",
+      "gcPedia",
+      "gcWiki"
+      
     ])
   },
 });

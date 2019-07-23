@@ -1791,7 +1791,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "account",
+            "name": "gcAccount",
             "description": null,
             "args": [],
             "type": {
@@ -1803,7 +1803,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "collab",
+            "name": "gcCollab",
             "description": null,
             "args": [],
             "type": {
@@ -1819,7 +1819,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "connex",
+            "name": "gcConnex",
             "description": null,
             "args": [],
             "type": {
@@ -1835,7 +1835,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "message",
+            "name": "gcMessage",
             "description": null,
             "args": [],
             "type": {
@@ -1851,7 +1851,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "pedia",
+            "name": "gcPedia",
             "description": null,
             "args": [],
             "type": {
@@ -1867,7 +1867,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "wiki",
+            "name": "gcWiki",
             "description": null,
             "args": [],
             "type": {
@@ -3028,7 +3028,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "account",
+            "name": "gcAccount",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -3038,7 +3038,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "collab",
+            "name": "gcCollab",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -3048,7 +3048,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "connex",
+            "name": "gcConnex",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -3058,7 +3058,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "message",
+            "name": "gcMessage",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -3068,7 +3068,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "pedia",
+            "name": "gcPedia",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -3078,7 +3078,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "wiki",
+            "name": "gcWiki",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -12368,7 +12368,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "account",
+            "name": "gcAccount",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -12378,7 +12378,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "collab",
+            "name": "gcCollab",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -12392,7 +12392,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "connex",
+            "name": "gcConnex",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -12406,7 +12406,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "message",
+            "name": "gcMessage",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -12420,7 +12420,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "pedia",
+            "name": "gcPedia",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -12434,7 +12434,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "wiki",
+            "name": "gcWiki",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -13243,7 +13243,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "account",
+            "name": "gcAccount",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -13253,7 +13253,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "collab",
+            "name": "gcCollab",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -13263,7 +13263,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "connex",
+            "name": "gcConnex",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -13273,7 +13273,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "message",
+            "name": "gcMessage",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -13283,7 +13283,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "pedia",
+            "name": "gcPedia",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -13293,7 +13293,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "wiki",
+            "name": "gcWiki",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -14668,7 +14668,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "PeriodCreateOneWithoutAccountInput",
+                "name": "PeriodCreateOneWithoutGcAccountInput",
                 "ofType": null
               }
             },
@@ -14701,7 +14701,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodCreateOneWithoutAccountInput",
+        "name": "PeriodCreateOneWithoutGcAccountInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -14710,7 +14710,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodCreateWithoutAccountInput",
+              "name": "PeriodCreateWithoutGcAccountInput",
               "ofType": null
             },
             "defaultValue": null
@@ -14732,7 +14732,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodCreateWithoutAccountInput",
+        "name": "PeriodCreateWithoutGcAccountInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -14775,7 +14775,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "collab",
+            "name": "gcCollab",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -14789,7 +14789,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "connex",
+            "name": "gcConnex",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -14803,7 +14803,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "message",
+            "name": "gcMessage",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -14817,7 +14817,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "pedia",
+            "name": "gcPedia",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -14831,7 +14831,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "wiki",
+            "name": "gcWiki",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -14860,7 +14860,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodUpdateOneRequiredWithoutAccountInput",
+              "name": "PeriodUpdateOneRequiredWithoutGcAccountInput",
               "ofType": null
             },
             "defaultValue": null
@@ -14892,7 +14892,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodUpdateOneRequiredWithoutAccountInput",
+        "name": "PeriodUpdateOneRequiredWithoutGcAccountInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -14901,7 +14901,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodCreateWithoutAccountInput",
+              "name": "PeriodCreateWithoutGcAccountInput",
               "ofType": null
             },
             "defaultValue": null
@@ -14911,7 +14911,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodUpdateWithoutAccountDataInput",
+              "name": "PeriodUpdateWithoutGcAccountDataInput",
               "ofType": null
             },
             "defaultValue": null
@@ -14921,7 +14921,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodUpsertWithoutAccountInput",
+              "name": "PeriodUpsertWithoutGcAccountInput",
               "ofType": null
             },
             "defaultValue": null
@@ -14943,7 +14943,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodUpdateWithoutAccountDataInput",
+        "name": "PeriodUpdateWithoutGcAccountDataInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -14968,7 +14968,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "collab",
+            "name": "gcCollab",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -14978,7 +14978,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "connex",
+            "name": "gcConnex",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -14988,7 +14988,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "message",
+            "name": "gcMessage",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -14998,7 +14998,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "pedia",
+            "name": "gcPedia",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -15008,7 +15008,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "wiki",
+            "name": "gcWiki",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -15024,7 +15024,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodUpsertWithoutAccountInput",
+        "name": "PeriodUpsertWithoutGcAccountInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -15036,7 +15036,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "PeriodUpdateWithoutAccountDataInput",
+                "name": "PeriodUpdateWithoutGcAccountDataInput",
                 "ofType": null
               }
             },
@@ -15050,7 +15050,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "PeriodCreateWithoutAccountInput",
+                "name": "PeriodCreateWithoutGcAccountInput",
                 "ofType": null
               }
             },
@@ -15116,7 +15116,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "PeriodCreateOneWithoutCollabInput",
+                "name": "PeriodCreateOneWithoutGcCollabInput",
                 "ofType": null
               }
             },
@@ -15179,7 +15179,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodCreateOneWithoutCollabInput",
+        "name": "PeriodCreateOneWithoutGcCollabInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -15188,7 +15188,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodCreateWithoutCollabInput",
+              "name": "PeriodCreateWithoutGcCollabInput",
               "ofType": null
             },
             "defaultValue": null
@@ -15210,7 +15210,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodCreateWithoutCollabInput",
+        "name": "PeriodCreateWithoutGcCollabInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -15253,7 +15253,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "account",
+            "name": "gcAccount",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -15263,7 +15263,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "connex",
+            "name": "gcConnex",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -15277,7 +15277,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "message",
+            "name": "gcMessage",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -15291,7 +15291,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "pedia",
+            "name": "gcPedia",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -15305,7 +15305,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "wiki",
+            "name": "gcWiki",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -15334,7 +15334,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodUpdateOneRequiredWithoutCollabInput",
+              "name": "PeriodUpdateOneRequiredWithoutGcCollabInput",
               "ofType": null
             },
             "defaultValue": null
@@ -15396,7 +15396,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodUpdateOneRequiredWithoutCollabInput",
+        "name": "PeriodUpdateOneRequiredWithoutGcCollabInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -15405,7 +15405,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodCreateWithoutCollabInput",
+              "name": "PeriodCreateWithoutGcCollabInput",
               "ofType": null
             },
             "defaultValue": null
@@ -15415,7 +15415,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodUpdateWithoutCollabDataInput",
+              "name": "PeriodUpdateWithoutGcCollabDataInput",
               "ofType": null
             },
             "defaultValue": null
@@ -15425,7 +15425,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodUpsertWithoutCollabInput",
+              "name": "PeriodUpsertWithoutGcCollabInput",
               "ofType": null
             },
             "defaultValue": null
@@ -15447,7 +15447,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodUpdateWithoutCollabDataInput",
+        "name": "PeriodUpdateWithoutGcCollabDataInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -15472,7 +15472,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "account",
+            "name": "gcAccount",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -15482,7 +15482,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "connex",
+            "name": "gcConnex",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -15492,7 +15492,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "message",
+            "name": "gcMessage",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -15502,7 +15502,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "pedia",
+            "name": "gcPedia",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -15512,7 +15512,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "wiki",
+            "name": "gcWiki",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -15528,7 +15528,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodUpsertWithoutCollabInput",
+        "name": "PeriodUpsertWithoutGcCollabInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -15540,7 +15540,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "PeriodUpdateWithoutCollabDataInput",
+                "name": "PeriodUpdateWithoutGcCollabDataInput",
                 "ofType": null
               }
             },
@@ -15554,7 +15554,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "PeriodCreateWithoutCollabInput",
+                "name": "PeriodCreateWithoutGcCollabInput",
                 "ofType": null
               }
             },
@@ -15640,7 +15640,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "PeriodCreateOneWithoutConnexInput",
+                "name": "PeriodCreateOneWithoutGcConnexInput",
                 "ofType": null
               }
             },
@@ -15703,7 +15703,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodCreateOneWithoutConnexInput",
+        "name": "PeriodCreateOneWithoutGcConnexInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -15712,7 +15712,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodCreateWithoutConnexInput",
+              "name": "PeriodCreateWithoutGcConnexInput",
               "ofType": null
             },
             "defaultValue": null
@@ -15734,7 +15734,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodCreateWithoutConnexInput",
+        "name": "PeriodCreateWithoutGcConnexInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -15777,7 +15777,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "account",
+            "name": "gcAccount",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -15787,7 +15787,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "collab",
+            "name": "gcCollab",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -15801,7 +15801,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "message",
+            "name": "gcMessage",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -15815,7 +15815,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "pedia",
+            "name": "gcPedia",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -15829,7 +15829,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "wiki",
+            "name": "gcWiki",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -15858,7 +15858,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodUpdateOneRequiredWithoutConnexInput",
+              "name": "PeriodUpdateOneRequiredWithoutGcConnexInput",
               "ofType": null
             },
             "defaultValue": null
@@ -15920,7 +15920,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodUpdateOneRequiredWithoutConnexInput",
+        "name": "PeriodUpdateOneRequiredWithoutGcConnexInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -15929,7 +15929,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodCreateWithoutConnexInput",
+              "name": "PeriodCreateWithoutGcConnexInput",
               "ofType": null
             },
             "defaultValue": null
@@ -15939,7 +15939,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodUpdateWithoutConnexDataInput",
+              "name": "PeriodUpdateWithoutGcConnexDataInput",
               "ofType": null
             },
             "defaultValue": null
@@ -15949,7 +15949,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodUpsertWithoutConnexInput",
+              "name": "PeriodUpsertWithoutGcConnexInput",
               "ofType": null
             },
             "defaultValue": null
@@ -15971,7 +15971,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodUpdateWithoutConnexDataInput",
+        "name": "PeriodUpdateWithoutGcConnexDataInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -15996,7 +15996,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "account",
+            "name": "gcAccount",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -16006,7 +16006,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "collab",
+            "name": "gcCollab",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -16016,7 +16016,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "message",
+            "name": "gcMessage",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -16026,7 +16026,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "pedia",
+            "name": "gcPedia",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -16036,7 +16036,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "wiki",
+            "name": "gcWiki",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -16052,7 +16052,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodUpsertWithoutConnexInput",
+        "name": "PeriodUpsertWithoutGcConnexInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -16064,7 +16064,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "PeriodUpdateWithoutConnexDataInput",
+                "name": "PeriodUpdateWithoutGcConnexDataInput",
                 "ofType": null
               }
             },
@@ -16078,7 +16078,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "PeriodCreateWithoutConnexInput",
+                "name": "PeriodCreateWithoutGcConnexInput",
                 "ofType": null
               }
             },
@@ -16164,7 +16164,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "PeriodCreateOneWithoutMessageInput",
+                "name": "PeriodCreateOneWithoutGcMessageInput",
                 "ofType": null
               }
             },
@@ -16277,7 +16277,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodCreateOneWithoutMessageInput",
+        "name": "PeriodCreateOneWithoutGcMessageInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -16286,7 +16286,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodCreateWithoutMessageInput",
+              "name": "PeriodCreateWithoutGcMessageInput",
               "ofType": null
             },
             "defaultValue": null
@@ -16308,7 +16308,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodCreateWithoutMessageInput",
+        "name": "PeriodCreateWithoutGcMessageInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -16351,7 +16351,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "account",
+            "name": "gcAccount",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -16361,7 +16361,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "collab",
+            "name": "gcCollab",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -16375,7 +16375,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "connex",
+            "name": "gcConnex",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -16389,7 +16389,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "pedia",
+            "name": "gcPedia",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -16403,7 +16403,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "wiki",
+            "name": "gcWiki",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -16432,7 +16432,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodUpdateOneRequiredWithoutMessageInput",
+              "name": "PeriodUpdateOneRequiredWithoutGcMessageInput",
               "ofType": null
             },
             "defaultValue": null
@@ -16544,7 +16544,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodUpdateOneRequiredWithoutMessageInput",
+        "name": "PeriodUpdateOneRequiredWithoutGcMessageInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -16553,7 +16553,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodCreateWithoutMessageInput",
+              "name": "PeriodCreateWithoutGcMessageInput",
               "ofType": null
             },
             "defaultValue": null
@@ -16563,7 +16563,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodUpdateWithoutMessageDataInput",
+              "name": "PeriodUpdateWithoutGcMessageDataInput",
               "ofType": null
             },
             "defaultValue": null
@@ -16573,7 +16573,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodUpsertWithoutMessageInput",
+              "name": "PeriodUpsertWithoutGcMessageInput",
               "ofType": null
             },
             "defaultValue": null
@@ -16595,7 +16595,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodUpdateWithoutMessageDataInput",
+        "name": "PeriodUpdateWithoutGcMessageDataInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -16620,7 +16620,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "account",
+            "name": "gcAccount",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -16630,7 +16630,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "collab",
+            "name": "gcCollab",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -16640,7 +16640,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "connex",
+            "name": "gcConnex",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -16650,7 +16650,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "pedia",
+            "name": "gcPedia",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -16660,7 +16660,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "wiki",
+            "name": "gcWiki",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -16676,7 +16676,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodUpsertWithoutMessageInput",
+        "name": "PeriodUpsertWithoutGcMessageInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -16688,7 +16688,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "PeriodUpdateWithoutMessageDataInput",
+                "name": "PeriodUpdateWithoutGcMessageDataInput",
                 "ofType": null
               }
             },
@@ -16702,7 +16702,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "PeriodCreateWithoutMessageInput",
+                "name": "PeriodCreateWithoutGcMessageInput",
                 "ofType": null
               }
             },
@@ -16848,7 +16848,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "PeriodCreateOneWithoutPediaInput",
+                "name": "PeriodCreateOneWithoutGcPediaInput",
                 "ofType": null
               }
             },
@@ -16921,7 +16921,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodCreateOneWithoutPediaInput",
+        "name": "PeriodCreateOneWithoutGcPediaInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -16930,7 +16930,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodCreateWithoutPediaInput",
+              "name": "PeriodCreateWithoutGcPediaInput",
               "ofType": null
             },
             "defaultValue": null
@@ -16952,7 +16952,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodCreateWithoutPediaInput",
+        "name": "PeriodCreateWithoutGcPediaInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -16995,7 +16995,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "account",
+            "name": "gcAccount",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -17005,7 +17005,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "collab",
+            "name": "gcCollab",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -17019,7 +17019,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "connex",
+            "name": "gcConnex",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -17033,7 +17033,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "message",
+            "name": "gcMessage",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -17047,7 +17047,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "wiki",
+            "name": "gcWiki",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -17076,7 +17076,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodUpdateOneRequiredWithoutPediaInput",
+              "name": "PeriodUpdateOneRequiredWithoutGcPediaInput",
               "ofType": null
             },
             "defaultValue": null
@@ -17148,7 +17148,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodUpdateOneRequiredWithoutPediaInput",
+        "name": "PeriodUpdateOneRequiredWithoutGcPediaInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -17157,7 +17157,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodCreateWithoutPediaInput",
+              "name": "PeriodCreateWithoutGcPediaInput",
               "ofType": null
             },
             "defaultValue": null
@@ -17167,7 +17167,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodUpdateWithoutPediaDataInput",
+              "name": "PeriodUpdateWithoutGcPediaDataInput",
               "ofType": null
             },
             "defaultValue": null
@@ -17177,7 +17177,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodUpsertWithoutPediaInput",
+              "name": "PeriodUpsertWithoutGcPediaInput",
               "ofType": null
             },
             "defaultValue": null
@@ -17199,7 +17199,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodUpdateWithoutPediaDataInput",
+        "name": "PeriodUpdateWithoutGcPediaDataInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -17224,7 +17224,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "account",
+            "name": "gcAccount",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -17234,7 +17234,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "collab",
+            "name": "gcCollab",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -17244,7 +17244,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "connex",
+            "name": "gcConnex",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -17254,7 +17254,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "message",
+            "name": "gcMessage",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -17264,7 +17264,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "wiki",
+            "name": "gcWiki",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -17280,7 +17280,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodUpsertWithoutPediaInput",
+        "name": "PeriodUpsertWithoutGcPediaInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -17292,7 +17292,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "PeriodUpdateWithoutPediaDataInput",
+                "name": "PeriodUpdateWithoutGcPediaDataInput",
                 "ofType": null
               }
             },
@@ -17306,7 +17306,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "PeriodCreateWithoutPediaInput",
+                "name": "PeriodCreateWithoutGcPediaInput",
                 "ofType": null
               }
             },
@@ -17412,7 +17412,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "PeriodCreateOneWithoutWikiInput",
+                "name": "PeriodCreateOneWithoutGcWikiInput",
                 "ofType": null
               }
             },
@@ -17495,7 +17495,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodCreateOneWithoutWikiInput",
+        "name": "PeriodCreateOneWithoutGcWikiInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -17504,7 +17504,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodCreateWithoutWikiInput",
+              "name": "PeriodCreateWithoutGcWikiInput",
               "ofType": null
             },
             "defaultValue": null
@@ -17526,7 +17526,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodCreateWithoutWikiInput",
+        "name": "PeriodCreateWithoutGcWikiInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -17569,7 +17569,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "account",
+            "name": "gcAccount",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -17579,7 +17579,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "collab",
+            "name": "gcCollab",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -17593,7 +17593,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "connex",
+            "name": "gcConnex",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -17607,7 +17607,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "message",
+            "name": "gcMessage",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -17621,7 +17621,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "pedia",
+            "name": "gcPedia",
             "description": null,
             "type": {
               "kind": "NON_NULL",
@@ -17650,7 +17650,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodUpdateOneRequiredWithoutWikiInput",
+              "name": "PeriodUpdateOneRequiredWithoutGcWikiInput",
               "ofType": null
             },
             "defaultValue": null
@@ -17732,7 +17732,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodUpdateOneRequiredWithoutWikiInput",
+        "name": "PeriodUpdateOneRequiredWithoutGcWikiInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -17741,7 +17741,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodCreateWithoutWikiInput",
+              "name": "PeriodCreateWithoutGcWikiInput",
               "ofType": null
             },
             "defaultValue": null
@@ -17751,7 +17751,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodUpdateWithoutWikiDataInput",
+              "name": "PeriodUpdateWithoutGcWikiDataInput",
               "ofType": null
             },
             "defaultValue": null
@@ -17761,7 +17761,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PeriodUpsertWithoutWikiInput",
+              "name": "PeriodUpsertWithoutGcWikiInput",
               "ofType": null
             },
             "defaultValue": null
@@ -17783,7 +17783,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodUpdateWithoutWikiDataInput",
+        "name": "PeriodUpdateWithoutGcWikiDataInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -17808,7 +17808,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "account",
+            "name": "gcAccount",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -17818,7 +17818,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "collab",
+            "name": "gcCollab",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -17828,7 +17828,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "connex",
+            "name": "gcConnex",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -17838,7 +17838,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "message",
+            "name": "gcMessage",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -17848,7 +17848,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "pedia",
+            "name": "gcPedia",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -17864,7 +17864,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PeriodUpsertWithoutWikiInput",
+        "name": "PeriodUpsertWithoutGcWikiInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -17876,7 +17876,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "PeriodUpdateWithoutWikiDataInput",
+                "name": "PeriodUpdateWithoutGcWikiDataInput",
                 "ofType": null
               }
             },
@@ -17890,7 +17890,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "PeriodCreateWithoutWikiInput",
+                "name": "PeriodCreateWithoutGcWikiInput",
                 "ofType": null
               }
             },

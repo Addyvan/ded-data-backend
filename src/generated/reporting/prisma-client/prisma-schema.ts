@@ -231,7 +231,7 @@ type gcAccountDataConnection {
 
 input gcAccountDataCreateInput {
   id: ID
-  period: PeriodCreateOneWithoutAccountInput!
+  period: PeriodCreateOneWithoutGcAccountInput!
   totalNumAccounts: Int
   numNewAccounts: Int
 }
@@ -286,7 +286,7 @@ input gcAccountDataSubscriptionWhereInput {
 }
 
 input gcAccountDataUpdateInput {
-  period: PeriodUpdateOneRequiredWithoutAccountInput
+  period: PeriodUpdateOneRequiredWithoutGcAccountInput
   totalNumAccounts: Int
   numNewAccounts: Int
 }
@@ -374,7 +374,7 @@ type gcCollabDataConnection {
 
 input gcCollabDataCreateInput {
   id: ID
-  period: PeriodCreateOneWithoutCollabInput!
+  period: PeriodCreateOneWithoutGcCollabInput!
   totalNumAccounts: Int
   numNewAccounts: Int
   gaData: gaStatsCreateOneInput
@@ -441,7 +441,7 @@ input gcCollabDataSubscriptionWhereInput {
 }
 
 input gcCollabDataUpdateInput {
-  period: PeriodUpdateOneRequiredWithoutCollabInput
+  period: PeriodUpdateOneRequiredWithoutGcCollabInput
   totalNumAccounts: Int
   numNewAccounts: Int
   gaData: gaStatsUpdateOneInput
@@ -552,7 +552,7 @@ type gcConnexDataConnection {
 
 input gcConnexDataCreateInput {
   id: ID
-  period: PeriodCreateOneWithoutConnexInput!
+  period: PeriodCreateOneWithoutGcConnexInput!
   totalNumAccounts: Int
   numNewAccounts: Int
   gaData: gaStatsCreateOneInput
@@ -619,7 +619,7 @@ input gcConnexDataSubscriptionWhereInput {
 }
 
 input gcConnexDataUpdateInput {
-  period: PeriodUpdateOneRequiredWithoutConnexInput
+  period: PeriodUpdateOneRequiredWithoutGcConnexInput
   totalNumAccounts: Int
   numNewAccounts: Int
   gaData: gaStatsUpdateOneInput
@@ -735,7 +735,7 @@ type gcMessageDataConnection {
 
 input gcMessageDataCreateInput {
   id: ID
-  period: PeriodCreateOneWithoutMessageInput!
+  period: PeriodCreateOneWithoutGcMessageInput!
   totalNumAccounts: Int
   numNewAccounts: Int
   totalNumChannelMessages: Int
@@ -830,7 +830,7 @@ input gcMessageDataSubscriptionWhereInput {
 }
 
 input gcMessageDataUpdateInput {
-  period: PeriodUpdateOneRequiredWithoutMessageInput
+  period: PeriodUpdateOneRequiredWithoutGcMessageInput
   totalNumAccounts: Int
   numNewAccounts: Int
   totalNumChannelMessages: Int
@@ -1005,7 +1005,7 @@ type gcPediaDataConnection {
 
 input gcPediaDataCreateInput {
   id: ID
-  period: PeriodCreateOneWithoutPediaInput!
+  period: PeriodCreateOneWithoutGcPediaInput!
   totalNumAccounts: Int
   numNewAccounts: Int
   totalNumArticles: Int
@@ -1080,7 +1080,7 @@ input gcPediaDataSubscriptionWhereInput {
 }
 
 input gcPediaDataUpdateInput {
-  period: PeriodUpdateOneRequiredWithoutPediaInput
+  period: PeriodUpdateOneRequiredWithoutGcPediaInput
   totalNumAccounts: Int
   numNewAccounts: Int
   totalNumArticles: Int
@@ -1212,7 +1212,7 @@ type gcWikiDataConnection {
 
 input gcWikiDataCreateInput {
   id: ID
-  period: PeriodCreateOneWithoutWikiInput!
+  period: PeriodCreateOneWithoutGcWikiInput!
   totalNumAccounts: Int
   numNewAccounts: Int
   gaData: gaStatsCreateOneInput
@@ -1289,7 +1289,7 @@ input gcWikiDataSubscriptionWhereInput {
 }
 
 input gcWikiDataUpdateInput {
-  period: PeriodUpdateOneRequiredWithoutWikiInput
+  period: PeriodUpdateOneRequiredWithoutGcWikiInput
   totalNumAccounts: Int
   numNewAccounts: Int
   gaData: gaStatsUpdateOneInput
@@ -1478,12 +1478,12 @@ type Period {
   id: ID!
   month: Int!
   year: Int!
-  account: gcAccountData
-  collab: gcCollabData!
-  connex: gcConnexData!
-  message: gcMessageData!
-  pedia: gcPediaData!
-  wiki: gcWikiData!
+  gcAccount: gcAccountData
+  gcCollab: gcCollabData!
+  gcConnex: gcConnexData!
+  gcMessage: gcMessageData!
+  gcPedia: gcPediaData!
+  gcWiki: gcWikiData!
 }
 
 type PeriodConnection {
@@ -1496,108 +1496,108 @@ input PeriodCreateInput {
   id: ID
   month: Int!
   year: Int!
-  account: gcAccountDataCreateOneWithoutPeriodInput
-  collab: gcCollabDataCreateOneWithoutPeriodInput!
-  connex: gcConnexDataCreateOneWithoutPeriodInput!
-  message: gcMessageDataCreateOneWithoutPeriodInput!
-  pedia: gcPediaDataCreateOneWithoutPeriodInput!
-  wiki: gcWikiDataCreateOneWithoutPeriodInput!
+  gcAccount: gcAccountDataCreateOneWithoutPeriodInput
+  gcCollab: gcCollabDataCreateOneWithoutPeriodInput!
+  gcConnex: gcConnexDataCreateOneWithoutPeriodInput!
+  gcMessage: gcMessageDataCreateOneWithoutPeriodInput!
+  gcPedia: gcPediaDataCreateOneWithoutPeriodInput!
+  gcWiki: gcWikiDataCreateOneWithoutPeriodInput!
 }
 
-input PeriodCreateOneWithoutAccountInput {
-  create: PeriodCreateWithoutAccountInput
+input PeriodCreateOneWithoutGcAccountInput {
+  create: PeriodCreateWithoutGcAccountInput
   connect: PeriodWhereUniqueInput
 }
 
-input PeriodCreateOneWithoutCollabInput {
-  create: PeriodCreateWithoutCollabInput
+input PeriodCreateOneWithoutGcCollabInput {
+  create: PeriodCreateWithoutGcCollabInput
   connect: PeriodWhereUniqueInput
 }
 
-input PeriodCreateOneWithoutConnexInput {
-  create: PeriodCreateWithoutConnexInput
+input PeriodCreateOneWithoutGcConnexInput {
+  create: PeriodCreateWithoutGcConnexInput
   connect: PeriodWhereUniqueInput
 }
 
-input PeriodCreateOneWithoutMessageInput {
-  create: PeriodCreateWithoutMessageInput
+input PeriodCreateOneWithoutGcMessageInput {
+  create: PeriodCreateWithoutGcMessageInput
   connect: PeriodWhereUniqueInput
 }
 
-input PeriodCreateOneWithoutPediaInput {
-  create: PeriodCreateWithoutPediaInput
+input PeriodCreateOneWithoutGcPediaInput {
+  create: PeriodCreateWithoutGcPediaInput
   connect: PeriodWhereUniqueInput
 }
 
-input PeriodCreateOneWithoutWikiInput {
-  create: PeriodCreateWithoutWikiInput
+input PeriodCreateOneWithoutGcWikiInput {
+  create: PeriodCreateWithoutGcWikiInput
   connect: PeriodWhereUniqueInput
 }
 
-input PeriodCreateWithoutAccountInput {
+input PeriodCreateWithoutGcAccountInput {
   id: ID
   month: Int!
   year: Int!
-  collab: gcCollabDataCreateOneWithoutPeriodInput!
-  connex: gcConnexDataCreateOneWithoutPeriodInput!
-  message: gcMessageDataCreateOneWithoutPeriodInput!
-  pedia: gcPediaDataCreateOneWithoutPeriodInput!
-  wiki: gcWikiDataCreateOneWithoutPeriodInput!
+  gcCollab: gcCollabDataCreateOneWithoutPeriodInput!
+  gcConnex: gcConnexDataCreateOneWithoutPeriodInput!
+  gcMessage: gcMessageDataCreateOneWithoutPeriodInput!
+  gcPedia: gcPediaDataCreateOneWithoutPeriodInput!
+  gcWiki: gcWikiDataCreateOneWithoutPeriodInput!
 }
 
-input PeriodCreateWithoutCollabInput {
+input PeriodCreateWithoutGcCollabInput {
   id: ID
   month: Int!
   year: Int!
-  account: gcAccountDataCreateOneWithoutPeriodInput
-  connex: gcConnexDataCreateOneWithoutPeriodInput!
-  message: gcMessageDataCreateOneWithoutPeriodInput!
-  pedia: gcPediaDataCreateOneWithoutPeriodInput!
-  wiki: gcWikiDataCreateOneWithoutPeriodInput!
+  gcAccount: gcAccountDataCreateOneWithoutPeriodInput
+  gcConnex: gcConnexDataCreateOneWithoutPeriodInput!
+  gcMessage: gcMessageDataCreateOneWithoutPeriodInput!
+  gcPedia: gcPediaDataCreateOneWithoutPeriodInput!
+  gcWiki: gcWikiDataCreateOneWithoutPeriodInput!
 }
 
-input PeriodCreateWithoutConnexInput {
+input PeriodCreateWithoutGcConnexInput {
   id: ID
   month: Int!
   year: Int!
-  account: gcAccountDataCreateOneWithoutPeriodInput
-  collab: gcCollabDataCreateOneWithoutPeriodInput!
-  message: gcMessageDataCreateOneWithoutPeriodInput!
-  pedia: gcPediaDataCreateOneWithoutPeriodInput!
-  wiki: gcWikiDataCreateOneWithoutPeriodInput!
+  gcAccount: gcAccountDataCreateOneWithoutPeriodInput
+  gcCollab: gcCollabDataCreateOneWithoutPeriodInput!
+  gcMessage: gcMessageDataCreateOneWithoutPeriodInput!
+  gcPedia: gcPediaDataCreateOneWithoutPeriodInput!
+  gcWiki: gcWikiDataCreateOneWithoutPeriodInput!
 }
 
-input PeriodCreateWithoutMessageInput {
+input PeriodCreateWithoutGcMessageInput {
   id: ID
   month: Int!
   year: Int!
-  account: gcAccountDataCreateOneWithoutPeriodInput
-  collab: gcCollabDataCreateOneWithoutPeriodInput!
-  connex: gcConnexDataCreateOneWithoutPeriodInput!
-  pedia: gcPediaDataCreateOneWithoutPeriodInput!
-  wiki: gcWikiDataCreateOneWithoutPeriodInput!
+  gcAccount: gcAccountDataCreateOneWithoutPeriodInput
+  gcCollab: gcCollabDataCreateOneWithoutPeriodInput!
+  gcConnex: gcConnexDataCreateOneWithoutPeriodInput!
+  gcPedia: gcPediaDataCreateOneWithoutPeriodInput!
+  gcWiki: gcWikiDataCreateOneWithoutPeriodInput!
 }
 
-input PeriodCreateWithoutPediaInput {
+input PeriodCreateWithoutGcPediaInput {
   id: ID
   month: Int!
   year: Int!
-  account: gcAccountDataCreateOneWithoutPeriodInput
-  collab: gcCollabDataCreateOneWithoutPeriodInput!
-  connex: gcConnexDataCreateOneWithoutPeriodInput!
-  message: gcMessageDataCreateOneWithoutPeriodInput!
-  wiki: gcWikiDataCreateOneWithoutPeriodInput!
+  gcAccount: gcAccountDataCreateOneWithoutPeriodInput
+  gcCollab: gcCollabDataCreateOneWithoutPeriodInput!
+  gcConnex: gcConnexDataCreateOneWithoutPeriodInput!
+  gcMessage: gcMessageDataCreateOneWithoutPeriodInput!
+  gcWiki: gcWikiDataCreateOneWithoutPeriodInput!
 }
 
-input PeriodCreateWithoutWikiInput {
+input PeriodCreateWithoutGcWikiInput {
   id: ID
   month: Int!
   year: Int!
-  account: gcAccountDataCreateOneWithoutPeriodInput
-  collab: gcCollabDataCreateOneWithoutPeriodInput!
-  connex: gcConnexDataCreateOneWithoutPeriodInput!
-  message: gcMessageDataCreateOneWithoutPeriodInput!
-  pedia: gcPediaDataCreateOneWithoutPeriodInput!
+  gcAccount: gcAccountDataCreateOneWithoutPeriodInput
+  gcCollab: gcCollabDataCreateOneWithoutPeriodInput!
+  gcConnex: gcConnexDataCreateOneWithoutPeriodInput!
+  gcMessage: gcMessageDataCreateOneWithoutPeriodInput!
+  gcPedia: gcPediaDataCreateOneWithoutPeriodInput!
 }
 
 type PeriodEdge {
@@ -1641,12 +1641,12 @@ input PeriodSubscriptionWhereInput {
 input PeriodUpdateInput {
   month: Int
   year: Int
-  account: gcAccountDataUpdateOneWithoutPeriodInput
-  collab: gcCollabDataUpdateOneRequiredWithoutPeriodInput
-  connex: gcConnexDataUpdateOneRequiredWithoutPeriodInput
-  message: gcMessageDataUpdateOneRequiredWithoutPeriodInput
-  pedia: gcPediaDataUpdateOneRequiredWithoutPeriodInput
-  wiki: gcWikiDataUpdateOneRequiredWithoutPeriodInput
+  gcAccount: gcAccountDataUpdateOneWithoutPeriodInput
+  gcCollab: gcCollabDataUpdateOneRequiredWithoutPeriodInput
+  gcConnex: gcConnexDataUpdateOneRequiredWithoutPeriodInput
+  gcMessage: gcMessageDataUpdateOneRequiredWithoutPeriodInput
+  gcPedia: gcPediaDataUpdateOneRequiredWithoutPeriodInput
+  gcWiki: gcWikiDataUpdateOneRequiredWithoutPeriodInput
 }
 
 input PeriodUpdateManyMutationInput {
@@ -1654,136 +1654,136 @@ input PeriodUpdateManyMutationInput {
   year: Int
 }
 
-input PeriodUpdateOneRequiredWithoutAccountInput {
-  create: PeriodCreateWithoutAccountInput
-  update: PeriodUpdateWithoutAccountDataInput
-  upsert: PeriodUpsertWithoutAccountInput
+input PeriodUpdateOneRequiredWithoutGcAccountInput {
+  create: PeriodCreateWithoutGcAccountInput
+  update: PeriodUpdateWithoutGcAccountDataInput
+  upsert: PeriodUpsertWithoutGcAccountInput
   connect: PeriodWhereUniqueInput
 }
 
-input PeriodUpdateOneRequiredWithoutCollabInput {
-  create: PeriodCreateWithoutCollabInput
-  update: PeriodUpdateWithoutCollabDataInput
-  upsert: PeriodUpsertWithoutCollabInput
+input PeriodUpdateOneRequiredWithoutGcCollabInput {
+  create: PeriodCreateWithoutGcCollabInput
+  update: PeriodUpdateWithoutGcCollabDataInput
+  upsert: PeriodUpsertWithoutGcCollabInput
   connect: PeriodWhereUniqueInput
 }
 
-input PeriodUpdateOneRequiredWithoutConnexInput {
-  create: PeriodCreateWithoutConnexInput
-  update: PeriodUpdateWithoutConnexDataInput
-  upsert: PeriodUpsertWithoutConnexInput
+input PeriodUpdateOneRequiredWithoutGcConnexInput {
+  create: PeriodCreateWithoutGcConnexInput
+  update: PeriodUpdateWithoutGcConnexDataInput
+  upsert: PeriodUpsertWithoutGcConnexInput
   connect: PeriodWhereUniqueInput
 }
 
-input PeriodUpdateOneRequiredWithoutMessageInput {
-  create: PeriodCreateWithoutMessageInput
-  update: PeriodUpdateWithoutMessageDataInput
-  upsert: PeriodUpsertWithoutMessageInput
+input PeriodUpdateOneRequiredWithoutGcMessageInput {
+  create: PeriodCreateWithoutGcMessageInput
+  update: PeriodUpdateWithoutGcMessageDataInput
+  upsert: PeriodUpsertWithoutGcMessageInput
   connect: PeriodWhereUniqueInput
 }
 
-input PeriodUpdateOneRequiredWithoutPediaInput {
-  create: PeriodCreateWithoutPediaInput
-  update: PeriodUpdateWithoutPediaDataInput
-  upsert: PeriodUpsertWithoutPediaInput
+input PeriodUpdateOneRequiredWithoutGcPediaInput {
+  create: PeriodCreateWithoutGcPediaInput
+  update: PeriodUpdateWithoutGcPediaDataInput
+  upsert: PeriodUpsertWithoutGcPediaInput
   connect: PeriodWhereUniqueInput
 }
 
-input PeriodUpdateOneRequiredWithoutWikiInput {
-  create: PeriodCreateWithoutWikiInput
-  update: PeriodUpdateWithoutWikiDataInput
-  upsert: PeriodUpsertWithoutWikiInput
+input PeriodUpdateOneRequiredWithoutGcWikiInput {
+  create: PeriodCreateWithoutGcWikiInput
+  update: PeriodUpdateWithoutGcWikiDataInput
+  upsert: PeriodUpsertWithoutGcWikiInput
   connect: PeriodWhereUniqueInput
 }
 
-input PeriodUpdateWithoutAccountDataInput {
+input PeriodUpdateWithoutGcAccountDataInput {
   month: Int
   year: Int
-  collab: gcCollabDataUpdateOneRequiredWithoutPeriodInput
-  connex: gcConnexDataUpdateOneRequiredWithoutPeriodInput
-  message: gcMessageDataUpdateOneRequiredWithoutPeriodInput
-  pedia: gcPediaDataUpdateOneRequiredWithoutPeriodInput
-  wiki: gcWikiDataUpdateOneRequiredWithoutPeriodInput
+  gcCollab: gcCollabDataUpdateOneRequiredWithoutPeriodInput
+  gcConnex: gcConnexDataUpdateOneRequiredWithoutPeriodInput
+  gcMessage: gcMessageDataUpdateOneRequiredWithoutPeriodInput
+  gcPedia: gcPediaDataUpdateOneRequiredWithoutPeriodInput
+  gcWiki: gcWikiDataUpdateOneRequiredWithoutPeriodInput
 }
 
-input PeriodUpdateWithoutCollabDataInput {
+input PeriodUpdateWithoutGcCollabDataInput {
   month: Int
   year: Int
-  account: gcAccountDataUpdateOneWithoutPeriodInput
-  connex: gcConnexDataUpdateOneRequiredWithoutPeriodInput
-  message: gcMessageDataUpdateOneRequiredWithoutPeriodInput
-  pedia: gcPediaDataUpdateOneRequiredWithoutPeriodInput
-  wiki: gcWikiDataUpdateOneRequiredWithoutPeriodInput
+  gcAccount: gcAccountDataUpdateOneWithoutPeriodInput
+  gcConnex: gcConnexDataUpdateOneRequiredWithoutPeriodInput
+  gcMessage: gcMessageDataUpdateOneRequiredWithoutPeriodInput
+  gcPedia: gcPediaDataUpdateOneRequiredWithoutPeriodInput
+  gcWiki: gcWikiDataUpdateOneRequiredWithoutPeriodInput
 }
 
-input PeriodUpdateWithoutConnexDataInput {
+input PeriodUpdateWithoutGcConnexDataInput {
   month: Int
   year: Int
-  account: gcAccountDataUpdateOneWithoutPeriodInput
-  collab: gcCollabDataUpdateOneRequiredWithoutPeriodInput
-  message: gcMessageDataUpdateOneRequiredWithoutPeriodInput
-  pedia: gcPediaDataUpdateOneRequiredWithoutPeriodInput
-  wiki: gcWikiDataUpdateOneRequiredWithoutPeriodInput
+  gcAccount: gcAccountDataUpdateOneWithoutPeriodInput
+  gcCollab: gcCollabDataUpdateOneRequiredWithoutPeriodInput
+  gcMessage: gcMessageDataUpdateOneRequiredWithoutPeriodInput
+  gcPedia: gcPediaDataUpdateOneRequiredWithoutPeriodInput
+  gcWiki: gcWikiDataUpdateOneRequiredWithoutPeriodInput
 }
 
-input PeriodUpdateWithoutMessageDataInput {
+input PeriodUpdateWithoutGcMessageDataInput {
   month: Int
   year: Int
-  account: gcAccountDataUpdateOneWithoutPeriodInput
-  collab: gcCollabDataUpdateOneRequiredWithoutPeriodInput
-  connex: gcConnexDataUpdateOneRequiredWithoutPeriodInput
-  pedia: gcPediaDataUpdateOneRequiredWithoutPeriodInput
-  wiki: gcWikiDataUpdateOneRequiredWithoutPeriodInput
+  gcAccount: gcAccountDataUpdateOneWithoutPeriodInput
+  gcCollab: gcCollabDataUpdateOneRequiredWithoutPeriodInput
+  gcConnex: gcConnexDataUpdateOneRequiredWithoutPeriodInput
+  gcPedia: gcPediaDataUpdateOneRequiredWithoutPeriodInput
+  gcWiki: gcWikiDataUpdateOneRequiredWithoutPeriodInput
 }
 
-input PeriodUpdateWithoutPediaDataInput {
+input PeriodUpdateWithoutGcPediaDataInput {
   month: Int
   year: Int
-  account: gcAccountDataUpdateOneWithoutPeriodInput
-  collab: gcCollabDataUpdateOneRequiredWithoutPeriodInput
-  connex: gcConnexDataUpdateOneRequiredWithoutPeriodInput
-  message: gcMessageDataUpdateOneRequiredWithoutPeriodInput
-  wiki: gcWikiDataUpdateOneRequiredWithoutPeriodInput
+  gcAccount: gcAccountDataUpdateOneWithoutPeriodInput
+  gcCollab: gcCollabDataUpdateOneRequiredWithoutPeriodInput
+  gcConnex: gcConnexDataUpdateOneRequiredWithoutPeriodInput
+  gcMessage: gcMessageDataUpdateOneRequiredWithoutPeriodInput
+  gcWiki: gcWikiDataUpdateOneRequiredWithoutPeriodInput
 }
 
-input PeriodUpdateWithoutWikiDataInput {
+input PeriodUpdateWithoutGcWikiDataInput {
   month: Int
   year: Int
-  account: gcAccountDataUpdateOneWithoutPeriodInput
-  collab: gcCollabDataUpdateOneRequiredWithoutPeriodInput
-  connex: gcConnexDataUpdateOneRequiredWithoutPeriodInput
-  message: gcMessageDataUpdateOneRequiredWithoutPeriodInput
-  pedia: gcPediaDataUpdateOneRequiredWithoutPeriodInput
+  gcAccount: gcAccountDataUpdateOneWithoutPeriodInput
+  gcCollab: gcCollabDataUpdateOneRequiredWithoutPeriodInput
+  gcConnex: gcConnexDataUpdateOneRequiredWithoutPeriodInput
+  gcMessage: gcMessageDataUpdateOneRequiredWithoutPeriodInput
+  gcPedia: gcPediaDataUpdateOneRequiredWithoutPeriodInput
 }
 
-input PeriodUpsertWithoutAccountInput {
-  update: PeriodUpdateWithoutAccountDataInput!
-  create: PeriodCreateWithoutAccountInput!
+input PeriodUpsertWithoutGcAccountInput {
+  update: PeriodUpdateWithoutGcAccountDataInput!
+  create: PeriodCreateWithoutGcAccountInput!
 }
 
-input PeriodUpsertWithoutCollabInput {
-  update: PeriodUpdateWithoutCollabDataInput!
-  create: PeriodCreateWithoutCollabInput!
+input PeriodUpsertWithoutGcCollabInput {
+  update: PeriodUpdateWithoutGcCollabDataInput!
+  create: PeriodCreateWithoutGcCollabInput!
 }
 
-input PeriodUpsertWithoutConnexInput {
-  update: PeriodUpdateWithoutConnexDataInput!
-  create: PeriodCreateWithoutConnexInput!
+input PeriodUpsertWithoutGcConnexInput {
+  update: PeriodUpdateWithoutGcConnexDataInput!
+  create: PeriodCreateWithoutGcConnexInput!
 }
 
-input PeriodUpsertWithoutMessageInput {
-  update: PeriodUpdateWithoutMessageDataInput!
-  create: PeriodCreateWithoutMessageInput!
+input PeriodUpsertWithoutGcMessageInput {
+  update: PeriodUpdateWithoutGcMessageDataInput!
+  create: PeriodCreateWithoutGcMessageInput!
 }
 
-input PeriodUpsertWithoutPediaInput {
-  update: PeriodUpdateWithoutPediaDataInput!
-  create: PeriodCreateWithoutPediaInput!
+input PeriodUpsertWithoutGcPediaInput {
+  update: PeriodUpdateWithoutGcPediaDataInput!
+  create: PeriodCreateWithoutGcPediaInput!
 }
 
-input PeriodUpsertWithoutWikiInput {
-  update: PeriodUpdateWithoutWikiDataInput!
-  create: PeriodCreateWithoutWikiInput!
+input PeriodUpsertWithoutGcWikiInput {
+  update: PeriodUpdateWithoutGcWikiDataInput!
+  create: PeriodCreateWithoutGcWikiInput!
 }
 
 input PeriodWhereInput {
@@ -1817,12 +1817,12 @@ input PeriodWhereInput {
   year_lte: Int
   year_gt: Int
   year_gte: Int
-  account: gcAccountDataWhereInput
-  collab: gcCollabDataWhereInput
-  connex: gcConnexDataWhereInput
-  message: gcMessageDataWhereInput
-  pedia: gcPediaDataWhereInput
-  wiki: gcWikiDataWhereInput
+  gcAccount: gcAccountDataWhereInput
+  gcCollab: gcCollabDataWhereInput
+  gcConnex: gcConnexDataWhereInput
+  gcMessage: gcMessageDataWhereInput
+  gcPedia: gcPediaDataWhereInput
+  gcWiki: gcWikiDataWhereInput
   AND: [PeriodWhereInput!]
   OR: [PeriodWhereInput!]
   NOT: [PeriodWhereInput!]

@@ -6,6 +6,7 @@ import Tag from "./mapping/tag";
 import Count from "./mapping/count";
 
 // Reporting
+import gaStats from "./reporting/gaStats"
 import gcAccountData from "./reporting/gcAccountData";
 import gcCollabData from "./reporting/gcCollabData";
 import gcConnexData from "./reporting/gcConnexData";
@@ -24,6 +25,7 @@ const Mapping = {
 }
 
 const Reporting = {
+  gaStats,
   gcAccountData,
   gcCollabData,
   gcConnexData,

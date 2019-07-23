@@ -3,7 +3,7 @@ import { prisma, Period } from "../src/generated/reporting/prisma-client/index";
 const JUNE_2018 = {
   month: 6,
   year: 2018,
-  collab: {
+  gcCollab: {
     create: {
       totalNumAccounts: 28397,
       numNewAccounts: 2732,
@@ -11,7 +11,7 @@ const JUNE_2018 = {
       numNewGroups: 157
     }
   },
-  connex: {
+  gcConnex: {
     create: {
       totalNumAccounts: 152737,
       numNewAccounts: 3100,
@@ -19,7 +19,7 @@ const JUNE_2018 = {
       numNewGroups: 117 
     }
   },
-  message: {
+  gcMessage: {
     create: {
       totalNumAccounts: 2654,
       numNewAccounts: 874,
@@ -33,7 +33,7 @@ const JUNE_2018 = {
       numNewFileUploads: 1254
     }
   },
-  pedia: {
+  gcPedia: {
     create: {
       totalNumAccounts: 83638,
       numNewAccounts: 746,
@@ -43,7 +43,7 @@ const JUNE_2018 = {
       numNewEdits: 23530
     }
   },
-  wiki: {
+  gcWiki: {
     create: {
       totalNumAccounts: 193,
       numNewAccounts: 35,
@@ -58,7 +58,7 @@ const JUNE_2018 = {
 const JUNE_2019 = {
   month: 6,
   year: 2019,
-  collab: {
+  gcCollab: {
     create: {
       totalNumAccounts: 56551,
       numNewAccounts: 2314,
@@ -66,7 +66,7 @@ const JUNE_2019 = {
       numNewGroups: 136
     }
   },
-  connex: {
+  gcConnex: {
     create: {
       totalNumAccounts: 179378,
       numNewAccounts: 2550,
@@ -74,7 +74,7 @@ const JUNE_2019 = {
       numNewGroups: 105 
     }
   },
-  message: {
+  gcMessage: {
     create: {
       totalNumAccounts: 9162,
       numNewAccounts: 264,
@@ -88,7 +88,7 @@ const JUNE_2019 = {
       numNewFileUploads: 926
     }
   },
-  pedia: {
+  gcPedia: {
     create: {
       totalNumAccounts: 91545,
       numNewAccounts: 661,
@@ -98,7 +98,7 @@ const JUNE_2019 = {
       numNewEdits: 18672
     }
   },
-  wiki: {
+  gcWiki: {
     create: {
       totalNumAccounts: 868,
       numNewAccounts: 94,

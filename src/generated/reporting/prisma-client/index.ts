@@ -549,12 +549,12 @@ export interface PeriodWhereInput {
   year_lte?: Maybe<Int>;
   year_gt?: Maybe<Int>;
   year_gte?: Maybe<Int>;
-  account?: Maybe<gcAccountDataWhereInput>;
-  collab?: Maybe<gcCollabDataWhereInput>;
-  connex?: Maybe<gcConnexDataWhereInput>;
-  message?: Maybe<gcMessageDataWhereInput>;
-  pedia?: Maybe<gcPediaDataWhereInput>;
-  wiki?: Maybe<gcWikiDataWhereInput>;
+  gcAccount?: Maybe<gcAccountDataWhereInput>;
+  gcCollab?: Maybe<gcCollabDataWhereInput>;
+  gcConnex?: Maybe<gcConnexDataWhereInput>;
+  gcMessage?: Maybe<gcMessageDataWhereInput>;
+  gcPedia?: Maybe<gcPediaDataWhereInput>;
+  gcWiki?: Maybe<gcWikiDataWhereInput>;
   AND?: Maybe<PeriodWhereInput[] | PeriodWhereInput>;
   OR?: Maybe<PeriodWhereInput[] | PeriodWhereInput>;
   NOT?: Maybe<PeriodWhereInput[] | PeriodWhereInput>;
@@ -1037,12 +1037,12 @@ export interface PeriodCreateInput {
   id?: Maybe<ID_Input>;
   month: Int;
   year: Int;
-  account?: Maybe<gcAccountDataCreateOneWithoutPeriodInput>;
-  collab: gcCollabDataCreateOneWithoutPeriodInput;
-  connex: gcConnexDataCreateOneWithoutPeriodInput;
-  message: gcMessageDataCreateOneWithoutPeriodInput;
-  pedia: gcPediaDataCreateOneWithoutPeriodInput;
-  wiki: gcWikiDataCreateOneWithoutPeriodInput;
+  gcAccount?: Maybe<gcAccountDataCreateOneWithoutPeriodInput>;
+  gcCollab: gcCollabDataCreateOneWithoutPeriodInput;
+  gcConnex: gcConnexDataCreateOneWithoutPeriodInput;
+  gcMessage: gcMessageDataCreateOneWithoutPeriodInput;
+  gcPedia: gcPediaDataCreateOneWithoutPeriodInput;
+  gcWiki: gcWikiDataCreateOneWithoutPeriodInput;
 }
 
 export interface gcAccountDataCreateOneWithoutPeriodInput {
@@ -1151,12 +1151,12 @@ export interface gcWikiDataCreateWithoutPeriodInput {
 export interface PeriodUpdateInput {
   month?: Maybe<Int>;
   year?: Maybe<Int>;
-  account?: Maybe<gcAccountDataUpdateOneWithoutPeriodInput>;
-  collab?: Maybe<gcCollabDataUpdateOneRequiredWithoutPeriodInput>;
-  connex?: Maybe<gcConnexDataUpdateOneRequiredWithoutPeriodInput>;
-  message?: Maybe<gcMessageDataUpdateOneRequiredWithoutPeriodInput>;
-  pedia?: Maybe<gcPediaDataUpdateOneRequiredWithoutPeriodInput>;
-  wiki?: Maybe<gcWikiDataUpdateOneRequiredWithoutPeriodInput>;
+  gcAccount?: Maybe<gcAccountDataUpdateOneWithoutPeriodInput>;
+  gcCollab?: Maybe<gcCollabDataUpdateOneRequiredWithoutPeriodInput>;
+  gcConnex?: Maybe<gcConnexDataUpdateOneRequiredWithoutPeriodInput>;
+  gcMessage?: Maybe<gcMessageDataUpdateOneRequiredWithoutPeriodInput>;
+  gcPedia?: Maybe<gcPediaDataUpdateOneRequiredWithoutPeriodInput>;
+  gcWiki?: Maybe<gcWikiDataUpdateOneRequiredWithoutPeriodInput>;
 }
 
 export interface gcAccountDataUpdateOneWithoutPeriodInput {
@@ -1331,53 +1331,53 @@ export interface gaStatsUpdateManyMutationInput {
 
 export interface gcAccountDataCreateInput {
   id?: Maybe<ID_Input>;
-  period: PeriodCreateOneWithoutAccountInput;
+  period: PeriodCreateOneWithoutGcAccountInput;
   totalNumAccounts?: Maybe<Int>;
   numNewAccounts?: Maybe<Int>;
 }
 
-export interface PeriodCreateOneWithoutAccountInput {
-  create?: Maybe<PeriodCreateWithoutAccountInput>;
+export interface PeriodCreateOneWithoutGcAccountInput {
+  create?: Maybe<PeriodCreateWithoutGcAccountInput>;
   connect?: Maybe<PeriodWhereUniqueInput>;
 }
 
-export interface PeriodCreateWithoutAccountInput {
+export interface PeriodCreateWithoutGcAccountInput {
   id?: Maybe<ID_Input>;
   month: Int;
   year: Int;
-  collab: gcCollabDataCreateOneWithoutPeriodInput;
-  connex: gcConnexDataCreateOneWithoutPeriodInput;
-  message: gcMessageDataCreateOneWithoutPeriodInput;
-  pedia: gcPediaDataCreateOneWithoutPeriodInput;
-  wiki: gcWikiDataCreateOneWithoutPeriodInput;
+  gcCollab: gcCollabDataCreateOneWithoutPeriodInput;
+  gcConnex: gcConnexDataCreateOneWithoutPeriodInput;
+  gcMessage: gcMessageDataCreateOneWithoutPeriodInput;
+  gcPedia: gcPediaDataCreateOneWithoutPeriodInput;
+  gcWiki: gcWikiDataCreateOneWithoutPeriodInput;
 }
 
 export interface gcAccountDataUpdateInput {
-  period?: Maybe<PeriodUpdateOneRequiredWithoutAccountInput>;
+  period?: Maybe<PeriodUpdateOneRequiredWithoutGcAccountInput>;
   totalNumAccounts?: Maybe<Int>;
   numNewAccounts?: Maybe<Int>;
 }
 
-export interface PeriodUpdateOneRequiredWithoutAccountInput {
-  create?: Maybe<PeriodCreateWithoutAccountInput>;
-  update?: Maybe<PeriodUpdateWithoutAccountDataInput>;
-  upsert?: Maybe<PeriodUpsertWithoutAccountInput>;
+export interface PeriodUpdateOneRequiredWithoutGcAccountInput {
+  create?: Maybe<PeriodCreateWithoutGcAccountInput>;
+  update?: Maybe<PeriodUpdateWithoutGcAccountDataInput>;
+  upsert?: Maybe<PeriodUpsertWithoutGcAccountInput>;
   connect?: Maybe<PeriodWhereUniqueInput>;
 }
 
-export interface PeriodUpdateWithoutAccountDataInput {
+export interface PeriodUpdateWithoutGcAccountDataInput {
   month?: Maybe<Int>;
   year?: Maybe<Int>;
-  collab?: Maybe<gcCollabDataUpdateOneRequiredWithoutPeriodInput>;
-  connex?: Maybe<gcConnexDataUpdateOneRequiredWithoutPeriodInput>;
-  message?: Maybe<gcMessageDataUpdateOneRequiredWithoutPeriodInput>;
-  pedia?: Maybe<gcPediaDataUpdateOneRequiredWithoutPeriodInput>;
-  wiki?: Maybe<gcWikiDataUpdateOneRequiredWithoutPeriodInput>;
+  gcCollab?: Maybe<gcCollabDataUpdateOneRequiredWithoutPeriodInput>;
+  gcConnex?: Maybe<gcConnexDataUpdateOneRequiredWithoutPeriodInput>;
+  gcMessage?: Maybe<gcMessageDataUpdateOneRequiredWithoutPeriodInput>;
+  gcPedia?: Maybe<gcPediaDataUpdateOneRequiredWithoutPeriodInput>;
+  gcWiki?: Maybe<gcWikiDataUpdateOneRequiredWithoutPeriodInput>;
 }
 
-export interface PeriodUpsertWithoutAccountInput {
-  update: PeriodUpdateWithoutAccountDataInput;
-  create: PeriodCreateWithoutAccountInput;
+export interface PeriodUpsertWithoutGcAccountInput {
+  update: PeriodUpdateWithoutGcAccountDataInput;
+  create: PeriodCreateWithoutGcAccountInput;
 }
 
 export interface gcAccountDataUpdateManyMutationInput {
@@ -1387,7 +1387,7 @@ export interface gcAccountDataUpdateManyMutationInput {
 
 export interface gcCollabDataCreateInput {
   id?: Maybe<ID_Input>;
-  period: PeriodCreateOneWithoutCollabInput;
+  period: PeriodCreateOneWithoutGcCollabInput;
   totalNumAccounts?: Maybe<Int>;
   numNewAccounts?: Maybe<Int>;
   gaData?: Maybe<gaStatsCreateOneInput>;
@@ -1395,24 +1395,24 @@ export interface gcCollabDataCreateInput {
   numNewGroups?: Maybe<Int>;
 }
 
-export interface PeriodCreateOneWithoutCollabInput {
-  create?: Maybe<PeriodCreateWithoutCollabInput>;
+export interface PeriodCreateOneWithoutGcCollabInput {
+  create?: Maybe<PeriodCreateWithoutGcCollabInput>;
   connect?: Maybe<PeriodWhereUniqueInput>;
 }
 
-export interface PeriodCreateWithoutCollabInput {
+export interface PeriodCreateWithoutGcCollabInput {
   id?: Maybe<ID_Input>;
   month: Int;
   year: Int;
-  account?: Maybe<gcAccountDataCreateOneWithoutPeriodInput>;
-  connex: gcConnexDataCreateOneWithoutPeriodInput;
-  message: gcMessageDataCreateOneWithoutPeriodInput;
-  pedia: gcPediaDataCreateOneWithoutPeriodInput;
-  wiki: gcWikiDataCreateOneWithoutPeriodInput;
+  gcAccount?: Maybe<gcAccountDataCreateOneWithoutPeriodInput>;
+  gcConnex: gcConnexDataCreateOneWithoutPeriodInput;
+  gcMessage: gcMessageDataCreateOneWithoutPeriodInput;
+  gcPedia: gcPediaDataCreateOneWithoutPeriodInput;
+  gcWiki: gcWikiDataCreateOneWithoutPeriodInput;
 }
 
 export interface gcCollabDataUpdateInput {
-  period?: Maybe<PeriodUpdateOneRequiredWithoutCollabInput>;
+  period?: Maybe<PeriodUpdateOneRequiredWithoutGcCollabInput>;
   totalNumAccounts?: Maybe<Int>;
   numNewAccounts?: Maybe<Int>;
   gaData?: Maybe<gaStatsUpdateOneInput>;
@@ -1420,26 +1420,26 @@ export interface gcCollabDataUpdateInput {
   numNewGroups?: Maybe<Int>;
 }
 
-export interface PeriodUpdateOneRequiredWithoutCollabInput {
-  create?: Maybe<PeriodCreateWithoutCollabInput>;
-  update?: Maybe<PeriodUpdateWithoutCollabDataInput>;
-  upsert?: Maybe<PeriodUpsertWithoutCollabInput>;
+export interface PeriodUpdateOneRequiredWithoutGcCollabInput {
+  create?: Maybe<PeriodCreateWithoutGcCollabInput>;
+  update?: Maybe<PeriodUpdateWithoutGcCollabDataInput>;
+  upsert?: Maybe<PeriodUpsertWithoutGcCollabInput>;
   connect?: Maybe<PeriodWhereUniqueInput>;
 }
 
-export interface PeriodUpdateWithoutCollabDataInput {
+export interface PeriodUpdateWithoutGcCollabDataInput {
   month?: Maybe<Int>;
   year?: Maybe<Int>;
-  account?: Maybe<gcAccountDataUpdateOneWithoutPeriodInput>;
-  connex?: Maybe<gcConnexDataUpdateOneRequiredWithoutPeriodInput>;
-  message?: Maybe<gcMessageDataUpdateOneRequiredWithoutPeriodInput>;
-  pedia?: Maybe<gcPediaDataUpdateOneRequiredWithoutPeriodInput>;
-  wiki?: Maybe<gcWikiDataUpdateOneRequiredWithoutPeriodInput>;
+  gcAccount?: Maybe<gcAccountDataUpdateOneWithoutPeriodInput>;
+  gcConnex?: Maybe<gcConnexDataUpdateOneRequiredWithoutPeriodInput>;
+  gcMessage?: Maybe<gcMessageDataUpdateOneRequiredWithoutPeriodInput>;
+  gcPedia?: Maybe<gcPediaDataUpdateOneRequiredWithoutPeriodInput>;
+  gcWiki?: Maybe<gcWikiDataUpdateOneRequiredWithoutPeriodInput>;
 }
 
-export interface PeriodUpsertWithoutCollabInput {
-  update: PeriodUpdateWithoutCollabDataInput;
-  create: PeriodCreateWithoutCollabInput;
+export interface PeriodUpsertWithoutGcCollabInput {
+  update: PeriodUpdateWithoutGcCollabDataInput;
+  create: PeriodCreateWithoutGcCollabInput;
 }
 
 export interface gcCollabDataUpdateManyMutationInput {
@@ -1451,7 +1451,7 @@ export interface gcCollabDataUpdateManyMutationInput {
 
 export interface gcConnexDataCreateInput {
   id?: Maybe<ID_Input>;
-  period: PeriodCreateOneWithoutConnexInput;
+  period: PeriodCreateOneWithoutGcConnexInput;
   totalNumAccounts?: Maybe<Int>;
   numNewAccounts?: Maybe<Int>;
   gaData?: Maybe<gaStatsCreateOneInput>;
@@ -1459,24 +1459,24 @@ export interface gcConnexDataCreateInput {
   numNewGroups?: Maybe<Int>;
 }
 
-export interface PeriodCreateOneWithoutConnexInput {
-  create?: Maybe<PeriodCreateWithoutConnexInput>;
+export interface PeriodCreateOneWithoutGcConnexInput {
+  create?: Maybe<PeriodCreateWithoutGcConnexInput>;
   connect?: Maybe<PeriodWhereUniqueInput>;
 }
 
-export interface PeriodCreateWithoutConnexInput {
+export interface PeriodCreateWithoutGcConnexInput {
   id?: Maybe<ID_Input>;
   month: Int;
   year: Int;
-  account?: Maybe<gcAccountDataCreateOneWithoutPeriodInput>;
-  collab: gcCollabDataCreateOneWithoutPeriodInput;
-  message: gcMessageDataCreateOneWithoutPeriodInput;
-  pedia: gcPediaDataCreateOneWithoutPeriodInput;
-  wiki: gcWikiDataCreateOneWithoutPeriodInput;
+  gcAccount?: Maybe<gcAccountDataCreateOneWithoutPeriodInput>;
+  gcCollab: gcCollabDataCreateOneWithoutPeriodInput;
+  gcMessage: gcMessageDataCreateOneWithoutPeriodInput;
+  gcPedia: gcPediaDataCreateOneWithoutPeriodInput;
+  gcWiki: gcWikiDataCreateOneWithoutPeriodInput;
 }
 
 export interface gcConnexDataUpdateInput {
-  period?: Maybe<PeriodUpdateOneRequiredWithoutConnexInput>;
+  period?: Maybe<PeriodUpdateOneRequiredWithoutGcConnexInput>;
   totalNumAccounts?: Maybe<Int>;
   numNewAccounts?: Maybe<Int>;
   gaData?: Maybe<gaStatsUpdateOneInput>;
@@ -1484,26 +1484,26 @@ export interface gcConnexDataUpdateInput {
   numNewGroups?: Maybe<Int>;
 }
 
-export interface PeriodUpdateOneRequiredWithoutConnexInput {
-  create?: Maybe<PeriodCreateWithoutConnexInput>;
-  update?: Maybe<PeriodUpdateWithoutConnexDataInput>;
-  upsert?: Maybe<PeriodUpsertWithoutConnexInput>;
+export interface PeriodUpdateOneRequiredWithoutGcConnexInput {
+  create?: Maybe<PeriodCreateWithoutGcConnexInput>;
+  update?: Maybe<PeriodUpdateWithoutGcConnexDataInput>;
+  upsert?: Maybe<PeriodUpsertWithoutGcConnexInput>;
   connect?: Maybe<PeriodWhereUniqueInput>;
 }
 
-export interface PeriodUpdateWithoutConnexDataInput {
+export interface PeriodUpdateWithoutGcConnexDataInput {
   month?: Maybe<Int>;
   year?: Maybe<Int>;
-  account?: Maybe<gcAccountDataUpdateOneWithoutPeriodInput>;
-  collab?: Maybe<gcCollabDataUpdateOneRequiredWithoutPeriodInput>;
-  message?: Maybe<gcMessageDataUpdateOneRequiredWithoutPeriodInput>;
-  pedia?: Maybe<gcPediaDataUpdateOneRequiredWithoutPeriodInput>;
-  wiki?: Maybe<gcWikiDataUpdateOneRequiredWithoutPeriodInput>;
+  gcAccount?: Maybe<gcAccountDataUpdateOneWithoutPeriodInput>;
+  gcCollab?: Maybe<gcCollabDataUpdateOneRequiredWithoutPeriodInput>;
+  gcMessage?: Maybe<gcMessageDataUpdateOneRequiredWithoutPeriodInput>;
+  gcPedia?: Maybe<gcPediaDataUpdateOneRequiredWithoutPeriodInput>;
+  gcWiki?: Maybe<gcWikiDataUpdateOneRequiredWithoutPeriodInput>;
 }
 
-export interface PeriodUpsertWithoutConnexInput {
-  update: PeriodUpdateWithoutConnexDataInput;
-  create: PeriodCreateWithoutConnexInput;
+export interface PeriodUpsertWithoutGcConnexInput {
+  update: PeriodUpdateWithoutGcConnexDataInput;
+  create: PeriodCreateWithoutGcConnexInput;
 }
 
 export interface gcConnexDataUpdateManyMutationInput {
@@ -1515,7 +1515,7 @@ export interface gcConnexDataUpdateManyMutationInput {
 
 export interface gcMessageDataCreateInput {
   id?: Maybe<ID_Input>;
-  period: PeriodCreateOneWithoutMessageInput;
+  period: PeriodCreateOneWithoutGcMessageInput;
   totalNumAccounts?: Maybe<Int>;
   numNewAccounts?: Maybe<Int>;
   totalNumChannelMessages?: Maybe<Int>;
@@ -1528,24 +1528,24 @@ export interface gcMessageDataCreateInput {
   numNewFileUploads?: Maybe<Int>;
 }
 
-export interface PeriodCreateOneWithoutMessageInput {
-  create?: Maybe<PeriodCreateWithoutMessageInput>;
+export interface PeriodCreateOneWithoutGcMessageInput {
+  create?: Maybe<PeriodCreateWithoutGcMessageInput>;
   connect?: Maybe<PeriodWhereUniqueInput>;
 }
 
-export interface PeriodCreateWithoutMessageInput {
+export interface PeriodCreateWithoutGcMessageInput {
   id?: Maybe<ID_Input>;
   month: Int;
   year: Int;
-  account?: Maybe<gcAccountDataCreateOneWithoutPeriodInput>;
-  collab: gcCollabDataCreateOneWithoutPeriodInput;
-  connex: gcConnexDataCreateOneWithoutPeriodInput;
-  pedia: gcPediaDataCreateOneWithoutPeriodInput;
-  wiki: gcWikiDataCreateOneWithoutPeriodInput;
+  gcAccount?: Maybe<gcAccountDataCreateOneWithoutPeriodInput>;
+  gcCollab: gcCollabDataCreateOneWithoutPeriodInput;
+  gcConnex: gcConnexDataCreateOneWithoutPeriodInput;
+  gcPedia: gcPediaDataCreateOneWithoutPeriodInput;
+  gcWiki: gcWikiDataCreateOneWithoutPeriodInput;
 }
 
 export interface gcMessageDataUpdateInput {
-  period?: Maybe<PeriodUpdateOneRequiredWithoutMessageInput>;
+  period?: Maybe<PeriodUpdateOneRequiredWithoutGcMessageInput>;
   totalNumAccounts?: Maybe<Int>;
   numNewAccounts?: Maybe<Int>;
   totalNumChannelMessages?: Maybe<Int>;
@@ -1558,26 +1558,26 @@ export interface gcMessageDataUpdateInput {
   numNewFileUploads?: Maybe<Int>;
 }
 
-export interface PeriodUpdateOneRequiredWithoutMessageInput {
-  create?: Maybe<PeriodCreateWithoutMessageInput>;
-  update?: Maybe<PeriodUpdateWithoutMessageDataInput>;
-  upsert?: Maybe<PeriodUpsertWithoutMessageInput>;
+export interface PeriodUpdateOneRequiredWithoutGcMessageInput {
+  create?: Maybe<PeriodCreateWithoutGcMessageInput>;
+  update?: Maybe<PeriodUpdateWithoutGcMessageDataInput>;
+  upsert?: Maybe<PeriodUpsertWithoutGcMessageInput>;
   connect?: Maybe<PeriodWhereUniqueInput>;
 }
 
-export interface PeriodUpdateWithoutMessageDataInput {
+export interface PeriodUpdateWithoutGcMessageDataInput {
   month?: Maybe<Int>;
   year?: Maybe<Int>;
-  account?: Maybe<gcAccountDataUpdateOneWithoutPeriodInput>;
-  collab?: Maybe<gcCollabDataUpdateOneRequiredWithoutPeriodInput>;
-  connex?: Maybe<gcConnexDataUpdateOneRequiredWithoutPeriodInput>;
-  pedia?: Maybe<gcPediaDataUpdateOneRequiredWithoutPeriodInput>;
-  wiki?: Maybe<gcWikiDataUpdateOneRequiredWithoutPeriodInput>;
+  gcAccount?: Maybe<gcAccountDataUpdateOneWithoutPeriodInput>;
+  gcCollab?: Maybe<gcCollabDataUpdateOneRequiredWithoutPeriodInput>;
+  gcConnex?: Maybe<gcConnexDataUpdateOneRequiredWithoutPeriodInput>;
+  gcPedia?: Maybe<gcPediaDataUpdateOneRequiredWithoutPeriodInput>;
+  gcWiki?: Maybe<gcWikiDataUpdateOneRequiredWithoutPeriodInput>;
 }
 
-export interface PeriodUpsertWithoutMessageInput {
-  update: PeriodUpdateWithoutMessageDataInput;
-  create: PeriodCreateWithoutMessageInput;
+export interface PeriodUpsertWithoutGcMessageInput {
+  update: PeriodUpdateWithoutGcMessageDataInput;
+  create: PeriodCreateWithoutGcMessageInput;
 }
 
 export interface gcMessageDataUpdateManyMutationInput {
@@ -1595,7 +1595,7 @@ export interface gcMessageDataUpdateManyMutationInput {
 
 export interface gcPediaDataCreateInput {
   id?: Maybe<ID_Input>;
-  period: PeriodCreateOneWithoutPediaInput;
+  period: PeriodCreateOneWithoutGcPediaInput;
   totalNumAccounts?: Maybe<Int>;
   numNewAccounts?: Maybe<Int>;
   totalNumArticles?: Maybe<Int>;
@@ -1604,24 +1604,24 @@ export interface gcPediaDataCreateInput {
   numNewEdits?: Maybe<Int>;
 }
 
-export interface PeriodCreateOneWithoutPediaInput {
-  create?: Maybe<PeriodCreateWithoutPediaInput>;
+export interface PeriodCreateOneWithoutGcPediaInput {
+  create?: Maybe<PeriodCreateWithoutGcPediaInput>;
   connect?: Maybe<PeriodWhereUniqueInput>;
 }
 
-export interface PeriodCreateWithoutPediaInput {
+export interface PeriodCreateWithoutGcPediaInput {
   id?: Maybe<ID_Input>;
   month: Int;
   year: Int;
-  account?: Maybe<gcAccountDataCreateOneWithoutPeriodInput>;
-  collab: gcCollabDataCreateOneWithoutPeriodInput;
-  connex: gcConnexDataCreateOneWithoutPeriodInput;
-  message: gcMessageDataCreateOneWithoutPeriodInput;
-  wiki: gcWikiDataCreateOneWithoutPeriodInput;
+  gcAccount?: Maybe<gcAccountDataCreateOneWithoutPeriodInput>;
+  gcCollab: gcCollabDataCreateOneWithoutPeriodInput;
+  gcConnex: gcConnexDataCreateOneWithoutPeriodInput;
+  gcMessage: gcMessageDataCreateOneWithoutPeriodInput;
+  gcWiki: gcWikiDataCreateOneWithoutPeriodInput;
 }
 
 export interface gcPediaDataUpdateInput {
-  period?: Maybe<PeriodUpdateOneRequiredWithoutPediaInput>;
+  period?: Maybe<PeriodUpdateOneRequiredWithoutGcPediaInput>;
   totalNumAccounts?: Maybe<Int>;
   numNewAccounts?: Maybe<Int>;
   totalNumArticles?: Maybe<Int>;
@@ -1630,26 +1630,26 @@ export interface gcPediaDataUpdateInput {
   numNewEdits?: Maybe<Int>;
 }
 
-export interface PeriodUpdateOneRequiredWithoutPediaInput {
-  create?: Maybe<PeriodCreateWithoutPediaInput>;
-  update?: Maybe<PeriodUpdateWithoutPediaDataInput>;
-  upsert?: Maybe<PeriodUpsertWithoutPediaInput>;
+export interface PeriodUpdateOneRequiredWithoutGcPediaInput {
+  create?: Maybe<PeriodCreateWithoutGcPediaInput>;
+  update?: Maybe<PeriodUpdateWithoutGcPediaDataInput>;
+  upsert?: Maybe<PeriodUpsertWithoutGcPediaInput>;
   connect?: Maybe<PeriodWhereUniqueInput>;
 }
 
-export interface PeriodUpdateWithoutPediaDataInput {
+export interface PeriodUpdateWithoutGcPediaDataInput {
   month?: Maybe<Int>;
   year?: Maybe<Int>;
-  account?: Maybe<gcAccountDataUpdateOneWithoutPeriodInput>;
-  collab?: Maybe<gcCollabDataUpdateOneRequiredWithoutPeriodInput>;
-  connex?: Maybe<gcConnexDataUpdateOneRequiredWithoutPeriodInput>;
-  message?: Maybe<gcMessageDataUpdateOneRequiredWithoutPeriodInput>;
-  wiki?: Maybe<gcWikiDataUpdateOneRequiredWithoutPeriodInput>;
+  gcAccount?: Maybe<gcAccountDataUpdateOneWithoutPeriodInput>;
+  gcCollab?: Maybe<gcCollabDataUpdateOneRequiredWithoutPeriodInput>;
+  gcConnex?: Maybe<gcConnexDataUpdateOneRequiredWithoutPeriodInput>;
+  gcMessage?: Maybe<gcMessageDataUpdateOneRequiredWithoutPeriodInput>;
+  gcWiki?: Maybe<gcWikiDataUpdateOneRequiredWithoutPeriodInput>;
 }
 
-export interface PeriodUpsertWithoutPediaInput {
-  update: PeriodUpdateWithoutPediaDataInput;
-  create: PeriodCreateWithoutPediaInput;
+export interface PeriodUpsertWithoutGcPediaInput {
+  update: PeriodUpdateWithoutGcPediaDataInput;
+  create: PeriodCreateWithoutGcPediaInput;
 }
 
 export interface gcPediaDataUpdateManyMutationInput {
@@ -1663,7 +1663,7 @@ export interface gcPediaDataUpdateManyMutationInput {
 
 export interface gcWikiDataCreateInput {
   id?: Maybe<ID_Input>;
-  period: PeriodCreateOneWithoutWikiInput;
+  period: PeriodCreateOneWithoutGcWikiInput;
   totalNumAccounts?: Maybe<Int>;
   numNewAccounts?: Maybe<Int>;
   gaData?: Maybe<gaStatsCreateOneInput>;
@@ -1673,24 +1673,24 @@ export interface gcWikiDataCreateInput {
   numNewEdits?: Maybe<Int>;
 }
 
-export interface PeriodCreateOneWithoutWikiInput {
-  create?: Maybe<PeriodCreateWithoutWikiInput>;
+export interface PeriodCreateOneWithoutGcWikiInput {
+  create?: Maybe<PeriodCreateWithoutGcWikiInput>;
   connect?: Maybe<PeriodWhereUniqueInput>;
 }
 
-export interface PeriodCreateWithoutWikiInput {
+export interface PeriodCreateWithoutGcWikiInput {
   id?: Maybe<ID_Input>;
   month: Int;
   year: Int;
-  account?: Maybe<gcAccountDataCreateOneWithoutPeriodInput>;
-  collab: gcCollabDataCreateOneWithoutPeriodInput;
-  connex: gcConnexDataCreateOneWithoutPeriodInput;
-  message: gcMessageDataCreateOneWithoutPeriodInput;
-  pedia: gcPediaDataCreateOneWithoutPeriodInput;
+  gcAccount?: Maybe<gcAccountDataCreateOneWithoutPeriodInput>;
+  gcCollab: gcCollabDataCreateOneWithoutPeriodInput;
+  gcConnex: gcConnexDataCreateOneWithoutPeriodInput;
+  gcMessage: gcMessageDataCreateOneWithoutPeriodInput;
+  gcPedia: gcPediaDataCreateOneWithoutPeriodInput;
 }
 
 export interface gcWikiDataUpdateInput {
-  period?: Maybe<PeriodUpdateOneRequiredWithoutWikiInput>;
+  period?: Maybe<PeriodUpdateOneRequiredWithoutGcWikiInput>;
   totalNumAccounts?: Maybe<Int>;
   numNewAccounts?: Maybe<Int>;
   gaData?: Maybe<gaStatsUpdateOneInput>;
@@ -1700,26 +1700,26 @@ export interface gcWikiDataUpdateInput {
   numNewEdits?: Maybe<Int>;
 }
 
-export interface PeriodUpdateOneRequiredWithoutWikiInput {
-  create?: Maybe<PeriodCreateWithoutWikiInput>;
-  update?: Maybe<PeriodUpdateWithoutWikiDataInput>;
-  upsert?: Maybe<PeriodUpsertWithoutWikiInput>;
+export interface PeriodUpdateOneRequiredWithoutGcWikiInput {
+  create?: Maybe<PeriodCreateWithoutGcWikiInput>;
+  update?: Maybe<PeriodUpdateWithoutGcWikiDataInput>;
+  upsert?: Maybe<PeriodUpsertWithoutGcWikiInput>;
   connect?: Maybe<PeriodWhereUniqueInput>;
 }
 
-export interface PeriodUpdateWithoutWikiDataInput {
+export interface PeriodUpdateWithoutGcWikiDataInput {
   month?: Maybe<Int>;
   year?: Maybe<Int>;
-  account?: Maybe<gcAccountDataUpdateOneWithoutPeriodInput>;
-  collab?: Maybe<gcCollabDataUpdateOneRequiredWithoutPeriodInput>;
-  connex?: Maybe<gcConnexDataUpdateOneRequiredWithoutPeriodInput>;
-  message?: Maybe<gcMessageDataUpdateOneRequiredWithoutPeriodInput>;
-  pedia?: Maybe<gcPediaDataUpdateOneRequiredWithoutPeriodInput>;
+  gcAccount?: Maybe<gcAccountDataUpdateOneWithoutPeriodInput>;
+  gcCollab?: Maybe<gcCollabDataUpdateOneRequiredWithoutPeriodInput>;
+  gcConnex?: Maybe<gcConnexDataUpdateOneRequiredWithoutPeriodInput>;
+  gcMessage?: Maybe<gcMessageDataUpdateOneRequiredWithoutPeriodInput>;
+  gcPedia?: Maybe<gcPediaDataUpdateOneRequiredWithoutPeriodInput>;
 }
 
-export interface PeriodUpsertWithoutWikiInput {
-  update: PeriodUpdateWithoutWikiDataInput;
-  create: PeriodCreateWithoutWikiInput;
+export interface PeriodUpsertWithoutGcWikiInput {
+  update: PeriodUpdateWithoutGcWikiDataInput;
+  create: PeriodCreateWithoutGcWikiInput;
 }
 
 export interface gcWikiDataUpdateManyMutationInput {
@@ -1869,12 +1869,12 @@ export interface PeriodPromise extends Promise<Period>, Fragmentable {
   id: () => Promise<ID_Output>;
   month: () => Promise<Int>;
   year: () => Promise<Int>;
-  account: <T = gcAccountDataPromise>() => T;
-  collab: <T = gcCollabDataPromise>() => T;
-  connex: <T = gcConnexDataPromise>() => T;
-  message: <T = gcMessageDataPromise>() => T;
-  pedia: <T = gcPediaDataPromise>() => T;
-  wiki: <T = gcWikiDataPromise>() => T;
+  gcAccount: <T = gcAccountDataPromise>() => T;
+  gcCollab: <T = gcCollabDataPromise>() => T;
+  gcConnex: <T = gcConnexDataPromise>() => T;
+  gcMessage: <T = gcMessageDataPromise>() => T;
+  gcPedia: <T = gcPediaDataPromise>() => T;
+  gcWiki: <T = gcWikiDataPromise>() => T;
 }
 
 export interface PeriodSubscription
@@ -1883,12 +1883,12 @@ export interface PeriodSubscription
   id: () => Promise<AsyncIterator<ID_Output>>;
   month: () => Promise<AsyncIterator<Int>>;
   year: () => Promise<AsyncIterator<Int>>;
-  account: <T = gcAccountDataSubscription>() => T;
-  collab: <T = gcCollabDataSubscription>() => T;
-  connex: <T = gcConnexDataSubscription>() => T;
-  message: <T = gcMessageDataSubscription>() => T;
-  pedia: <T = gcPediaDataSubscription>() => T;
-  wiki: <T = gcWikiDataSubscription>() => T;
+  gcAccount: <T = gcAccountDataSubscription>() => T;
+  gcCollab: <T = gcCollabDataSubscription>() => T;
+  gcConnex: <T = gcConnexDataSubscription>() => T;
+  gcMessage: <T = gcMessageDataSubscription>() => T;
+  gcPedia: <T = gcPediaDataSubscription>() => T;
+  gcWiki: <T = gcWikiDataSubscription>() => T;
 }
 
 export interface PeriodNullablePromise
@@ -1897,12 +1897,12 @@ export interface PeriodNullablePromise
   id: () => Promise<ID_Output>;
   month: () => Promise<Int>;
   year: () => Promise<Int>;
-  account: <T = gcAccountDataPromise>() => T;
-  collab: <T = gcCollabDataPromise>() => T;
-  connex: <T = gcConnexDataPromise>() => T;
-  message: <T = gcMessageDataPromise>() => T;
-  pedia: <T = gcPediaDataPromise>() => T;
-  wiki: <T = gcWikiDataPromise>() => T;
+  gcAccount: <T = gcAccountDataPromise>() => T;
+  gcCollab: <T = gcCollabDataPromise>() => T;
+  gcConnex: <T = gcConnexDataPromise>() => T;
+  gcMessage: <T = gcMessageDataPromise>() => T;
+  gcPedia: <T = gcPediaDataPromise>() => T;
+  gcWiki: <T = gcWikiDataPromise>() => T;
 }
 
 export interface gcAccountData {

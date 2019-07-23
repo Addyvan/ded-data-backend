@@ -77,20 +77,26 @@ type gcWikiData {
 }
 
 type Period {
-  account: gcAccountData
-  collab: gcCollabData!
-  connex: gcConnexData!
+  gcAccount: gcAccountData
+  gcCollab: gcCollabData!
+  gcConnex: gcConnexData!
+  gcMessage: gcMessageData!
+  gcPedia: gcPediaData!
+  gcWiki: gcWikiData!
   id: ID!
-  message: gcMessageData!
   month: Int!
-  pedia: gcPediaData!
-  wiki: gcWikiData!
   year: Int!
 }
 
 type quarter {
-  endPeriod: Period!
-  startPeriod: Period!
+  endPeriod: Period
+  gcAccountSummary: gcAccountData
+  gcCollabSummary: gcCollabData
+  gcConnexSummary: gcConnexData
+  gcMessageSummary: gcMessageData
+  gcPediaSummary: gcPediaData
+  gcWikiSummary: gcWikiData
+  startPeriod: Period
 }
 
 type Query {
@@ -102,5 +108,5 @@ type Query {
   gcWikiDatas: [gcWikiData!]!
   period(id: String!): [Period!]!
   periods(month: Int, year: Int): [Period!]!
-  quarter(month: Int!, year: Int!): quarter!
+  quarter(quarterNum: Int!, year: Int!): quarter!
 }

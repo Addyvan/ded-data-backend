@@ -183,52 +183,52 @@ export interface NexusPrismaTypes {
       gaStatsUpdateInput: gaStatsUpdateInputInputObject
       gaStatsUpdateManyMutationInput: gaStatsUpdateManyMutationInputInputObject
       gcAccountDataCreateInput: gcAccountDataCreateInputInputObject
-      PeriodCreateOneWithoutAccountInput: PeriodCreateOneWithoutAccountInputInputObject
-      PeriodCreateWithoutAccountInput: PeriodCreateWithoutAccountInputInputObject
+      PeriodCreateOneWithoutGcAccountInput: PeriodCreateOneWithoutGcAccountInputInputObject
+      PeriodCreateWithoutGcAccountInput: PeriodCreateWithoutGcAccountInputInputObject
       gcAccountDataUpdateInput: gcAccountDataUpdateInputInputObject
-      PeriodUpdateOneRequiredWithoutAccountInput: PeriodUpdateOneRequiredWithoutAccountInputInputObject
-      PeriodUpdateWithoutAccountDataInput: PeriodUpdateWithoutAccountDataInputInputObject
-      PeriodUpsertWithoutAccountInput: PeriodUpsertWithoutAccountInputInputObject
+      PeriodUpdateOneRequiredWithoutGcAccountInput: PeriodUpdateOneRequiredWithoutGcAccountInputInputObject
+      PeriodUpdateWithoutGcAccountDataInput: PeriodUpdateWithoutGcAccountDataInputInputObject
+      PeriodUpsertWithoutGcAccountInput: PeriodUpsertWithoutGcAccountInputInputObject
       gcAccountDataUpdateManyMutationInput: gcAccountDataUpdateManyMutationInputInputObject
       gcCollabDataCreateInput: gcCollabDataCreateInputInputObject
-      PeriodCreateOneWithoutCollabInput: PeriodCreateOneWithoutCollabInputInputObject
-      PeriodCreateWithoutCollabInput: PeriodCreateWithoutCollabInputInputObject
+      PeriodCreateOneWithoutGcCollabInput: PeriodCreateOneWithoutGcCollabInputInputObject
+      PeriodCreateWithoutGcCollabInput: PeriodCreateWithoutGcCollabInputInputObject
       gcCollabDataUpdateInput: gcCollabDataUpdateInputInputObject
-      PeriodUpdateOneRequiredWithoutCollabInput: PeriodUpdateOneRequiredWithoutCollabInputInputObject
-      PeriodUpdateWithoutCollabDataInput: PeriodUpdateWithoutCollabDataInputInputObject
-      PeriodUpsertWithoutCollabInput: PeriodUpsertWithoutCollabInputInputObject
+      PeriodUpdateOneRequiredWithoutGcCollabInput: PeriodUpdateOneRequiredWithoutGcCollabInputInputObject
+      PeriodUpdateWithoutGcCollabDataInput: PeriodUpdateWithoutGcCollabDataInputInputObject
+      PeriodUpsertWithoutGcCollabInput: PeriodUpsertWithoutGcCollabInputInputObject
       gcCollabDataUpdateManyMutationInput: gcCollabDataUpdateManyMutationInputInputObject
       gcConnexDataCreateInput: gcConnexDataCreateInputInputObject
-      PeriodCreateOneWithoutConnexInput: PeriodCreateOneWithoutConnexInputInputObject
-      PeriodCreateWithoutConnexInput: PeriodCreateWithoutConnexInputInputObject
+      PeriodCreateOneWithoutGcConnexInput: PeriodCreateOneWithoutGcConnexInputInputObject
+      PeriodCreateWithoutGcConnexInput: PeriodCreateWithoutGcConnexInputInputObject
       gcConnexDataUpdateInput: gcConnexDataUpdateInputInputObject
-      PeriodUpdateOneRequiredWithoutConnexInput: PeriodUpdateOneRequiredWithoutConnexInputInputObject
-      PeriodUpdateWithoutConnexDataInput: PeriodUpdateWithoutConnexDataInputInputObject
-      PeriodUpsertWithoutConnexInput: PeriodUpsertWithoutConnexInputInputObject
+      PeriodUpdateOneRequiredWithoutGcConnexInput: PeriodUpdateOneRequiredWithoutGcConnexInputInputObject
+      PeriodUpdateWithoutGcConnexDataInput: PeriodUpdateWithoutGcConnexDataInputInputObject
+      PeriodUpsertWithoutGcConnexInput: PeriodUpsertWithoutGcConnexInputInputObject
       gcConnexDataUpdateManyMutationInput: gcConnexDataUpdateManyMutationInputInputObject
       gcMessageDataCreateInput: gcMessageDataCreateInputInputObject
-      PeriodCreateOneWithoutMessageInput: PeriodCreateOneWithoutMessageInputInputObject
-      PeriodCreateWithoutMessageInput: PeriodCreateWithoutMessageInputInputObject
+      PeriodCreateOneWithoutGcMessageInput: PeriodCreateOneWithoutGcMessageInputInputObject
+      PeriodCreateWithoutGcMessageInput: PeriodCreateWithoutGcMessageInputInputObject
       gcMessageDataUpdateInput: gcMessageDataUpdateInputInputObject
-      PeriodUpdateOneRequiredWithoutMessageInput: PeriodUpdateOneRequiredWithoutMessageInputInputObject
-      PeriodUpdateWithoutMessageDataInput: PeriodUpdateWithoutMessageDataInputInputObject
-      PeriodUpsertWithoutMessageInput: PeriodUpsertWithoutMessageInputInputObject
+      PeriodUpdateOneRequiredWithoutGcMessageInput: PeriodUpdateOneRequiredWithoutGcMessageInputInputObject
+      PeriodUpdateWithoutGcMessageDataInput: PeriodUpdateWithoutGcMessageDataInputInputObject
+      PeriodUpsertWithoutGcMessageInput: PeriodUpsertWithoutGcMessageInputInputObject
       gcMessageDataUpdateManyMutationInput: gcMessageDataUpdateManyMutationInputInputObject
       gcPediaDataCreateInput: gcPediaDataCreateInputInputObject
-      PeriodCreateOneWithoutPediaInput: PeriodCreateOneWithoutPediaInputInputObject
-      PeriodCreateWithoutPediaInput: PeriodCreateWithoutPediaInputInputObject
+      PeriodCreateOneWithoutGcPediaInput: PeriodCreateOneWithoutGcPediaInputInputObject
+      PeriodCreateWithoutGcPediaInput: PeriodCreateWithoutGcPediaInputInputObject
       gcPediaDataUpdateInput: gcPediaDataUpdateInputInputObject
-      PeriodUpdateOneRequiredWithoutPediaInput: PeriodUpdateOneRequiredWithoutPediaInputInputObject
-      PeriodUpdateWithoutPediaDataInput: PeriodUpdateWithoutPediaDataInputInputObject
-      PeriodUpsertWithoutPediaInput: PeriodUpsertWithoutPediaInputInputObject
+      PeriodUpdateOneRequiredWithoutGcPediaInput: PeriodUpdateOneRequiredWithoutGcPediaInputInputObject
+      PeriodUpdateWithoutGcPediaDataInput: PeriodUpdateWithoutGcPediaDataInputInputObject
+      PeriodUpsertWithoutGcPediaInput: PeriodUpsertWithoutGcPediaInputInputObject
       gcPediaDataUpdateManyMutationInput: gcPediaDataUpdateManyMutationInputInputObject
       gcWikiDataCreateInput: gcWikiDataCreateInputInputObject
-      PeriodCreateOneWithoutWikiInput: PeriodCreateOneWithoutWikiInputInputObject
-      PeriodCreateWithoutWikiInput: PeriodCreateWithoutWikiInputInputObject
+      PeriodCreateOneWithoutGcWikiInput: PeriodCreateOneWithoutGcWikiInputInputObject
+      PeriodCreateWithoutGcWikiInput: PeriodCreateWithoutGcWikiInputInputObject
       gcWikiDataUpdateInput: gcWikiDataUpdateInputInputObject
-      PeriodUpdateOneRequiredWithoutWikiInput: PeriodUpdateOneRequiredWithoutWikiInputInputObject
-      PeriodUpdateWithoutWikiDataInput: PeriodUpdateWithoutWikiDataInputInputObject
-      PeriodUpsertWithoutWikiInput: PeriodUpsertWithoutWikiInputInputObject
+      PeriodUpdateOneRequiredWithoutGcWikiInput: PeriodUpdateOneRequiredWithoutGcWikiInputInputObject
+      PeriodUpdateWithoutGcWikiDataInput: PeriodUpdateWithoutGcWikiDataInputInputObject
+      PeriodUpsertWithoutGcWikiInput: PeriodUpsertWithoutGcWikiInputInputObject
       gcWikiDataUpdateManyMutationInput: gcWikiDataUpdateManyMutationInputInputObject
       PeriodSubscriptionWhereInput: PeriodSubscriptionWhereInputInputObject
       gaStatsSubscriptionWhereInput: gaStatsSubscriptionWhereInputInputObject
@@ -778,23 +778,23 @@ type PeriodObject =
   | { name: 'id', args?: [] | false, alias?: string  } 
   | { name: 'month', args?: [] | false, alias?: string  } 
   | { name: 'year', args?: [] | false, alias?: string  } 
-  | { name: 'account', args?: [] | false, alias?: string  } 
-  | { name: 'collab', args?: [] | false, alias?: string  } 
-  | { name: 'connex', args?: [] | false, alias?: string  } 
-  | { name: 'message', args?: [] | false, alias?: string  } 
-  | { name: 'pedia', args?: [] | false, alias?: string  } 
-  | { name: 'wiki', args?: [] | false, alias?: string  } 
+  | { name: 'gcAccount', args?: [] | false, alias?: string  } 
+  | { name: 'gcCollab', args?: [] | false, alias?: string  } 
+  | { name: 'gcConnex', args?: [] | false, alias?: string  } 
+  | { name: 'gcMessage', args?: [] | false, alias?: string  } 
+  | { name: 'gcPedia', args?: [] | false, alias?: string  } 
+  | { name: 'gcWiki', args?: [] | false, alias?: string  } 
 
 type PeriodFields =
   | 'id'
   | 'month'
   | 'year'
-  | 'account'
-  | 'collab'
-  | 'connex'
-  | 'message'
-  | 'pedia'
-  | 'wiki'
+  | 'gcAccount'
+  | 'gcCollab'
+  | 'gcConnex'
+  | 'gcMessage'
+  | 'gcPedia'
+  | 'gcWiki'
 
 
 
@@ -825,7 +825,7 @@ export interface PeriodFieldDetails {
     nullable: false
     resolve: undefined
   }
-  account: {
+  gcAccount: {
     type: 'gcAccountData'
     args: {}
     description: string
@@ -838,7 +838,7 @@ export interface PeriodFieldDetails {
       info?: GraphQLResolveInfo
     ) => Promise<prisma.gcAccountData | null> | prisma.gcAccountData | null
   }
-  collab: {
+  gcCollab: {
     type: 'gcCollabData'
     args: {}
     description: string
@@ -851,7 +851,7 @@ export interface PeriodFieldDetails {
       info?: GraphQLResolveInfo
     ) => Promise<prisma.gcCollabData> | prisma.gcCollabData
   }
-  connex: {
+  gcConnex: {
     type: 'gcConnexData'
     args: {}
     description: string
@@ -864,7 +864,7 @@ export interface PeriodFieldDetails {
       info?: GraphQLResolveInfo
     ) => Promise<prisma.gcConnexData> | prisma.gcConnexData
   }
-  message: {
+  gcMessage: {
     type: 'gcMessageData'
     args: {}
     description: string
@@ -877,7 +877,7 @@ export interface PeriodFieldDetails {
       info?: GraphQLResolveInfo
     ) => Promise<prisma.gcMessageData> | prisma.gcMessageData
   }
-  pedia: {
+  gcPedia: {
     type: 'gcPediaData'
     args: {}
     description: string
@@ -890,7 +890,7 @@ export interface PeriodFieldDetails {
       info?: GraphQLResolveInfo
     ) => Promise<prisma.gcPediaData> | prisma.gcPediaData
   }
-  wiki: {
+  gcWiki: {
     type: 'gcWikiData'
     args: {}
     description: string
@@ -4867,12 +4867,12 @@ export interface PeriodWhereInput {
   year_lte?: number | null
   year_gt?: number | null
   year_gte?: number | null
-  account?: gcAccountDataWhereInput | null
-  collab?: gcCollabDataWhereInput | null
-  connex?: gcConnexDataWhereInput | null
-  message?: gcMessageDataWhereInput | null
-  pedia?: gcPediaDataWhereInput | null
-  wiki?: gcWikiDataWhereInput | null
+  gcAccount?: gcAccountDataWhereInput | null
+  gcCollab?: gcCollabDataWhereInput | null
+  gcConnex?: gcConnexDataWhereInput | null
+  gcMessage?: gcMessageDataWhereInput | null
+  gcPedia?: gcPediaDataWhereInput | null
+  gcWiki?: gcWikiDataWhereInput | null
   AND?: PeriodWhereInput[]
   OR?: PeriodWhereInput[]
   NOT?: PeriodWhereInput[]
@@ -4909,12 +4909,12 @@ export type PeriodWhereInputInputObject =
   | { name: 'year_lte', alias?: string  } 
   | { name: 'year_gt', alias?: string  } 
   | { name: 'year_gte', alias?: string  } 
-  | { name: 'account', alias?: string  } 
-  | { name: 'collab', alias?: string  } 
-  | { name: 'connex', alias?: string  } 
-  | { name: 'message', alias?: string  } 
-  | { name: 'pedia', alias?: string  } 
-  | { name: 'wiki', alias?: string  } 
+  | { name: 'gcAccount', alias?: string  } 
+  | { name: 'gcCollab', alias?: string  } 
+  | { name: 'gcConnex', alias?: string  } 
+  | { name: 'gcMessage', alias?: string  } 
+  | { name: 'gcPedia', alias?: string  } 
+  | { name: 'gcWiki', alias?: string  } 
   | { name: 'AND', alias?: string  } 
   | { name: 'OR', alias?: string  } 
   | { name: 'NOT', alias?: string  } 
@@ -5855,24 +5855,24 @@ export interface PeriodCreateInput {
   id?: string | null
   month?: number
   year?: number
-  account?: gcAccountDataCreateOneWithoutPeriodInput | null
-  collab?: gcCollabDataCreateOneWithoutPeriodInput
-  connex?: gcConnexDataCreateOneWithoutPeriodInput
-  message?: gcMessageDataCreateOneWithoutPeriodInput
-  pedia?: gcPediaDataCreateOneWithoutPeriodInput
-  wiki?: gcWikiDataCreateOneWithoutPeriodInput
+  gcAccount?: gcAccountDataCreateOneWithoutPeriodInput | null
+  gcCollab?: gcCollabDataCreateOneWithoutPeriodInput
+  gcConnex?: gcConnexDataCreateOneWithoutPeriodInput
+  gcMessage?: gcMessageDataCreateOneWithoutPeriodInput
+  gcPedia?: gcPediaDataCreateOneWithoutPeriodInput
+  gcWiki?: gcWikiDataCreateOneWithoutPeriodInput
 }
 export type PeriodCreateInputInputObject =
   | Extract<keyof PeriodCreateInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'month', alias?: string  } 
   | { name: 'year', alias?: string  } 
-  | { name: 'account', alias?: string  } 
-  | { name: 'collab', alias?: string  } 
-  | { name: 'connex', alias?: string  } 
-  | { name: 'message', alias?: string  } 
-  | { name: 'pedia', alias?: string  } 
-  | { name: 'wiki', alias?: string  } 
+  | { name: 'gcAccount', alias?: string  } 
+  | { name: 'gcCollab', alias?: string  } 
+  | { name: 'gcConnex', alias?: string  } 
+  | { name: 'gcMessage', alias?: string  } 
+  | { name: 'gcPedia', alias?: string  } 
+  | { name: 'gcWiki', alias?: string  } 
   
 export interface gcAccountDataCreateOneWithoutPeriodInput {
   create?: gcAccountDataCreateWithoutPeriodInput | null
@@ -6069,23 +6069,23 @@ export type gcWikiDataCreateWithoutPeriodInputInputObject =
 export interface PeriodUpdateInput {
   month?: number | null
   year?: number | null
-  account?: gcAccountDataUpdateOneWithoutPeriodInput | null
-  collab?: gcCollabDataUpdateOneRequiredWithoutPeriodInput | null
-  connex?: gcConnexDataUpdateOneRequiredWithoutPeriodInput | null
-  message?: gcMessageDataUpdateOneRequiredWithoutPeriodInput | null
-  pedia?: gcPediaDataUpdateOneRequiredWithoutPeriodInput | null
-  wiki?: gcWikiDataUpdateOneRequiredWithoutPeriodInput | null
+  gcAccount?: gcAccountDataUpdateOneWithoutPeriodInput | null
+  gcCollab?: gcCollabDataUpdateOneRequiredWithoutPeriodInput | null
+  gcConnex?: gcConnexDataUpdateOneRequiredWithoutPeriodInput | null
+  gcMessage?: gcMessageDataUpdateOneRequiredWithoutPeriodInput | null
+  gcPedia?: gcPediaDataUpdateOneRequiredWithoutPeriodInput | null
+  gcWiki?: gcWikiDataUpdateOneRequiredWithoutPeriodInput | null
 }
 export type PeriodUpdateInputInputObject =
   | Extract<keyof PeriodUpdateInput, string>
   | { name: 'month', alias?: string  } 
   | { name: 'year', alias?: string  } 
-  | { name: 'account', alias?: string  } 
-  | { name: 'collab', alias?: string  } 
-  | { name: 'connex', alias?: string  } 
-  | { name: 'message', alias?: string  } 
-  | { name: 'pedia', alias?: string  } 
-  | { name: 'wiki', alias?: string  } 
+  | { name: 'gcAccount', alias?: string  } 
+  | { name: 'gcCollab', alias?: string  } 
+  | { name: 'gcConnex', alias?: string  } 
+  | { name: 'gcMessage', alias?: string  } 
+  | { name: 'gcPedia', alias?: string  } 
+  | { name: 'gcWiki', alias?: string  } 
   
 export interface gcAccountDataUpdateOneWithoutPeriodInput {
   create?: gcAccountDataCreateWithoutPeriodInput | null
@@ -6405,7 +6405,7 @@ export type gaStatsUpdateManyMutationInputInputObject =
   
 export interface gcAccountDataCreateInput {
   id?: string | null
-  period?: PeriodCreateOneWithoutAccountInput
+  period?: PeriodCreateOneWithoutGcAccountInput
   totalNumAccounts?: number | null
   numNewAccounts?: number | null
 }
@@ -6416,38 +6416,38 @@ export type gcAccountDataCreateInputInputObject =
   | { name: 'totalNumAccounts', alias?: string  } 
   | { name: 'numNewAccounts', alias?: string  } 
   
-export interface PeriodCreateOneWithoutAccountInput {
-  create?: PeriodCreateWithoutAccountInput | null
+export interface PeriodCreateOneWithoutGcAccountInput {
+  create?: PeriodCreateWithoutGcAccountInput | null
   connect?: PeriodWhereUniqueInput | null
 }
-export type PeriodCreateOneWithoutAccountInputInputObject =
-  | Extract<keyof PeriodCreateOneWithoutAccountInput, string>
+export type PeriodCreateOneWithoutGcAccountInputInputObject =
+  | Extract<keyof PeriodCreateOneWithoutGcAccountInput, string>
   | { name: 'create', alias?: string  } 
   | { name: 'connect', alias?: string  } 
   
-export interface PeriodCreateWithoutAccountInput {
+export interface PeriodCreateWithoutGcAccountInput {
   id?: string | null
   month?: number
   year?: number
-  collab?: gcCollabDataCreateOneWithoutPeriodInput
-  connex?: gcConnexDataCreateOneWithoutPeriodInput
-  message?: gcMessageDataCreateOneWithoutPeriodInput
-  pedia?: gcPediaDataCreateOneWithoutPeriodInput
-  wiki?: gcWikiDataCreateOneWithoutPeriodInput
+  gcCollab?: gcCollabDataCreateOneWithoutPeriodInput
+  gcConnex?: gcConnexDataCreateOneWithoutPeriodInput
+  gcMessage?: gcMessageDataCreateOneWithoutPeriodInput
+  gcPedia?: gcPediaDataCreateOneWithoutPeriodInput
+  gcWiki?: gcWikiDataCreateOneWithoutPeriodInput
 }
-export type PeriodCreateWithoutAccountInputInputObject =
-  | Extract<keyof PeriodCreateWithoutAccountInput, string>
+export type PeriodCreateWithoutGcAccountInputInputObject =
+  | Extract<keyof PeriodCreateWithoutGcAccountInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'month', alias?: string  } 
   | { name: 'year', alias?: string  } 
-  | { name: 'collab', alias?: string  } 
-  | { name: 'connex', alias?: string  } 
-  | { name: 'message', alias?: string  } 
-  | { name: 'pedia', alias?: string  } 
-  | { name: 'wiki', alias?: string  } 
+  | { name: 'gcCollab', alias?: string  } 
+  | { name: 'gcConnex', alias?: string  } 
+  | { name: 'gcMessage', alias?: string  } 
+  | { name: 'gcPedia', alias?: string  } 
+  | { name: 'gcWiki', alias?: string  } 
   
 export interface gcAccountDataUpdateInput {
-  period?: PeriodUpdateOneRequiredWithoutAccountInput | null
+  period?: PeriodUpdateOneRequiredWithoutGcAccountInput | null
   totalNumAccounts?: number | null
   numNewAccounts?: number | null
 }
@@ -6457,44 +6457,44 @@ export type gcAccountDataUpdateInputInputObject =
   | { name: 'totalNumAccounts', alias?: string  } 
   | { name: 'numNewAccounts', alias?: string  } 
   
-export interface PeriodUpdateOneRequiredWithoutAccountInput {
-  create?: PeriodCreateWithoutAccountInput | null
-  update?: PeriodUpdateWithoutAccountDataInput | null
-  upsert?: PeriodUpsertWithoutAccountInput | null
+export interface PeriodUpdateOneRequiredWithoutGcAccountInput {
+  create?: PeriodCreateWithoutGcAccountInput | null
+  update?: PeriodUpdateWithoutGcAccountDataInput | null
+  upsert?: PeriodUpsertWithoutGcAccountInput | null
   connect?: PeriodWhereUniqueInput | null
 }
-export type PeriodUpdateOneRequiredWithoutAccountInputInputObject =
-  | Extract<keyof PeriodUpdateOneRequiredWithoutAccountInput, string>
+export type PeriodUpdateOneRequiredWithoutGcAccountInputInputObject =
+  | Extract<keyof PeriodUpdateOneRequiredWithoutGcAccountInput, string>
   | { name: 'create', alias?: string  } 
   | { name: 'update', alias?: string  } 
   | { name: 'upsert', alias?: string  } 
   | { name: 'connect', alias?: string  } 
   
-export interface PeriodUpdateWithoutAccountDataInput {
+export interface PeriodUpdateWithoutGcAccountDataInput {
   month?: number | null
   year?: number | null
-  collab?: gcCollabDataUpdateOneRequiredWithoutPeriodInput | null
-  connex?: gcConnexDataUpdateOneRequiredWithoutPeriodInput | null
-  message?: gcMessageDataUpdateOneRequiredWithoutPeriodInput | null
-  pedia?: gcPediaDataUpdateOneRequiredWithoutPeriodInput | null
-  wiki?: gcWikiDataUpdateOneRequiredWithoutPeriodInput | null
+  gcCollab?: gcCollabDataUpdateOneRequiredWithoutPeriodInput | null
+  gcConnex?: gcConnexDataUpdateOneRequiredWithoutPeriodInput | null
+  gcMessage?: gcMessageDataUpdateOneRequiredWithoutPeriodInput | null
+  gcPedia?: gcPediaDataUpdateOneRequiredWithoutPeriodInput | null
+  gcWiki?: gcWikiDataUpdateOneRequiredWithoutPeriodInput | null
 }
-export type PeriodUpdateWithoutAccountDataInputInputObject =
-  | Extract<keyof PeriodUpdateWithoutAccountDataInput, string>
+export type PeriodUpdateWithoutGcAccountDataInputInputObject =
+  | Extract<keyof PeriodUpdateWithoutGcAccountDataInput, string>
   | { name: 'month', alias?: string  } 
   | { name: 'year', alias?: string  } 
-  | { name: 'collab', alias?: string  } 
-  | { name: 'connex', alias?: string  } 
-  | { name: 'message', alias?: string  } 
-  | { name: 'pedia', alias?: string  } 
-  | { name: 'wiki', alias?: string  } 
+  | { name: 'gcCollab', alias?: string  } 
+  | { name: 'gcConnex', alias?: string  } 
+  | { name: 'gcMessage', alias?: string  } 
+  | { name: 'gcPedia', alias?: string  } 
+  | { name: 'gcWiki', alias?: string  } 
   
-export interface PeriodUpsertWithoutAccountInput {
-  update?: PeriodUpdateWithoutAccountDataInput
-  create?: PeriodCreateWithoutAccountInput
+export interface PeriodUpsertWithoutGcAccountInput {
+  update?: PeriodUpdateWithoutGcAccountDataInput
+  create?: PeriodCreateWithoutGcAccountInput
 }
-export type PeriodUpsertWithoutAccountInputInputObject =
-  | Extract<keyof PeriodUpsertWithoutAccountInput, string>
+export type PeriodUpsertWithoutGcAccountInputInputObject =
+  | Extract<keyof PeriodUpsertWithoutGcAccountInput, string>
   | { name: 'update', alias?: string  } 
   | { name: 'create', alias?: string  } 
   
@@ -6509,7 +6509,7 @@ export type gcAccountDataUpdateManyMutationInputInputObject =
   
 export interface gcCollabDataCreateInput {
   id?: string | null
-  period?: PeriodCreateOneWithoutCollabInput
+  period?: PeriodCreateOneWithoutGcCollabInput
   totalNumAccounts?: number | null
   numNewAccounts?: number | null
   gaData?: gaStatsCreateOneInput | null
@@ -6526,38 +6526,38 @@ export type gcCollabDataCreateInputInputObject =
   | { name: 'totalNumGroups', alias?: string  } 
   | { name: 'numNewGroups', alias?: string  } 
   
-export interface PeriodCreateOneWithoutCollabInput {
-  create?: PeriodCreateWithoutCollabInput | null
+export interface PeriodCreateOneWithoutGcCollabInput {
+  create?: PeriodCreateWithoutGcCollabInput | null
   connect?: PeriodWhereUniqueInput | null
 }
-export type PeriodCreateOneWithoutCollabInputInputObject =
-  | Extract<keyof PeriodCreateOneWithoutCollabInput, string>
+export type PeriodCreateOneWithoutGcCollabInputInputObject =
+  | Extract<keyof PeriodCreateOneWithoutGcCollabInput, string>
   | { name: 'create', alias?: string  } 
   | { name: 'connect', alias?: string  } 
   
-export interface PeriodCreateWithoutCollabInput {
+export interface PeriodCreateWithoutGcCollabInput {
   id?: string | null
   month?: number
   year?: number
-  account?: gcAccountDataCreateOneWithoutPeriodInput | null
-  connex?: gcConnexDataCreateOneWithoutPeriodInput
-  message?: gcMessageDataCreateOneWithoutPeriodInput
-  pedia?: gcPediaDataCreateOneWithoutPeriodInput
-  wiki?: gcWikiDataCreateOneWithoutPeriodInput
+  gcAccount?: gcAccountDataCreateOneWithoutPeriodInput | null
+  gcConnex?: gcConnexDataCreateOneWithoutPeriodInput
+  gcMessage?: gcMessageDataCreateOneWithoutPeriodInput
+  gcPedia?: gcPediaDataCreateOneWithoutPeriodInput
+  gcWiki?: gcWikiDataCreateOneWithoutPeriodInput
 }
-export type PeriodCreateWithoutCollabInputInputObject =
-  | Extract<keyof PeriodCreateWithoutCollabInput, string>
+export type PeriodCreateWithoutGcCollabInputInputObject =
+  | Extract<keyof PeriodCreateWithoutGcCollabInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'month', alias?: string  } 
   | { name: 'year', alias?: string  } 
-  | { name: 'account', alias?: string  } 
-  | { name: 'connex', alias?: string  } 
-  | { name: 'message', alias?: string  } 
-  | { name: 'pedia', alias?: string  } 
-  | { name: 'wiki', alias?: string  } 
+  | { name: 'gcAccount', alias?: string  } 
+  | { name: 'gcConnex', alias?: string  } 
+  | { name: 'gcMessage', alias?: string  } 
+  | { name: 'gcPedia', alias?: string  } 
+  | { name: 'gcWiki', alias?: string  } 
   
 export interface gcCollabDataUpdateInput {
-  period?: PeriodUpdateOneRequiredWithoutCollabInput | null
+  period?: PeriodUpdateOneRequiredWithoutGcCollabInput | null
   totalNumAccounts?: number | null
   numNewAccounts?: number | null
   gaData?: gaStatsUpdateOneInput | null
@@ -6573,44 +6573,44 @@ export type gcCollabDataUpdateInputInputObject =
   | { name: 'totalNumGroups', alias?: string  } 
   | { name: 'numNewGroups', alias?: string  } 
   
-export interface PeriodUpdateOneRequiredWithoutCollabInput {
-  create?: PeriodCreateWithoutCollabInput | null
-  update?: PeriodUpdateWithoutCollabDataInput | null
-  upsert?: PeriodUpsertWithoutCollabInput | null
+export interface PeriodUpdateOneRequiredWithoutGcCollabInput {
+  create?: PeriodCreateWithoutGcCollabInput | null
+  update?: PeriodUpdateWithoutGcCollabDataInput | null
+  upsert?: PeriodUpsertWithoutGcCollabInput | null
   connect?: PeriodWhereUniqueInput | null
 }
-export type PeriodUpdateOneRequiredWithoutCollabInputInputObject =
-  | Extract<keyof PeriodUpdateOneRequiredWithoutCollabInput, string>
+export type PeriodUpdateOneRequiredWithoutGcCollabInputInputObject =
+  | Extract<keyof PeriodUpdateOneRequiredWithoutGcCollabInput, string>
   | { name: 'create', alias?: string  } 
   | { name: 'update', alias?: string  } 
   | { name: 'upsert', alias?: string  } 
   | { name: 'connect', alias?: string  } 
   
-export interface PeriodUpdateWithoutCollabDataInput {
+export interface PeriodUpdateWithoutGcCollabDataInput {
   month?: number | null
   year?: number | null
-  account?: gcAccountDataUpdateOneWithoutPeriodInput | null
-  connex?: gcConnexDataUpdateOneRequiredWithoutPeriodInput | null
-  message?: gcMessageDataUpdateOneRequiredWithoutPeriodInput | null
-  pedia?: gcPediaDataUpdateOneRequiredWithoutPeriodInput | null
-  wiki?: gcWikiDataUpdateOneRequiredWithoutPeriodInput | null
+  gcAccount?: gcAccountDataUpdateOneWithoutPeriodInput | null
+  gcConnex?: gcConnexDataUpdateOneRequiredWithoutPeriodInput | null
+  gcMessage?: gcMessageDataUpdateOneRequiredWithoutPeriodInput | null
+  gcPedia?: gcPediaDataUpdateOneRequiredWithoutPeriodInput | null
+  gcWiki?: gcWikiDataUpdateOneRequiredWithoutPeriodInput | null
 }
-export type PeriodUpdateWithoutCollabDataInputInputObject =
-  | Extract<keyof PeriodUpdateWithoutCollabDataInput, string>
+export type PeriodUpdateWithoutGcCollabDataInputInputObject =
+  | Extract<keyof PeriodUpdateWithoutGcCollabDataInput, string>
   | { name: 'month', alias?: string  } 
   | { name: 'year', alias?: string  } 
-  | { name: 'account', alias?: string  } 
-  | { name: 'connex', alias?: string  } 
-  | { name: 'message', alias?: string  } 
-  | { name: 'pedia', alias?: string  } 
-  | { name: 'wiki', alias?: string  } 
+  | { name: 'gcAccount', alias?: string  } 
+  | { name: 'gcConnex', alias?: string  } 
+  | { name: 'gcMessage', alias?: string  } 
+  | { name: 'gcPedia', alias?: string  } 
+  | { name: 'gcWiki', alias?: string  } 
   
-export interface PeriodUpsertWithoutCollabInput {
-  update?: PeriodUpdateWithoutCollabDataInput
-  create?: PeriodCreateWithoutCollabInput
+export interface PeriodUpsertWithoutGcCollabInput {
+  update?: PeriodUpdateWithoutGcCollabDataInput
+  create?: PeriodCreateWithoutGcCollabInput
 }
-export type PeriodUpsertWithoutCollabInputInputObject =
-  | Extract<keyof PeriodUpsertWithoutCollabInput, string>
+export type PeriodUpsertWithoutGcCollabInputInputObject =
+  | Extract<keyof PeriodUpsertWithoutGcCollabInput, string>
   | { name: 'update', alias?: string  } 
   | { name: 'create', alias?: string  } 
   
@@ -6629,7 +6629,7 @@ export type gcCollabDataUpdateManyMutationInputInputObject =
   
 export interface gcConnexDataCreateInput {
   id?: string | null
-  period?: PeriodCreateOneWithoutConnexInput
+  period?: PeriodCreateOneWithoutGcConnexInput
   totalNumAccounts?: number | null
   numNewAccounts?: number | null
   gaData?: gaStatsCreateOneInput | null
@@ -6646,38 +6646,38 @@ export type gcConnexDataCreateInputInputObject =
   | { name: 'totalNumGroups', alias?: string  } 
   | { name: 'numNewGroups', alias?: string  } 
   
-export interface PeriodCreateOneWithoutConnexInput {
-  create?: PeriodCreateWithoutConnexInput | null
+export interface PeriodCreateOneWithoutGcConnexInput {
+  create?: PeriodCreateWithoutGcConnexInput | null
   connect?: PeriodWhereUniqueInput | null
 }
-export type PeriodCreateOneWithoutConnexInputInputObject =
-  | Extract<keyof PeriodCreateOneWithoutConnexInput, string>
+export type PeriodCreateOneWithoutGcConnexInputInputObject =
+  | Extract<keyof PeriodCreateOneWithoutGcConnexInput, string>
   | { name: 'create', alias?: string  } 
   | { name: 'connect', alias?: string  } 
   
-export interface PeriodCreateWithoutConnexInput {
+export interface PeriodCreateWithoutGcConnexInput {
   id?: string | null
   month?: number
   year?: number
-  account?: gcAccountDataCreateOneWithoutPeriodInput | null
-  collab?: gcCollabDataCreateOneWithoutPeriodInput
-  message?: gcMessageDataCreateOneWithoutPeriodInput
-  pedia?: gcPediaDataCreateOneWithoutPeriodInput
-  wiki?: gcWikiDataCreateOneWithoutPeriodInput
+  gcAccount?: gcAccountDataCreateOneWithoutPeriodInput | null
+  gcCollab?: gcCollabDataCreateOneWithoutPeriodInput
+  gcMessage?: gcMessageDataCreateOneWithoutPeriodInput
+  gcPedia?: gcPediaDataCreateOneWithoutPeriodInput
+  gcWiki?: gcWikiDataCreateOneWithoutPeriodInput
 }
-export type PeriodCreateWithoutConnexInputInputObject =
-  | Extract<keyof PeriodCreateWithoutConnexInput, string>
+export type PeriodCreateWithoutGcConnexInputInputObject =
+  | Extract<keyof PeriodCreateWithoutGcConnexInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'month', alias?: string  } 
   | { name: 'year', alias?: string  } 
-  | { name: 'account', alias?: string  } 
-  | { name: 'collab', alias?: string  } 
-  | { name: 'message', alias?: string  } 
-  | { name: 'pedia', alias?: string  } 
-  | { name: 'wiki', alias?: string  } 
+  | { name: 'gcAccount', alias?: string  } 
+  | { name: 'gcCollab', alias?: string  } 
+  | { name: 'gcMessage', alias?: string  } 
+  | { name: 'gcPedia', alias?: string  } 
+  | { name: 'gcWiki', alias?: string  } 
   
 export interface gcConnexDataUpdateInput {
-  period?: PeriodUpdateOneRequiredWithoutConnexInput | null
+  period?: PeriodUpdateOneRequiredWithoutGcConnexInput | null
   totalNumAccounts?: number | null
   numNewAccounts?: number | null
   gaData?: gaStatsUpdateOneInput | null
@@ -6693,44 +6693,44 @@ export type gcConnexDataUpdateInputInputObject =
   | { name: 'totalNumGroups', alias?: string  } 
   | { name: 'numNewGroups', alias?: string  } 
   
-export interface PeriodUpdateOneRequiredWithoutConnexInput {
-  create?: PeriodCreateWithoutConnexInput | null
-  update?: PeriodUpdateWithoutConnexDataInput | null
-  upsert?: PeriodUpsertWithoutConnexInput | null
+export interface PeriodUpdateOneRequiredWithoutGcConnexInput {
+  create?: PeriodCreateWithoutGcConnexInput | null
+  update?: PeriodUpdateWithoutGcConnexDataInput | null
+  upsert?: PeriodUpsertWithoutGcConnexInput | null
   connect?: PeriodWhereUniqueInput | null
 }
-export type PeriodUpdateOneRequiredWithoutConnexInputInputObject =
-  | Extract<keyof PeriodUpdateOneRequiredWithoutConnexInput, string>
+export type PeriodUpdateOneRequiredWithoutGcConnexInputInputObject =
+  | Extract<keyof PeriodUpdateOneRequiredWithoutGcConnexInput, string>
   | { name: 'create', alias?: string  } 
   | { name: 'update', alias?: string  } 
   | { name: 'upsert', alias?: string  } 
   | { name: 'connect', alias?: string  } 
   
-export interface PeriodUpdateWithoutConnexDataInput {
+export interface PeriodUpdateWithoutGcConnexDataInput {
   month?: number | null
   year?: number | null
-  account?: gcAccountDataUpdateOneWithoutPeriodInput | null
-  collab?: gcCollabDataUpdateOneRequiredWithoutPeriodInput | null
-  message?: gcMessageDataUpdateOneRequiredWithoutPeriodInput | null
-  pedia?: gcPediaDataUpdateOneRequiredWithoutPeriodInput | null
-  wiki?: gcWikiDataUpdateOneRequiredWithoutPeriodInput | null
+  gcAccount?: gcAccountDataUpdateOneWithoutPeriodInput | null
+  gcCollab?: gcCollabDataUpdateOneRequiredWithoutPeriodInput | null
+  gcMessage?: gcMessageDataUpdateOneRequiredWithoutPeriodInput | null
+  gcPedia?: gcPediaDataUpdateOneRequiredWithoutPeriodInput | null
+  gcWiki?: gcWikiDataUpdateOneRequiredWithoutPeriodInput | null
 }
-export type PeriodUpdateWithoutConnexDataInputInputObject =
-  | Extract<keyof PeriodUpdateWithoutConnexDataInput, string>
+export type PeriodUpdateWithoutGcConnexDataInputInputObject =
+  | Extract<keyof PeriodUpdateWithoutGcConnexDataInput, string>
   | { name: 'month', alias?: string  } 
   | { name: 'year', alias?: string  } 
-  | { name: 'account', alias?: string  } 
-  | { name: 'collab', alias?: string  } 
-  | { name: 'message', alias?: string  } 
-  | { name: 'pedia', alias?: string  } 
-  | { name: 'wiki', alias?: string  } 
+  | { name: 'gcAccount', alias?: string  } 
+  | { name: 'gcCollab', alias?: string  } 
+  | { name: 'gcMessage', alias?: string  } 
+  | { name: 'gcPedia', alias?: string  } 
+  | { name: 'gcWiki', alias?: string  } 
   
-export interface PeriodUpsertWithoutConnexInput {
-  update?: PeriodUpdateWithoutConnexDataInput
-  create?: PeriodCreateWithoutConnexInput
+export interface PeriodUpsertWithoutGcConnexInput {
+  update?: PeriodUpdateWithoutGcConnexDataInput
+  create?: PeriodCreateWithoutGcConnexInput
 }
-export type PeriodUpsertWithoutConnexInputInputObject =
-  | Extract<keyof PeriodUpsertWithoutConnexInput, string>
+export type PeriodUpsertWithoutGcConnexInputInputObject =
+  | Extract<keyof PeriodUpsertWithoutGcConnexInput, string>
   | { name: 'update', alias?: string  } 
   | { name: 'create', alias?: string  } 
   
@@ -6749,7 +6749,7 @@ export type gcConnexDataUpdateManyMutationInputInputObject =
   
 export interface gcMessageDataCreateInput {
   id?: string | null
-  period?: PeriodCreateOneWithoutMessageInput
+  period?: PeriodCreateOneWithoutGcMessageInput
   totalNumAccounts?: number | null
   numNewAccounts?: number | null
   totalNumChannelMessages?: number | null
@@ -6776,38 +6776,38 @@ export type gcMessageDataCreateInputInputObject =
   | { name: 'totalNumFileUploads', alias?: string  } 
   | { name: 'numNewFileUploads', alias?: string  } 
   
-export interface PeriodCreateOneWithoutMessageInput {
-  create?: PeriodCreateWithoutMessageInput | null
+export interface PeriodCreateOneWithoutGcMessageInput {
+  create?: PeriodCreateWithoutGcMessageInput | null
   connect?: PeriodWhereUniqueInput | null
 }
-export type PeriodCreateOneWithoutMessageInputInputObject =
-  | Extract<keyof PeriodCreateOneWithoutMessageInput, string>
+export type PeriodCreateOneWithoutGcMessageInputInputObject =
+  | Extract<keyof PeriodCreateOneWithoutGcMessageInput, string>
   | { name: 'create', alias?: string  } 
   | { name: 'connect', alias?: string  } 
   
-export interface PeriodCreateWithoutMessageInput {
+export interface PeriodCreateWithoutGcMessageInput {
   id?: string | null
   month?: number
   year?: number
-  account?: gcAccountDataCreateOneWithoutPeriodInput | null
-  collab?: gcCollabDataCreateOneWithoutPeriodInput
-  connex?: gcConnexDataCreateOneWithoutPeriodInput
-  pedia?: gcPediaDataCreateOneWithoutPeriodInput
-  wiki?: gcWikiDataCreateOneWithoutPeriodInput
+  gcAccount?: gcAccountDataCreateOneWithoutPeriodInput | null
+  gcCollab?: gcCollabDataCreateOneWithoutPeriodInput
+  gcConnex?: gcConnexDataCreateOneWithoutPeriodInput
+  gcPedia?: gcPediaDataCreateOneWithoutPeriodInput
+  gcWiki?: gcWikiDataCreateOneWithoutPeriodInput
 }
-export type PeriodCreateWithoutMessageInputInputObject =
-  | Extract<keyof PeriodCreateWithoutMessageInput, string>
+export type PeriodCreateWithoutGcMessageInputInputObject =
+  | Extract<keyof PeriodCreateWithoutGcMessageInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'month', alias?: string  } 
   | { name: 'year', alias?: string  } 
-  | { name: 'account', alias?: string  } 
-  | { name: 'collab', alias?: string  } 
-  | { name: 'connex', alias?: string  } 
-  | { name: 'pedia', alias?: string  } 
-  | { name: 'wiki', alias?: string  } 
+  | { name: 'gcAccount', alias?: string  } 
+  | { name: 'gcCollab', alias?: string  } 
+  | { name: 'gcConnex', alias?: string  } 
+  | { name: 'gcPedia', alias?: string  } 
+  | { name: 'gcWiki', alias?: string  } 
   
 export interface gcMessageDataUpdateInput {
-  period?: PeriodUpdateOneRequiredWithoutMessageInput | null
+  period?: PeriodUpdateOneRequiredWithoutGcMessageInput | null
   totalNumAccounts?: number | null
   numNewAccounts?: number | null
   totalNumChannelMessages?: number | null
@@ -6833,44 +6833,44 @@ export type gcMessageDataUpdateInputInputObject =
   | { name: 'totalNumFileUploads', alias?: string  } 
   | { name: 'numNewFileUploads', alias?: string  } 
   
-export interface PeriodUpdateOneRequiredWithoutMessageInput {
-  create?: PeriodCreateWithoutMessageInput | null
-  update?: PeriodUpdateWithoutMessageDataInput | null
-  upsert?: PeriodUpsertWithoutMessageInput | null
+export interface PeriodUpdateOneRequiredWithoutGcMessageInput {
+  create?: PeriodCreateWithoutGcMessageInput | null
+  update?: PeriodUpdateWithoutGcMessageDataInput | null
+  upsert?: PeriodUpsertWithoutGcMessageInput | null
   connect?: PeriodWhereUniqueInput | null
 }
-export type PeriodUpdateOneRequiredWithoutMessageInputInputObject =
-  | Extract<keyof PeriodUpdateOneRequiredWithoutMessageInput, string>
+export type PeriodUpdateOneRequiredWithoutGcMessageInputInputObject =
+  | Extract<keyof PeriodUpdateOneRequiredWithoutGcMessageInput, string>
   | { name: 'create', alias?: string  } 
   | { name: 'update', alias?: string  } 
   | { name: 'upsert', alias?: string  } 
   | { name: 'connect', alias?: string  } 
   
-export interface PeriodUpdateWithoutMessageDataInput {
+export interface PeriodUpdateWithoutGcMessageDataInput {
   month?: number | null
   year?: number | null
-  account?: gcAccountDataUpdateOneWithoutPeriodInput | null
-  collab?: gcCollabDataUpdateOneRequiredWithoutPeriodInput | null
-  connex?: gcConnexDataUpdateOneRequiredWithoutPeriodInput | null
-  pedia?: gcPediaDataUpdateOneRequiredWithoutPeriodInput | null
-  wiki?: gcWikiDataUpdateOneRequiredWithoutPeriodInput | null
+  gcAccount?: gcAccountDataUpdateOneWithoutPeriodInput | null
+  gcCollab?: gcCollabDataUpdateOneRequiredWithoutPeriodInput | null
+  gcConnex?: gcConnexDataUpdateOneRequiredWithoutPeriodInput | null
+  gcPedia?: gcPediaDataUpdateOneRequiredWithoutPeriodInput | null
+  gcWiki?: gcWikiDataUpdateOneRequiredWithoutPeriodInput | null
 }
-export type PeriodUpdateWithoutMessageDataInputInputObject =
-  | Extract<keyof PeriodUpdateWithoutMessageDataInput, string>
+export type PeriodUpdateWithoutGcMessageDataInputInputObject =
+  | Extract<keyof PeriodUpdateWithoutGcMessageDataInput, string>
   | { name: 'month', alias?: string  } 
   | { name: 'year', alias?: string  } 
-  | { name: 'account', alias?: string  } 
-  | { name: 'collab', alias?: string  } 
-  | { name: 'connex', alias?: string  } 
-  | { name: 'pedia', alias?: string  } 
-  | { name: 'wiki', alias?: string  } 
+  | { name: 'gcAccount', alias?: string  } 
+  | { name: 'gcCollab', alias?: string  } 
+  | { name: 'gcConnex', alias?: string  } 
+  | { name: 'gcPedia', alias?: string  } 
+  | { name: 'gcWiki', alias?: string  } 
   
-export interface PeriodUpsertWithoutMessageInput {
-  update?: PeriodUpdateWithoutMessageDataInput
-  create?: PeriodCreateWithoutMessageInput
+export interface PeriodUpsertWithoutGcMessageInput {
+  update?: PeriodUpdateWithoutGcMessageDataInput
+  create?: PeriodCreateWithoutGcMessageInput
 }
-export type PeriodUpsertWithoutMessageInputInputObject =
-  | Extract<keyof PeriodUpsertWithoutMessageInput, string>
+export type PeriodUpsertWithoutGcMessageInputInputObject =
+  | Extract<keyof PeriodUpsertWithoutGcMessageInput, string>
   | { name: 'update', alias?: string  } 
   | { name: 'create', alias?: string  } 
   
@@ -6901,7 +6901,7 @@ export type gcMessageDataUpdateManyMutationInputInputObject =
   
 export interface gcPediaDataCreateInput {
   id?: string | null
-  period?: PeriodCreateOneWithoutPediaInput
+  period?: PeriodCreateOneWithoutGcPediaInput
   totalNumAccounts?: number | null
   numNewAccounts?: number | null
   totalNumArticles?: number | null
@@ -6920,38 +6920,38 @@ export type gcPediaDataCreateInputInputObject =
   | { name: 'totalNumEdits', alias?: string  } 
   | { name: 'numNewEdits', alias?: string  } 
   
-export interface PeriodCreateOneWithoutPediaInput {
-  create?: PeriodCreateWithoutPediaInput | null
+export interface PeriodCreateOneWithoutGcPediaInput {
+  create?: PeriodCreateWithoutGcPediaInput | null
   connect?: PeriodWhereUniqueInput | null
 }
-export type PeriodCreateOneWithoutPediaInputInputObject =
-  | Extract<keyof PeriodCreateOneWithoutPediaInput, string>
+export type PeriodCreateOneWithoutGcPediaInputInputObject =
+  | Extract<keyof PeriodCreateOneWithoutGcPediaInput, string>
   | { name: 'create', alias?: string  } 
   | { name: 'connect', alias?: string  } 
   
-export interface PeriodCreateWithoutPediaInput {
+export interface PeriodCreateWithoutGcPediaInput {
   id?: string | null
   month?: number
   year?: number
-  account?: gcAccountDataCreateOneWithoutPeriodInput | null
-  collab?: gcCollabDataCreateOneWithoutPeriodInput
-  connex?: gcConnexDataCreateOneWithoutPeriodInput
-  message?: gcMessageDataCreateOneWithoutPeriodInput
-  wiki?: gcWikiDataCreateOneWithoutPeriodInput
+  gcAccount?: gcAccountDataCreateOneWithoutPeriodInput | null
+  gcCollab?: gcCollabDataCreateOneWithoutPeriodInput
+  gcConnex?: gcConnexDataCreateOneWithoutPeriodInput
+  gcMessage?: gcMessageDataCreateOneWithoutPeriodInput
+  gcWiki?: gcWikiDataCreateOneWithoutPeriodInput
 }
-export type PeriodCreateWithoutPediaInputInputObject =
-  | Extract<keyof PeriodCreateWithoutPediaInput, string>
+export type PeriodCreateWithoutGcPediaInputInputObject =
+  | Extract<keyof PeriodCreateWithoutGcPediaInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'month', alias?: string  } 
   | { name: 'year', alias?: string  } 
-  | { name: 'account', alias?: string  } 
-  | { name: 'collab', alias?: string  } 
-  | { name: 'connex', alias?: string  } 
-  | { name: 'message', alias?: string  } 
-  | { name: 'wiki', alias?: string  } 
+  | { name: 'gcAccount', alias?: string  } 
+  | { name: 'gcCollab', alias?: string  } 
+  | { name: 'gcConnex', alias?: string  } 
+  | { name: 'gcMessage', alias?: string  } 
+  | { name: 'gcWiki', alias?: string  } 
   
 export interface gcPediaDataUpdateInput {
-  period?: PeriodUpdateOneRequiredWithoutPediaInput | null
+  period?: PeriodUpdateOneRequiredWithoutGcPediaInput | null
   totalNumAccounts?: number | null
   numNewAccounts?: number | null
   totalNumArticles?: number | null
@@ -6969,44 +6969,44 @@ export type gcPediaDataUpdateInputInputObject =
   | { name: 'totalNumEdits', alias?: string  } 
   | { name: 'numNewEdits', alias?: string  } 
   
-export interface PeriodUpdateOneRequiredWithoutPediaInput {
-  create?: PeriodCreateWithoutPediaInput | null
-  update?: PeriodUpdateWithoutPediaDataInput | null
-  upsert?: PeriodUpsertWithoutPediaInput | null
+export interface PeriodUpdateOneRequiredWithoutGcPediaInput {
+  create?: PeriodCreateWithoutGcPediaInput | null
+  update?: PeriodUpdateWithoutGcPediaDataInput | null
+  upsert?: PeriodUpsertWithoutGcPediaInput | null
   connect?: PeriodWhereUniqueInput | null
 }
-export type PeriodUpdateOneRequiredWithoutPediaInputInputObject =
-  | Extract<keyof PeriodUpdateOneRequiredWithoutPediaInput, string>
+export type PeriodUpdateOneRequiredWithoutGcPediaInputInputObject =
+  | Extract<keyof PeriodUpdateOneRequiredWithoutGcPediaInput, string>
   | { name: 'create', alias?: string  } 
   | { name: 'update', alias?: string  } 
   | { name: 'upsert', alias?: string  } 
   | { name: 'connect', alias?: string  } 
   
-export interface PeriodUpdateWithoutPediaDataInput {
+export interface PeriodUpdateWithoutGcPediaDataInput {
   month?: number | null
   year?: number | null
-  account?: gcAccountDataUpdateOneWithoutPeriodInput | null
-  collab?: gcCollabDataUpdateOneRequiredWithoutPeriodInput | null
-  connex?: gcConnexDataUpdateOneRequiredWithoutPeriodInput | null
-  message?: gcMessageDataUpdateOneRequiredWithoutPeriodInput | null
-  wiki?: gcWikiDataUpdateOneRequiredWithoutPeriodInput | null
+  gcAccount?: gcAccountDataUpdateOneWithoutPeriodInput | null
+  gcCollab?: gcCollabDataUpdateOneRequiredWithoutPeriodInput | null
+  gcConnex?: gcConnexDataUpdateOneRequiredWithoutPeriodInput | null
+  gcMessage?: gcMessageDataUpdateOneRequiredWithoutPeriodInput | null
+  gcWiki?: gcWikiDataUpdateOneRequiredWithoutPeriodInput | null
 }
-export type PeriodUpdateWithoutPediaDataInputInputObject =
-  | Extract<keyof PeriodUpdateWithoutPediaDataInput, string>
+export type PeriodUpdateWithoutGcPediaDataInputInputObject =
+  | Extract<keyof PeriodUpdateWithoutGcPediaDataInput, string>
   | { name: 'month', alias?: string  } 
   | { name: 'year', alias?: string  } 
-  | { name: 'account', alias?: string  } 
-  | { name: 'collab', alias?: string  } 
-  | { name: 'connex', alias?: string  } 
-  | { name: 'message', alias?: string  } 
-  | { name: 'wiki', alias?: string  } 
+  | { name: 'gcAccount', alias?: string  } 
+  | { name: 'gcCollab', alias?: string  } 
+  | { name: 'gcConnex', alias?: string  } 
+  | { name: 'gcMessage', alias?: string  } 
+  | { name: 'gcWiki', alias?: string  } 
   
-export interface PeriodUpsertWithoutPediaInput {
-  update?: PeriodUpdateWithoutPediaDataInput
-  create?: PeriodCreateWithoutPediaInput
+export interface PeriodUpsertWithoutGcPediaInput {
+  update?: PeriodUpdateWithoutGcPediaDataInput
+  create?: PeriodCreateWithoutGcPediaInput
 }
-export type PeriodUpsertWithoutPediaInputInputObject =
-  | Extract<keyof PeriodUpsertWithoutPediaInput, string>
+export type PeriodUpsertWithoutGcPediaInputInputObject =
+  | Extract<keyof PeriodUpsertWithoutGcPediaInput, string>
   | { name: 'update', alias?: string  } 
   | { name: 'create', alias?: string  } 
   
@@ -7029,7 +7029,7 @@ export type gcPediaDataUpdateManyMutationInputInputObject =
   
 export interface gcWikiDataCreateInput {
   id?: string | null
-  period?: PeriodCreateOneWithoutWikiInput
+  period?: PeriodCreateOneWithoutGcWikiInput
   totalNumAccounts?: number | null
   numNewAccounts?: number | null
   gaData?: gaStatsCreateOneInput | null
@@ -7050,38 +7050,38 @@ export type gcWikiDataCreateInputInputObject =
   | { name: 'totalNumEdits', alias?: string  } 
   | { name: 'numNewEdits', alias?: string  } 
   
-export interface PeriodCreateOneWithoutWikiInput {
-  create?: PeriodCreateWithoutWikiInput | null
+export interface PeriodCreateOneWithoutGcWikiInput {
+  create?: PeriodCreateWithoutGcWikiInput | null
   connect?: PeriodWhereUniqueInput | null
 }
-export type PeriodCreateOneWithoutWikiInputInputObject =
-  | Extract<keyof PeriodCreateOneWithoutWikiInput, string>
+export type PeriodCreateOneWithoutGcWikiInputInputObject =
+  | Extract<keyof PeriodCreateOneWithoutGcWikiInput, string>
   | { name: 'create', alias?: string  } 
   | { name: 'connect', alias?: string  } 
   
-export interface PeriodCreateWithoutWikiInput {
+export interface PeriodCreateWithoutGcWikiInput {
   id?: string | null
   month?: number
   year?: number
-  account?: gcAccountDataCreateOneWithoutPeriodInput | null
-  collab?: gcCollabDataCreateOneWithoutPeriodInput
-  connex?: gcConnexDataCreateOneWithoutPeriodInput
-  message?: gcMessageDataCreateOneWithoutPeriodInput
-  pedia?: gcPediaDataCreateOneWithoutPeriodInput
+  gcAccount?: gcAccountDataCreateOneWithoutPeriodInput | null
+  gcCollab?: gcCollabDataCreateOneWithoutPeriodInput
+  gcConnex?: gcConnexDataCreateOneWithoutPeriodInput
+  gcMessage?: gcMessageDataCreateOneWithoutPeriodInput
+  gcPedia?: gcPediaDataCreateOneWithoutPeriodInput
 }
-export type PeriodCreateWithoutWikiInputInputObject =
-  | Extract<keyof PeriodCreateWithoutWikiInput, string>
+export type PeriodCreateWithoutGcWikiInputInputObject =
+  | Extract<keyof PeriodCreateWithoutGcWikiInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'month', alias?: string  } 
   | { name: 'year', alias?: string  } 
-  | { name: 'account', alias?: string  } 
-  | { name: 'collab', alias?: string  } 
-  | { name: 'connex', alias?: string  } 
-  | { name: 'message', alias?: string  } 
-  | { name: 'pedia', alias?: string  } 
+  | { name: 'gcAccount', alias?: string  } 
+  | { name: 'gcCollab', alias?: string  } 
+  | { name: 'gcConnex', alias?: string  } 
+  | { name: 'gcMessage', alias?: string  } 
+  | { name: 'gcPedia', alias?: string  } 
   
 export interface gcWikiDataUpdateInput {
-  period?: PeriodUpdateOneRequiredWithoutWikiInput | null
+  period?: PeriodUpdateOneRequiredWithoutGcWikiInput | null
   totalNumAccounts?: number | null
   numNewAccounts?: number | null
   gaData?: gaStatsUpdateOneInput | null
@@ -7101,44 +7101,44 @@ export type gcWikiDataUpdateInputInputObject =
   | { name: 'totalNumEdits', alias?: string  } 
   | { name: 'numNewEdits', alias?: string  } 
   
-export interface PeriodUpdateOneRequiredWithoutWikiInput {
-  create?: PeriodCreateWithoutWikiInput | null
-  update?: PeriodUpdateWithoutWikiDataInput | null
-  upsert?: PeriodUpsertWithoutWikiInput | null
+export interface PeriodUpdateOneRequiredWithoutGcWikiInput {
+  create?: PeriodCreateWithoutGcWikiInput | null
+  update?: PeriodUpdateWithoutGcWikiDataInput | null
+  upsert?: PeriodUpsertWithoutGcWikiInput | null
   connect?: PeriodWhereUniqueInput | null
 }
-export type PeriodUpdateOneRequiredWithoutWikiInputInputObject =
-  | Extract<keyof PeriodUpdateOneRequiredWithoutWikiInput, string>
+export type PeriodUpdateOneRequiredWithoutGcWikiInputInputObject =
+  | Extract<keyof PeriodUpdateOneRequiredWithoutGcWikiInput, string>
   | { name: 'create', alias?: string  } 
   | { name: 'update', alias?: string  } 
   | { name: 'upsert', alias?: string  } 
   | { name: 'connect', alias?: string  } 
   
-export interface PeriodUpdateWithoutWikiDataInput {
+export interface PeriodUpdateWithoutGcWikiDataInput {
   month?: number | null
   year?: number | null
-  account?: gcAccountDataUpdateOneWithoutPeriodInput | null
-  collab?: gcCollabDataUpdateOneRequiredWithoutPeriodInput | null
-  connex?: gcConnexDataUpdateOneRequiredWithoutPeriodInput | null
-  message?: gcMessageDataUpdateOneRequiredWithoutPeriodInput | null
-  pedia?: gcPediaDataUpdateOneRequiredWithoutPeriodInput | null
+  gcAccount?: gcAccountDataUpdateOneWithoutPeriodInput | null
+  gcCollab?: gcCollabDataUpdateOneRequiredWithoutPeriodInput | null
+  gcConnex?: gcConnexDataUpdateOneRequiredWithoutPeriodInput | null
+  gcMessage?: gcMessageDataUpdateOneRequiredWithoutPeriodInput | null
+  gcPedia?: gcPediaDataUpdateOneRequiredWithoutPeriodInput | null
 }
-export type PeriodUpdateWithoutWikiDataInputInputObject =
-  | Extract<keyof PeriodUpdateWithoutWikiDataInput, string>
+export type PeriodUpdateWithoutGcWikiDataInputInputObject =
+  | Extract<keyof PeriodUpdateWithoutGcWikiDataInput, string>
   | { name: 'month', alias?: string  } 
   | { name: 'year', alias?: string  } 
-  | { name: 'account', alias?: string  } 
-  | { name: 'collab', alias?: string  } 
-  | { name: 'connex', alias?: string  } 
-  | { name: 'message', alias?: string  } 
-  | { name: 'pedia', alias?: string  } 
+  | { name: 'gcAccount', alias?: string  } 
+  | { name: 'gcCollab', alias?: string  } 
+  | { name: 'gcConnex', alias?: string  } 
+  | { name: 'gcMessage', alias?: string  } 
+  | { name: 'gcPedia', alias?: string  } 
   
-export interface PeriodUpsertWithoutWikiInput {
-  update?: PeriodUpdateWithoutWikiDataInput
-  create?: PeriodCreateWithoutWikiInput
+export interface PeriodUpsertWithoutGcWikiInput {
+  update?: PeriodUpdateWithoutGcWikiDataInput
+  create?: PeriodCreateWithoutGcWikiInput
 }
-export type PeriodUpsertWithoutWikiInputInputObject =
-  | Extract<keyof PeriodUpsertWithoutWikiInput, string>
+export type PeriodUpsertWithoutGcWikiInputInputObject =
+  | Extract<keyof PeriodUpsertWithoutGcWikiInput, string>
   | { name: 'update', alias?: string  } 
   | { name: 'create', alias?: string  } 
   

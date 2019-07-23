@@ -1,5 +1,10 @@
 import { objectType, intArg, idArg } from "nexus";
 import gcAccountData from "./gcAccountData";
+import gcCollabData from "./gcCollabData";
+import gcConnexData from "./gcConnexData";
+import gcMessageData from "./gcMessageData";
+import gcPediaData from "./gcPediaData";
+import gcWikiData from "./gcWikiData";
 import Period from "./period";
 import { addMockFunctionsToSchema } from "graphql-tools";
 
@@ -8,25 +13,42 @@ const quarter = objectType({
   definition(t : any) {
     
     t.field("startPeriod", {
-      type: Period, 
-      /*args: {
-        year: intArg(),
-        month: intArg()
-      },*/
-      resolve(root, args: any, ctx) {
-        return ctx.prisma.periods();
-      }
+      type: Period,
+      nullable: true
     });
     t.field("endPeriod", {
-        type: Period, 
-        resolve(root, args: any, ctx) {
-            return ctx.prisma.periods();
-          }
+        type: Period,
+        nullable: true
     });
-    
+    t.field("gcAccountSummary", {
+      type: gcAccountData,
+      nullable: true
+  });
+  t.field("gcCollabSummary", {
+    type: gcCollabData,
+    nullable: true
+});
+t.field("gcConnexSummary", {
+  type: gcConnexData,
+  nullable: true
+});
+t.field("gcMessageSummary", {
+  type: gcMessageData,
+  nullable: true
+});
+t.field("gcPediaSummary", {
+  type: gcPediaData,
+  nullable: true
+});
+t.field("gcWikiSummary", {
+  type: gcWikiData,
+  nullable: true
+});
+
+
 
     
- 
+
   }, //end of definition
 });
 

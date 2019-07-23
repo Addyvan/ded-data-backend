@@ -11,12 +11,12 @@ type Period {
   id: ID! @id
   month: Int!
   year: Int!
-  account: gcAccountData @relation(name: "AccountDataPeriod", link: TABLE)
-  collab: gcCollabData! @relation(name:"CollabDataPeriod", link: TABLE)
-  connex: gcConnexData! @relation(name:"ConnexDataPeriod", link: TABLE)
-  message: gcMessageData! @relation(name:"MessageDataPeriod", link: TABLE)
-  pedia: gcPediaData! @relation(name:"PediaDataPeriod", link: TABLE)
-  wiki: gcWikiData! @relation(name: "WikiDataPeriod", link: TABLE)
+  gcAccount: gcAccountData @relation(name: "AccountDataPeriod", link: TABLE)
+  gcCollab: gcCollabData! @relation(name:"CollabDataPeriod", link: TABLE)
+  gcConnex: gcConnexData! @relation(name:"ConnexDataPeriod", link: TABLE)
+  gcMessage: gcMessageData! @relation(name:"MessageDataPeriod", link: TABLE)
+  gcPedia: gcPediaData! @relation(name:"PediaDataPeriod", link: TABLE)
+  gcWiki: gcWikiData! @relation(name: "WikiDataPeriod", link: TABLE)
 }
 
 #type HelpDeskStats {

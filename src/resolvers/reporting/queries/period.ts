@@ -1,4 +1,5 @@
 import { extendType, stringArg } from "nexus";
+import {Period} from "../../../generated/reporting/prisma-client";
 
 const period = extendType( {
   type: "Query",
@@ -9,7 +10,7 @@ const period = extendType( {
         id: stringArg(),
       },
       resolve: async (parent, args : any, ctx, info) => {
-        const period: any = await ctx.reportingPrisma.periods({where: {id: args.id}});
+        const period : Period = await ctx.reportingPrisma.periods({where: {id: args.id}});
         return period;
       },
     })
