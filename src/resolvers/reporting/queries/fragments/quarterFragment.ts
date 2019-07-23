@@ -74,8 +74,7 @@ fragment allPeriod on Period {
     totalNumEdits
     numNewEdits
   }
-
 }
 `
 
-export default quarterFragment;
+export default quarterFragment;C
