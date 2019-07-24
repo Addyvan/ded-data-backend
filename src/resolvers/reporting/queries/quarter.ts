@@ -115,7 +115,6 @@ const quarter = extendType( {
       
       var collabSummaryValueGaStats = gaStatsSummary(firstPeriod.gcCollab.gaStats, firstPeriod.gcCollab.gaStats, firstPeriod.gcCollab.gaStats);
 
-
       console.log(collabSummaryValue);
 
       return await {
@@ -126,10 +125,10 @@ const quarter = extendType( {
             collabSummaryValue,
             collabSummaryValueGaStats
           },
-          gcConnexSummary: null,
+          gcConnexSummary: connexSummaryValue,
           gcMessageSummary: messageSummaryValue,
           gcPediaSummary: pediaSummaryValue,
-          gcWikiSummary: null,
+          gcWikiSummary: wikiSummaryValue
           
       };
       },
