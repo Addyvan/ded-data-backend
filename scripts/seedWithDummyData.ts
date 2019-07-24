@@ -3,6 +3,12 @@ import { prisma, Period } from "../src/generated/reporting/prisma-client/index";
 const JANUARY_1789 = {
   month: 1,
   year: 1789,
+  gcAccount: {
+    create: {
+      totalNumAccounts: 200,
+      numNewAccounts: 5
+    }
+  },
   gcCollab: {
     create: {
       totalNumAccounts: 200,
@@ -60,6 +66,12 @@ const JANUARY_1789 = {
 const FEBRUARY_1789 = {
     month: 2,
     year: 1789,
+    gcAccount: {
+      create: {
+        totalNumAccounts: 205,
+        numNewAccounts: 5
+      }
+    },
     gcCollab: {
       create: {
         totalNumAccounts: 205,
@@ -112,11 +124,15 @@ const FEBRUARY_1789 = {
     }
   };
   
-
-
   const MARCH_1789 = {
     month: 3,
     year: 1789,
+    gcAccount: {
+      create: {
+        totalNumAccounts: 210,
+        numNewAccounts: 5
+      }
+    },
     gcCollab: {
       create: {
         totalNumAccounts: 210,

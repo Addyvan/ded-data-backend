@@ -3,10 +3,7 @@ const quarterFragment = `
 fragment allPeriod on Period {
   month
   year
-  gcAccount {
-    totalNumAccounts
-    numNewAccounts
-  }
+  
   gcCollab {
     totalNumAccounts
     numNewAccounts
@@ -19,6 +16,10 @@ fragment allPeriod on Period {
     }
     totalNumGroups
     numNewGroups
+  }
+  gcAccount {
+    totalNumAccounts
+    numNewAccounts
   }
   gcConnex {
     totalNumAccounts
@@ -77,4 +78,4 @@ fragment allPeriod on Period {
 }
 `
 
-export default quarterFragment;C
+export default quarterFragment;
