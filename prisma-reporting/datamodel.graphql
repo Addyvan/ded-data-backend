@@ -48,7 +48,7 @@ type gcCollabData implements GeneralData {
   totalNumAccounts: Int
   numNewAccounts: Int
   #helpDeskStat: HelpDeskStats
-  gaData: gaStats @relation(name: "CollabGAStats")
+  gaStats: gaStats @relation(name: "CollabGAStats")
 
   totalNumGroups: Int
   numNewGroups: Int
@@ -62,7 +62,7 @@ type gcConnexData implements GeneralData {
   totalNumAccounts: Int
   numNewAccounts: Int
   #helpDeskStat: HelpDeskStats
-  gaData: gaStats @relation(name: "ConnexGAStats")
+  gaStats: gaStats @relation(name: "ConnexGAStats")
 
   totalNumGroups: Int
   numNewGroups: Int
@@ -106,7 +106,7 @@ type gcWikiData implements GeneralData {
   totalNumAccounts: Int
   numNewAccounts: Int
   #helpDeskStat: HelpDeskStats 
-  gaData: gaStats @unique
+  gaStats: gaStats @unique
 
   totalNumArticles: Int
   numNewArticles: Int

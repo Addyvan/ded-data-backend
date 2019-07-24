@@ -13,6 +13,15 @@ const JANUARY_1789 = {
     create: {
       totalNumAccounts: 200,
       numNewAccounts: 5,
+      gaStats: {
+        create: {
+          numSessions: 200, 
+          avgPageviewsPerSession: 5,
+          avgSessionDuration: 50,
+          avgPageLoadTime: 1.3, 
+          bounceRate: 0.75
+        }
+      },
       totalNumGroups: 100,
       numNewGroups: 5
     }
@@ -21,6 +30,15 @@ const JANUARY_1789 = {
     create: {
         totalNumAccounts: 200,
         numNewAccounts: 5,
+        gaStats: {
+          create: {
+            numSessions: 200,
+            avgPageviewsPerSession: 5,
+            avgSessionDuration: 50,
+            avgPageLoadTime: 0.30,
+            bounceRate: 0.75
+          }
+        },
         totalNumGroups: 100,
         numNewGroups: 5
     }
@@ -53,6 +71,15 @@ const JANUARY_1789 = {
     create: {
       totalNumAccounts: 200,
       numNewAccounts: 5,
+      gaStats: {
+        create: {
+          numSessions: 200,
+          avgPageviewsPerSession: 5,
+          avgSessionDuration: 50,
+          avgPageLoadTime: 0.30,
+          bounceRate: 0.75
+        }
+      },
       totalNumArticles: 200,
       numNewArticles: 5,
       totalNumEdits: 200,
@@ -76,6 +103,15 @@ const FEBRUARY_1789 = {
       create: {
         totalNumAccounts: 205,
         numNewAccounts: 5,
+        gaStats: {
+          create: {
+            numSessions: 200, 
+            avgPageviewsPerSession: 5,
+            avgSessionDuration: 50,
+            avgPageLoadTime: 1.3, 
+            bounceRate: 0.75
+          }
+        },
         totalNumGroups: 105,
         numNewGroups: 5
       }
@@ -84,6 +120,15 @@ const FEBRUARY_1789 = {
       create: {
           totalNumAccounts: 205,
           numNewAccounts: 5,
+          gaStats: {
+            create: {
+              numSessions: 200,
+              avgPageviewsPerSession: 5,
+              avgSessionDuration: 50,
+              avgPageLoadTime: 0.30,
+              bounceRate: 0.75
+            }
+          },
           totalNumGroups: 105,
           numNewGroups: 5
       }
@@ -116,6 +161,15 @@ const FEBRUARY_1789 = {
       create: {
         totalNumAccounts: 205,
         numNewAccounts: 5,
+        gaStats: {
+          create: {
+            numSessions: 200,
+            avgPageviewsPerSession: 5,
+            avgSessionDuration: 50,
+            avgPageLoadTime: 0.30,
+            bounceRate: 0.75
+          }
+        },
         totalNumArticles: 205,
         numNewArticles: 5,
         totalNumEdits: 205,
@@ -137,6 +191,15 @@ const FEBRUARY_1789 = {
       create: {
         totalNumAccounts: 210,
         numNewAccounts: 5,
+        gaStats: {
+          create: {
+            numSessions: 200,
+            avgPageviewsPerSession: 5,
+            avgSessionDuration: 50,
+            avgPageLoadTime: 0.30,
+            bounceRate: 0.75
+          }
+        },
         totalNumGroups: 105,
         numNewGroups: 5
       }
@@ -145,6 +208,15 @@ const FEBRUARY_1789 = {
       create: {
           totalNumAccounts: 210,
           numNewAccounts: 5,
+          gaStats: {
+            create: {
+              numSessions: 200,
+              avgPageviewsPerSession: 5,
+              avgSessionDuration: 50,
+              avgPageLoadTime: 0.30,
+              bounceRate: 0.75
+            }
+          },
           totalNumGroups: 105,
           numNewGroups: 5
       }
@@ -177,6 +249,15 @@ const FEBRUARY_1789 = {
       create: {
         totalNumAccounts: 210,
         numNewAccounts: 5,
+        gaStats: {
+          create: {
+            numSessions: 200,
+            avgPageviewsPerSession: 5,
+            avgSessionDuration: 50,
+            avgPageLoadTime: 0.30,
+            bounceRate: 0.75
+          }
+        },
         totalNumArticles: 210,
         numNewArticles: 5,
         totalNumEdits: 210,

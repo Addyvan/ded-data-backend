@@ -8,7 +8,7 @@ const GCconnexData = prismaObjectType({
       "period",
       "totalNumAccounts",
       "numNewAccounts",
-      "gaData",
+      "gaStats",
 
       "totalNumGroups",
       "numNewGroups",

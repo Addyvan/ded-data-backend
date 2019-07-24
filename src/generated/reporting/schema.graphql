@@ -19,7 +19,7 @@ type gcAccountData {
 }
 
 type gcCollabData {
-  gaData: gaStats
+  gaStats: gaStats
   id: ID!
   numNewAccounts: Int
   numNewGroups: Int
@@ -29,7 +29,7 @@ type gcCollabData {
 }
 
 type gcConnexData {
-  gaData: gaStats
+  gaStats: gaStats
   id: ID!
   numNewAccounts: Int
   numNewGroups: Int
@@ -65,7 +65,7 @@ type gcPediaData {
 }
 
 type gcWikiData {
-  gaData: gaStats
+  gaStats: gaStats
   id: ID!
   numNewAccounts: Int
   numNewArticles: Int

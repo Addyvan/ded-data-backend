@@ -13,14 +13,14 @@ const quarter = objectType({
   definition(t : any) {
     
     t.field("startPeriod", {
-      type: Period,
+      type: Period, //TODO: Shouldn't list all fields of Period
       nullable: true
     });
     t.field("endPeriod", {
-        type: Period,
+        type: Period, //TODO: Shouldn't list all fields of Period
         nullable: true
     });
-    t.field("gcAccountSummary", {
+    t.field("gcAccountSummary", { //TODO: Actually, each of these should probably be fragmented
       type: gcAccountData,
       nullable: true
   });
@@ -44,9 +44,6 @@ t.field("gcWikiSummary", {
   type: gcWikiData,
   nullable: true
 });
-
-
-
     
 
   }, //end of definition

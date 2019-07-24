@@ -4,9 +4,9 @@ import gcCollabData from "./gcCollabData";
 //import month_ASC from "../../../generated/reporting/prisma-client/index";
 
 import quarterFragment from "./fragments/quarterFragment";
+import { getCiphers } from "crypto";
 
 function accountSummary(firstAccount, secondAccount, thirdAccount){
-  //console.log(firstAccount);console.log(secondAccount);console.log(thirdAccount);
   return {
     totalNumAccounts: thirdAccount.totalNumAccounts,
     numNewAccounts: firstAccount.numNewAccounts + secondAccount.numNewAccounts + thirdAccount.numNewAccounts,
@@ -14,27 +14,27 @@ function accountSummary(firstAccount, secondAccount, thirdAccount){
 }
 
 function collabSummary(firstCollab, secondCollab, thirdCollab){
+  var x  = gaStatsSummary(firstCollab.gaStats, secondCollab.gaStats, thirdCollab.gaStats);
+
+console.log(x);
 
   return {
     totalNumAccounts: thirdCollab.totalNumAccounts,
     numNewAccounts: firstCollab.numNewAccounts + secondCollab.numNewAccounts + thirdCollab.numNewAccounts,
-    gaData: null,
     totalNumGroups: thirdCollab.totalNumGroups,
     numNewGroups: firstCollab.numNewGroups + secondCollab.numNewGroups + thirdCollab.numNewGroups,
   };
 }
 function connexSummary(firstConnex, secondConnex, thirdConnex){
-  
   return {
     totalNumAccounts: thirdConnex.totalNumAccounts,
     numNewAccounts: firstConnex.numNewAccounts + secondConnex.numNewAccounts + thirdConnex.numNewAccounts,
-    gaData: null,
+    gaStats: gaStatsSummary(firstConnex.gaStats, secondConnex.gaStats, thirdConnex.gaStats),
     totalNumGroups: firstConnex.numNewGroups + secondConnex.numNewGroups + thirdConnex.numNewGroups,
     numNewGroups: null,
   };
 }
 function messageSummary(firstMessage, secondMessage, thirdMessage){
-
   return {
     totalNumAccounts: thirdMessage.totalNumAccounts,
     numNewAccounts: firstMessage.numNewAccounts + secondMessage.numNewAccounts + thirdMessage.numNewAccounts,
@@ -50,7 +50,6 @@ function messageSummary(firstMessage, secondMessage, thirdMessage){
   };
 }
 function pediaSummary(firstPedia, secondPedia, thirdPedia){
-
   return {
     totalNumAccounts: thirdPedia.totalNumAccounts,
     numNewAccounts: firstPedia.numNewAccounts + secondPedia.numNewAccounts + thirdPedia.numNewAccounts,
@@ -61,11 +60,10 @@ function pediaSummary(firstPedia, secondPedia, thirdPedia){
   };
 }
 function wikiSummary(firstWiki, secondWiki, thirdWiki){
-
   return {
     totalNumAccounts: thirdWiki.totalNumAccounts,
     numNewAccounts: firstWiki.numNewAccounts + secondWiki.numNewAccounts + thirdWiki.numNewAccounts,
-    gaData: null,
+    gaStats: gaStatsSummary(firstWiki.gaStats, secondWiki.gaStats, thirdWiki.gaStats),
     totalNumArticles: thirdWiki.totalNumArticles,
     numNewArticles: firstWiki.numNewArticles + secondWiki.numNewArticles + thirdWiki.numNewArticles,
     totalNumEdits: thirdWiki.totalNumEdits,
@@ -73,8 +71,8 @@ function wikiSummary(firstWiki, secondWiki, thirdWiki){
   };
 }
 
-function gaDataSummary(firstData, secondData, thirdData){
-
+function gaStatsSummary(firstData, secondData, thirdData){
+  
   return { //TODO: Verify 
     numSessions: firstData.numSessions + secondData.numSessions + thirdData.numSessions,
     avgPageviewsPerSession: (firstData.avgPageviewsPerSession + secondData.avgPageviewsPerSession + thirdData.avgPageviewsPerSession ) / 3,
@@ -108,16 +106,31 @@ const quarter = extendType( {
         else thirdPeriod = element;
         num++;
       });
+      var accountSummaryValue = accountSummary(firstPeriod.gcAccount, secondPeriod.gcAccount, thirdPeriod.gcAccount);
+      var collabSummaryValue = collabSummary(firstPeriod.gcCollab, secondPeriod.gcCollab, thirdPeriod.gcCollab);
+      var connexSummaryValue = connexSummary(firstPeriod.gcConnex, secondPeriod.gcConnex, thirdPeriod.gcConnex);
+      var messageSummaryValue = messageSummary(firstPeriod.gcMessage, secondPeriod.gcMessage, thirdPeriod.gcMessage);
+      var pediaSummaryValue = pediaSummary(firstPeriod.gcPedia, secondPeriod.gcPedia, thirdPeriod.gcPedia);
+      var wikiSummaryValue = wikiSummary(firstPeriod.gcWiki, secondPeriod.gcWiki, thirdPeriod.gcWiki);
       
+      var collabSummaryValueGaStats = gaStatsSummary(firstPeriod.gcCollab.gaStats, firstPeriod.gcCollab.gaStats, firstPeriod.gcCollab.gaStats);
+
+
+      console.log(collabSummaryValue);
+
       return await {
           startPeriod: periodRange[0],
           endPeriod: periodRange[2],
-          gcAccountSummary: accountSummary(firstPeriod.gcAccount, secondPeriod.gcAccount, thirdPeriod.gcAccount),
-          gcCollabSummary: collabSummary(firstPeriod.gcCollab, secondPeriod.gcCollab, thirdPeriod.gcCollab),
-          gcConnexSummary: connexSummary(firstPeriod.gcConnex, secondPeriod.gcConnex, thirdPeriod.gcConnex),
-          gcMessageSummary: messageSummary(firstPeriod.gcMessage, secondPeriod.gcMessage, thirdPeriod.gcMessage),
-          gcPediaSummary: pediaSummary(firstPeriod.gcPedia, secondPeriod.gcPedia, thirdPeriod.gcPedia),
-          gcWikiSummary: wikiSummary(firstPeriod.gcWiki, secondPeriod.gcWiki, thirdPeriod.gcWiki),
+          gcAccountSummary: accountSummaryValue,
+          gcCollabSummary: { 
+            collabSummaryValue,
+            collabSummaryValueGaStats
+          },
+          gcConnexSummary: null,
+          gcMessageSummary: messageSummaryValue,
+          gcPediaSummary: pediaSummaryValue,
+          gcWikiSummary: null,
+          
       };
       },
     })

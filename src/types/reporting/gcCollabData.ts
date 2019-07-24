@@ -8,7 +8,7 @@ const GCcollabData = prismaObjectType({
       "period",
       "totalNumAccounts",
       "numNewAccounts",
-      "gaData",
+      "gaStats",
 
       "totalNumGroups",
       "numNewGroups",

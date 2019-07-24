@@ -974,7 +974,7 @@ type gcCollabDataObject =
   | { name: 'period', args?: [] | false, alias?: string  } 
   | { name: 'totalNumAccounts', args?: [] | false, alias?: string  } 
   | { name: 'numNewAccounts', args?: [] | false, alias?: string  } 
-  | { name: 'gaData', args?: [] | false, alias?: string  } 
+  | { name: 'gaStats', args?: [] | false, alias?: string  } 
   | { name: 'totalNumGroups', args?: [] | false, alias?: string  } 
   | { name: 'numNewGroups', args?: [] | false, alias?: string  } 
 
@@ -983,7 +983,7 @@ type gcCollabDataFields =
   | 'period'
   | 'totalNumAccounts'
   | 'numNewAccounts'
-  | 'gaData'
+  | 'gaStats'
   | 'totalNumGroups'
   | 'numNewGroups'
 
@@ -1029,7 +1029,7 @@ export interface gcCollabDataFieldDetails {
     nullable: true
     resolve: undefined
   }
-  gaData: {
+  gaStats: {
     type: 'gaStats'
     args: {}
     description: string
@@ -1144,7 +1144,7 @@ type gcConnexDataObject =
   | { name: 'period', args?: [] | false, alias?: string  } 
   | { name: 'totalNumAccounts', args?: [] | false, alias?: string  } 
   | { name: 'numNewAccounts', args?: [] | false, alias?: string  } 
-  | { name: 'gaData', args?: [] | false, alias?: string  } 
+  | { name: 'gaStats', args?: [] | false, alias?: string  } 
   | { name: 'totalNumGroups', args?: [] | false, alias?: string  } 
   | { name: 'numNewGroups', args?: [] | false, alias?: string  } 
 
@@ -1153,7 +1153,7 @@ type gcConnexDataFields =
   | 'period'
   | 'totalNumAccounts'
   | 'numNewAccounts'
-  | 'gaData'
+  | 'gaStats'
   | 'totalNumGroups'
   | 'numNewGroups'
 
@@ -1199,7 +1199,7 @@ export interface gcConnexDataFieldDetails {
     nullable: true
     resolve: undefined
   }
-  gaData: {
+  gaStats: {
     type: 'gaStats'
     args: {}
     description: string
@@ -1479,7 +1479,7 @@ type gcWikiDataObject =
   | { name: 'period', args?: [] | false, alias?: string  } 
   | { name: 'totalNumAccounts', args?: [] | false, alias?: string  } 
   | { name: 'numNewAccounts', args?: [] | false, alias?: string  } 
-  | { name: 'gaData', args?: [] | false, alias?: string  } 
+  | { name: 'gaStats', args?: [] | false, alias?: string  } 
   | { name: 'totalNumArticles', args?: [] | false, alias?: string  } 
   | { name: 'numNewArticles', args?: [] | false, alias?: string  } 
   | { name: 'totalNumEdits', args?: [] | false, alias?: string  } 
@@ -1490,7 +1490,7 @@ type gcWikiDataFields =
   | 'period'
   | 'totalNumAccounts'
   | 'numNewAccounts'
-  | 'gaData'
+  | 'gaStats'
   | 'totalNumArticles'
   | 'numNewArticles'
   | 'totalNumEdits'
@@ -1538,7 +1538,7 @@ export interface gcWikiDataFieldDetails {
     nullable: true
     resolve: undefined
   }
-  gaData: {
+  gaStats: {
     type: 'gaStats'
     args: {}
     description: string
@@ -5024,7 +5024,7 @@ export interface gcCollabDataWhereInput {
   numNewAccounts_lte?: number | null
   numNewAccounts_gt?: number | null
   numNewAccounts_gte?: number | null
-  gaData?: gaStatsWhereInput | null
+  gaStats?: gaStatsWhereInput | null
   totalNumGroups?: number | null
   totalNumGroups_not?: number | null
   totalNumGroups_in?: number[]
@@ -5078,7 +5078,7 @@ export type gcCollabDataWhereInputInputObject =
   | { name: 'numNewAccounts_lte', alias?: string  } 
   | { name: 'numNewAccounts_gt', alias?: string  } 
   | { name: 'numNewAccounts_gte', alias?: string  } 
-  | { name: 'gaData', alias?: string  } 
+  | { name: 'gaStats', alias?: string  } 
   | { name: 'totalNumGroups', alias?: string  } 
   | { name: 'totalNumGroups_not', alias?: string  } 
   | { name: 'totalNumGroups_in', alias?: string  } 
@@ -5250,7 +5250,7 @@ export interface gcConnexDataWhereInput {
   numNewAccounts_lte?: number | null
   numNewAccounts_gt?: number | null
   numNewAccounts_gte?: number | null
-  gaData?: gaStatsWhereInput | null
+  gaStats?: gaStatsWhereInput | null
   totalNumGroups?: number | null
   totalNumGroups_not?: number | null
   totalNumGroups_in?: number[]
@@ -5304,7 +5304,7 @@ export type gcConnexDataWhereInputInputObject =
   | { name: 'numNewAccounts_lte', alias?: string  } 
   | { name: 'numNewAccounts_gt', alias?: string  } 
   | { name: 'numNewAccounts_gte', alias?: string  } 
-  | { name: 'gaData', alias?: string  } 
+  | { name: 'gaStats', alias?: string  } 
   | { name: 'totalNumGroups', alias?: string  } 
   | { name: 'totalNumGroups_not', alias?: string  } 
   | { name: 'totalNumGroups_in', alias?: string  } 
@@ -5695,7 +5695,7 @@ export interface gcWikiDataWhereInput {
   numNewAccounts_lte?: number | null
   numNewAccounts_gt?: number | null
   numNewAccounts_gte?: number | null
-  gaData?: gaStatsWhereInput | null
+  gaStats?: gaStatsWhereInput | null
   totalNumArticles?: number | null
   totalNumArticles_not?: number | null
   totalNumArticles_in?: number[]
@@ -5765,7 +5765,7 @@ export type gcWikiDataWhereInputInputObject =
   | { name: 'numNewAccounts_lte', alias?: string  } 
   | { name: 'numNewAccounts_gt', alias?: string  } 
   | { name: 'numNewAccounts_gte', alias?: string  } 
-  | { name: 'gaData', alias?: string  } 
+  | { name: 'gaStats', alias?: string  } 
   | { name: 'totalNumArticles', alias?: string  } 
   | { name: 'totalNumArticles_not', alias?: string  } 
   | { name: 'totalNumArticles_in', alias?: string  } 
@@ -5907,7 +5907,7 @@ export interface gcCollabDataCreateWithoutPeriodInput {
   id?: string | null
   totalNumAccounts?: number | null
   numNewAccounts?: number | null
-  gaData?: gaStatsCreateOneInput | null
+  gaStats?: gaStatsCreateOneInput | null
   totalNumGroups?: number | null
   numNewGroups?: number | null
 }
@@ -5916,7 +5916,7 @@ export type gcCollabDataCreateWithoutPeriodInputInputObject =
   | { name: 'id', alias?: string  } 
   | { name: 'totalNumAccounts', alias?: string  } 
   | { name: 'numNewAccounts', alias?: string  } 
-  | { name: 'gaData', alias?: string  } 
+  | { name: 'gaStats', alias?: string  } 
   | { name: 'totalNumGroups', alias?: string  } 
   | { name: 'numNewGroups', alias?: string  } 
   
@@ -5959,7 +5959,7 @@ export interface gcConnexDataCreateWithoutPeriodInput {
   id?: string | null
   totalNumAccounts?: number | null
   numNewAccounts?: number | null
-  gaData?: gaStatsCreateOneInput | null
+  gaStats?: gaStatsCreateOneInput | null
   totalNumGroups?: number | null
   numNewGroups?: number | null
 }
@@ -5968,7 +5968,7 @@ export type gcConnexDataCreateWithoutPeriodInputInputObject =
   | { name: 'id', alias?: string  } 
   | { name: 'totalNumAccounts', alias?: string  } 
   | { name: 'numNewAccounts', alias?: string  } 
-  | { name: 'gaData', alias?: string  } 
+  | { name: 'gaStats', alias?: string  } 
   | { name: 'totalNumGroups', alias?: string  } 
   | { name: 'numNewGroups', alias?: string  } 
   
@@ -6049,7 +6049,7 @@ export interface gcWikiDataCreateWithoutPeriodInput {
   id?: string | null
   totalNumAccounts?: number | null
   numNewAccounts?: number | null
-  gaData?: gaStatsCreateOneInput | null
+  gaStats?: gaStatsCreateOneInput | null
   totalNumArticles?: number | null
   numNewArticles?: number | null
   totalNumEdits?: number | null
@@ -6060,7 +6060,7 @@ export type gcWikiDataCreateWithoutPeriodInputInputObject =
   | { name: 'id', alias?: string  } 
   | { name: 'totalNumAccounts', alias?: string  } 
   | { name: 'numNewAccounts', alias?: string  } 
-  | { name: 'gaData', alias?: string  } 
+  | { name: 'gaStats', alias?: string  } 
   | { name: 'totalNumArticles', alias?: string  } 
   | { name: 'numNewArticles', alias?: string  } 
   | { name: 'totalNumEdits', alias?: string  } 
@@ -6138,7 +6138,7 @@ export type gcCollabDataUpdateOneRequiredWithoutPeriodInputInputObject =
 export interface gcCollabDataUpdateWithoutPeriodDataInput {
   totalNumAccounts?: number | null
   numNewAccounts?: number | null
-  gaData?: gaStatsUpdateOneInput | null
+  gaStats?: gaStatsUpdateOneInput | null
   totalNumGroups?: number | null
   numNewGroups?: number | null
 }
@@ -6146,7 +6146,7 @@ export type gcCollabDataUpdateWithoutPeriodDataInputInputObject =
   | Extract<keyof gcCollabDataUpdateWithoutPeriodDataInput, string>
   | { name: 'totalNumAccounts', alias?: string  } 
   | { name: 'numNewAccounts', alias?: string  } 
-  | { name: 'gaData', alias?: string  } 
+  | { name: 'gaStats', alias?: string  } 
   | { name: 'totalNumGroups', alias?: string  } 
   | { name: 'numNewGroups', alias?: string  } 
   
@@ -6216,7 +6216,7 @@ export type gcConnexDataUpdateOneRequiredWithoutPeriodInputInputObject =
 export interface gcConnexDataUpdateWithoutPeriodDataInput {
   totalNumAccounts?: number | null
   numNewAccounts?: number | null
-  gaData?: gaStatsUpdateOneInput | null
+  gaStats?: gaStatsUpdateOneInput | null
   totalNumGroups?: number | null
   numNewGroups?: number | null
 }
@@ -6224,7 +6224,7 @@ export type gcConnexDataUpdateWithoutPeriodDataInputInputObject =
   | Extract<keyof gcConnexDataUpdateWithoutPeriodDataInput, string>
   | { name: 'totalNumAccounts', alias?: string  } 
   | { name: 'numNewAccounts', alias?: string  } 
-  | { name: 'gaData', alias?: string  } 
+  | { name: 'gaStats', alias?: string  } 
   | { name: 'totalNumGroups', alias?: string  } 
   | { name: 'numNewGroups', alias?: string  } 
   
@@ -6339,7 +6339,7 @@ export type gcWikiDataUpdateOneRequiredWithoutPeriodInputInputObject =
 export interface gcWikiDataUpdateWithoutPeriodDataInput {
   totalNumAccounts?: number | null
   numNewAccounts?: number | null
-  gaData?: gaStatsUpdateOneInput | null
+  gaStats?: gaStatsUpdateOneInput | null
   totalNumArticles?: number | null
   numNewArticles?: number | null
   totalNumEdits?: number | null
@@ -6349,7 +6349,7 @@ export type gcWikiDataUpdateWithoutPeriodDataInputInputObject =
   | Extract<keyof gcWikiDataUpdateWithoutPeriodDataInput, string>
   | { name: 'totalNumAccounts', alias?: string  } 
   | { name: 'numNewAccounts', alias?: string  } 
-  | { name: 'gaData', alias?: string  } 
+  | { name: 'gaStats', alias?: string  } 
   | { name: 'totalNumArticles', alias?: string  } 
   | { name: 'numNewArticles', alias?: string  } 
   | { name: 'totalNumEdits', alias?: string  } 
@@ -6512,7 +6512,7 @@ export interface gcCollabDataCreateInput {
   period?: PeriodCreateOneWithoutGcCollabInput
   totalNumAccounts?: number | null
   numNewAccounts?: number | null
-  gaData?: gaStatsCreateOneInput | null
+  gaStats?: gaStatsCreateOneInput | null
   totalNumGroups?: number | null
   numNewGroups?: number | null
 }
@@ -6522,7 +6522,7 @@ export type gcCollabDataCreateInputInputObject =
   | { name: 'period', alias?: string  } 
   | { name: 'totalNumAccounts', alias?: string  } 
   | { name: 'numNewAccounts', alias?: string  } 
-  | { name: 'gaData', alias?: string  } 
+  | { name: 'gaStats', alias?: string  } 
   | { name: 'totalNumGroups', alias?: string  } 
   | { name: 'numNewGroups', alias?: string  } 
   
@@ -6560,7 +6560,7 @@ export interface gcCollabDataUpdateInput {
   period?: PeriodUpdateOneRequiredWithoutGcCollabInput | null
   totalNumAccounts?: number | null
   numNewAccounts?: number | null
-  gaData?: gaStatsUpdateOneInput | null
+  gaStats?: gaStatsUpdateOneInput | null
   totalNumGroups?: number | null
   numNewGroups?: number | null
 }
@@ -6569,7 +6569,7 @@ export type gcCollabDataUpdateInputInputObject =
   | { name: 'period', alias?: string  } 
   | { name: 'totalNumAccounts', alias?: string  } 
   | { name: 'numNewAccounts', alias?: string  } 
-  | { name: 'gaData', alias?: string  } 
+  | { name: 'gaStats', alias?: string  } 
   | { name: 'totalNumGroups', alias?: string  } 
   | { name: 'numNewGroups', alias?: string  } 
   
@@ -6632,7 +6632,7 @@ export interface gcConnexDataCreateInput {
   period?: PeriodCreateOneWithoutGcConnexInput
   totalNumAccounts?: number | null
   numNewAccounts?: number | null
-  gaData?: gaStatsCreateOneInput | null
+  gaStats?: gaStatsCreateOneInput | null
   totalNumGroups?: number | null
   numNewGroups?: number | null
 }
@@ -6642,7 +6642,7 @@ export type gcConnexDataCreateInputInputObject =
   | { name: 'period', alias?: string  } 
   | { name: 'totalNumAccounts', alias?: string  } 
   | { name: 'numNewAccounts', alias?: string  } 
-  | { name: 'gaData', alias?: string  } 
+  | { name: 'gaStats', alias?: string  } 
   | { name: 'totalNumGroups', alias?: string  } 
   | { name: 'numNewGroups', alias?: string  } 
   
@@ -6680,7 +6680,7 @@ export interface gcConnexDataUpdateInput {
   period?: PeriodUpdateOneRequiredWithoutGcConnexInput | null
   totalNumAccounts?: number | null
   numNewAccounts?: number | null
-  gaData?: gaStatsUpdateOneInput | null
+  gaStats?: gaStatsUpdateOneInput | null
   totalNumGroups?: number | null
   numNewGroups?: number | null
 }
@@ -6689,7 +6689,7 @@ export type gcConnexDataUpdateInputInputObject =
   | { name: 'period', alias?: string  } 
   | { name: 'totalNumAccounts', alias?: string  } 
   | { name: 'numNewAccounts', alias?: string  } 
-  | { name: 'gaData', alias?: string  } 
+  | { name: 'gaStats', alias?: string  } 
   | { name: 'totalNumGroups', alias?: string  } 
   | { name: 'numNewGroups', alias?: string  } 
   
@@ -7032,7 +7032,7 @@ export interface gcWikiDataCreateInput {
   period?: PeriodCreateOneWithoutGcWikiInput
   totalNumAccounts?: number | null
   numNewAccounts?: number | null
-  gaData?: gaStatsCreateOneInput | null
+  gaStats?: gaStatsCreateOneInput | null
   totalNumArticles?: number | null
   numNewArticles?: number | null
   totalNumEdits?: number | null
@@ -7044,7 +7044,7 @@ export type gcWikiDataCreateInputInputObject =
   | { name: 'period', alias?: string  } 
   | { name: 'totalNumAccounts', alias?: string  } 
   | { name: 'numNewAccounts', alias?: string  } 
-  | { name: 'gaData', alias?: string  } 
+  | { name: 'gaStats', alias?: string  } 
   | { name: 'totalNumArticles', alias?: string  } 
   | { name: 'numNewArticles', alias?: string  } 
   | { name: 'totalNumEdits', alias?: string  } 
@@ -7084,7 +7084,7 @@ export interface gcWikiDataUpdateInput {
   period?: PeriodUpdateOneRequiredWithoutGcWikiInput | null
   totalNumAccounts?: number | null
   numNewAccounts?: number | null
-  gaData?: gaStatsUpdateOneInput | null
+  gaStats?: gaStatsUpdateOneInput | null
   totalNumArticles?: number | null
   numNewArticles?: number | null
   totalNumEdits?: number | null
@@ -7095,7 +7095,7 @@ export type gcWikiDataUpdateInputInputObject =
   | { name: 'period', alias?: string  } 
   | { name: 'totalNumAccounts', alias?: string  } 
   | { name: 'numNewAccounts', alias?: string  } 
-  | { name: 'gaData', alias?: string  } 
+  | { name: 'gaStats', alias?: string  } 
   | { name: 'totalNumArticles', alias?: string  } 
   | { name: 'numNewArticles', alias?: string  } 
   | { name: 'totalNumEdits', alias?: string  } 

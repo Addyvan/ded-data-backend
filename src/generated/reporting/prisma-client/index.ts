@@ -629,7 +629,7 @@ export interface gcCollabDataWhereInput {
   numNewAccounts_lte?: Maybe<Int>;
   numNewAccounts_gt?: Maybe<Int>;
   numNewAccounts_gte?: Maybe<Int>;
-  gaData?: Maybe<gaStatsWhereInput>;
+  gaStats?: Maybe<gaStatsWhereInput>;
   totalNumGroups?: Maybe<Int>;
   totalNumGroups_not?: Maybe<Int>;
   totalNumGroups_in?: Maybe<Int[] | Int>;
@@ -743,7 +743,7 @@ export interface gcConnexDataWhereInput {
   numNewAccounts_lte?: Maybe<Int>;
   numNewAccounts_gt?: Maybe<Int>;
   numNewAccounts_gte?: Maybe<Int>;
-  gaData?: Maybe<gaStatsWhereInput>;
+  gaStats?: Maybe<gaStatsWhereInput>;
   totalNumGroups?: Maybe<Int>;
   totalNumGroups_not?: Maybe<Int>;
   totalNumGroups_in?: Maybe<Int[] | Int>;
@@ -967,7 +967,7 @@ export interface gcWikiDataWhereInput {
   numNewAccounts_lte?: Maybe<Int>;
   numNewAccounts_gt?: Maybe<Int>;
   numNewAccounts_gte?: Maybe<Int>;
-  gaData?: Maybe<gaStatsWhereInput>;
+  gaStats?: Maybe<gaStatsWhereInput>;
   totalNumArticles?: Maybe<Int>;
   totalNumArticles_not?: Maybe<Int>;
   totalNumArticles_in?: Maybe<Int[] | Int>;
@@ -1065,7 +1065,7 @@ export interface gcCollabDataCreateWithoutPeriodInput {
   id?: Maybe<ID_Input>;
   totalNumAccounts?: Maybe<Int>;
   numNewAccounts?: Maybe<Int>;
-  gaData?: Maybe<gaStatsCreateOneInput>;
+  gaStats?: Maybe<gaStatsCreateOneInput>;
   totalNumGroups?: Maybe<Int>;
   numNewGroups?: Maybe<Int>;
 }
@@ -1093,7 +1093,7 @@ export interface gcConnexDataCreateWithoutPeriodInput {
   id?: Maybe<ID_Input>;
   totalNumAccounts?: Maybe<Int>;
   numNewAccounts?: Maybe<Int>;
-  gaData?: Maybe<gaStatsCreateOneInput>;
+  gaStats?: Maybe<gaStatsCreateOneInput>;
   totalNumGroups?: Maybe<Int>;
   numNewGroups?: Maybe<Int>;
 }
@@ -1141,7 +1141,7 @@ export interface gcWikiDataCreateWithoutPeriodInput {
   id?: Maybe<ID_Input>;
   totalNumAccounts?: Maybe<Int>;
   numNewAccounts?: Maybe<Int>;
-  gaData?: Maybe<gaStatsCreateOneInput>;
+  gaStats?: Maybe<gaStatsCreateOneInput>;
   totalNumArticles?: Maybe<Int>;
   numNewArticles?: Maybe<Int>;
   totalNumEdits?: Maybe<Int>;
@@ -1188,7 +1188,7 @@ export interface gcCollabDataUpdateOneRequiredWithoutPeriodInput {
 export interface gcCollabDataUpdateWithoutPeriodDataInput {
   totalNumAccounts?: Maybe<Int>;
   numNewAccounts?: Maybe<Int>;
-  gaData?: Maybe<gaStatsUpdateOneInput>;
+  gaStats?: Maybe<gaStatsUpdateOneInput>;
   totalNumGroups?: Maybe<Int>;
   numNewGroups?: Maybe<Int>;
 }
@@ -1230,7 +1230,7 @@ export interface gcConnexDataUpdateOneRequiredWithoutPeriodInput {
 export interface gcConnexDataUpdateWithoutPeriodDataInput {
   totalNumAccounts?: Maybe<Int>;
   numNewAccounts?: Maybe<Int>;
-  gaData?: Maybe<gaStatsUpdateOneInput>;
+  gaStats?: Maybe<gaStatsUpdateOneInput>;
   totalNumGroups?: Maybe<Int>;
   numNewGroups?: Maybe<Int>;
 }
@@ -1296,7 +1296,7 @@ export interface gcWikiDataUpdateOneRequiredWithoutPeriodInput {
 export interface gcWikiDataUpdateWithoutPeriodDataInput {
   totalNumAccounts?: Maybe<Int>;
   numNewAccounts?: Maybe<Int>;
-  gaData?: Maybe<gaStatsUpdateOneInput>;
+  gaStats?: Maybe<gaStatsUpdateOneInput>;
   totalNumArticles?: Maybe<Int>;
   numNewArticles?: Maybe<Int>;
   totalNumEdits?: Maybe<Int>;
@@ -1390,7 +1390,7 @@ export interface gcCollabDataCreateInput {
   period: PeriodCreateOneWithoutGcCollabInput;
   totalNumAccounts?: Maybe<Int>;
   numNewAccounts?: Maybe<Int>;
-  gaData?: Maybe<gaStatsCreateOneInput>;
+  gaStats?: Maybe<gaStatsCreateOneInput>;
   totalNumGroups?: Maybe<Int>;
   numNewGroups?: Maybe<Int>;
 }
@@ -1415,7 +1415,7 @@ export interface gcCollabDataUpdateInput {
   period?: Maybe<PeriodUpdateOneRequiredWithoutGcCollabInput>;
   totalNumAccounts?: Maybe<Int>;
   numNewAccounts?: Maybe<Int>;
-  gaData?: Maybe<gaStatsUpdateOneInput>;
+  gaStats?: Maybe<gaStatsUpdateOneInput>;
   totalNumGroups?: Maybe<Int>;
   numNewGroups?: Maybe<Int>;
 }
@@ -1454,7 +1454,7 @@ export interface gcConnexDataCreateInput {
   period: PeriodCreateOneWithoutGcConnexInput;
   totalNumAccounts?: Maybe<Int>;
   numNewAccounts?: Maybe<Int>;
-  gaData?: Maybe<gaStatsCreateOneInput>;
+  gaStats?: Maybe<gaStatsCreateOneInput>;
   totalNumGroups?: Maybe<Int>;
   numNewGroups?: Maybe<Int>;
 }
@@ -1479,7 +1479,7 @@ export interface gcConnexDataUpdateInput {
   period?: Maybe<PeriodUpdateOneRequiredWithoutGcConnexInput>;
   totalNumAccounts?: Maybe<Int>;
   numNewAccounts?: Maybe<Int>;
-  gaData?: Maybe<gaStatsUpdateOneInput>;
+  gaStats?: Maybe<gaStatsUpdateOneInput>;
   totalNumGroups?: Maybe<Int>;
   numNewGroups?: Maybe<Int>;
 }
@@ -1666,7 +1666,7 @@ export interface gcWikiDataCreateInput {
   period: PeriodCreateOneWithoutGcWikiInput;
   totalNumAccounts?: Maybe<Int>;
   numNewAccounts?: Maybe<Int>;
-  gaData?: Maybe<gaStatsCreateOneInput>;
+  gaStats?: Maybe<gaStatsCreateOneInput>;
   totalNumArticles?: Maybe<Int>;
   numNewArticles?: Maybe<Int>;
   totalNumEdits?: Maybe<Int>;
@@ -1693,7 +1693,7 @@ export interface gcWikiDataUpdateInput {
   period?: Maybe<PeriodUpdateOneRequiredWithoutGcWikiInput>;
   totalNumAccounts?: Maybe<Int>;
   numNewAccounts?: Maybe<Int>;
-  gaData?: Maybe<gaStatsUpdateOneInput>;
+  gaStats?: Maybe<gaStatsUpdateOneInput>;
   totalNumArticles?: Maybe<Int>;
   numNewArticles?: Maybe<Int>;
   totalNumEdits?: Maybe<Int>;
@@ -1953,7 +1953,7 @@ export interface gcCollabDataPromise
   period: <T = PeriodPromise>() => T;
   totalNumAccounts: () => Promise<Int>;
   numNewAccounts: () => Promise<Int>;
-  gaData: <T = gaStatsPromise>() => T;
+  gaStats: <T = gaStatsPromise>() => T;
   totalNumGroups: () => Promise<Int>;
   numNewGroups: () => Promise<Int>;
 }
@@ -1965,7 +1965,7 @@ export interface gcCollabDataSubscription
   period: <T = PeriodSubscription>() => T;
   totalNumAccounts: () => Promise<AsyncIterator<Int>>;
   numNewAccounts: () => Promise<AsyncIterator<Int>>;
-  gaData: <T = gaStatsSubscription>() => T;
+  gaStats: <T = gaStatsSubscription>() => T;
   totalNumGroups: () => Promise<AsyncIterator<Int>>;
   numNewGroups: () => Promise<AsyncIterator<Int>>;
 }
@@ -1977,7 +1977,7 @@ export interface gcCollabDataNullablePromise
   period: <T = PeriodPromise>() => T;
   totalNumAccounts: () => Promise<Int>;
   numNewAccounts: () => Promise<Int>;
-  gaData: <T = gaStatsPromise>() => T;
+  gaStats: <T = gaStatsPromise>() => T;
   totalNumGroups: () => Promise<Int>;
   numNewGroups: () => Promise<Int>;
 }
@@ -2037,7 +2037,7 @@ export interface gcConnexDataPromise
   period: <T = PeriodPromise>() => T;
   totalNumAccounts: () => Promise<Int>;
   numNewAccounts: () => Promise<Int>;
-  gaData: <T = gaStatsPromise>() => T;
+  gaStats: <T = gaStatsPromise>() => T;
   totalNumGroups: () => Promise<Int>;
   numNewGroups: () => Promise<Int>;
 }
@@ -2049,7 +2049,7 @@ export interface gcConnexDataSubscription
   period: <T = PeriodSubscription>() => T;
   totalNumAccounts: () => Promise<AsyncIterator<Int>>;
   numNewAccounts: () => Promise<AsyncIterator<Int>>;
-  gaData: <T = gaStatsSubscription>() => T;
+  gaStats: <T = gaStatsSubscription>() => T;
   totalNumGroups: () => Promise<AsyncIterator<Int>>;
   numNewGroups: () => Promise<AsyncIterator<Int>>;
 }
@@ -2061,7 +2061,7 @@ export interface gcConnexDataNullablePromise
   period: <T = PeriodPromise>() => T;
   totalNumAccounts: () => Promise<Int>;
   numNewAccounts: () => Promise<Int>;
-  gaData: <T = gaStatsPromise>() => T;
+  gaStats: <T = gaStatsPromise>() => T;
   totalNumGroups: () => Promise<Int>;
   numNewGroups: () => Promise<Int>;
 }
@@ -2193,7 +2193,7 @@ export interface gcWikiDataPromise extends Promise<gcWikiData>, Fragmentable {
   period: <T = PeriodPromise>() => T;
   totalNumAccounts: () => Promise<Int>;
   numNewAccounts: () => Promise<Int>;
-  gaData: <T = gaStatsPromise>() => T;
+  gaStats: <T = gaStatsPromise>() => T;
   totalNumArticles: () => Promise<Int>;
   numNewArticles: () => Promise<Int>;
   totalNumEdits: () => Promise<Int>;
@@ -2207,7 +2207,7 @@ export interface gcWikiDataSubscription
   period: <T = PeriodSubscription>() => T;
   totalNumAccounts: () => Promise<AsyncIterator<Int>>;
   numNewAccounts: () => Promise<AsyncIterator<Int>>;
-  gaData: <T = gaStatsSubscription>() => T;
+  gaStats: <T = gaStatsSubscription>() => T;
   totalNumArticles: () => Promise<AsyncIterator<Int>>;
   numNewArticles: () => Promise<AsyncIterator<Int>>;
   totalNumEdits: () => Promise<AsyncIterator<Int>>;
@@ -2221,7 +2221,7 @@ export interface gcWikiDataNullablePromise
   period: <T = PeriodPromise>() => T;
   totalNumAccounts: () => Promise<Int>;
   numNewAccounts: () => Promise<Int>;
-  gaData: <T = gaStatsPromise>() => T;
+  gaStats: <T = gaStatsPromise>() => T;
   totalNumArticles: () => Promise<Int>;
   numNewArticles: () => Promise<Int>;
   totalNumEdits: () => Promise<Int>;

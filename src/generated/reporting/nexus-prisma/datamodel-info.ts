@@ -12,7 +12,7 @@ export default {
     gcConnexData: ['id'],
     gcMessageData: ['id'],
     gcPediaData: ['id'],
-    gcWikiData: ['id', 'gaData']
+    gcWikiData: ['id', 'gaStats']
   },
   embeddedTypes: [],
   clientPath: 'src\\generated\\reporting\\prisma-client',
@@ -2027,7 +2027,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "gaData",
+            "name": "gaStats",
             "description": null,
             "args": [],
             "type": {
@@ -2227,7 +2227,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "gaData",
+            "name": "gaStats",
             "description": null,
             "args": [],
             "type": {
@@ -2608,7 +2608,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "gaData",
+            "name": "gaStats",
             "description": null,
             "args": [],
             "type": {
@@ -3934,7 +3934,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "gaData",
+            "name": "gaStats",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -5260,7 +5260,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "gaData",
+            "name": "gaStats",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -7883,7 +7883,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "gaData",
+            "name": "gaStats",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -12592,7 +12592,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "gaData",
+            "name": "gaStats",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -12796,7 +12796,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "gaData",
+            "name": "gaStats",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -13162,7 +13162,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "gaData",
+            "name": "gaStats",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -13526,7 +13526,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "gaData",
+            "name": "gaStats",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -13848,7 +13848,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "gaData",
+            "name": "gaStats",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -14361,7 +14361,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "gaData",
+            "name": "gaStats",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -15143,7 +15143,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "gaData",
+            "name": "gaStats",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -15360,7 +15360,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "gaData",
+            "name": "gaStats",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -15667,7 +15667,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "gaData",
+            "name": "gaStats",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -15884,7 +15884,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "gaData",
+            "name": "gaStats",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -17439,7 +17439,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "gaData",
+            "name": "gaStats",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -17676,7 +17676,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "gaData",
+            "name": "gaStats",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",

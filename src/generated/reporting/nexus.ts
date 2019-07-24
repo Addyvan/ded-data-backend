@@ -141,7 +141,7 @@ export interface NexusGenFieldTypes {
     totalNumAccounts: number | null; // Int
   }
   gcCollabData: { // field return type
-    gaData: NexusGenRootTypes['gaStats'] | null; // gaStats
+    gaStats: NexusGenRootTypes['gaStats'] | null; // gaStats
     id: string; // ID!
     numNewAccounts: number | null; // Int
     numNewGroups: number | null; // Int
@@ -150,7 +150,7 @@ export interface NexusGenFieldTypes {
     totalNumGroups: number | null; // Int
   }
   gcConnexData: { // field return type
-    gaData: NexusGenRootTypes['gaStats'] | null; // gaStats
+    gaStats: NexusGenRootTypes['gaStats'] | null; // gaStats
     id: string; // ID!
     numNewAccounts: number | null; // Int
     numNewGroups: number | null; // Int
@@ -183,7 +183,7 @@ export interface NexusGenFieldTypes {
     totalNumEdits: number | null; // Int
   }
   gcWikiData: { // field return type
-    gaData: NexusGenRootTypes['gaStats'] | null; // gaStats
+    gaStats: NexusGenRootTypes['gaStats'] | null; // gaStats
     id: string; // ID!
     numNewAccounts: number | null; // Int
     numNewArticles: number | null; // Int

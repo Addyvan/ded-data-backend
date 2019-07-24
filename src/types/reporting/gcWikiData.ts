@@ -8,7 +8,7 @@ const GCwikiData = prismaObjectType({
       "period",
       "totalNumAccounts",
       "numNewAccounts",
-      "gaData",
+      "gaStats",
 
       "totalNumArticles",
       "numNewArticles",

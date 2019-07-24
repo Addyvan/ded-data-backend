@@ -361,7 +361,7 @@ type gcCollabData {
   period: Period!
   totalNumAccounts: Int
   numNewAccounts: Int
-  gaData: gaStats
+  gaStats: gaStats
   totalNumGroups: Int
   numNewGroups: Int
 }
@@ -377,7 +377,7 @@ input gcCollabDataCreateInput {
   period: PeriodCreateOneWithoutGcCollabInput!
   totalNumAccounts: Int
   numNewAccounts: Int
-  gaData: gaStatsCreateOneInput
+  gaStats: gaStatsCreateOneInput
   totalNumGroups: Int
   numNewGroups: Int
 }
@@ -391,7 +391,7 @@ input gcCollabDataCreateWithoutPeriodInput {
   id: ID
   totalNumAccounts: Int
   numNewAccounts: Int
-  gaData: gaStatsCreateOneInput
+  gaStats: gaStatsCreateOneInput
   totalNumGroups: Int
   numNewGroups: Int
 }
@@ -444,7 +444,7 @@ input gcCollabDataUpdateInput {
   period: PeriodUpdateOneRequiredWithoutGcCollabInput
   totalNumAccounts: Int
   numNewAccounts: Int
-  gaData: gaStatsUpdateOneInput
+  gaStats: gaStatsUpdateOneInput
   totalNumGroups: Int
   numNewGroups: Int
 }
@@ -466,7 +466,7 @@ input gcCollabDataUpdateOneRequiredWithoutPeriodInput {
 input gcCollabDataUpdateWithoutPeriodDataInput {
   totalNumAccounts: Int
   numNewAccounts: Int
-  gaData: gaStatsUpdateOneInput
+  gaStats: gaStatsUpdateOneInput
   totalNumGroups: Int
   numNewGroups: Int
 }
@@ -508,7 +508,7 @@ input gcCollabDataWhereInput {
   numNewAccounts_lte: Int
   numNewAccounts_gt: Int
   numNewAccounts_gte: Int
-  gaData: gaStatsWhereInput
+  gaStats: gaStatsWhereInput
   totalNumGroups: Int
   totalNumGroups_not: Int
   totalNumGroups_in: [Int!]
@@ -539,7 +539,7 @@ type gcConnexData {
   period: Period!
   totalNumAccounts: Int
   numNewAccounts: Int
-  gaData: gaStats
+  gaStats: gaStats
   totalNumGroups: Int
   numNewGroups: Int
 }
@@ -555,7 +555,7 @@ input gcConnexDataCreateInput {
   period: PeriodCreateOneWithoutGcConnexInput!
   totalNumAccounts: Int
   numNewAccounts: Int
-  gaData: gaStatsCreateOneInput
+  gaStats: gaStatsCreateOneInput
   totalNumGroups: Int
   numNewGroups: Int
 }
@@ -569,7 +569,7 @@ input gcConnexDataCreateWithoutPeriodInput {
   id: ID
   totalNumAccounts: Int
   numNewAccounts: Int
-  gaData: gaStatsCreateOneInput
+  gaStats: gaStatsCreateOneInput
   totalNumGroups: Int
   numNewGroups: Int
 }
@@ -622,7 +622,7 @@ input gcConnexDataUpdateInput {
   period: PeriodUpdateOneRequiredWithoutGcConnexInput
   totalNumAccounts: Int
   numNewAccounts: Int
-  gaData: gaStatsUpdateOneInput
+  gaStats: gaStatsUpdateOneInput
   totalNumGroups: Int
   numNewGroups: Int
 }
@@ -644,7 +644,7 @@ input gcConnexDataUpdateOneRequiredWithoutPeriodInput {
 input gcConnexDataUpdateWithoutPeriodDataInput {
   totalNumAccounts: Int
   numNewAccounts: Int
-  gaData: gaStatsUpdateOneInput
+  gaStats: gaStatsUpdateOneInput
   totalNumGroups: Int
   numNewGroups: Int
 }
@@ -686,7 +686,7 @@ input gcConnexDataWhereInput {
   numNewAccounts_lte: Int
   numNewAccounts_gt: Int
   numNewAccounts_gte: Int
-  gaData: gaStatsWhereInput
+  gaStats: gaStatsWhereInput
   totalNumGroups: Int
   totalNumGroups_not: Int
   totalNumGroups_in: [Int!]
@@ -1197,7 +1197,7 @@ type gcWikiData {
   period: Period!
   totalNumAccounts: Int
   numNewAccounts: Int
-  gaData: gaStats
+  gaStats: gaStats
   totalNumArticles: Int
   numNewArticles: Int
   totalNumEdits: Int
@@ -1215,7 +1215,7 @@ input gcWikiDataCreateInput {
   period: PeriodCreateOneWithoutGcWikiInput!
   totalNumAccounts: Int
   numNewAccounts: Int
-  gaData: gaStatsCreateOneInput
+  gaStats: gaStatsCreateOneInput
   totalNumArticles: Int
   numNewArticles: Int
   totalNumEdits: Int
@@ -1231,7 +1231,7 @@ input gcWikiDataCreateWithoutPeriodInput {
   id: ID
   totalNumAccounts: Int
   numNewAccounts: Int
-  gaData: gaStatsCreateOneInput
+  gaStats: gaStatsCreateOneInput
   totalNumArticles: Int
   numNewArticles: Int
   totalNumEdits: Int
@@ -1292,7 +1292,7 @@ input gcWikiDataUpdateInput {
   period: PeriodUpdateOneRequiredWithoutGcWikiInput
   totalNumAccounts: Int
   numNewAccounts: Int
-  gaData: gaStatsUpdateOneInput
+  gaStats: gaStatsUpdateOneInput
   totalNumArticles: Int
   numNewArticles: Int
   totalNumEdits: Int
@@ -1318,7 +1318,7 @@ input gcWikiDataUpdateOneRequiredWithoutPeriodInput {
 input gcWikiDataUpdateWithoutPeriodDataInput {
   totalNumAccounts: Int
   numNewAccounts: Int
-  gaData: gaStatsUpdateOneInput
+  gaStats: gaStatsUpdateOneInput
   totalNumArticles: Int
   numNewArticles: Int
   totalNumEdits: Int
@@ -1362,7 +1362,7 @@ input gcWikiDataWhereInput {
   numNewAccounts_lte: Int
   numNewAccounts_gt: Int
   numNewAccounts_gte: Int
-  gaData: gaStatsWhereInput
+  gaStats: gaStatsWhereInput
   totalNumArticles: Int
   totalNumArticles_not: Int
   totalNumArticles_in: [Int!]

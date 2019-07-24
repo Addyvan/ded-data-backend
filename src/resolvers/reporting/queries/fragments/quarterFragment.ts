@@ -7,7 +7,7 @@ fragment allPeriod on Period {
   gcCollab {
     totalNumAccounts
     numNewAccounts
-    gaData {
+    gaStats {
       numSessions
       avgPageviewsPerSession
       avgSessionDuration
@@ -24,7 +24,7 @@ fragment allPeriod on Period {
   gcConnex {
     totalNumAccounts
     numNewAccounts
-    gaData {
+    gaStats {
       numSessions
       avgPageviewsPerSession
       avgSessionDuration
@@ -62,7 +62,7 @@ fragment allPeriod on Period {
     totalNumAccounts
     numNewAccounts
 
-    gaData {
+    gaStats {
       numSessions
       avgPageviewsPerSession
       avgSessionDuration
