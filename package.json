@@ -23,6 +23,7 @@
     "graphql-tools": "^4.0.5",
     "nexus": "^0.12.0-beta.6",
     "nexus-prisma": "^0.3.7",
+    "nexus-prisma-generate": "^0.3.7",
     "node-fetch": "^2.6.0",
     "prisma-client-lib": "^1.34.1"
   }

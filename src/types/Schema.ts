@@ -14,6 +14,7 @@ import gcMessageData from "./reporting/gcMessageData";
 import gcPediaData from "./reporting/gcPediaData";
 import gcWikiData from "./reporting/gcWikiData";
 import period from "./reporting/period";
+import restrictedPeriod from "./reporting/restrictedPeriod";
 import quarter from "./reporting/quarter";
 //import report from "./reporting/report";
 
@@ -33,6 +34,7 @@ const Reporting = {
   gcPediaData,
   gcWikiData,
   period,
+  restrictedPeriod,
   quarter
   //report
 };

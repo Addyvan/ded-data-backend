@@ -4,7 +4,7 @@ import {Period} from "../../../generated/reporting/prisma-client";
 const period = extendType( {
   type: "Query",
   definition(t) {
-    t.list.field('period', {
+    t.field('period', {
       type: 'Period',
       args: {
         id: stringArg(),

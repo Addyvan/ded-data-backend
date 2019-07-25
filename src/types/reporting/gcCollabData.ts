@@ -1,21 +1,37 @@
-import { prismaObjectType } from "nexus-prisma";
+import { objectType } from "nexus";
+import Period from "./period";
+import GAstats from "./gaStats";
 
-const GCcollabData = prismaObjectType({
+const GCcollabData = objectType({
   name: 'gcCollabData',
   definition(t : any) {
-    t.prismaFields([
-      "id",
-      "period",
-      "totalNumAccounts",
-      "numNewAccounts",
-      "gaStats",
 
-      "totalNumGroups",
-      "numNewGroups",
-      //"mostActiveDepartments",
-      //"mostActiveGroups"
+    t.field("period", {
+      type: Period, 
+      nullable: false
+    });
 
-    ])
+    t.int("totalNumAccounts", {
+      nullable: true
+    });
+    t.int("numNewAccounts", {
+      nullable: true
+    });
+
+    t.field("gaStats", {
+      type: GAstats,
+      nullable: true
+    });
+
+    t.int("totalNumGroups", {
+      nullable: true
+    });
+    t.int("numNewGroups", {
+      nullable: true
+    });
+
+    //"mostActiveDepartments",
+    //"mostActiveGroups"
   },
 });
 

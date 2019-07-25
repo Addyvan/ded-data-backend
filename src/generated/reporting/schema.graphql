@@ -12,7 +12,6 @@ type gaStats {
 }
 
 type gcAccountData {
-  id: ID!
   numNewAccounts: Int
   period: Period!
   totalNumAccounts: Int
@@ -20,7 +19,6 @@ type gcAccountData {
 
 type gcCollabData {
   gaStats: gaStats
-  id: ID!
   numNewAccounts: Int
   numNewGroups: Int
   period: Period!
@@ -30,7 +28,6 @@ type gcCollabData {
 
 type gcConnexData {
   gaStats: gaStats
-  id: ID!
   numNewAccounts: Int
   numNewGroups: Int
   period: Period!
@@ -39,7 +36,6 @@ type gcConnexData {
 }
 
 type gcMessageData {
-  id: ID!
   numNewAccounts: Int
   numNewChannelMessages: Int
   numNewDirectMessages: Int
@@ -54,7 +50,6 @@ type gcMessageData {
 }
 
 type gcPediaData {
-  id: ID!
   numNewAccounts: Int
   numNewArticles: Int
   numNewEdits: Int
@@ -66,7 +61,6 @@ type gcPediaData {
 
 type gcWikiData {
   gaStats: gaStats
-  id: ID!
   numNewAccounts: Int
   numNewArticles: Int
   numNewEdits: Int
@@ -83,7 +77,6 @@ type Period {
   gcMessage: gcMessageData!
   gcPedia: gcPediaData!
   gcWiki: gcWikiData!
-  id: ID!
   month: Int!
   year: Int!
 }
@@ -106,7 +99,11 @@ type Query {
   gcMessageDatas: [gcMessageData!]!
   gcPediaDatas: [gcPediaData!]!
   gcWikiDatas: [gcWikiData!]!
-  period(id: String!): [Period!]!
+  period(id: String!): Period!
   periods(month: Int, year: Int): [Period!]!
   quarter(quarterNum: Int!, year: Int!): quarter!
+}
+
+type RestrictedPeriod {
+  startPeriod: Period
 }

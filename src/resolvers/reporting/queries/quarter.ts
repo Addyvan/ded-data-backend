@@ -3,8 +3,8 @@ import {Period,  gcAccountData} from "../../../generated/reporting/prisma-client
 import gcCollabData from "./gcCollabData";
 //import month_ASC from "../../../generated/reporting/prisma-client/index";
 
+
 import quarterFragment from "./fragments/quarterFragment";
-import { getCiphers } from "crypto";
 
 function accountSummary(firstAccount, secondAccount, thirdAccount){
   return {
@@ -13,27 +13,26 @@ function accountSummary(firstAccount, secondAccount, thirdAccount){
   };
 }
 
-function collabSummary(firstCollab, secondCollab, thirdCollab){
-  var x  = gaStatsSummary(firstCollab.gaStats, secondCollab.gaStats, thirdCollab.gaStats);
-
-console.log(x);
-
+function collabSummary(firstCollab, secondCollab, thirdCollab){ 
   return {
     totalNumAccounts: thirdCollab.totalNumAccounts,
     numNewAccounts: firstCollab.numNewAccounts + secondCollab.numNewAccounts + thirdCollab.numNewAccounts,
+    gaStats: gaStatsSummary(firstCollab.gaStats, secondCollab.gaStats, thirdCollab.gaStats),
     totalNumGroups: thirdCollab.totalNumGroups,
     numNewGroups: firstCollab.numNewGroups + secondCollab.numNewGroups + thirdCollab.numNewGroups,
   };
 }
+
 function connexSummary(firstConnex, secondConnex, thirdConnex){
   return {
     totalNumAccounts: thirdConnex.totalNumAccounts,
     numNewAccounts: firstConnex.numNewAccounts + secondConnex.numNewAccounts + thirdConnex.numNewAccounts,
     gaStats: gaStatsSummary(firstConnex.gaStats, secondConnex.gaStats, thirdConnex.gaStats),
-    totalNumGroups: firstConnex.numNewGroups + secondConnex.numNewGroups + thirdConnex.numNewGroups,
-    numNewGroups: null,
+    totalNumGroups: thirdConnex.totalNumGroups,
+    numNewGroups: firstConnex.numNewGroups + secondConnex.numNewGroups + thirdConnex.numNewGroups,
   };
 }
+
 function messageSummary(firstMessage, secondMessage, thirdMessage){
   return {
     totalNumAccounts: thirdMessage.totalNumAccounts,
@@ -46,9 +45,9 @@ function messageSummary(firstMessage, secondMessage, thirdMessage){
     numNewDirectMessages: firstMessage.numNewDirectMessages + secondMessage.numNewDirectMessages + thirdMessage.numNewDirectMessages,
     totalNumFileUploads: thirdMessage.totalNumFileUploads,
     numNewFileUploads: firstMessage.numNewFileUploads + secondMessage.numNewFileUploads + thirdMessage.numNewFileUploads,
-
   };
 }
+
 function pediaSummary(firstPedia, secondPedia, thirdPedia){
   return {
     totalNumAccounts: thirdPedia.totalNumAccounts,
@@ -59,6 +58,7 @@ function pediaSummary(firstPedia, secondPedia, thirdPedia){
     numNewEdits: firstPedia.numNewEdits + secondPedia.numNewEdits + thirdPedia.numNewEdits,
   };
 }
+
 function wikiSummary(firstWiki, secondWiki, thirdWiki){
   return {
     totalNumAccounts: thirdWiki.totalNumAccounts,
@@ -71,10 +71,9 @@ function wikiSummary(firstWiki, secondWiki, thirdWiki){
   };
 }
 
-function gaStatsSummary(firstData, secondData, thirdData){
-  
-  return { //TODO: Verify 
-    numSessions: firstData.numSessions + secondData.numSessions + thirdData.numSessions,
+function gaStatsSummary(firstData, secondData, thirdData){ //TODO: round values
+  return {
+    numSessions: firstData.numSessions + secondData.numSessions + thirdData.numSessions, 
     avgPageviewsPerSession: (firstData.avgPageviewsPerSession + secondData.avgPageviewsPerSession + thirdData.avgPageviewsPerSession ) / 3,
     avgSessionDuration: (firstData.avgSessionDuration + secondData.avgSessionDuration + thirdData.avgSessionDuration ) / 3,
     avgPageLoadTime: (firstData.avgPageLoadTime + secondData.avgPageLoadTime + thirdData.avgPageLoadTime ) / 3,
@@ -94,7 +93,7 @@ const quarter = extendType( {
     resolve: async (parent, args : any, ctx, info) => {
       
       const range : any = 1 + (args.quarterNum - 1) * 3;
-      const periodRange : Period[] = await ctx.reportingPrisma.periods({ /*TODO: orderBy: ____ ,*/where: { year: args.year, month_in: [range, range + 1, range + 2] } } ).$fragment(quarterFragment);
+      const periodRange : Period[] = await ctx.reportingPrisma.periods({ /*TODO: orderBy: ____ ,*/ where: { year: args.year, month_in: [range, range + 1, range + 2] } } ).$fragment(quarterFragment); //Alt, the weird code below could also sort if needed
       if (periodRange.length != 3) throw Error ("Quarter is missing one or more reports");
       
       //idk why this is necessary, but it is
@@ -106,31 +105,37 @@ const quarter = extendType( {
         else thirdPeriod = element;
         num++;
       });
-      var accountSummaryValue = accountSummary(firstPeriod.gcAccount, secondPeriod.gcAccount, thirdPeriod.gcAccount);
-      var collabSummaryValue = collabSummary(firstPeriod.gcCollab, secondPeriod.gcCollab, thirdPeriod.gcCollab);
-      var connexSummaryValue = connexSummary(firstPeriod.gcConnex, secondPeriod.gcConnex, thirdPeriod.gcConnex);
-      var messageSummaryValue = messageSummary(firstPeriod.gcMessage, secondPeriod.gcMessage, thirdPeriod.gcMessage);
-      var pediaSummaryValue = pediaSummary(firstPeriod.gcPedia, secondPeriod.gcPedia, thirdPeriod.gcPedia);
-      var wikiSummaryValue = wikiSummary(firstPeriod.gcWiki, secondPeriod.gcWiki, thirdPeriod.gcWiki);
+
+      //console.log(firstPeriod);
+
+      const accountSummaryValue = accountSummary(firstPeriod.gcAccount, secondPeriod.gcAccount, thirdPeriod.gcAccount);
+      const collabSummaryValue = collabSummary(firstPeriod.gcCollab, secondPeriod.gcCollab, thirdPeriod.gcCollab);
+      const connexSummaryValue = connexSummary(firstPeriod.gcConnex, secondPeriod.gcConnex, thirdPeriod.gcConnex);
+      const messageSummaryValue = messageSummary(firstPeriod.gcMessage, secondPeriod.gcMessage, thirdPeriod.gcMessage);
+      const pediaSummaryValue = pediaSummary(firstPeriod.gcPedia, secondPeriod.gcPedia, thirdPeriod.gcPedia);
+      const wikiSummaryValue = wikiSummary(firstPeriod.gcWiki, secondPeriod.gcWiki, thirdPeriod.gcWiki);
       
-      var collabSummaryValueGaStats = gaStatsSummary(firstPeriod.gcCollab.gaStats, firstPeriod.gcCollab.gaStats, firstPeriod.gcCollab.gaStats);
-
-      console.log(collabSummaryValue);
-
-      return await {
-          startPeriod: periodRange[0],
-          endPeriod: periodRange[2],
-          gcAccountSummary: accountSummaryValue,
-          gcCollabSummary: { 
-            collabSummaryValue,
-            collabSummaryValueGaStats
-          },
-          gcConnexSummary: connexSummaryValue,
-          gcMessageSummary: messageSummaryValue,
-          gcPediaSummary: pediaSummaryValue,
-          gcWikiSummary: wikiSummaryValue
-          
+      const results = {
+        startPeriod: {
+          year: periodRange[0]["year"],
+          month: periodRange[0]["month"]
+        }, //need to restrict fields provided
+        endPeriod: {
+          year: periodRange[2]["year"],
+          month: periodRange[2]["month"]
+        }, //need to restrict fields provided
+        //endPeriod: periodRange[2],
+        gcAccountSummary: accountSummaryValue,
+        gcCollabSummary: collabSummaryValue,
+        gcConnexSummary: connexSummaryValue,
+        gcMessageSummary: messageSummaryValue,
+        gcPediaSummary: pediaSummaryValue,
+        gcWikiSummary: wikiSummaryValue
       };
+      
+      console.log(results);
+
+      return results;
       },
     })
   }

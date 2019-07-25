@@ -5,7 +5,7 @@ const GAstats = prismaObjectType({
   definition(t : any) {
     t.prismaFields([
       "id", 
-      "numSessions",
+      "numSessions", 
       "avgPageviewsPerSession",
       "avgSessionDuration",
       "avgPageLoadTime",

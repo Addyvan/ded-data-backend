@@ -1,14 +1,21 @@
-import { prismaObjectType } from "nexus-prisma";
+import { objectType, intArg } from "nexus";
+import Period from "./period";
 
-const GCaccountData = prismaObjectType({
+const GCaccountData = objectType({
   name: 'gcAccountData',
   definition(t : any) {
-    t.prismaFields([
-      "id",
-      "period",
-      "totalNumAccounts",
-      "numNewAccounts"
-    ])
+
+    t.field("period", {
+      type: Period, 
+    });
+
+    t.int("totalNumAccounts", {
+      nullable: true
+    });
+    t.int("numNewAccounts", {
+      nullable: true
+    });
+      
   },
 });
 

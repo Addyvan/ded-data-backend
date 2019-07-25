@@ -20,7 +20,7 @@ const quarter = objectType({
         type: Period, //TODO: Shouldn't list all fields of Period
         nullable: true
     });
-    t.field("gcAccountSummary", { //TODO: Actually, each of these should probably be fragmented
+    t.field("gcAccountSummary", { 
       type: gcAccountData,
       nullable: true
   });

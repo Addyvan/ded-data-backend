@@ -210,11 +210,11 @@ const FEBRUARY_1789 = {
           numNewAccounts: 5,
           gaStats: {
             create: {
-              numSessions: 200,
+              numSessions: 200, 
               avgPageviewsPerSession: 5,
               avgSessionDuration: 50,
               avgPageLoadTime: 0.30,
-              bounceRate: 0.75
+              bounceRate: 0.75 
             }
           },
           totalNumGroups: 105,
@@ -251,7 +251,7 @@ const FEBRUARY_1789 = {
         numNewAccounts: 5,
         gaStats: {
           create: {
-            numSessions: 200,
+            numSessions: 200, 
             avgPageviewsPerSession: 5,
             avgSessionDuration: 50,
             avgPageLoadTime: 0.30,

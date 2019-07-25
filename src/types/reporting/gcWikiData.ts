@@ -1,20 +1,38 @@
-import { prismaObjectType } from "nexus-prisma";
+import { objectType } from "nexus";
+import Period from "./period";
+import GAstats from "./gaStats";
 
-const GCwikiData = prismaObjectType({
+const GCwikiData = objectType({
   name: 'gcWikiData',
   definition(t : any) {
-    t.prismaFields([
-      "id",
-      "period",
-      "totalNumAccounts",
-      "numNewAccounts",
-      "gaStats",
+    t.field("period", {
+      type: Period, 
+      nullable: false
+    });
+    t.int("totalNumAccounts", {
+      nullable: true
+    });
+    t.int("numNewAccounts", {
+      nullable: true
+    });
+    t.field("gaStats", {
+      type: GAstats,
+      nullable: true
+    });
 
-      "totalNumArticles",
-      "numNewArticles",
-      "totalNumEdits",
-      "numNewEdits"
-    ])
+    t.int("totalNumArticles", {
+      nullable: true
+    });
+    t.int("numNewArticles", {
+      nullable: true
+    });
+    t.int("totalNumEdits", {
+      nullable: true
+    });
+    t.int("numNewEdits", {
+      nullable: true
+    });
+
   },
 });
 

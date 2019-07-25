@@ -1,20 +1,16 @@
-import { prismaObjectType } from "nexus-prisma";
+import { objectType } from "prisma";
 
-const Period = prismaObjectType({
+const Period = objectType({
   name: 'Period',
   definition(t : any) {
-    t.prismaFields([
-      "id",
-      "month",
-      "year",
-      "gcAccount",
-      "gcCollab",
-      "gcConnex",
-      "gcMessage",
-      "gcPedia",
-      "gcWiki"
+
+    t.int("year", {
+      nullable: false
+    });
+    t.int("month", {
+      nullable: false
+    });
       
-    ])
   },
 });
 
