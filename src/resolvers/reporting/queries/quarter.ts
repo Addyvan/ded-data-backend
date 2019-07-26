@@ -1,4 +1,4 @@
-import { extendType, intArg } from "nexus";
+import { extendType, intArg, arg } from "nexus";
 import {Period,  gcAccountData} from "../../../generated/reporting/prisma-client";
 import gcCollabData from "./gcCollabData";
 //import month_ASC from "../../../generated/reporting/prisma-client/index";
@@ -6,8 +6,23 @@ import gcCollabData from "./gcCollabData";
 
 import quarterFragment from "./fragments/quarterFragment";
 
+function sortPeriods(periods : Period[]) {
+  periods.sort(
+    (n1, n2) => 
+      {if (n1.month > n2.month) return 1; 
+      else if (n1.month == n2.month) return 0;
+      else return -1;
+      }
+  )
+  return periods;
+}
+
+
 function accountSummary(firstAccount, secondAccount, thirdAccount){
   return {
+    period: {
+
+    },
     totalNumAccounts: thirdAccount.totalNumAccounts,
     numNewAccounts: firstAccount.numNewAccounts + secondAccount.numNewAccounts + thirdAccount.numNewAccounts,
   };
@@ -71,13 +86,13 @@ function wikiSummary(firstWiki, secondWiki, thirdWiki){
   };
 }
 
-function gaStatsSummary(firstData, secondData, thirdData){ //TODO: round values
+function gaStatsSummary(firstData, secondData, thirdData){ 
   return {
     numSessions: firstData.numSessions + secondData.numSessions + thirdData.numSessions, 
-    avgPageviewsPerSession: (firstData.avgPageviewsPerSession + secondData.avgPageviewsPerSession + thirdData.avgPageviewsPerSession ) / 3,
-    avgSessionDuration: (firstData.avgSessionDuration + secondData.avgSessionDuration + thirdData.avgSessionDuration ) / 3,
-    avgPageLoadTime: (firstData.avgPageLoadTime + secondData.avgPageLoadTime + thirdData.avgPageLoadTime ) / 3,
-    bounceRate: (firstData.bounceRate + secondData.bounceRate + thirdData.bounceRate ) / 3,
+    avgPageviewsPerSession: Math.round((firstData.avgPageviewsPerSession + secondData.avgPageviewsPerSession + thirdData.avgPageviewsPerSession ) / 3 * 1000) / 1000,
+    avgSessionDuration: Math.round((firstData.avgSessionDuration + secondData.avgSessionDuration + thirdData.avgSessionDuration ) / 3 * 1000) / 1000,
+    avgPageLoadTime: Math.round((firstData.avgPageLoadTime + secondData.avgPageLoadTime + thirdData.avgPageLoadTime ) / 3 * 1000) / 1000,
+    bounceRate: Math.round((firstData.bounceRate + secondData.bounceRate + thirdData.bounceRate ) / 3 * 1000) / 1000,
   }
 }
 
@@ -92,9 +107,13 @@ const quarter = extendType( {
       },
     resolve: async (parent, args : any, ctx, info) => {
       
+      if (args.quarterNum < 0 || args.quarterNum > 4 ) throw Error ("Invalid quarter number. Must be a whole number from 1-4");
+      
+
       const range : any = 1 + (args.quarterNum - 1) * 3;
-      const periodRange : Period[] = await ctx.reportingPrisma.periods({ /*TODO: orderBy: ____ ,*/ where: { year: args.year, month_in: [range, range + 1, range + 2] } } ).$fragment(quarterFragment); //Alt, the weird code below could also sort if needed
-      if (periodRange.length != 3) throw Error ("Quarter is missing one or more reports");
+      let periodRange : Period[] = await ctx.reportingPrisma.periods({ where: { year: args.year, month_in: [range, range + 1, range + 2] } } ).$fragment(quarterFragment); 
+      
+      periodRange = sortPeriods(periodRange); //Just in case they aren't sorted by month, as adding orderBy didn't seem to do anything
       
       //idk why this is necessary, but it is
       var firstPeriod, secondPeriod, thirdPeriod = null;
@@ -106,7 +125,6 @@ const quarter = extendType( {
         num++;
       });
 
-      //console.log(firstPeriod);
 
       const accountSummaryValue = accountSummary(firstPeriod.gcAccount, secondPeriod.gcAccount, thirdPeriod.gcAccount);
       const collabSummaryValue = collabSummary(firstPeriod.gcCollab, secondPeriod.gcCollab, thirdPeriod.gcCollab);
@@ -133,7 +151,7 @@ const quarter = extendType( {
         gcWikiSummary: wikiSummaryValue
       };
       
-      console.log(results);
+      //console.log(results);
 
       return results;
       },

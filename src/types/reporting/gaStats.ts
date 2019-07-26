@@ -1,17 +1,26 @@
-import { prismaObjectType } from "nexus-prisma";
+import { objectType } from "nexus";
 
-const GAstats = prismaObjectType({
+const GAstats = objectType({
   name: 'gaStats',
   definition(t : any) {
-    t.prismaFields([
-      "id", 
-      "numSessions", 
-      "avgPageviewsPerSession",
-      "avgSessionDuration",
-      "avgPageLoadTime",
-      "bounceRate"
-      
-    ])
+
+    t.int("numSessions", {
+      nullable: true,
+    });
+
+    t.float("avgPageviewsPerSession", {
+      nullable:true, 
+    });
+    t.float("avgSessionDuration", {
+      nullable:true, 
+    });
+    t.float("avgPageLoadTime", {
+      nullable:true, 
+    });
+    t.float("bounceRate", {
+      nullable:true, 
+    });
+
   },
 });
 

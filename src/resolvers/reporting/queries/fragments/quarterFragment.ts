@@ -4,7 +4,13 @@ fragment allPeriod on Period {
   month
   year
   
+  
+  gcAccount {
+    totalNumAccounts
+    numNewAccounts
+  }
   gcCollab {
+    
     totalNumAccounts
     numNewAccounts
     gaStats {
@@ -17,11 +23,8 @@ fragment allPeriod on Period {
     totalNumGroups
     numNewGroups
   }
-  gcAccount {
-    totalNumAccounts
-    numNewAccounts
-  }
   gcConnex {
+    
     totalNumAccounts
     numNewAccounts
     gaStats {
@@ -35,6 +38,7 @@ fragment allPeriod on Period {
     numNewGroups
   }
   gcMessage {
+    
     totalNumAccounts
     numNewAccounts
 
@@ -49,6 +53,7 @@ fragment allPeriod on Period {
   }
 
   gcPedia {
+    
     totalNumAccounts
     numNewAccounts
 
@@ -59,6 +64,7 @@ fragment allPeriod on Period {
   }
 
   gcWiki {
+    
     totalNumAccounts
     numNewAccounts
 

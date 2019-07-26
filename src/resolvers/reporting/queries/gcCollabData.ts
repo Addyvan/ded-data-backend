@@ -1,4 +1,5 @@
 import { extendType } from "nexus";
+import gcCollabFragment from "./fragments/gcCollabFragment";
 
 const gcCollabData = extendType( {
   type: "Query",
@@ -6,7 +7,7 @@ const gcCollabData = extendType( {
     t.list.field('gcCollabDatas', {
       type: 'gcCollabData',
       resolve: (parent, args, ctx, info) => {
-        return ctx.reportingPrisma.gcCollabDatas(args);
+        return ctx.reportingPrisma.gcCollabDatas(args).$fragment(gcCollabFragment);
       },
     })
   }

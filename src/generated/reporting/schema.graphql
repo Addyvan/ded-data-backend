@@ -2,18 +2,33 @@
 ### Do not make changes to this file directly
 
 
+type extendedPeriod {
+  gcAccountData: gcAccountSimple
+  gcCollabData: gcCollabSimple
+  gcConnexData: gcConnexSimple
+  gcMessageData: gcMessageSimple
+  gcPediaData: gcPediaSimple
+  gcWikiData: gcWikiSimple
+  month: Int
+  year: Int
+}
+
 type gaStats {
   avgPageLoadTime: Float
   avgPageviewsPerSession: Float
   avgSessionDuration: Float
   bounceRate: Float
-  id: ID!
   numSessions: Int
 }
 
 type gcAccountData {
   numNewAccounts: Int
   period: Period!
+  totalNumAccounts: Int
+}
+
+type gcAccountSimple {
+  numNewAccounts: Int
   totalNumAccounts: Int
 }
 
@@ -26,11 +41,27 @@ type gcCollabData {
   totalNumGroups: Int
 }
 
+type gcCollabSimple {
+  gaStats: gaStats
+  numNewAccounts: Int
+  numNewGroups: Int
+  totalNumAccounts: Int
+  totalNumGroups: Int
+}
+
 type gcConnexData {
   gaStats: gaStats
   numNewAccounts: Int
   numNewGroups: Int
   period: Period!
+  totalNumAccounts: Int
+  totalNumGroups: Int
+}
+
+type gcConnexSimple {
+  gaStats: gaStats
+  numNewAccounts: Int
+  numNewGroups: Int
   totalNumAccounts: Int
   totalNumGroups: Int
 }
@@ -49,11 +80,33 @@ type gcMessageData {
   totalNumPrivateGroupMessages: Int
 }
 
+type gcMessageSimple {
+  numNewAccounts: Int
+  numNewChannelMessages: Int
+  numNewDirectMessages: Int
+  numNewFileUploads: Int
+  numNewPrivateGroupMessages: Int
+  totalNumAccounts: Int
+  totalNumChannelMessages: Int
+  totalNumDirectMessages: Int
+  totalNumFileUploads: Int
+  totalNumPrivateGroupMessages: Int
+}
+
 type gcPediaData {
   numNewAccounts: Int
   numNewArticles: Int
   numNewEdits: Int
   period: Period!
+  totalNumAccounts: Int
+  totalNumArticles: Int
+  totalNumEdits: Int
+}
+
+type gcPediaSimple {
+  numNewAccounts: Int
+  numNewArticles: Int
+  numNewEdits: Int
   totalNumAccounts: Int
   totalNumArticles: Int
   totalNumEdits: Int
@@ -70,25 +123,29 @@ type gcWikiData {
   totalNumEdits: Int
 }
 
+type gcWikiSimple {
+  gaStats: gaStats
+  numNewAccounts: Int
+  numNewArticles: Int
+  numNewEdits: Int
+  totalNumAccounts: Int
+  totalNumArticles: Int
+  totalNumEdits: Int
+}
+
 type Period {
-  gcAccount: gcAccountData
-  gcCollab: gcCollabData!
-  gcConnex: gcConnexData!
-  gcMessage: gcMessageData!
-  gcPedia: gcPediaData!
-  gcWiki: gcWikiData!
   month: Int!
   year: Int!
 }
 
 type quarter {
   endPeriod: Period
-  gcAccountSummary: gcAccountData
-  gcCollabSummary: gcCollabData
-  gcConnexSummary: gcConnexData
-  gcMessageSummary: gcMessageData
-  gcPediaSummary: gcPediaData
-  gcWikiSummary: gcWikiData
+  gcAccountSummary: gcAccountSimple
+  gcCollabSummary: gcCollabSimple
+  gcConnexSummary: gcConnexSimple
+  gcMessageSummary: gcMessageSimple
+  gcPediaSummary: gcPediaSimple
+  gcWikiSummary: gcWikiSimple
   startPeriod: Period
 }
 
@@ -99,11 +156,7 @@ type Query {
   gcMessageDatas: [gcMessageData!]!
   gcPediaDatas: [gcPediaData!]!
   gcWikiDatas: [gcWikiData!]!
-  period(id: String!): Period!
-  periods(month: Int, year: Int): [Period!]!
+  period(id: String!): extendedPeriod!
+  periods(month: Int, year: Int): [extendedPeriod!]!
   quarter(quarterNum: Int!, year: Int!): quarter!
-}
-
-type RestrictedPeriod {
-  startPeriod: Period
 }

@@ -1,4 +1,5 @@
 import { extendType } from "nexus";
+import gcAccountFragment from "./fragments/gcAccountFragment";
 
 const gcAccountData = extendType( {
   type: "Query",
@@ -7,8 +8,8 @@ const gcAccountData = extendType( {
       type: 'gcAccountData',
 
     resolve: async (parent, args : any, ctx, info) => {
-      return ctx.reportingPrisma.gcAccountDatas(args);
-      },
+      return ctx.reportingPrisma.gcAccountDatas(args).$fragment(gcAccountFragment);
+      }
     })
   }
 });

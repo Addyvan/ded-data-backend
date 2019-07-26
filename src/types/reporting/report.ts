@@ -3,7 +3,6 @@
 import { objectType, intArg, idArg } from "nexus";
 import gcAccountData from "./gcAccountData";
 import Period from "./period";
-import { addMockFunctionsToSchema } from "graphql-tools";
 
 const report = objectType({
   name: 'report',

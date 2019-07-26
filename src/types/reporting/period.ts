@@ -1,4 +1,4 @@
-import { objectType } from "prisma";
+import { objectType } from "nexus";
 
 const Period = objectType({
   name: 'Period',

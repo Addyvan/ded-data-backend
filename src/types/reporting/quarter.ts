@@ -1,10 +1,10 @@
 import { objectType, intArg, idArg } from "nexus";
-import gcAccountData from "./gcAccountData";
-import gcCollabData from "./gcCollabData";
-import gcConnexData from "./gcConnexData";
-import gcMessageData from "./gcMessageData";
-import gcPediaData from "./gcPediaData";
-import gcWikiData from "./gcWikiData";
+import gcAccountSimple from "./gcAccountSimple";
+import gcCollabSimple from "./gcCollabSimple";
+import gcConnexSimple from "./gcConnexSimple";
+import gcMessageSimple from "./gcMessageSimple";
+import gcPediaSimple from "./gcPediaSimple";
+import gcWikiSimple from "./gcWikiSimple";
 import Period from "./period";
 import { addMockFunctionsToSchema } from "graphql-tools";
 
@@ -13,35 +13,35 @@ const quarter = objectType({
   definition(t : any) {
     
     t.field("startPeriod", {
-      type: Period, //TODO: Shouldn't list all fields of Period
+      type: Period,
       nullable: true
     });
     t.field("endPeriod", {
-        type: Period, //TODO: Shouldn't list all fields of Period
+        type: Period,
         nullable: true
     });
     t.field("gcAccountSummary", { 
-      type: gcAccountData,
+      type: gcAccountSimple,
       nullable: true
   });
   t.field("gcCollabSummary", {
-    type: gcCollabData,
+    type: gcCollabSimple,
     nullable: true
 });
 t.field("gcConnexSummary", {
-  type: gcConnexData,
+  type: gcConnexSimple,
   nullable: true
 });
 t.field("gcMessageSummary", {
-  type: gcMessageData,
+  type: gcMessageSimple,
   nullable: true
 });
 t.field("gcPediaSummary", {
-  type: gcPediaData,
+  type: gcPediaSimple,
   nullable: true
 });
 t.field("gcWikiSummary", {
-  type: gcWikiData,
+  type: gcWikiSimple,
   nullable: true
 });
     

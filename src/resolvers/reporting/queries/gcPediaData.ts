@@ -1,4 +1,5 @@
 import { extendType } from "nexus";
+import gcPediaFragment from "./fragments/gcPediaFragment";
 
 const gcPediaData = extendType( {
   type: "Query",
@@ -7,7 +8,7 @@ const gcPediaData = extendType( {
       type: 'gcPediaData',
 
     resolve: async (parent, args : any, ctx, info) => {
-      return ctx.reportingPrisma.gcPediaDatas(args);
+      return ctx.reportingPrisma.gcPediaDatas(args).$fragment(gcPediaFragment);
       },
     })
   }
