@@ -1,11 +1,11 @@
 import { objectType } from "nexus";
-import Period from "./period";
+import PeriodSimple from "./periodSimple";
 
 const GCpediaData = objectType({
   name: 'gcPediaData',
   definition(t : any) {
     t.field("period", {
-      type: Period, 
+      type: PeriodSimple, 
       nullable: false
     });
     t.int("totalNumAccounts", {

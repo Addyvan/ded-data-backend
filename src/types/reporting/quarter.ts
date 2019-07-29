@@ -5,7 +5,7 @@ import gcConnexSimple from "./gcConnexSimple";
 import gcMessageSimple from "./gcMessageSimple";
 import gcPediaSimple from "./gcPediaSimple";
 import gcWikiSimple from "./gcWikiSimple";
-import Period from "./period";
+import PeriodSimple from "./periodSimple";
 import { addMockFunctionsToSchema } from "graphql-tools";
 
 const quarter = objectType({
@@ -13,11 +13,11 @@ const quarter = objectType({
   definition(t : any) {
     
     t.field("startPeriod", {
-      type: Period,
+      type: PeriodSimple,
       nullable: true
     });
     t.field("endPeriod", {
-        type: Period,
+        type: PeriodSimple,
         nullable: true
     });
     t.field("gcAccountSummary", { 

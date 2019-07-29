@@ -19,21 +19,11 @@ export interface NexusGenEnums {
 }
 
 export interface NexusGenRootTypes {
-  Period: { // root type
+  PeriodSimple: { // root type
     month: number; // Int!
     year: number; // Int!
   }
   Query: {};
-  extendedPeriod: { // root type
-    gcAccountData?: NexusGenRootTypes['gcAccountSimple'] | null; // gcAccountSimple
-    gcCollabData?: NexusGenRootTypes['gcCollabSimple'] | null; // gcCollabSimple
-    gcConnexData?: NexusGenRootTypes['gcConnexSimple'] | null; // gcConnexSimple
-    gcMessageData?: NexusGenRootTypes['gcMessageSimple'] | null; // gcMessageSimple
-    gcPediaData?: NexusGenRootTypes['gcPediaSimple'] | null; // gcPediaSimple
-    gcWikiData?: NexusGenRootTypes['gcWikiSimple'] | null; // gcWikiSimple
-    month?: number | null; // Int
-    year?: number | null; // Int
-  }
   gaStats: { // root type
     avgPageLoadTime?: number | null; // Float
     avgPageviewsPerSession?: number | null; // Float
@@ -43,7 +33,7 @@ export interface NexusGenRootTypes {
   }
   gcAccountData: { // root type
     numNewAccounts?: number | null; // Int
-    period: NexusGenRootTypes['Period']; // Period!
+    period: NexusGenRootTypes['PeriodSimple']; // PeriodSimple!
     totalNumAccounts?: number | null; // Int
   }
   gcAccountSimple: { // root type
@@ -54,7 +44,7 @@ export interface NexusGenRootTypes {
     gaStats?: NexusGenRootTypes['gaStats'] | null; // gaStats
     numNewAccounts?: number | null; // Int
     numNewGroups?: number | null; // Int
-    period: NexusGenRootTypes['Period']; // Period!
+    period: NexusGenRootTypes['PeriodSimple']; // PeriodSimple!
     totalNumAccounts?: number | null; // Int
     totalNumGroups?: number | null; // Int
   }
@@ -69,7 +59,7 @@ export interface NexusGenRootTypes {
     gaStats?: NexusGenRootTypes['gaStats'] | null; // gaStats
     numNewAccounts?: number | null; // Int
     numNewGroups?: number | null; // Int
-    period: NexusGenRootTypes['Period']; // Period!
+    period: NexusGenRootTypes['PeriodSimple']; // PeriodSimple!
     totalNumAccounts?: number | null; // Int
     totalNumGroups?: number | null; // Int
   }
@@ -86,7 +76,7 @@ export interface NexusGenRootTypes {
     numNewDirectMessages?: number | null; // Int
     numNewFileUploads?: number | null; // Int
     numNewPrivateGroupMessages?: number | null; // Int
-    period: NexusGenRootTypes['Period']; // Period!
+    period: NexusGenRootTypes['PeriodSimple']; // PeriodSimple!
     totalNumAccounts?: number | null; // Int
     totalNumChannelMessages?: number | null; // Int
     totalNumDirectMessages?: number | null; // Int
@@ -109,7 +99,7 @@ export interface NexusGenRootTypes {
     numNewAccounts?: number | null; // Int
     numNewArticles?: number | null; // Int
     numNewEdits?: number | null; // Int
-    period: NexusGenRootTypes['Period']; // Period!
+    period: NexusGenRootTypes['PeriodSimple']; // PeriodSimple!
     totalNumAccounts?: number | null; // Int
     totalNumArticles?: number | null; // Int
     totalNumEdits?: number | null; // Int
@@ -127,7 +117,7 @@ export interface NexusGenRootTypes {
     numNewAccounts?: number | null; // Int
     numNewArticles?: number | null; // Int
     numNewEdits?: number | null; // Int
-    period: NexusGenRootTypes['Period']; // Period!
+    period: NexusGenRootTypes['PeriodSimple']; // PeriodSimple!
     totalNumAccounts?: number | null; // Int
     totalNumArticles?: number | null; // Int
     totalNumEdits?: number | null; // Int
@@ -141,15 +131,25 @@ export interface NexusGenRootTypes {
     totalNumArticles?: number | null; // Int
     totalNumEdits?: number | null; // Int
   }
+  period: { // root type
+    gcAccountData?: NexusGenRootTypes['gcAccountSimple'] | null; // gcAccountSimple
+    gcCollabData?: NexusGenRootTypes['gcCollabSimple'] | null; // gcCollabSimple
+    gcConnexData?: NexusGenRootTypes['gcConnexSimple'] | null; // gcConnexSimple
+    gcMessageData?: NexusGenRootTypes['gcMessageSimple'] | null; // gcMessageSimple
+    gcPediaData?: NexusGenRootTypes['gcPediaSimple'] | null; // gcPediaSimple
+    gcWikiData?: NexusGenRootTypes['gcWikiSimple'] | null; // gcWikiSimple
+    month?: number | null; // Int
+    year?: number | null; // Int
+  }
   quarter: { // root type
-    endPeriod?: NexusGenRootTypes['Period'] | null; // Period
+    endPeriod?: NexusGenRootTypes['PeriodSimple'] | null; // PeriodSimple
     gcAccountSummary?: NexusGenRootTypes['gcAccountSimple'] | null; // gcAccountSimple
     gcCollabSummary?: NexusGenRootTypes['gcCollabSimple'] | null; // gcCollabSimple
     gcConnexSummary?: NexusGenRootTypes['gcConnexSimple'] | null; // gcConnexSimple
     gcMessageSummary?: NexusGenRootTypes['gcMessageSimple'] | null; // gcMessageSimple
     gcPediaSummary?: NexusGenRootTypes['gcPediaSimple'] | null; // gcPediaSimple
     gcWikiSummary?: NexusGenRootTypes['gcWikiSimple'] | null; // gcWikiSimple
-    startPeriod?: NexusGenRootTypes['Period'] | null; // Period
+    startPeriod?: NexusGenRootTypes['PeriodSimple'] | null; // PeriodSimple
   }
   String: string;
   Int: number;
@@ -162,30 +162,20 @@ export interface NexusGenAllTypes extends NexusGenRootTypes {
 }
 
 export interface NexusGenFieldTypes {
-  Period: { // field return type
+  PeriodSimple: { // field return type
     month: number; // Int!
     year: number; // Int!
   }
   Query: { // field return type
-    gcAccountDatas: NexusGenRootTypes['gcAccountData'][]; // [gcAccountData!]!
+    gcAccountDatas: NexusGenRootTypes['gcAccountData']; // gcAccountData!
     gcCollabDatas: NexusGenRootTypes['gcCollabData'][]; // [gcCollabData!]!
     gcConnexDatas: NexusGenRootTypes['gcConnexData'][]; // [gcConnexData!]!
     gcMessageDatas: NexusGenRootTypes['gcMessageData'][]; // [gcMessageData!]!
     gcPediaDatas: NexusGenRootTypes['gcPediaData'][]; // [gcPediaData!]!
     gcWikiDatas: NexusGenRootTypes['gcWikiData'][]; // [gcWikiData!]!
-    period: NexusGenRootTypes['extendedPeriod']; // extendedPeriod!
-    periods: NexusGenRootTypes['extendedPeriod'][]; // [extendedPeriod!]!
+    period: NexusGenRootTypes['period'] | null; // period
+    periods: NexusGenRootTypes['period'][]; // [period!]!
     quarter: NexusGenRootTypes['quarter']; // quarter!
-  }
-  extendedPeriod: { // field return type
-    gcAccountData: NexusGenRootTypes['gcAccountSimple'] | null; // gcAccountSimple
-    gcCollabData: NexusGenRootTypes['gcCollabSimple'] | null; // gcCollabSimple
-    gcConnexData: NexusGenRootTypes['gcConnexSimple'] | null; // gcConnexSimple
-    gcMessageData: NexusGenRootTypes['gcMessageSimple'] | null; // gcMessageSimple
-    gcPediaData: NexusGenRootTypes['gcPediaSimple'] | null; // gcPediaSimple
-    gcWikiData: NexusGenRootTypes['gcWikiSimple'] | null; // gcWikiSimple
-    month: number | null; // Int
-    year: number | null; // Int
   }
   gaStats: { // field return type
     avgPageLoadTime: number | null; // Float
@@ -196,7 +186,7 @@ export interface NexusGenFieldTypes {
   }
   gcAccountData: { // field return type
     numNewAccounts: number | null; // Int
-    period: NexusGenRootTypes['Period']; // Period!
+    period: NexusGenRootTypes['PeriodSimple']; // PeriodSimple!
     totalNumAccounts: number | null; // Int
   }
   gcAccountSimple: { // field return type
@@ -207,7 +197,7 @@ export interface NexusGenFieldTypes {
     gaStats: NexusGenRootTypes['gaStats'] | null; // gaStats
     numNewAccounts: number | null; // Int
     numNewGroups: number | null; // Int
-    period: NexusGenRootTypes['Period']; // Period!
+    period: NexusGenRootTypes['PeriodSimple']; // PeriodSimple!
     totalNumAccounts: number | null; // Int
     totalNumGroups: number | null; // Int
   }
@@ -222,7 +212,7 @@ export interface NexusGenFieldTypes {
     gaStats: NexusGenRootTypes['gaStats'] | null; // gaStats
     numNewAccounts: number | null; // Int
     numNewGroups: number | null; // Int
-    period: NexusGenRootTypes['Period']; // Period!
+    period: NexusGenRootTypes['PeriodSimple']; // PeriodSimple!
     totalNumAccounts: number | null; // Int
     totalNumGroups: number | null; // Int
   }
@@ -239,7 +229,7 @@ export interface NexusGenFieldTypes {
     numNewDirectMessages: number | null; // Int
     numNewFileUploads: number | null; // Int
     numNewPrivateGroupMessages: number | null; // Int
-    period: NexusGenRootTypes['Period']; // Period!
+    period: NexusGenRootTypes['PeriodSimple']; // PeriodSimple!
     totalNumAccounts: number | null; // Int
     totalNumChannelMessages: number | null; // Int
     totalNumDirectMessages: number | null; // Int
@@ -262,7 +252,7 @@ export interface NexusGenFieldTypes {
     numNewAccounts: number | null; // Int
     numNewArticles: number | null; // Int
     numNewEdits: number | null; // Int
-    period: NexusGenRootTypes['Period']; // Period!
+    period: NexusGenRootTypes['PeriodSimple']; // PeriodSimple!
     totalNumAccounts: number | null; // Int
     totalNumArticles: number | null; // Int
     totalNumEdits: number | null; // Int
@@ -280,7 +270,7 @@ export interface NexusGenFieldTypes {
     numNewAccounts: number | null; // Int
     numNewArticles: number | null; // Int
     numNewEdits: number | null; // Int
-    period: NexusGenRootTypes['Period']; // Period!
+    period: NexusGenRootTypes['PeriodSimple']; // PeriodSimple!
     totalNumAccounts: number | null; // Int
     totalNumArticles: number | null; // Int
     totalNumEdits: number | null; // Int
@@ -294,22 +284,57 @@ export interface NexusGenFieldTypes {
     totalNumArticles: number | null; // Int
     totalNumEdits: number | null; // Int
   }
+  period: { // field return type
+    gcAccountData: NexusGenRootTypes['gcAccountSimple'] | null; // gcAccountSimple
+    gcCollabData: NexusGenRootTypes['gcCollabSimple'] | null; // gcCollabSimple
+    gcConnexData: NexusGenRootTypes['gcConnexSimple'] | null; // gcConnexSimple
+    gcMessageData: NexusGenRootTypes['gcMessageSimple'] | null; // gcMessageSimple
+    gcPediaData: NexusGenRootTypes['gcPediaSimple'] | null; // gcPediaSimple
+    gcWikiData: NexusGenRootTypes['gcWikiSimple'] | null; // gcWikiSimple
+    month: number | null; // Int
+    year: number | null; // Int
+  }
   quarter: { // field return type
-    endPeriod: NexusGenRootTypes['Period'] | null; // Period
+    endPeriod: NexusGenRootTypes['PeriodSimple'] | null; // PeriodSimple
     gcAccountSummary: NexusGenRootTypes['gcAccountSimple'] | null; // gcAccountSimple
     gcCollabSummary: NexusGenRootTypes['gcCollabSimple'] | null; // gcCollabSimple
     gcConnexSummary: NexusGenRootTypes['gcConnexSimple'] | null; // gcConnexSimple
     gcMessageSummary: NexusGenRootTypes['gcMessageSimple'] | null; // gcMessageSimple
     gcPediaSummary: NexusGenRootTypes['gcPediaSimple'] | null; // gcPediaSimple
     gcWikiSummary: NexusGenRootTypes['gcWikiSimple'] | null; // gcWikiSimple
-    startPeriod: NexusGenRootTypes['Period'] | null; // Period
+    startPeriod: NexusGenRootTypes['PeriodSimple'] | null; // PeriodSimple
   }
 }
 
 export interface NexusGenArgTypes {
   Query: {
+    gcAccountDatas: { // args
+      month?: number | null; // Int
+      year?: number | null; // Int
+    }
+    gcCollabDatas: { // args
+      month?: number | null; // Int
+      year?: number | null; // Int
+    }
+    gcConnexDatas: { // args
+      month?: number | null; // Int
+      year?: number | null; // Int
+    }
+    gcMessageDatas: { // args
+      month?: number | null; // Int
+      year?: number | null; // Int
+    }
+    gcPediaDatas: { // args
+      month?: number | null; // Int
+      year?: number | null; // Int
+    }
+    gcWikiDatas: { // args
+      month?: number | null; // Int
+      year?: number | null; // Int
+    }
     period: { // args
-      id: string; // String!
+      month: number; // Int!
+      year: number; // Int!
     }
     periods: { // args
       month?: number | null; // Int
@@ -327,7 +352,7 @@ export interface NexusGenAbstractResolveReturnTypes {
 
 export interface NexusGenInheritedFields {}
 
-export type NexusGenObjectNames = "Period" | "Query" | "extendedPeriod" | "gaStats" | "gcAccountData" | "gcAccountSimple" | "gcCollabData" | "gcCollabSimple" | "gcConnexData" | "gcConnexSimple" | "gcMessageData" | "gcMessageSimple" | "gcPediaData" | "gcPediaSimple" | "gcWikiData" | "gcWikiSimple" | "quarter";
+export type NexusGenObjectNames = "PeriodSimple" | "Query" | "gaStats" | "gcAccountData" | "gcAccountSimple" | "gcCollabData" | "gcCollabSimple" | "gcConnexData" | "gcConnexSimple" | "gcMessageData" | "gcMessageSimple" | "gcPediaData" | "gcPediaSimple" | "gcWikiData" | "gcWikiSimple" | "period" | "quarter";
 
 export type NexusGenInputNames = never;
 

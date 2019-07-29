@@ -1,16 +1,22 @@
-import { prismaObjectType } from "nexus-prisma";
+import { objectType } from "nexus";
+import project from "./project";
 
-const Tag = prismaObjectType({
+const Tag = objectType({
   name: 'Tag',
   definition(t : any) {
-    t.prismaFields([
-      'id',
-      'name',
-      {
-        name: 'projects',
-        args: ['*'], // remove the arguments from the `posts` field of the `User` type in the Prisma schema
-      },
-    ])
+
+    t.id("id", {
+      nullable: false
+    });
+
+    t.string("name", {
+      nullable: false
+    });
+    t.list.field("projects", {
+      type: project, 
+      nullable: true
+    })
+      
   },
 });
 

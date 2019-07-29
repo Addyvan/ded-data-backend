@@ -1,4 +1,4 @@
-import { extendType } from "nexus";
+import { extendType, intArg } from "nexus";
 import gcConnexFragment from "./fragments/gcConnexFragment";
 
 const gcConnexData = extendType( {
@@ -6,8 +6,12 @@ const gcConnexData = extendType( {
   definition(t) {
     t.list.field('gcConnexDatas', {
       type: 'gcConnexData',
+      args: {
+        month: intArg({required: false}),
+        year: intArg({required: false})
+      },
       resolve: (parent, args, ctx, info) => {
-        return ctx.reportingPrisma.gcConnexDatas(args).$fragment(gcConnexFragment);
+        return ctx.reportingPrisma.gcConnexDatas({where: {period: args}}).$fragment(gcConnexFragment);
       },
     })
   }

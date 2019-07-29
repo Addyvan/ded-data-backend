@@ -1,4 +1,4 @@
-import { extendType } from "nexus";
+import { extendType, intArg } from "nexus";
 import gcWikiFragment from "./fragments/gcWikiFragment";
 
 const gcWikiData = extendType( {
@@ -6,9 +6,13 @@ const gcWikiData = extendType( {
   definition(t) {
     t.list.field('gcWikiDatas', {
       type: 'gcWikiData',
+      args: {
+        month: intArg({required: false}),
+        year: intArg({required: false})
+      },
 
     resolve: async (parent, args : any, ctx, info) => {
-      return ctx.reportingPrisma.gcWikiDatas(args).$fragment(gcWikiFragment);
+      return ctx.reportingPrisma.gcWikiDatas({where: {period: args}}).$fragment(gcWikiFragment);
       },
     })
   }

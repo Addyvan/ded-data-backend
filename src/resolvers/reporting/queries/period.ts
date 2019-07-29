@@ -1,41 +1,24 @@
-import { extendType, stringArg } from "nexus";
-import {Period} from "../../../generated/reporting/prisma-client";
+//any value in keeping period rather than just using periods
+
+import { extendType, stringArg, intArg, arg } from "nexus";
 import quarterFragment from "./fragments/quarterFragment";
-import gcAccountData from "./gcAccountData";
-//import {extendedPeriod} from "../../../types/reporting/extendedPeriod";
 
 const period = extendType( {
   type: "Query",
   definition(t) {
     t.field('period', {
-      type: 'extendedPeriod',
+      type: 'period',
+      nullable: true,
       args: {
-        id: stringArg(),
+        month: intArg({required: true}),
+        year: intArg({required: true})
       },
       resolve: async (parent, args : any, ctx, info) => {
-        const period = await ctx.reportingPrisma.period(args).$fragment(quarterFragment);
+        const periods = await ctx.reportingPrisma.periods( { where: {month: args.month, year: args.year} } ).$fragment(quarterFragment);
+        const period = periods[0];
         
-        return {
-          year: period["year"],
-          month: period["month"],
-          gcAccountData: period["gcAccount"],
-          gcCollabData: period["gcCollab"],
-          gcConnexData: period["gcConnex"],
-          gcMessageData: period["gcMessage"],
-          gcPediaData: period["gcPedia"],
-          gcWikiData: period["gcWiki"],
-        }
+        return period;
       
-
-        //return period;
-         /*
-        if (period) {
-          return period;
-        }
-        return {
-          year: -1,
-          month: -1
-        };*/
       },
     })
   }

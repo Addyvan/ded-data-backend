@@ -2,23 +2,16 @@
 
 import { objectType, intArg, idArg } from "nexus";
 import gcAccountData from "./gcAccountData";
-import Period from "./period";
+import PeriodSimple from "./periodSimple";
 
 const report = objectType({
   name: 'report',
   definition(t : any) {
     
-    t.list.field("period", {
-      type: Period, 
-      args: {
-        year: intArg(),
-        month: intArg()
-      },
-      resolve(root, args: any,ctx) {
-        return ctx.prisma.periods({where: {month: args.month, year: args.year }});
-      },
-    },
-    );
+    t.field("period", {
+      type: PeriodSimple, 
+      nullable: false
+    });
 
 
     /*t.list.field('gcAccountData', {

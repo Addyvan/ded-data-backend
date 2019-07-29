@@ -29,16 +29,20 @@ export interface NexusGenRootTypes {
     gcId?: number | null; // Int
     id: string; // ID!
     name: string; // String!
+    projects?: NexusGenRootTypes['Project'][] | null; // [Project!]
   }
   Project: { // root type
     description: string; // String!
     id: string; // ID!
     name: string; // String!
+    people?: NexusGenRootTypes['Person'][] | null; // [Person!]
+    tags?: NexusGenRootTypes['Tag'][] | null; // [Tag!]
   }
   Query: {};
   Tag: { // root type
     id: string; // ID!
     name: string; // String!
+    projects?: NexusGenRootTypes['Project'][] | null; // [Project!]
   }
   String: string;
   Int: number;

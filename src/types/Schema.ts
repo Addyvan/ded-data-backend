@@ -13,8 +13,8 @@ import gcConnexData from "./reporting/gcConnexData";
 import gcMessageData from "./reporting/gcMessageData";
 import gcPediaData from "./reporting/gcPediaData";
 import gcWikiData from "./reporting/gcWikiData";
+import periodSimple from "./reporting/periodSimple";
 import period from "./reporting/period";
-import extendedPeriod from "./reporting/extendedPeriod";
 import quarter from "./reporting/quarter";
 //import report from "./reporting/report";
 
@@ -33,8 +33,8 @@ const Reporting = {
   gcMessageData,
   gcPediaData,
   gcWikiData,
+  periodSimple,
   period,
-  extendedPeriod,
   quarter
   //report
 };

@@ -1,5 +1,5 @@
 import { extendType, intArg, arg } from "nexus";
-import {Period,  gcAccountData} from "../../../generated/reporting/prisma-client";
+import {Period,  gcAccountData, Prisma} from "../../../generated/reporting/prisma-client";
 import gcCollabData from "./gcCollabData";
 //import month_ASC from "../../../generated/reporting/prisma-client/index";
 
@@ -102,53 +102,42 @@ const quarter = extendType( {
     t.field('quarter', {
       type: 'quarter',
       args: {
-        year: intArg(),
-        quarterNum: intArg()
+        year: intArg({required: true}),
+        quarterNum: intArg({required: true})
       },
     resolve: async (parent, args : any, ctx, info) => {
+            
+      if (args.quarterNum < 1 || args.quarterNum > 4 ) throw Error ("Invalid quarter number. Must be a whole number from 1-4");
       
-      if (args.quarterNum < 0 || args.quarterNum > 4 ) throw Error ("Invalid quarter number. Must be a whole number from 1-4");
+      const startMonth = 1 + (args.quarterNum - 1) * 3;
+      let range : number[] = [startMonth, startMonth + 1, startMonth + 2];
+      let periodRange : Period[] = await ctx.reportingPrisma.periods({where: { year: args.year, month_in: range } } ).$fragment(quarterFragment); 
       
+      if (periodRange.length != 3){ //Missing months needed for quarter
+        periodRange.forEach( element => {
+          let x = range.indexOf(element.month);
+          if (x > -1) {
+            range.splice(x, 1);
+          }
+        });
+        throw Error ("Incomplete period. Missing months " + range.toString() );
+      };
 
-      const range : any = 1 + (args.quarterNum - 1) * 3;
-      let periodRange : Period[] = await ctx.reportingPrisma.periods({ where: { year: args.year, month_in: [range, range + 1, range + 2] } } ).$fragment(quarterFragment); 
+      periodRange = sortPeriods(periodRange); //Just in case they aren't sorted by month, as adding orderBy isn't working
       
-      periodRange = sortPeriods(periodRange); //Just in case they aren't sorted by month, as adding orderBy didn't seem to do anything
-      
-      //idk why this is necessary, but it is
-      var firstPeriod, secondPeriod, thirdPeriod = null;
-      var num = 0;
-      periodRange.forEach(element => {
-        if (num == 0) firstPeriod = element;
-        else if (num == 1) secondPeriod = element;
-        else thirdPeriod = element;
-        num++;
-      });
-
-
-      const accountSummaryValue = accountSummary(firstPeriod.gcAccount, secondPeriod.gcAccount, thirdPeriod.gcAccount);
-      const collabSummaryValue = collabSummary(firstPeriod.gcCollab, secondPeriod.gcCollab, thirdPeriod.gcCollab);
-      const connexSummaryValue = connexSummary(firstPeriod.gcConnex, secondPeriod.gcConnex, thirdPeriod.gcConnex);
-      const messageSummaryValue = messageSummary(firstPeriod.gcMessage, secondPeriod.gcMessage, thirdPeriod.gcMessage);
-      const pediaSummaryValue = pediaSummary(firstPeriod.gcPedia, secondPeriod.gcPedia, thirdPeriod.gcPedia);
-      const wikiSummaryValue = wikiSummary(firstPeriod.gcWiki, secondPeriod.gcWiki, thirdPeriod.gcWiki);
+      let firstPeriod, secondPeriod, thirdPeriod = null;
+      firstPeriod = periodRange[0]; secondPeriod = periodRange[1]; thirdPeriod = periodRange[2];
       
       const results = {
-        startPeriod: {
-          year: periodRange[0]["year"],
-          month: periodRange[0]["month"]
-        }, //need to restrict fields provided
-        endPeriod: {
-          year: periodRange[2]["year"],
-          month: periodRange[2]["month"]
-        }, //need to restrict fields provided
-        //endPeriod: periodRange[2],
-        gcAccountSummary: accountSummaryValue,
-        gcCollabSummary: collabSummaryValue,
-        gcConnexSummary: connexSummaryValue,
-        gcMessageSummary: messageSummaryValue,
-        gcPediaSummary: pediaSummaryValue,
-        gcWikiSummary: wikiSummaryValue
+        startPeriod: periodRange[0], 
+        endPeriod: periodRange[2], 
+        
+        gcAccountSummary: accountSummary(firstPeriod.gcAccount, secondPeriod.gcAccount, thirdPeriod.gcAccount),
+        gcCollabSummary: collabSummary(firstPeriod.gcCollab, secondPeriod.gcCollab, thirdPeriod.gcCollab),
+        gcConnexSummary: connexSummary(firstPeriod.gcConnex, secondPeriod.gcConnex, thirdPeriod.gcConnex),
+        gcMessageSummary: messageSummary(firstPeriod.gcMessage, secondPeriod.gcMessage, thirdPeriod.gcMessage),
+        gcPediaSummary: pediaSummary(firstPeriod.gcPedia, secondPeriod.gcPedia, thirdPeriod.gcPedia),
+        gcWikiSummary: wikiSummary(firstPeriod.gcWiki, secondPeriod.gcWiki, thirdPeriod.gcWiki),
       };
       
       //console.log(results);

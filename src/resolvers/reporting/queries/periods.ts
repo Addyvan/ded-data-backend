@@ -6,7 +6,8 @@ const periods = extendType( {
   type: "Query",
   definition(t) {
     t.list.field('periods', {
-      type: 'extendedPeriod',
+      type: 'period',
+      nullable: false,
       args: {
         month: intArg({required: false}),
         year: intArg({required: false})
@@ -21,7 +22,6 @@ const periods = extendType( {
           element[tool] = null;
         })
       });
-      console.log(periods);
       return periods;
       },
     })

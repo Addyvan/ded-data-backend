@@ -1,4 +1,4 @@
-import { extendType } from "nexus";
+import { extendType, intArg } from "nexus";
 import gcPediaFragment from "./fragments/gcPediaFragment";
 
 const gcPediaData = extendType( {
@@ -6,9 +6,13 @@ const gcPediaData = extendType( {
   definition(t) {
     t.list.field('gcPediaDatas', {
       type: 'gcPediaData',
+      args: {
+        month: intArg({required: false}),
+        year: intArg({required: false})
+      },
 
     resolve: async (parent, args : any, ctx, info) => {
-      return ctx.reportingPrisma.gcPediaDatas(args).$fragment(gcPediaFragment);
+      return ctx.reportingPrisma.gcPediaDatas({where: {period: args}}).$fragment(gcPediaFragment);
       },
     })
   }

@@ -2,17 +2,6 @@
 ### Do not make changes to this file directly
 
 
-type extendedPeriod {
-  gcAccountData: gcAccountSimple
-  gcCollabData: gcCollabSimple
-  gcConnexData: gcConnexSimple
-  gcMessageData: gcMessageSimple
-  gcPediaData: gcPediaSimple
-  gcWikiData: gcWikiSimple
-  month: Int
-  year: Int
-}
-
 type gaStats {
   avgPageLoadTime: Float
   avgPageviewsPerSession: Float
@@ -23,7 +12,7 @@ type gaStats {
 
 type gcAccountData {
   numNewAccounts: Int
-  period: Period!
+  period: PeriodSimple!
   totalNumAccounts: Int
 }
 
@@ -36,7 +25,7 @@ type gcCollabData {
   gaStats: gaStats
   numNewAccounts: Int
   numNewGroups: Int
-  period: Period!
+  period: PeriodSimple!
   totalNumAccounts: Int
   totalNumGroups: Int
 }
@@ -53,7 +42,7 @@ type gcConnexData {
   gaStats: gaStats
   numNewAccounts: Int
   numNewGroups: Int
-  period: Period!
+  period: PeriodSimple!
   totalNumAccounts: Int
   totalNumGroups: Int
 }
@@ -72,7 +61,7 @@ type gcMessageData {
   numNewDirectMessages: Int
   numNewFileUploads: Int
   numNewPrivateGroupMessages: Int
-  period: Period!
+  period: PeriodSimple!
   totalNumAccounts: Int
   totalNumChannelMessages: Int
   totalNumDirectMessages: Int
@@ -97,7 +86,7 @@ type gcPediaData {
   numNewAccounts: Int
   numNewArticles: Int
   numNewEdits: Int
-  period: Period!
+  period: PeriodSimple!
   totalNumAccounts: Int
   totalNumArticles: Int
   totalNumEdits: Int
@@ -117,7 +106,7 @@ type gcWikiData {
   numNewAccounts: Int
   numNewArticles: Int
   numNewEdits: Int
-  period: Period!
+  period: PeriodSimple!
   totalNumAccounts: Int
   totalNumArticles: Int
   totalNumEdits: Int
@@ -133,30 +122,41 @@ type gcWikiSimple {
   totalNumEdits: Int
 }
 
-type Period {
+type period {
+  gcAccountData: gcAccountSimple
+  gcCollabData: gcCollabSimple
+  gcConnexData: gcConnexSimple
+  gcMessageData: gcMessageSimple
+  gcPediaData: gcPediaSimple
+  gcWikiData: gcWikiSimple
+  month: Int
+  year: Int
+}
+
+type PeriodSimple {
   month: Int!
   year: Int!
 }
 
 type quarter {
-  endPeriod: Period
+  endPeriod: PeriodSimple
   gcAccountSummary: gcAccountSimple
   gcCollabSummary: gcCollabSimple
   gcConnexSummary: gcConnexSimple
   gcMessageSummary: gcMessageSimple
   gcPediaSummary: gcPediaSimple
   gcWikiSummary: gcWikiSimple
-  startPeriod: Period
+  startPeriod: PeriodSimple
 }
 
 type Query {
-  gcAccountDatas: [gcAccountData!]!
-  gcCollabDatas: [gcCollabData!]!
-  gcConnexDatas: [gcConnexData!]!
-  gcMessageDatas: [gcMessageData!]!
-  gcPediaDatas: [gcPediaData!]!
-  gcWikiDatas: [gcWikiData!]!
-  period(id: String!): extendedPeriod!
-  periods(month: Int, year: Int): [extendedPeriod!]!
+  gcAccountDatas(month: Int, year: Int): gcAccountData!
+  gcCollabDatas(month: Int, year: Int): [gcCollabData!]!
+  gcConnexDatas(month: Int, year: Int): [gcConnexData!]!
+  gcMessageDatas(month: Int, year: Int): [gcMessageData!]!
+  gcPediaDatas(month: Int, year: Int): [gcPediaData!]!
+  gcWikiDatas(month: Int, year: Int): [gcWikiData!]!
+  period(month: Int!, year: Int!): period
+  periods(month: Int, year: Int): [period!]!
   quarter(quarterNum: Int!, year: Int!): quarter!
 }

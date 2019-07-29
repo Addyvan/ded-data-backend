@@ -1,5 +1,5 @@
 import { objectType } from "nexus";
-import Period from "./period";
+import PeriodSimple from "./periodSimple";
 import GAstats from "./gaStats";
 
 const GCcollabData = objectType({
@@ -7,7 +7,7 @@ const GCcollabData = objectType({
   definition(t : any) {
 
     t.field("period", {
-      type: Period, 
+      type: PeriodSimple, 
       nullable: false
     });
 
