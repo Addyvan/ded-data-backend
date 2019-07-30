@@ -4,8 +4,7 @@ fragment gcCollab on gcCollab {
     totalNumAccounts
     numNewAccounts
     period {
-        year
-        month
+        date
     }
     totalNumGroups
     numNewGroups

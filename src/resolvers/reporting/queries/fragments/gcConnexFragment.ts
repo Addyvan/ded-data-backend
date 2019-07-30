@@ -4,8 +4,7 @@ fragment gcConnex on gcConnex {
     totalNumAccounts
     numNewAccounts
     period {
-        year
-        month
+        date
     }
     totalNumGroups
     numNewGroups

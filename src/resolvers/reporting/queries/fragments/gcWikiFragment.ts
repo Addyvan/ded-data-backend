@@ -3,8 +3,7 @@ const gcWikiFragment = `
 fragment gcWiki on gcWiki {
     
     period {
-        year
-        month
+        date
     }
     totalNumAccounts
     numNewAccounts

@@ -776,8 +776,7 @@ export interface QueryFieldDetails {
 type PeriodObject =
   | PeriodFields
   | { name: 'id', args?: [] | false, alias?: string  } 
-  | { name: 'month', args?: [] | false, alias?: string  } 
-  | { name: 'year', args?: [] | false, alias?: string  } 
+  | { name: 'date', args?: [] | false, alias?: string  } 
   | { name: 'gcAccount', args?: [] | false, alias?: string  } 
   | { name: 'gcCollab', args?: [] | false, alias?: string  } 
   | { name: 'gcConnex', args?: [] | false, alias?: string  } 
@@ -787,8 +786,7 @@ type PeriodObject =
 
 type PeriodFields =
   | 'id'
-  | 'month'
-  | 'year'
+  | 'date'
   | 'gcAccount'
   | 'gcCollab'
   | 'gcConnex'
@@ -809,16 +807,8 @@ export interface PeriodFieldDetails {
     nullable: false
     resolve: undefined
   }
-  month: {
-    type: 'Int'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-  year: {
-    type: 'Int'
+  date: {
+    type: 'String'
     args: {}
     description: string
     list: undefined
@@ -3753,13 +3743,11 @@ export interface PeriodSubscriptionPayloadFieldDetails {
 type PeriodPreviousValuesObject =
   | PeriodPreviousValuesFields
   | { name: 'id', args?: [] | false, alias?: string  } 
-  | { name: 'month', args?: [] | false, alias?: string  } 
-  | { name: 'year', args?: [] | false, alias?: string  } 
+  | { name: 'date', args?: [] | false, alias?: string  } 
 
 type PeriodPreviousValuesFields =
   | 'id'
-  | 'month'
-  | 'year'
+  | 'date'
 
 
 
@@ -3774,16 +3762,8 @@ export interface PeriodPreviousValuesFieldDetails {
     nullable: false
     resolve: undefined
   }
-  month: {
-    type: 'Int'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-  year: {
-    type: 'Int'
+  date: {
+    type: 'String'
     args: {}
     description: string
     list: undefined
@@ -4851,22 +4831,20 @@ export interface PeriodWhereInput {
   id_not_starts_with?: string | null
   id_ends_with?: string | null
   id_not_ends_with?: string | null
-  month?: number | null
-  month_not?: number | null
-  month_in?: number[]
-  month_not_in?: number[]
-  month_lt?: number | null
-  month_lte?: number | null
-  month_gt?: number | null
-  month_gte?: number | null
-  year?: number | null
-  year_not?: number | null
-  year_in?: number[]
-  year_not_in?: number[]
-  year_lt?: number | null
-  year_lte?: number | null
-  year_gt?: number | null
-  year_gte?: number | null
+  date?: string | null
+  date_not?: string | null
+  date_in?: string[]
+  date_not_in?: string[]
+  date_lt?: string | null
+  date_lte?: string | null
+  date_gt?: string | null
+  date_gte?: string | null
+  date_contains?: string | null
+  date_not_contains?: string | null
+  date_starts_with?: string | null
+  date_not_starts_with?: string | null
+  date_ends_with?: string | null
+  date_not_ends_with?: string | null
   gcAccount?: gcAccountDataWhereInput | null
   gcCollab?: gcCollabDataWhereInput | null
   gcConnex?: gcConnexDataWhereInput | null
@@ -4893,22 +4871,20 @@ export type PeriodWhereInputInputObject =
   | { name: 'id_not_starts_with', alias?: string  } 
   | { name: 'id_ends_with', alias?: string  } 
   | { name: 'id_not_ends_with', alias?: string  } 
-  | { name: 'month', alias?: string  } 
-  | { name: 'month_not', alias?: string  } 
-  | { name: 'month_in', alias?: string  } 
-  | { name: 'month_not_in', alias?: string  } 
-  | { name: 'month_lt', alias?: string  } 
-  | { name: 'month_lte', alias?: string  } 
-  | { name: 'month_gt', alias?: string  } 
-  | { name: 'month_gte', alias?: string  } 
-  | { name: 'year', alias?: string  } 
-  | { name: 'year_not', alias?: string  } 
-  | { name: 'year_in', alias?: string  } 
-  | { name: 'year_not_in', alias?: string  } 
-  | { name: 'year_lt', alias?: string  } 
-  | { name: 'year_lte', alias?: string  } 
-  | { name: 'year_gt', alias?: string  } 
-  | { name: 'year_gte', alias?: string  } 
+  | { name: 'date', alias?: string  } 
+  | { name: 'date_not', alias?: string  } 
+  | { name: 'date_in', alias?: string  } 
+  | { name: 'date_not_in', alias?: string  } 
+  | { name: 'date_lt', alias?: string  } 
+  | { name: 'date_lte', alias?: string  } 
+  | { name: 'date_gt', alias?: string  } 
+  | { name: 'date_gte', alias?: string  } 
+  | { name: 'date_contains', alias?: string  } 
+  | { name: 'date_not_contains', alias?: string  } 
+  | { name: 'date_starts_with', alias?: string  } 
+  | { name: 'date_not_starts_with', alias?: string  } 
+  | { name: 'date_ends_with', alias?: string  } 
+  | { name: 'date_not_ends_with', alias?: string  } 
   | { name: 'gcAccount', alias?: string  } 
   | { name: 'gcCollab', alias?: string  } 
   | { name: 'gcConnex', alias?: string  } 
@@ -5853,8 +5829,7 @@ export type gcWikiDataWhereUniqueInputInputObject =
   
 export interface PeriodCreateInput {
   id?: string | null
-  month?: number
-  year?: number
+  date?: string
   gcAccount?: gcAccountDataCreateOneWithoutPeriodInput | null
   gcCollab?: gcCollabDataCreateOneWithoutPeriodInput
   gcConnex?: gcConnexDataCreateOneWithoutPeriodInput
@@ -5865,8 +5840,7 @@ export interface PeriodCreateInput {
 export type PeriodCreateInputInputObject =
   | Extract<keyof PeriodCreateInput, string>
   | { name: 'id', alias?: string  } 
-  | { name: 'month', alias?: string  } 
-  | { name: 'year', alias?: string  } 
+  | { name: 'date', alias?: string  } 
   | { name: 'gcAccount', alias?: string  } 
   | { name: 'gcCollab', alias?: string  } 
   | { name: 'gcConnex', alias?: string  } 
@@ -6067,8 +6041,7 @@ export type gcWikiDataCreateWithoutPeriodInputInputObject =
   | { name: 'numNewEdits', alias?: string  } 
   
 export interface PeriodUpdateInput {
-  month?: number | null
-  year?: number | null
+  date?: string | null
   gcAccount?: gcAccountDataUpdateOneWithoutPeriodInput | null
   gcCollab?: gcCollabDataUpdateOneRequiredWithoutPeriodInput | null
   gcConnex?: gcConnexDataUpdateOneRequiredWithoutPeriodInput | null
@@ -6078,8 +6051,7 @@ export interface PeriodUpdateInput {
 }
 export type PeriodUpdateInputInputObject =
   | Extract<keyof PeriodUpdateInput, string>
-  | { name: 'month', alias?: string  } 
-  | { name: 'year', alias?: string  } 
+  | { name: 'date', alias?: string  } 
   | { name: 'gcAccount', alias?: string  } 
   | { name: 'gcCollab', alias?: string  } 
   | { name: 'gcConnex', alias?: string  } 
@@ -6365,13 +6337,11 @@ export type gcWikiDataUpsertWithoutPeriodInputInputObject =
   | { name: 'create', alias?: string  } 
   
 export interface PeriodUpdateManyMutationInput {
-  month?: number | null
-  year?: number | null
+  date?: string | null
 }
 export type PeriodUpdateManyMutationInputInputObject =
   | Extract<keyof PeriodUpdateManyMutationInput, string>
-  | { name: 'month', alias?: string  } 
-  | { name: 'year', alias?: string  } 
+  | { name: 'date', alias?: string  } 
   
 export interface gaStatsUpdateInput {
   numSessions?: number | null
@@ -6427,8 +6397,7 @@ export type PeriodCreateOneWithoutGcAccountInputInputObject =
   
 export interface PeriodCreateWithoutGcAccountInput {
   id?: string | null
-  month?: number
-  year?: number
+  date?: string
   gcCollab?: gcCollabDataCreateOneWithoutPeriodInput
   gcConnex?: gcConnexDataCreateOneWithoutPeriodInput
   gcMessage?: gcMessageDataCreateOneWithoutPeriodInput
@@ -6438,8 +6407,7 @@ export interface PeriodCreateWithoutGcAccountInput {
 export type PeriodCreateWithoutGcAccountInputInputObject =
   | Extract<keyof PeriodCreateWithoutGcAccountInput, string>
   | { name: 'id', alias?: string  } 
-  | { name: 'month', alias?: string  } 
-  | { name: 'year', alias?: string  } 
+  | { name: 'date', alias?: string  } 
   | { name: 'gcCollab', alias?: string  } 
   | { name: 'gcConnex', alias?: string  } 
   | { name: 'gcMessage', alias?: string  } 
@@ -6471,8 +6439,7 @@ export type PeriodUpdateOneRequiredWithoutGcAccountInputInputObject =
   | { name: 'connect', alias?: string  } 
   
 export interface PeriodUpdateWithoutGcAccountDataInput {
-  month?: number | null
-  year?: number | null
+  date?: string | null
   gcCollab?: gcCollabDataUpdateOneRequiredWithoutPeriodInput | null
   gcConnex?: gcConnexDataUpdateOneRequiredWithoutPeriodInput | null
   gcMessage?: gcMessageDataUpdateOneRequiredWithoutPeriodInput | null
@@ -6481,8 +6448,7 @@ export interface PeriodUpdateWithoutGcAccountDataInput {
 }
 export type PeriodUpdateWithoutGcAccountDataInputInputObject =
   | Extract<keyof PeriodUpdateWithoutGcAccountDataInput, string>
-  | { name: 'month', alias?: string  } 
-  | { name: 'year', alias?: string  } 
+  | { name: 'date', alias?: string  } 
   | { name: 'gcCollab', alias?: string  } 
   | { name: 'gcConnex', alias?: string  } 
   | { name: 'gcMessage', alias?: string  } 
@@ -6537,8 +6503,7 @@ export type PeriodCreateOneWithoutGcCollabInputInputObject =
   
 export interface PeriodCreateWithoutGcCollabInput {
   id?: string | null
-  month?: number
-  year?: number
+  date?: string
   gcAccount?: gcAccountDataCreateOneWithoutPeriodInput | null
   gcConnex?: gcConnexDataCreateOneWithoutPeriodInput
   gcMessage?: gcMessageDataCreateOneWithoutPeriodInput
@@ -6548,8 +6513,7 @@ export interface PeriodCreateWithoutGcCollabInput {
 export type PeriodCreateWithoutGcCollabInputInputObject =
   | Extract<keyof PeriodCreateWithoutGcCollabInput, string>
   | { name: 'id', alias?: string  } 
-  | { name: 'month', alias?: string  } 
-  | { name: 'year', alias?: string  } 
+  | { name: 'date', alias?: string  } 
   | { name: 'gcAccount', alias?: string  } 
   | { name: 'gcConnex', alias?: string  } 
   | { name: 'gcMessage', alias?: string  } 
@@ -6587,8 +6551,7 @@ export type PeriodUpdateOneRequiredWithoutGcCollabInputInputObject =
   | { name: 'connect', alias?: string  } 
   
 export interface PeriodUpdateWithoutGcCollabDataInput {
-  month?: number | null
-  year?: number | null
+  date?: string | null
   gcAccount?: gcAccountDataUpdateOneWithoutPeriodInput | null
   gcConnex?: gcConnexDataUpdateOneRequiredWithoutPeriodInput | null
   gcMessage?: gcMessageDataUpdateOneRequiredWithoutPeriodInput | null
@@ -6597,8 +6560,7 @@ export interface PeriodUpdateWithoutGcCollabDataInput {
 }
 export type PeriodUpdateWithoutGcCollabDataInputInputObject =
   | Extract<keyof PeriodUpdateWithoutGcCollabDataInput, string>
-  | { name: 'month', alias?: string  } 
-  | { name: 'year', alias?: string  } 
+  | { name: 'date', alias?: string  } 
   | { name: 'gcAccount', alias?: string  } 
   | { name: 'gcConnex', alias?: string  } 
   | { name: 'gcMessage', alias?: string  } 
@@ -6657,8 +6619,7 @@ export type PeriodCreateOneWithoutGcConnexInputInputObject =
   
 export interface PeriodCreateWithoutGcConnexInput {
   id?: string | null
-  month?: number
-  year?: number
+  date?: string
   gcAccount?: gcAccountDataCreateOneWithoutPeriodInput | null
   gcCollab?: gcCollabDataCreateOneWithoutPeriodInput
   gcMessage?: gcMessageDataCreateOneWithoutPeriodInput
@@ -6668,8 +6629,7 @@ export interface PeriodCreateWithoutGcConnexInput {
 export type PeriodCreateWithoutGcConnexInputInputObject =
   | Extract<keyof PeriodCreateWithoutGcConnexInput, string>
   | { name: 'id', alias?: string  } 
-  | { name: 'month', alias?: string  } 
-  | { name: 'year', alias?: string  } 
+  | { name: 'date', alias?: string  } 
   | { name: 'gcAccount', alias?: string  } 
   | { name: 'gcCollab', alias?: string  } 
   | { name: 'gcMessage', alias?: string  } 
@@ -6707,8 +6667,7 @@ export type PeriodUpdateOneRequiredWithoutGcConnexInputInputObject =
   | { name: 'connect', alias?: string  } 
   
 export interface PeriodUpdateWithoutGcConnexDataInput {
-  month?: number | null
-  year?: number | null
+  date?: string | null
   gcAccount?: gcAccountDataUpdateOneWithoutPeriodInput | null
   gcCollab?: gcCollabDataUpdateOneRequiredWithoutPeriodInput | null
   gcMessage?: gcMessageDataUpdateOneRequiredWithoutPeriodInput | null
@@ -6717,8 +6676,7 @@ export interface PeriodUpdateWithoutGcConnexDataInput {
 }
 export type PeriodUpdateWithoutGcConnexDataInputInputObject =
   | Extract<keyof PeriodUpdateWithoutGcConnexDataInput, string>
-  | { name: 'month', alias?: string  } 
-  | { name: 'year', alias?: string  } 
+  | { name: 'date', alias?: string  } 
   | { name: 'gcAccount', alias?: string  } 
   | { name: 'gcCollab', alias?: string  } 
   | { name: 'gcMessage', alias?: string  } 
@@ -6787,8 +6745,7 @@ export type PeriodCreateOneWithoutGcMessageInputInputObject =
   
 export interface PeriodCreateWithoutGcMessageInput {
   id?: string | null
-  month?: number
-  year?: number
+  date?: string
   gcAccount?: gcAccountDataCreateOneWithoutPeriodInput | null
   gcCollab?: gcCollabDataCreateOneWithoutPeriodInput
   gcConnex?: gcConnexDataCreateOneWithoutPeriodInput
@@ -6798,8 +6755,7 @@ export interface PeriodCreateWithoutGcMessageInput {
 export type PeriodCreateWithoutGcMessageInputInputObject =
   | Extract<keyof PeriodCreateWithoutGcMessageInput, string>
   | { name: 'id', alias?: string  } 
-  | { name: 'month', alias?: string  } 
-  | { name: 'year', alias?: string  } 
+  | { name: 'date', alias?: string  } 
   | { name: 'gcAccount', alias?: string  } 
   | { name: 'gcCollab', alias?: string  } 
   | { name: 'gcConnex', alias?: string  } 
@@ -6847,8 +6803,7 @@ export type PeriodUpdateOneRequiredWithoutGcMessageInputInputObject =
   | { name: 'connect', alias?: string  } 
   
 export interface PeriodUpdateWithoutGcMessageDataInput {
-  month?: number | null
-  year?: number | null
+  date?: string | null
   gcAccount?: gcAccountDataUpdateOneWithoutPeriodInput | null
   gcCollab?: gcCollabDataUpdateOneRequiredWithoutPeriodInput | null
   gcConnex?: gcConnexDataUpdateOneRequiredWithoutPeriodInput | null
@@ -6857,8 +6812,7 @@ export interface PeriodUpdateWithoutGcMessageDataInput {
 }
 export type PeriodUpdateWithoutGcMessageDataInputInputObject =
   | Extract<keyof PeriodUpdateWithoutGcMessageDataInput, string>
-  | { name: 'month', alias?: string  } 
-  | { name: 'year', alias?: string  } 
+  | { name: 'date', alias?: string  } 
   | { name: 'gcAccount', alias?: string  } 
   | { name: 'gcCollab', alias?: string  } 
   | { name: 'gcConnex', alias?: string  } 
@@ -6931,8 +6885,7 @@ export type PeriodCreateOneWithoutGcPediaInputInputObject =
   
 export interface PeriodCreateWithoutGcPediaInput {
   id?: string | null
-  month?: number
-  year?: number
+  date?: string
   gcAccount?: gcAccountDataCreateOneWithoutPeriodInput | null
   gcCollab?: gcCollabDataCreateOneWithoutPeriodInput
   gcConnex?: gcConnexDataCreateOneWithoutPeriodInput
@@ -6942,8 +6895,7 @@ export interface PeriodCreateWithoutGcPediaInput {
 export type PeriodCreateWithoutGcPediaInputInputObject =
   | Extract<keyof PeriodCreateWithoutGcPediaInput, string>
   | { name: 'id', alias?: string  } 
-  | { name: 'month', alias?: string  } 
-  | { name: 'year', alias?: string  } 
+  | { name: 'date', alias?: string  } 
   | { name: 'gcAccount', alias?: string  } 
   | { name: 'gcCollab', alias?: string  } 
   | { name: 'gcConnex', alias?: string  } 
@@ -6983,8 +6935,7 @@ export type PeriodUpdateOneRequiredWithoutGcPediaInputInputObject =
   | { name: 'connect', alias?: string  } 
   
 export interface PeriodUpdateWithoutGcPediaDataInput {
-  month?: number | null
-  year?: number | null
+  date?: string | null
   gcAccount?: gcAccountDataUpdateOneWithoutPeriodInput | null
   gcCollab?: gcCollabDataUpdateOneRequiredWithoutPeriodInput | null
   gcConnex?: gcConnexDataUpdateOneRequiredWithoutPeriodInput | null
@@ -6993,8 +6944,7 @@ export interface PeriodUpdateWithoutGcPediaDataInput {
 }
 export type PeriodUpdateWithoutGcPediaDataInputInputObject =
   | Extract<keyof PeriodUpdateWithoutGcPediaDataInput, string>
-  | { name: 'month', alias?: string  } 
-  | { name: 'year', alias?: string  } 
+  | { name: 'date', alias?: string  } 
   | { name: 'gcAccount', alias?: string  } 
   | { name: 'gcCollab', alias?: string  } 
   | { name: 'gcConnex', alias?: string  } 
@@ -7061,8 +7011,7 @@ export type PeriodCreateOneWithoutGcWikiInputInputObject =
   
 export interface PeriodCreateWithoutGcWikiInput {
   id?: string | null
-  month?: number
-  year?: number
+  date?: string
   gcAccount?: gcAccountDataCreateOneWithoutPeriodInput | null
   gcCollab?: gcCollabDataCreateOneWithoutPeriodInput
   gcConnex?: gcConnexDataCreateOneWithoutPeriodInput
@@ -7072,8 +7021,7 @@ export interface PeriodCreateWithoutGcWikiInput {
 export type PeriodCreateWithoutGcWikiInputInputObject =
   | Extract<keyof PeriodCreateWithoutGcWikiInput, string>
   | { name: 'id', alias?: string  } 
-  | { name: 'month', alias?: string  } 
-  | { name: 'year', alias?: string  } 
+  | { name: 'date', alias?: string  } 
   | { name: 'gcAccount', alias?: string  } 
   | { name: 'gcCollab', alias?: string  } 
   | { name: 'gcConnex', alias?: string  } 
@@ -7115,8 +7063,7 @@ export type PeriodUpdateOneRequiredWithoutGcWikiInputInputObject =
   | { name: 'connect', alias?: string  } 
   
 export interface PeriodUpdateWithoutGcWikiDataInput {
-  month?: number | null
-  year?: number | null
+  date?: string | null
   gcAccount?: gcAccountDataUpdateOneWithoutPeriodInput | null
   gcCollab?: gcCollabDataUpdateOneRequiredWithoutPeriodInput | null
   gcConnex?: gcConnexDataUpdateOneRequiredWithoutPeriodInput | null
@@ -7125,8 +7072,7 @@ export interface PeriodUpdateWithoutGcWikiDataInput {
 }
 export type PeriodUpdateWithoutGcWikiDataInputInputObject =
   | Extract<keyof PeriodUpdateWithoutGcWikiDataInput, string>
-  | { name: 'month', alias?: string  } 
-  | { name: 'year', alias?: string  } 
+  | { name: 'date', alias?: string  } 
   | { name: 'gcAccount', alias?: string  } 
   | { name: 'gcCollab', alias?: string  } 
   | { name: 'gcConnex', alias?: string  } 
@@ -7331,10 +7277,8 @@ export type gcWikiDataSubscriptionWhereInputInputObject =
 export type PeriodOrderByInputValues =
   | 'id_ASC'
   | 'id_DESC'
-  | 'month_ASC'
-  | 'month_DESC'
-  | 'year_ASC'
-  | 'year_DESC'
+  | 'date_ASC'
+  | 'date_DESC'
   | 'createdAt_ASC'
   | 'createdAt_DESC'
   | 'updatedAt_ASC'

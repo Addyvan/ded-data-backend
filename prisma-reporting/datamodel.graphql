@@ -9,8 +9,7 @@ interface GeneralData {
 
 type Period {
   id: ID! @id
-  month: Int!
-  year: Int!
+  date: String!
   gcAccount: gcAccountData @relation(name: "AccountDataPeriod", link: TABLE)
   gcCollab: gcCollabData! @relation(name:"CollabDataPeriod", link: TABLE)
   gcConnex: gcConnexData! @relation(name:"ConnexDataPeriod", link: TABLE)

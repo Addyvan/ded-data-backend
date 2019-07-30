@@ -5,6 +5,7 @@ import gcCollabData from "./gcCollabData";
 
 
 import quarterFragment from "./fragments/quarterFragment";
+import { start } from "repl";
 /*
 function sortPeriods(periods : Period[]) {
   periods.sort(
@@ -103,12 +104,28 @@ const quarter = extendType( {
         quarterNum: intArg({required: true})
       },
     resolve: async (parent, args : any, ctx, info) => {
-            
+       
+      //TODO fix!
+
       if (args.quarterNum < 1 || args.quarterNum > 4 ) throw Error ("Invalid quarter number. Must be a whole number from 1-4");
       
+      let month = args.month.toString();
+      console.log(month);
+      month = (args.month < 10) ? "0" + args.month.toString() : month;         
+      let year = args.year.toString();
+    
       const startMonth = 1 + (args.quarterNum - 1) * 3;
-      let range : number[] = [startMonth, startMonth + 1, startMonth + 2];
-      let periodRange : Period[] = await ctx.reportingPrisma.periods({where: { year: args.year, month_in: range } } ).$fragment(quarterFragment); 
+      var months : string[] = null;
+      if (startMonth < 10){
+        months = [ "0" + (startMonth).toString(), "0" + (startMonth + 1).toString(), "0" + (startMonth + 2).toString() ];
+      }
+      else {
+        months = [ (startMonth).toString(), (startMonth + 1).toString(), (startMonth + 2).toString(),];
+      }
+      console.log(months);
+      let range : string[] = [year + "-"  + months[0], year + "-" + months[1], year + "-" + months[2] ];
+      
+      let periodRange : Period[] = await ctx.reportingPrisma.periods({where: { date_in: range } } ).$fragment(quarterFragment); 
       
       /*
       if (periodRange.length != 3){ //Missing months needed for quarter
@@ -127,8 +144,10 @@ const quarter = extendType( {
       firstPeriod = periodRange[0]; secondPeriod = periodRange[1]; thirdPeriod = periodRange[2];
       
       const results = {
-        startPeriod: periodRange[0], 
-        endPeriod: periodRange[2], 
+        //startPeriod: periodRange[0], 
+        //endPeriod: periodRange[2], 
+        startPeriod: null, 
+        endPeriod: null, 
         
         gcAccountSummary: accountSummary(firstPeriod.gcAccount, secondPeriod.gcAccount, thirdPeriod.gcAccount),
         gcCollabSummary: collabSummary(firstPeriod.gcCollab, secondPeriod.gcCollab, thirdPeriod.gcCollab),

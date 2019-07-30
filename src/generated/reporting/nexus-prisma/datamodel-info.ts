@@ -1759,7 +1759,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "month",
+            "name": "date",
             "description": null,
             "args": [],
             "type": {
@@ -1767,23 +1767,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "year",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Int",
+                "name": "String",
                 "ofType": null
               }
             },
@@ -1890,8 +1874,8 @@ export default {
       },
       {
         "kind": "SCALAR",
-        "name": "Int",
-        "description": "The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1. ",
+        "name": "String",
+        "description": "The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.",
         "fields": null,
         "inputFields": null,
         "interfaces": null,
@@ -1962,6 +1946,16 @@ export default {
         ],
         "inputFields": null,
         "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "SCALAR",
+        "name": "Int",
+        "description": "The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1. ",
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
         "enumValues": null,
         "possibleTypes": null
       },
@@ -2836,27 +2830,27 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "month",
+            "name": "date",
             "description": null,
             "type": {
               "kind": "SCALAR",
-              "name": "Int",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null
           },
           {
-            "name": "month_not",
+            "name": "date_not",
             "description": null,
             "type": {
               "kind": "SCALAR",
-              "name": "Int",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null
           },
           {
-            "name": "month_in",
+            "name": "date_in",
             "description": null,
             "type": {
               "kind": "LIST",
@@ -2866,7 +2860,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "Int",
+                  "name": "String",
                   "ofType": null
                 }
               }
@@ -2874,7 +2868,7 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "month_not_in",
+            "name": "date_not_in",
             "description": null,
             "type": {
               "kind": "LIST",
@@ -2884,7 +2878,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "Int",
+                  "name": "String",
                   "ofType": null
                 }
               }
@@ -2892,137 +2886,101 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "month_lt",
+            "name": "date_lt",
             "description": null,
             "type": {
               "kind": "SCALAR",
-              "name": "Int",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null
           },
           {
-            "name": "month_lte",
+            "name": "date_lte",
             "description": null,
             "type": {
               "kind": "SCALAR",
-              "name": "Int",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null
           },
           {
-            "name": "month_gt",
+            "name": "date_gt",
             "description": null,
             "type": {
               "kind": "SCALAR",
-              "name": "Int",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null
           },
           {
-            "name": "month_gte",
+            "name": "date_gte",
             "description": null,
             "type": {
               "kind": "SCALAR",
-              "name": "Int",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null
           },
           {
-            "name": "year",
+            "name": "date_contains",
             "description": null,
             "type": {
               "kind": "SCALAR",
-              "name": "Int",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null
           },
           {
-            "name": "year_not",
+            "name": "date_not_contains",
             "description": null,
             "type": {
               "kind": "SCALAR",
-              "name": "Int",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null
           },
           {
-            "name": "year_in",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "Int",
-                  "ofType": null
-                }
-              }
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "year_not_in",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "Int",
-                  "ofType": null
-                }
-              }
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "year_lt",
+            "name": "date_starts_with",
             "description": null,
             "type": {
               "kind": "SCALAR",
-              "name": "Int",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null
           },
           {
-            "name": "year_lte",
+            "name": "date_not_starts_with",
             "description": null,
             "type": {
               "kind": "SCALAR",
-              "name": "Int",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null
           },
           {
-            "name": "year_gt",
+            "name": "date_ends_with",
             "description": null,
             "type": {
               "kind": "SCALAR",
-              "name": "Int",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null
           },
           {
-            "name": "year_gte",
+            "name": "date_not_ends_with",
             "description": null,
             "type": {
               "kind": "SCALAR",
-              "name": "Int",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null
@@ -8356,25 +8314,13 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "month_ASC",
+            "name": "date_ASC",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "month_DESC",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "year_ASC",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "year_DESC",
+            "name": "date_DESC",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -8404,16 +8350,6 @@ export default {
             "deprecationReason": null
           }
         ],
-        "possibleTypes": null
-      },
-      {
-        "kind": "SCALAR",
-        "name": "String",
-        "description": "The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.",
-        "fields": null,
-        "inputFields": null,
-        "interfaces": null,
-        "enumValues": null,
         "possibleTypes": null
       },
       {
@@ -12340,28 +12276,14 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "month",
+            "name": "date",
             "description": null,
             "type": {
               "kind": "NON_NULL",
               "name": null,
               "ofType": {
                 "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "year",
-            "description": null,
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Int",
+                "name": "String",
                 "ofType": null
               }
             },
@@ -13223,21 +13145,11 @@ export default {
         "fields": null,
         "inputFields": [
           {
-            "name": "month",
+            "name": "date",
             "description": null,
             "type": {
               "kind": "SCALAR",
-              "name": "Int",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "year",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "Int",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null
@@ -14461,21 +14373,11 @@ export default {
         "fields": null,
         "inputFields": [
           {
-            "name": "month",
+            "name": "date",
             "description": null,
             "type": {
               "kind": "SCALAR",
-              "name": "Int",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "year",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "Int",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null
@@ -14747,28 +14649,14 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "month",
+            "name": "date",
             "description": null,
             "type": {
               "kind": "NON_NULL",
               "name": null,
               "ofType": {
                 "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "year",
-            "description": null,
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Int",
+                "name": "String",
                 "ofType": null
               }
             },
@@ -14948,21 +14836,11 @@ export default {
         "fields": null,
         "inputFields": [
           {
-            "name": "month",
+            "name": "date",
             "description": null,
             "type": {
               "kind": "SCALAR",
-              "name": "Int",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "year",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "Int",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null
@@ -15225,28 +15103,14 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "month",
+            "name": "date",
             "description": null,
             "type": {
               "kind": "NON_NULL",
               "name": null,
               "ofType": {
                 "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "year",
-            "description": null,
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Int",
+                "name": "String",
                 "ofType": null
               }
             },
@@ -15452,21 +15316,11 @@ export default {
         "fields": null,
         "inputFields": [
           {
-            "name": "month",
+            "name": "date",
             "description": null,
             "type": {
               "kind": "SCALAR",
-              "name": "Int",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "year",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "Int",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null
@@ -15749,28 +15603,14 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "month",
+            "name": "date",
             "description": null,
             "type": {
               "kind": "NON_NULL",
               "name": null,
               "ofType": {
                 "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "year",
-            "description": null,
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Int",
+                "name": "String",
                 "ofType": null
               }
             },
@@ -15976,21 +15816,11 @@ export default {
         "fields": null,
         "inputFields": [
           {
-            "name": "month",
+            "name": "date",
             "description": null,
             "type": {
               "kind": "SCALAR",
-              "name": "Int",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "year",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "Int",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null
@@ -16323,28 +16153,14 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "month",
+            "name": "date",
             "description": null,
             "type": {
               "kind": "NON_NULL",
               "name": null,
               "ofType": {
                 "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "year",
-            "description": null,
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Int",
+                "name": "String",
                 "ofType": null
               }
             },
@@ -16600,21 +16416,11 @@ export default {
         "fields": null,
         "inputFields": [
           {
-            "name": "month",
+            "name": "date",
             "description": null,
             "type": {
               "kind": "SCALAR",
-              "name": "Int",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "year",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "Int",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null
@@ -16967,28 +16773,14 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "month",
+            "name": "date",
             "description": null,
             "type": {
               "kind": "NON_NULL",
               "name": null,
               "ofType": {
                 "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "year",
-            "description": null,
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Int",
+                "name": "String",
                 "ofType": null
               }
             },
@@ -17204,21 +16996,11 @@ export default {
         "fields": null,
         "inputFields": [
           {
-            "name": "month",
+            "name": "date",
             "description": null,
             "type": {
               "kind": "SCALAR",
-              "name": "Int",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "year",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "Int",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null
@@ -17541,28 +17323,14 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "month",
+            "name": "date",
             "description": null,
             "type": {
               "kind": "NON_NULL",
               "name": null,
               "ofType": {
                 "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "year",
-            "description": null,
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Int",
+                "name": "String",
                 "ofType": null
               }
             },
@@ -17788,21 +17556,11 @@ export default {
         "fields": null,
         "inputFields": [
           {
-            "name": "month",
+            "name": "date",
             "description": null,
             "type": {
               "kind": "SCALAR",
-              "name": "Int",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "year",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "Int",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null
@@ -18428,7 +18186,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "month",
+            "name": "date",
             "description": null,
             "args": [],
             "type": {
@@ -18436,23 +18194,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "year",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Int",
+                "name": "String",
                 "ofType": null
               }
             },

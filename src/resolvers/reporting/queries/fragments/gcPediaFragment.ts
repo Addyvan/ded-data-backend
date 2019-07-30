@@ -3,8 +3,7 @@ const gcPediaFragment = `
 fragment gcPedia on gcPedia {
     
     period {
-        year
-        month
+        date
     }
     totalNumAccounts
     numNewAccounts

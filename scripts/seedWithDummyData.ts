@@ -1,8 +1,8 @@
 import { prisma, Period } from "../src/generated/reporting/prisma-client/index";
 
 const JANUARY_1789 = {
-  month: 1,
-  year: 1789,
+  date: "1789-01",
+  
   gcAccount: {
     create: {
       totalNumAccounts: 200,
@@ -91,8 +91,8 @@ const JANUARY_1789 = {
 
 
 const FEBRUARY_1789 = {
-    month: 2,
-    year: 1789,
+  date: "1789-02",
+  
     gcAccount: {
       create: {
         totalNumAccounts: 205,
@@ -179,8 +179,8 @@ const FEBRUARY_1789 = {
   };
   
   const MARCH_1789 = {
-    month: 3,
-    year: 1789,
+    date: "1789-03",
+  
     gcAccount: {
       create: {
         totalNumAccounts: 210,

@@ -405,10 +405,8 @@ export interface ClientConstructor<T> {
 export type PeriodOrderByInput =
   | "id_ASC"
   | "id_DESC"
-  | "month_ASC"
-  | "month_DESC"
-  | "year_ASC"
-  | "year_DESC";
+  | "date_ASC"
+  | "date_DESC";
 
 export type gaStatsOrderByInput =
   | "id_ASC"
@@ -533,22 +531,20 @@ export interface PeriodWhereInput {
   id_not_starts_with?: Maybe<ID_Input>;
   id_ends_with?: Maybe<ID_Input>;
   id_not_ends_with?: Maybe<ID_Input>;
-  month?: Maybe<Int>;
-  month_not?: Maybe<Int>;
-  month_in?: Maybe<Int[] | Int>;
-  month_not_in?: Maybe<Int[] | Int>;
-  month_lt?: Maybe<Int>;
-  month_lte?: Maybe<Int>;
-  month_gt?: Maybe<Int>;
-  month_gte?: Maybe<Int>;
-  year?: Maybe<Int>;
-  year_not?: Maybe<Int>;
-  year_in?: Maybe<Int[] | Int>;
-  year_not_in?: Maybe<Int[] | Int>;
-  year_lt?: Maybe<Int>;
-  year_lte?: Maybe<Int>;
-  year_gt?: Maybe<Int>;
-  year_gte?: Maybe<Int>;
+  date?: Maybe<String>;
+  date_not?: Maybe<String>;
+  date_in?: Maybe<String[] | String>;
+  date_not_in?: Maybe<String[] | String>;
+  date_lt?: Maybe<String>;
+  date_lte?: Maybe<String>;
+  date_gt?: Maybe<String>;
+  date_gte?: Maybe<String>;
+  date_contains?: Maybe<String>;
+  date_not_contains?: Maybe<String>;
+  date_starts_with?: Maybe<String>;
+  date_not_starts_with?: Maybe<String>;
+  date_ends_with?: Maybe<String>;
+  date_not_ends_with?: Maybe<String>;
   gcAccount?: Maybe<gcAccountDataWhereInput>;
   gcCollab?: Maybe<gcCollabDataWhereInput>;
   gcConnex?: Maybe<gcConnexDataWhereInput>;
@@ -1035,8 +1031,7 @@ export type gcWikiDataWhereUniqueInput = AtLeastOne<{
 
 export interface PeriodCreateInput {
   id?: Maybe<ID_Input>;
-  month: Int;
-  year: Int;
+  date: String;
   gcAccount?: Maybe<gcAccountDataCreateOneWithoutPeriodInput>;
   gcCollab: gcCollabDataCreateOneWithoutPeriodInput;
   gcConnex: gcConnexDataCreateOneWithoutPeriodInput;
@@ -1149,8 +1144,7 @@ export interface gcWikiDataCreateWithoutPeriodInput {
 }
 
 export interface PeriodUpdateInput {
-  month?: Maybe<Int>;
-  year?: Maybe<Int>;
+  date?: Maybe<String>;
   gcAccount?: Maybe<gcAccountDataUpdateOneWithoutPeriodInput>;
   gcCollab?: Maybe<gcCollabDataUpdateOneRequiredWithoutPeriodInput>;
   gcConnex?: Maybe<gcConnexDataUpdateOneRequiredWithoutPeriodInput>;
@@ -1309,8 +1303,7 @@ export interface gcWikiDataUpsertWithoutPeriodInput {
 }
 
 export interface PeriodUpdateManyMutationInput {
-  month?: Maybe<Int>;
-  year?: Maybe<Int>;
+  date?: Maybe<String>;
 }
 
 export interface gaStatsUpdateInput {
@@ -1343,8 +1336,7 @@ export interface PeriodCreateOneWithoutGcAccountInput {
 
 export interface PeriodCreateWithoutGcAccountInput {
   id?: Maybe<ID_Input>;
-  month: Int;
-  year: Int;
+  date: String;
   gcCollab: gcCollabDataCreateOneWithoutPeriodInput;
   gcConnex: gcConnexDataCreateOneWithoutPeriodInput;
   gcMessage: gcMessageDataCreateOneWithoutPeriodInput;
@@ -1366,8 +1358,7 @@ export interface PeriodUpdateOneRequiredWithoutGcAccountInput {
 }
 
 export interface PeriodUpdateWithoutGcAccountDataInput {
-  month?: Maybe<Int>;
-  year?: Maybe<Int>;
+  date?: Maybe<String>;
   gcCollab?: Maybe<gcCollabDataUpdateOneRequiredWithoutPeriodInput>;
   gcConnex?: Maybe<gcConnexDataUpdateOneRequiredWithoutPeriodInput>;
   gcMessage?: Maybe<gcMessageDataUpdateOneRequiredWithoutPeriodInput>;
@@ -1402,8 +1393,7 @@ export interface PeriodCreateOneWithoutGcCollabInput {
 
 export interface PeriodCreateWithoutGcCollabInput {
   id?: Maybe<ID_Input>;
-  month: Int;
-  year: Int;
+  date: String;
   gcAccount?: Maybe<gcAccountDataCreateOneWithoutPeriodInput>;
   gcConnex: gcConnexDataCreateOneWithoutPeriodInput;
   gcMessage: gcMessageDataCreateOneWithoutPeriodInput;
@@ -1428,8 +1418,7 @@ export interface PeriodUpdateOneRequiredWithoutGcCollabInput {
 }
 
 export interface PeriodUpdateWithoutGcCollabDataInput {
-  month?: Maybe<Int>;
-  year?: Maybe<Int>;
+  date?: Maybe<String>;
   gcAccount?: Maybe<gcAccountDataUpdateOneWithoutPeriodInput>;
   gcConnex?: Maybe<gcConnexDataUpdateOneRequiredWithoutPeriodInput>;
   gcMessage?: Maybe<gcMessageDataUpdateOneRequiredWithoutPeriodInput>;
@@ -1466,8 +1455,7 @@ export interface PeriodCreateOneWithoutGcConnexInput {
 
 export interface PeriodCreateWithoutGcConnexInput {
   id?: Maybe<ID_Input>;
-  month: Int;
-  year: Int;
+  date: String;
   gcAccount?: Maybe<gcAccountDataCreateOneWithoutPeriodInput>;
   gcCollab: gcCollabDataCreateOneWithoutPeriodInput;
   gcMessage: gcMessageDataCreateOneWithoutPeriodInput;
@@ -1492,8 +1480,7 @@ export interface PeriodUpdateOneRequiredWithoutGcConnexInput {
 }
 
 export interface PeriodUpdateWithoutGcConnexDataInput {
-  month?: Maybe<Int>;
-  year?: Maybe<Int>;
+  date?: Maybe<String>;
   gcAccount?: Maybe<gcAccountDataUpdateOneWithoutPeriodInput>;
   gcCollab?: Maybe<gcCollabDataUpdateOneRequiredWithoutPeriodInput>;
   gcMessage?: Maybe<gcMessageDataUpdateOneRequiredWithoutPeriodInput>;
@@ -1535,8 +1522,7 @@ export interface PeriodCreateOneWithoutGcMessageInput {
 
 export interface PeriodCreateWithoutGcMessageInput {
   id?: Maybe<ID_Input>;
-  month: Int;
-  year: Int;
+  date: String;
   gcAccount?: Maybe<gcAccountDataCreateOneWithoutPeriodInput>;
   gcCollab: gcCollabDataCreateOneWithoutPeriodInput;
   gcConnex: gcConnexDataCreateOneWithoutPeriodInput;
@@ -1566,8 +1552,7 @@ export interface PeriodUpdateOneRequiredWithoutGcMessageInput {
 }
 
 export interface PeriodUpdateWithoutGcMessageDataInput {
-  month?: Maybe<Int>;
-  year?: Maybe<Int>;
+  date?: Maybe<String>;
   gcAccount?: Maybe<gcAccountDataUpdateOneWithoutPeriodInput>;
   gcCollab?: Maybe<gcCollabDataUpdateOneRequiredWithoutPeriodInput>;
   gcConnex?: Maybe<gcConnexDataUpdateOneRequiredWithoutPeriodInput>;
@@ -1611,8 +1596,7 @@ export interface PeriodCreateOneWithoutGcPediaInput {
 
 export interface PeriodCreateWithoutGcPediaInput {
   id?: Maybe<ID_Input>;
-  month: Int;
-  year: Int;
+  date: String;
   gcAccount?: Maybe<gcAccountDataCreateOneWithoutPeriodInput>;
   gcCollab: gcCollabDataCreateOneWithoutPeriodInput;
   gcConnex: gcConnexDataCreateOneWithoutPeriodInput;
@@ -1638,8 +1622,7 @@ export interface PeriodUpdateOneRequiredWithoutGcPediaInput {
 }
 
 export interface PeriodUpdateWithoutGcPediaDataInput {
-  month?: Maybe<Int>;
-  year?: Maybe<Int>;
+  date?: Maybe<String>;
   gcAccount?: Maybe<gcAccountDataUpdateOneWithoutPeriodInput>;
   gcCollab?: Maybe<gcCollabDataUpdateOneRequiredWithoutPeriodInput>;
   gcConnex?: Maybe<gcConnexDataUpdateOneRequiredWithoutPeriodInput>;
@@ -1680,8 +1663,7 @@ export interface PeriodCreateOneWithoutGcWikiInput {
 
 export interface PeriodCreateWithoutGcWikiInput {
   id?: Maybe<ID_Input>;
-  month: Int;
-  year: Int;
+  date: String;
   gcAccount?: Maybe<gcAccountDataCreateOneWithoutPeriodInput>;
   gcCollab: gcCollabDataCreateOneWithoutPeriodInput;
   gcConnex: gcConnexDataCreateOneWithoutPeriodInput;
@@ -1708,8 +1690,7 @@ export interface PeriodUpdateOneRequiredWithoutGcWikiInput {
 }
 
 export interface PeriodUpdateWithoutGcWikiDataInput {
-  month?: Maybe<Int>;
-  year?: Maybe<Int>;
+  date?: Maybe<String>;
   gcAccount?: Maybe<gcAccountDataUpdateOneWithoutPeriodInput>;
   gcCollab?: Maybe<gcCollabDataUpdateOneRequiredWithoutPeriodInput>;
   gcConnex?: Maybe<gcConnexDataUpdateOneRequiredWithoutPeriodInput>;
@@ -1861,14 +1842,12 @@ export interface NodeNode {
 
 export interface Period {
   id: ID_Output;
-  month: Int;
-  year: Int;
+  date: String;
 }
 
 export interface PeriodPromise extends Promise<Period>, Fragmentable {
   id: () => Promise<ID_Output>;
-  month: () => Promise<Int>;
-  year: () => Promise<Int>;
+  date: () => Promise<String>;
   gcAccount: <T = gcAccountDataPromise>() => T;
   gcCollab: <T = gcCollabDataPromise>() => T;
   gcConnex: <T = gcConnexDataPromise>() => T;
@@ -1881,8 +1860,7 @@ export interface PeriodSubscription
   extends Promise<AsyncIterator<Period>>,
     Fragmentable {
   id: () => Promise<AsyncIterator<ID_Output>>;
-  month: () => Promise<AsyncIterator<Int>>;
-  year: () => Promise<AsyncIterator<Int>>;
+  date: () => Promise<AsyncIterator<String>>;
   gcAccount: <T = gcAccountDataSubscription>() => T;
   gcCollab: <T = gcCollabDataSubscription>() => T;
   gcConnex: <T = gcConnexDataSubscription>() => T;
@@ -1895,8 +1873,7 @@ export interface PeriodNullablePromise
   extends Promise<Period | null>,
     Fragmentable {
   id: () => Promise<ID_Output>;
-  month: () => Promise<Int>;
-  year: () => Promise<Int>;
+  date: () => Promise<String>;
   gcAccount: <T = gcAccountDataPromise>() => T;
   gcCollab: <T = gcCollabDataPromise>() => T;
   gcConnex: <T = gcConnexDataPromise>() => T;
@@ -2738,24 +2715,21 @@ export interface PeriodSubscriptionPayloadSubscription
 
 export interface PeriodPreviousValues {
   id: ID_Output;
-  month: Int;
-  year: Int;
+  date: String;
 }
 
 export interface PeriodPreviousValuesPromise
   extends Promise<PeriodPreviousValues>,
     Fragmentable {
   id: () => Promise<ID_Output>;
-  month: () => Promise<Int>;
-  year: () => Promise<Int>;
+  date: () => Promise<String>;
 }
 
 export interface PeriodPreviousValuesSubscription
   extends Promise<AsyncIterator<PeriodPreviousValues>>,
     Fragmentable {
   id: () => Promise<AsyncIterator<ID_Output>>;
-  month: () => Promise<AsyncIterator<Int>>;
-  year: () => Promise<AsyncIterator<Int>>;
+  date: () => Promise<AsyncIterator<String>>;
 }
 
 export interface gaStatsSubscriptionPayload {
@@ -3163,6 +3137,11 @@ export type ID_Input = string | number;
 export type ID_Output = string;
 
 /*
+The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+*/
+export type String = string;
+
+/*
 The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
 */
 export type Int = number;
@@ -3171,11 +3150,6 @@ export type Int = number;
 The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point).
 */
 export type Float = number;
-
-/*
-The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
-*/
-export type String = string;
 
 /*
 The `Boolean` scalar type represents `true` or `false`.

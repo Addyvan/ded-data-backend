@@ -1,8 +1,7 @@
 
 const quarterFragment = `
 fragment allPeriod on Period {
-  month
-  year
+  date
   
   
   gcAccount {

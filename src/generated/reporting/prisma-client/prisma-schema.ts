@@ -1476,8 +1476,7 @@ type PageInfo {
 
 type Period {
   id: ID!
-  month: Int!
-  year: Int!
+  date: String!
   gcAccount: gcAccountData
   gcCollab: gcCollabData!
   gcConnex: gcConnexData!
@@ -1494,8 +1493,7 @@ type PeriodConnection {
 
 input PeriodCreateInput {
   id: ID
-  month: Int!
-  year: Int!
+  date: String!
   gcAccount: gcAccountDataCreateOneWithoutPeriodInput
   gcCollab: gcCollabDataCreateOneWithoutPeriodInput!
   gcConnex: gcConnexDataCreateOneWithoutPeriodInput!
@@ -1536,8 +1534,7 @@ input PeriodCreateOneWithoutGcWikiInput {
 
 input PeriodCreateWithoutGcAccountInput {
   id: ID
-  month: Int!
-  year: Int!
+  date: String!
   gcCollab: gcCollabDataCreateOneWithoutPeriodInput!
   gcConnex: gcConnexDataCreateOneWithoutPeriodInput!
   gcMessage: gcMessageDataCreateOneWithoutPeriodInput!
@@ -1547,8 +1544,7 @@ input PeriodCreateWithoutGcAccountInput {
 
 input PeriodCreateWithoutGcCollabInput {
   id: ID
-  month: Int!
-  year: Int!
+  date: String!
   gcAccount: gcAccountDataCreateOneWithoutPeriodInput
   gcConnex: gcConnexDataCreateOneWithoutPeriodInput!
   gcMessage: gcMessageDataCreateOneWithoutPeriodInput!
@@ -1558,8 +1554,7 @@ input PeriodCreateWithoutGcCollabInput {
 
 input PeriodCreateWithoutGcConnexInput {
   id: ID
-  month: Int!
-  year: Int!
+  date: String!
   gcAccount: gcAccountDataCreateOneWithoutPeriodInput
   gcCollab: gcCollabDataCreateOneWithoutPeriodInput!
   gcMessage: gcMessageDataCreateOneWithoutPeriodInput!
@@ -1569,8 +1564,7 @@ input PeriodCreateWithoutGcConnexInput {
 
 input PeriodCreateWithoutGcMessageInput {
   id: ID
-  month: Int!
-  year: Int!
+  date: String!
   gcAccount: gcAccountDataCreateOneWithoutPeriodInput
   gcCollab: gcCollabDataCreateOneWithoutPeriodInput!
   gcConnex: gcConnexDataCreateOneWithoutPeriodInput!
@@ -1580,8 +1574,7 @@ input PeriodCreateWithoutGcMessageInput {
 
 input PeriodCreateWithoutGcPediaInput {
   id: ID
-  month: Int!
-  year: Int!
+  date: String!
   gcAccount: gcAccountDataCreateOneWithoutPeriodInput
   gcCollab: gcCollabDataCreateOneWithoutPeriodInput!
   gcConnex: gcConnexDataCreateOneWithoutPeriodInput!
@@ -1591,8 +1584,7 @@ input PeriodCreateWithoutGcPediaInput {
 
 input PeriodCreateWithoutGcWikiInput {
   id: ID
-  month: Int!
-  year: Int!
+  date: String!
   gcAccount: gcAccountDataCreateOneWithoutPeriodInput
   gcCollab: gcCollabDataCreateOneWithoutPeriodInput!
   gcConnex: gcConnexDataCreateOneWithoutPeriodInput!
@@ -1608,16 +1600,13 @@ type PeriodEdge {
 enum PeriodOrderByInput {
   id_ASC
   id_DESC
-  month_ASC
-  month_DESC
-  year_ASC
-  year_DESC
+  date_ASC
+  date_DESC
 }
 
 type PeriodPreviousValues {
   id: ID!
-  month: Int!
-  year: Int!
+  date: String!
 }
 
 type PeriodSubscriptionPayload {
@@ -1639,8 +1628,7 @@ input PeriodSubscriptionWhereInput {
 }
 
 input PeriodUpdateInput {
-  month: Int
-  year: Int
+  date: String
   gcAccount: gcAccountDataUpdateOneWithoutPeriodInput
   gcCollab: gcCollabDataUpdateOneRequiredWithoutPeriodInput
   gcConnex: gcConnexDataUpdateOneRequiredWithoutPeriodInput
@@ -1650,8 +1638,7 @@ input PeriodUpdateInput {
 }
 
 input PeriodUpdateManyMutationInput {
-  month: Int
-  year: Int
+  date: String
 }
 
 input PeriodUpdateOneRequiredWithoutGcAccountInput {
@@ -1697,8 +1684,7 @@ input PeriodUpdateOneRequiredWithoutGcWikiInput {
 }
 
 input PeriodUpdateWithoutGcAccountDataInput {
-  month: Int
-  year: Int
+  date: String
   gcCollab: gcCollabDataUpdateOneRequiredWithoutPeriodInput
   gcConnex: gcConnexDataUpdateOneRequiredWithoutPeriodInput
   gcMessage: gcMessageDataUpdateOneRequiredWithoutPeriodInput
@@ -1707,8 +1693,7 @@ input PeriodUpdateWithoutGcAccountDataInput {
 }
 
 input PeriodUpdateWithoutGcCollabDataInput {
-  month: Int
-  year: Int
+  date: String
   gcAccount: gcAccountDataUpdateOneWithoutPeriodInput
   gcConnex: gcConnexDataUpdateOneRequiredWithoutPeriodInput
   gcMessage: gcMessageDataUpdateOneRequiredWithoutPeriodInput
@@ -1717,8 +1702,7 @@ input PeriodUpdateWithoutGcCollabDataInput {
 }
 
 input PeriodUpdateWithoutGcConnexDataInput {
-  month: Int
-  year: Int
+  date: String
   gcAccount: gcAccountDataUpdateOneWithoutPeriodInput
   gcCollab: gcCollabDataUpdateOneRequiredWithoutPeriodInput
   gcMessage: gcMessageDataUpdateOneRequiredWithoutPeriodInput
@@ -1727,8 +1711,7 @@ input PeriodUpdateWithoutGcConnexDataInput {
 }
 
 input PeriodUpdateWithoutGcMessageDataInput {
-  month: Int
-  year: Int
+  date: String
   gcAccount: gcAccountDataUpdateOneWithoutPeriodInput
   gcCollab: gcCollabDataUpdateOneRequiredWithoutPeriodInput
   gcConnex: gcConnexDataUpdateOneRequiredWithoutPeriodInput
@@ -1737,8 +1720,7 @@ input PeriodUpdateWithoutGcMessageDataInput {
 }
 
 input PeriodUpdateWithoutGcPediaDataInput {
-  month: Int
-  year: Int
+  date: String
   gcAccount: gcAccountDataUpdateOneWithoutPeriodInput
   gcCollab: gcCollabDataUpdateOneRequiredWithoutPeriodInput
   gcConnex: gcConnexDataUpdateOneRequiredWithoutPeriodInput
@@ -1747,8 +1729,7 @@ input PeriodUpdateWithoutGcPediaDataInput {
 }
 
 input PeriodUpdateWithoutGcWikiDataInput {
-  month: Int
-  year: Int
+  date: String
   gcAccount: gcAccountDataUpdateOneWithoutPeriodInput
   gcCollab: gcCollabDataUpdateOneRequiredWithoutPeriodInput
   gcConnex: gcConnexDataUpdateOneRequiredWithoutPeriodInput
@@ -1801,22 +1782,20 @@ input PeriodWhereInput {
   id_not_starts_with: ID
   id_ends_with: ID
   id_not_ends_with: ID
-  month: Int
-  month_not: Int
-  month_in: [Int!]
-  month_not_in: [Int!]
-  month_lt: Int
-  month_lte: Int
-  month_gt: Int
-  month_gte: Int
-  year: Int
-  year_not: Int
-  year_in: [Int!]
-  year_not_in: [Int!]
-  year_lt: Int
-  year_lte: Int
-  year_gt: Int
-  year_gte: Int
+  date: String
+  date_not: String
+  date_in: [String!]
+  date_not_in: [String!]
+  date_lt: String
+  date_lte: String
+  date_gt: String
+  date_gte: String
+  date_contains: String
+  date_not_contains: String
+  date_starts_with: String
+  date_not_starts_with: String
+  date_ends_with: String
+  date_not_ends_with: String
   gcAccount: gcAccountDataWhereInput
   gcCollab: gcCollabDataWhereInput
   gcConnex: gcConnexDataWhereInput

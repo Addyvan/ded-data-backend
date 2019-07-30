@@ -14,8 +14,8 @@ import gcPediaData from "./reporting/queries/gcPediaData";
 import gcWikiData from "./reporting/queries/gcWikiData";
 import period from "./reporting/queries/period";
 import periods from "./reporting/queries/periods";
-import quarter from "./reporting/queries/quarter"
-//import report from "./reporting/queries/report";
+import quarter from "./reporting/queries/quarter";
+import summary from "./reporting/queries/summary";
 
 const Mapping = {
   people,
@@ -33,9 +33,9 @@ const Reporting = {
   gcWikiData,
   period,
   periods,
-  quarter
-  //report
-}
+  quarter,
+  summary
+ }
 
 export {
   Mapping,

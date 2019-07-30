@@ -4,8 +4,7 @@ fragment gcMessage on gcMessage {
     totalNumAccounts
     numNewAccounts
     period {
-        year
-        month
+        date
     }
     totalNumChannelMessages
     numNewChannelMessages

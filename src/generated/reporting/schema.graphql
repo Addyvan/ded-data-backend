@@ -21,6 +21,10 @@ type gcAccountSimple {
   totalNumAccounts: Int
 }
 
+type gcAccountSummary {
+  totalNumAccounts: Int
+}
+
 type gcCollabData {
   gaStats: gaStats
   numNewAccounts: Int
@@ -38,6 +42,12 @@ type gcCollabSimple {
   totalNumGroups: Int
 }
 
+type gcCollabSummary {
+  gaStats: gaStats
+  totalNumAccounts: Int
+  totalNumGroups: Int
+}
+
 type gcConnexData {
   gaStats: gaStats
   numNewAccounts: Int
@@ -51,6 +61,12 @@ type gcConnexSimple {
   gaStats: gaStats
   numNewAccounts: Int
   numNewGroups: Int
+  totalNumAccounts: Int
+  totalNumGroups: Int
+}
+
+type gcConnexSummary {
+  gaStats: gaStats
   totalNumAccounts: Int
   totalNumGroups: Int
 }
@@ -82,6 +98,14 @@ type gcMessageSimple {
   totalNumPrivateGroupMessages: Int
 }
 
+type gcMessageSummary {
+  totalNumAccounts: Int
+  totalNumChannelMessages: Int
+  totalNumDirectMessages: Int
+  totalNumFileUploads: Int
+  totalNumPrivateGroupMessages: Int
+}
+
 type gcPediaData {
   numNewAccounts: Int
   numNewArticles: Int
@@ -96,6 +120,12 @@ type gcPediaSimple {
   numNewAccounts: Int
   numNewArticles: Int
   numNewEdits: Int
+  totalNumAccounts: Int
+  totalNumArticles: Int
+  totalNumEdits: Int
+}
+
+type gcPediaSummary {
   totalNumAccounts: Int
   totalNumArticles: Int
   totalNumEdits: Int
@@ -117,6 +147,13 @@ type gcWikiSimple {
   numNewAccounts: Int
   numNewArticles: Int
   numNewEdits: Int
+  totalNumAccounts: Int
+  totalNumArticles: Int
+  totalNumEdits: Int
+}
+
+type gcWikiSummary {
+  gaStats: gaStats
   totalNumAccounts: Int
   totalNumArticles: Int
   totalNumEdits: Int
@@ -150,13 +187,25 @@ type quarter {
 }
 
 type Query {
-  gcAccountDatas(month: Int, year: Int): gcAccountData!
+  gcAccountDatas(month: Int, year: Int): [gcAccountData!]!
   gcCollabDatas(month: Int, year: Int): [gcCollabData!]!
   gcConnexDatas(month: Int, year: Int): [gcConnexData!]!
   gcMessageDatas(month: Int, year: Int): [gcMessageData!]!
   gcPediaDatas(month: Int, year: Int): [gcPediaData!]!
   gcWikiDatas(month: Int, year: Int): [gcWikiData!]!
   period(month: Int!, year: Int!): period
-  periods(month: Int, year: Int): [period!]!
+  periods(month: Int, orderBy: String, year: Int): [period!]!
   quarter(quarterNum: Int!, year: Int!): quarter!
+  summary: summary!
+}
+
+type summary {
+  endPeriod: PeriodSimple
+  gcAccountSummary: gcAccountSummary
+  gcCollabSummary: gcCollabSummary
+  gcConnexSummary: gcConnexSummary
+  gcMessageSummary: gcMessageSummary
+  gcPediaSummary: gcPediaSummary
+  gcWikiSummary: gcWikiSummary
+  startPeriod: PeriodSimple
 }

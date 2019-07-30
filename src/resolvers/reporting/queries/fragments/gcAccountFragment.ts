@@ -4,8 +4,7 @@ fragment gcAccount on gcAccount {
     totalNumAccounts
     numNewAccounts
     period {
-        year
-        month
+        date
     }
 }
 `
