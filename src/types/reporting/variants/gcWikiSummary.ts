@@ -1,14 +1,11 @@
 import { objectType } from "nexus";
-import GAstats from "./gaStats";
+import GAstats from "../gaStats";
 
-const GCwikiSimple = objectType({
-  name: 'gcWikiSimple',
+const GCwikiSummary = objectType({
+  name: 'gcWikiSummary',
   definition(t : any) {
 
     t.int("totalNumAccounts", {
-      nullable: true
-    });
-    t.int("numNewAccounts", {
       nullable: true
     });
     t.field("gaStats", {
@@ -19,17 +16,11 @@ const GCwikiSimple = objectType({
     t.int("totalNumArticles", {
       nullable: true
     });
-    t.int("numNewArticles", {
-      nullable: true
-    });
     t.int("totalNumEdits", {
-      nullable: true
-    });
-    t.int("numNewEdits", {
       nullable: true
     });
 
   },
 });
 
-export default GCwikiSimple;
+export default GCwikiSummary;

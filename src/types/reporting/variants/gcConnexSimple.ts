@@ -1,6 +1,6 @@
 
 import { objectType } from "nexus";
-import GAstats from "./gaStats";
+import GAstats from "../gaStats";
 
 const GCconnexSimple = objectType({
   name: 'gcConnexSimple',

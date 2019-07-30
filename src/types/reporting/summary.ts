@@ -1,15 +1,15 @@
 import { objectType, intArg, idArg } from "nexus";
-import gcAccountSimple from "./variants/gcAccountSimple";
-import gcCollabSimple from "./variants/gcCollabSimple";
-import gcConnexSimple from "./variants/gcConnexSimple";
-import gcMessageSimple from "./variants/gcMessageSimple";
-import gcPediaSimple from "./variants/gcPediaSimple";
-import gcWikiSimple from "./variants/gcWikiSimple";
-import PeriodSimple from "./variants/periodSimple";
-import { addMockFunctionsToSchema } from "graphql-tools";
 
-const quarter = objectType({
-  name: 'quarter',
+import gcAccountSummary from "./variants/gcAccountSummary";
+import gcCollabSummary from "./variants/gcCollabSummary";
+import gcConnexSummary from "./variants/gcConnexSummary";
+import gcMessageSummary from "./variants/gcMessageSummary";
+import gcPediaSummary from "./variants/gcPediaSummary";
+import gcWikiSummary from "./variants/gcWikiSummary";
+import PeriodSimple from "./variants/periodSimple";
+
+const summary = objectType({
+  name: 'summary',
   definition(t : any) {
     
     t.field("startPeriod", {
@@ -21,27 +21,27 @@ const quarter = objectType({
         nullable: true
     });
     t.field("gcAccountSummary", { 
-      type: gcAccountSimple,
+      type: gcAccountSummary,
       nullable: true
   });
   t.field("gcCollabSummary", {
-    type: gcCollabSimple,
+    type: gcCollabSummary,
     nullable: true
 });
 t.field("gcConnexSummary", {
-  type: gcConnexSimple,
+  type: gcConnexSummary,
   nullable: true
 });
 t.field("gcMessageSummary", {
-  type: gcMessageSimple,
+  type: gcMessageSummary,
   nullable: true
 });
 t.field("gcPediaSummary", {
-  type: gcPediaSimple,
+  type: gcPediaSummary,
   nullable: true
 });
 t.field("gcWikiSummary", {
-  type: gcWikiSimple,
+  type: gcWikiSummary,
   nullable: true
 });
     
@@ -49,4 +49,4 @@ t.field("gcWikiSummary", {
   }, //end of definition
 });
 
-export default quarter;
+export default summary;

@@ -1,10 +1,8 @@
 import { extendType, intArg, arg } from "nexus";
 import {Period,  gcAccountData, Prisma} from "../../../generated/reporting/prisma-client";
-import gcCollabData from "./gcCollabData";
-//import month_ASC from "../../../generated/reporting/prisma-client/index";
 
+import summaryFragment from "./fragments/summaryFragment";
 
-import quarterFragment from "./fragments/quarterFragment";
 /*
 function sortPeriods(periods : Period[]) {
   periods.sort(
@@ -15,11 +13,13 @@ function sortPeriods(periods : Period[]) {
       }
   )
   return periods;
-}*/
-
-
+}
+*/
 function accountSummary(firstAccount, secondAccount, thirdAccount){
   return {
+    period: {
+
+    },
     totalNumAccounts: thirdAccount.totalNumAccounts,
     numNewAccounts: firstAccount.numNewAccounts + secondAccount.numNewAccounts + thirdAccount.numNewAccounts,
   };
@@ -93,40 +93,22 @@ function gaStatsSummary(firstData, secondData, thirdData){
   }
 }
 
-const quarter = extendType( {
+
+const summary = extendType( {
   type: "Query",
   definition(t) {
-    t.field('quarter', {
-      type: 'quarter',
-      args: {
-        year: intArg({required: true}),
-        quarterNum: intArg({required: true})
-      },
+    t.field('summary', {
+      type: 'summary',
+      
     resolve: async (parent, args : any, ctx, info) => {
             
-      if (args.quarterNum < 1 || args.quarterNum > 4 ) throw Error ("Invalid quarter number. Must be a whole number from 1-4");
+      //let periodRange : Period[] = await ctx.reportingPrisma.periods().$fragment(summaryFragment); 
       
-      const startMonth = 1 + (args.quarterNum - 1) * 3;
-      let range : number[] = [startMonth, startMonth + 1, startMonth + 2];
-      let periodRange : Period[] = await ctx.reportingPrisma.periods({where: { year: args.year, month_in: range } } ).$fragment(quarterFragment); 
       
-      /*
-      if (periodRange.length != 3){ //Missing months needed for quarter
-        periodRange.forEach( element => {
-          let x = range.indexOf(element.month);
-          if (x > -1) {
-            range.splice(x, 1);
-          }
-        });
-        throw Error ("Incomplete period. Missing months " + range.toString() );
-      };*/
-
       //periodRange = sortPeriods(periodRange); //Just in case they aren't sorted by month, as adding orderBy isn't working
       
-      let firstPeriod, secondPeriod, thirdPeriod = null;
-      firstPeriod = periodRange[0]; secondPeriod = periodRange[1]; thirdPeriod = periodRange[2];
       
-      const results = {
+      /*const results = {
         startPeriod: periodRange[0], 
         endPeriod: periodRange[2], 
         
@@ -136,6 +118,17 @@ const quarter = extendType( {
         gcMessageSummary: messageSummary(firstPeriod.gcMessage, secondPeriod.gcMessage, thirdPeriod.gcMessage),
         gcPediaSummary: pediaSummary(firstPeriod.gcPedia, secondPeriod.gcPedia, thirdPeriod.gcPedia),
         gcWikiSummary: wikiSummary(firstPeriod.gcWiki, secondPeriod.gcWiki, thirdPeriod.gcWiki),
+      };*/
+      const results = {
+        startPeriod: null,
+        endPeriod: null, 
+        
+        gcAccountSummary: null,
+        gcCollabSummary: null,
+        gcConnexSummary: null,
+        gcMessageSummary: null,
+        gcPediaSummary: null,
+        gcWikiSummary: null,
       };
       
       //console.log(results);
@@ -146,6 +139,6 @@ const quarter = extendType( {
   }
 });
 
-export default quarter;
+export default summary;
 
 

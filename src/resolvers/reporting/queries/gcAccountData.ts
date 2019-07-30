@@ -1,11 +1,12 @@
 import { extendType, intArg } from "nexus";
 import gcAccountFragment from "./fragments/gcAccountFragment";
+import { gcAccountData } from "../../../generated/reporting/prisma-client";
 
 
 const gcAccountData = extendType( {
   type: "Query",
   definition(t) {
-    t.field('gcAccountDatas', {
+    t.list.field('gcAccountDatas', {
       type: 'gcAccountData',
       args: {
         month: intArg({required: false}),
@@ -13,8 +14,9 @@ const gcAccountData = extendType( {
       },
     resolve: async (parent, args : any, ctx, info) => {
 
-      return ctx.reportingPrisma.gcAccountDatas({where: {period: args}}).$fragment(gcAccountFragment);
-
+      let result : gcAccountData[] = ctx.reportingPrisma.gcAccountDatas({where: {period: args}}).$fragment(gcAccountFragment);
+      console.log(result["totalNumAccounts"]);
+      return result;
       }
     })
   }

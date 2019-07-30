@@ -1,5 +1,5 @@
 import { objectType } from "nexus";
-import PeriodSimple from "./periodSimple";
+import PeriodSimple from "./variants/periodSimple";
 
 const GCpediaData = objectType({
   name: 'gcPediaData',

@@ -1,10 +1,10 @@
 import { objectType } from "nexus/dist";
-import GCaccountSimple from "./gcAccountSimple";
-import GCcollabSimple from "./gcCollabSimple";
-import GCconnexSimple from "./gcConnexSimple";
-import GCmessageSimple from "./gcMessageSimple";
-import GCpediaSimple from "./gcPediaSimple";
-import GCwikiSimple from "./gcWikiSimple";
+import GCaccountSimple from "./variants/gcAccountSimple";
+import GCcollabSimple from "./variants/gcCollabSimple";
+import GCconnexSimple from "./variants/gcConnexSimple";
+import GCmessageSimple from "./variants/gcMessageSimple";
+import GCpediaSimple from "./variants/gcPediaSimple";
+import GCwikiSimple from "./variants/gcWikiSimple";
 
 const period = objectType({
   

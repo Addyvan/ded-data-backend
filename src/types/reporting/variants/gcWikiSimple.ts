@@ -1,14 +1,10 @@
 import { objectType } from "nexus";
-import PeriodSimple from "./variants/periodSimple";
-import GAstats from "./gaStats";
+import GAstats from "../gaStats";
 
-const GCwikiData = objectType({
-  name: 'gcWikiData',
+const GCwikiSimple = objectType({
+  name: 'gcWikiSimple',
   definition(t : any) {
-    t.field("period", {
-      type: PeriodSimple, 
-      nullable: false
-    });
+
     t.int("totalNumAccounts", {
       nullable: true
     });
@@ -36,4 +32,4 @@ const GCwikiData = objectType({
   },
 });
 
-export default GCwikiData;
+export default GCwikiSimple;

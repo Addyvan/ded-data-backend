@@ -1,5 +1,5 @@
 import { objectType } from "nexus";
-import GAstats from "./gaStats";
+import GAstats from "../gaStats";
 
 const GCcollabSimple = objectType({
   name: 'gcCollabSimple',

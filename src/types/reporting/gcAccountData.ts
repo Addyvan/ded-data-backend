@@ -1,10 +1,10 @@
 import { objectType, intArg } from "nexus";
-import PeriodSimple from "./periodSimple";
+import PeriodSimple from "./variants/periodSimple";
 
 const GCaccountData = objectType({
   name: 'gcAccountData',
+  
   definition(t : any) {
-
     t.field("period", {
       type: PeriodSimple, 
     });
