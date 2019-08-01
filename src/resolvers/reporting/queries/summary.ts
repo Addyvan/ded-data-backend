@@ -3,96 +3,124 @@ import {Period,  gcAccountData, Prisma} from "../../../generated/reporting/prism
 
 import summaryFragment from "./fragments/summaryFragment";
 
-/*
-function sortPeriods(periods : Period[]) {
-  periods.sort(
-    (n1, n2) => 
-      {if (n1.month > n2.month) return 1; 
-      else if (n1.month == n2.month) return 0;
-      else return -1;
-      }
-  )
-  return periods;
-}
-*/
-function accountSummary(firstAccount, secondAccount, thirdAccount){
+function accountSummary(periodRange){
   return {
-    period: {
+    totalNumAccounts: periodRange[periodRange.length - 1].gcAccount.totalNumAccounts,
+  };
+}
 
+function collabSummary(periodRange){ 
+  let numSessions = 0;
+  let avgPageLoadTime = 0;
+  let avgSessionDuration = 0;
+  let avgPageviewsPerSession = 0;
+  let bounceRate = 0;
+  let count = 0;
+
+  periodRange.forEach(element =>
+    { 
+      numSessions += element.gcCollab.gaStats.numSessions;
+      avgPageLoadTime += element.gcCollab.gaStats.avgPageLoadTime;
+      avgSessionDuration += element.gcCollab.gaStats.avgSessionDuration;
+      avgPageviewsPerSession += element.gcCollab.gaStats.avgPageviewsPerSession;
+      bounceRate += element.gcCollab.gaStats.bounceRate;
+      count ++;
+    }
+  );
+  return {
+    totalNumAccounts: periodRange[periodRange.length - 1].gcCollab.totalNumAccounts,
+    gaStats:  {
+      numSessions: numSessions, //just the sum
+      avgPageviewsPerSession: Math.round(avgPageviewsPerSession / count * 1000) / 1000,
+      avgSessionDuration: Math.round(avgSessionDuration / count * 1000) / 1000,
+      avgPageLoadTime: Math.round(avgPageLoadTime / count * 1000) / 1000,
+      bounceRate: Math.round(bounceRate / count * 1000) / 1000,
     },
-    totalNumAccounts: thirdAccount.totalNumAccounts,
-    numNewAccounts: firstAccount.numNewAccounts + secondAccount.numNewAccounts + thirdAccount.numNewAccounts,
+    totalNumGroups: periodRange[periodRange.length - 1].gcCollab.totalNumGroups,
   };
 }
 
-function collabSummary(firstCollab, secondCollab, thirdCollab){ 
+function connexSummary(periodRange){
+  let numSessions = 0;
+  let avgPageLoadTime = 0;
+  let avgSessionDuration = 0;
+  let avgPageviewsPerSession = 0;
+  let bounceRate = 0;
+  let count = 0;
+
+  periodRange.forEach(element =>
+    { 
+      numSessions += element.gcConnex.gaStats.numSessions;
+      avgPageLoadTime += element.gcConnex.gaStats.avgPageLoadTime;
+      avgSessionDuration += element.gcConnex.gaStats.avgSessionDuration;
+      avgPageviewsPerSession += element.gcConnex.gaStats.avgPageviewsPerSession;
+      bounceRate += element.gcConnex.gaStats.bounceRate;
+      count ++;
+    }
+  );
   return {
-    totalNumAccounts: thirdCollab.totalNumAccounts,
-    numNewAccounts: firstCollab.numNewAccounts + secondCollab.numNewAccounts + thirdCollab.numNewAccounts,
-    gaStats: gaStatsSummary(firstCollab.gaStats, secondCollab.gaStats, thirdCollab.gaStats),
-    totalNumGroups: thirdCollab.totalNumGroups,
-    numNewGroups: firstCollab.numNewGroups + secondCollab.numNewGroups + thirdCollab.numNewGroups,
+    totalNumAccounts: periodRange[periodRange.length - 1].gcConnex.totalNumAccounts,
+    gaStats:  {
+      numSessions: numSessions, //just the sum
+      avgPageviewsPerSession: Math.round(avgPageviewsPerSession / count * 1000) / 1000,
+      avgSessionDuration: Math.round(avgSessionDuration / count * 1000) / 1000,
+      avgPageLoadTime: Math.round(avgPageLoadTime / count * 1000) / 1000,
+      bounceRate: Math.round(bounceRate / count * 1000) / 1000,
+    },
+    totalNumGroups: periodRange[periodRange.length - 1].gcConnex.totalNumGroups,
   };
 }
 
-function connexSummary(firstConnex, secondConnex, thirdConnex){
+function messageSummary(periodRange){
   return {
-    totalNumAccounts: thirdConnex.totalNumAccounts,
-    numNewAccounts: firstConnex.numNewAccounts + secondConnex.numNewAccounts + thirdConnex.numNewAccounts,
-    gaStats: gaStatsSummary(firstConnex.gaStats, secondConnex.gaStats, thirdConnex.gaStats),
-    totalNumGroups: thirdConnex.totalNumGroups,
-    numNewGroups: firstConnex.numNewGroups + secondConnex.numNewGroups + thirdConnex.numNewGroups,
+    totalNumAccounts: periodRange[periodRange.length - 1].gcMessage.totalNumAccounts,
+    totalNumChannelMessages: periodRange[periodRange.length - 1].gcMessage.totalNumChannelMessages,
+    totalNumPrivateGroupMessages: periodRange[periodRange.length - 1].gcMessage.totalNumPrivateGroupMessages,
+    totalNumDirectMessages: periodRange[periodRange.length - 1].gcMessage.totalNumDirectMessages,
+    totalNumFileUploads: periodRange[periodRange.length - 1].gcMessage.totalNumFileUploads,
   };
 }
 
-function messageSummary(firstMessage, secondMessage, thirdMessage){
+function pediaSummary(periodRange){
   return {
-    totalNumAccounts: thirdMessage.totalNumAccounts,
-    numNewAccounts: firstMessage.numNewAccounts + secondMessage.numNewAccounts + thirdMessage.numNewAccounts,
-    totalNumChannelMessages: thirdMessage.totalNumChannelMessages,
-    numNewChannelMessages: firstMessage.numNewChannelMessages + secondMessage.numNewChannelMessages + thirdMessage.numNewChannelMessages,
-    totalNumPrivateGroupMessages: thirdMessage.totalNumPrivateGroupMessages,
-    numNewPrivateGroupMessages: firstMessage.numNewPrivateGroupMessages + secondMessage.numNewPrivateGroupMessages + thirdMessage.numNewPrivateGroupMessages,
-    totalNumDirectMessages: thirdMessage.totalNumDirectMessages,
-    numNewDirectMessages: firstMessage.numNewDirectMessages + secondMessage.numNewDirectMessages + thirdMessage.numNewDirectMessages,
-    totalNumFileUploads: thirdMessage.totalNumFileUploads,
-    numNewFileUploads: firstMessage.numNewFileUploads + secondMessage.numNewFileUploads + thirdMessage.numNewFileUploads,
+    totalNumAccounts: periodRange[periodRange.length - 1].gcPedia.totalNumAccounts,
+    totalNumArticles: periodRange[periodRange.length - 1].gcPedia.totalNumArticles,
+    totalNumEdits: periodRange[periodRange.length - 1].gcPedia.totalNumEdits,
   };
 }
 
-function pediaSummary(firstPedia, secondPedia, thirdPedia){
+function wikiSummary(periodRange){
+  let numSessions = 0;
+  let avgPageLoadTime = 0;
+  let avgSessionDuration = 0;
+  let avgPageviewsPerSession = 0;
+  let bounceRate = 0;
+  let count = 0;
+
+  periodRange.forEach(element =>
+    { 
+      numSessions += element.gcWiki.gaStats.numSessions;
+      avgPageLoadTime += element.gcWiki.gaStats.avgPageLoadTime;
+      avgSessionDuration += element.gcWiki.gaStats.avgSessionDuration;
+      avgPageviewsPerSession += element.gcWiki.gaStats.avgPageviewsPerSession;
+      bounceRate += element.gcWiki.gaStats.bounceRate;
+      count ++;
+    }
+  );
+
   return {
-    totalNumAccounts: thirdPedia.totalNumAccounts,
-    numNewAccounts: firstPedia.numNewAccounts + secondPedia.numNewAccounts + thirdPedia.numNewAccounts,
-    totalNumArticles: thirdPedia.totalNumArticles,
-    numNewArticles: firstPedia.numNewArticles + secondPedia.numNewArticles + thirdPedia.numNewArticles,
-    totalNumEdits: thirdPedia.totalNumEdits,
-    numNewEdits: firstPedia.numNewEdits + secondPedia.numNewEdits + thirdPedia.numNewEdits,
+    totalNumAccounts: periodRange[periodRange.length - 1].gcWiki.totalNumAccounts,
+    gaStats:  {
+      numSessions: numSessions, //just the sum
+      avgPageviewsPerSession: Math.round(avgPageviewsPerSession / count * 1000) / 1000,
+      avgSessionDuration: Math.round(avgSessionDuration / count * 1000) / 1000,
+      avgPageLoadTime: Math.round(avgPageLoadTime / count * 1000) / 1000,
+      bounceRate: Math.round(bounceRate / count * 1000) / 1000,
+    },
+    totalNumArticles: periodRange[periodRange.length - 1].gcWiki.totalNumArticles,
+    totalNumEdits: periodRange[periodRange.length - 1].gcWiki.totalNumEdits,
   };
 }
-
-function wikiSummary(firstWiki, secondWiki, thirdWiki){
-  return {
-    totalNumAccounts: thirdWiki.totalNumAccounts,
-    numNewAccounts: firstWiki.numNewAccounts + secondWiki.numNewAccounts + thirdWiki.numNewAccounts,
-    gaStats: gaStatsSummary(firstWiki.gaStats, secondWiki.gaStats, thirdWiki.gaStats),
-    totalNumArticles: thirdWiki.totalNumArticles,
-    numNewArticles: firstWiki.numNewArticles + secondWiki.numNewArticles + thirdWiki.numNewArticles,
-    totalNumEdits: thirdWiki.totalNumEdits,
-    numNewEdits: firstWiki.numNewEdits + secondWiki.numNewEdits + thirdWiki.numNewEdits,
-  };
-}
-
-function gaStatsSummary(firstData, secondData, thirdData){ 
-  return {
-    numSessions: firstData.numSessions + secondData.numSessions + thirdData.numSessions, 
-    avgPageviewsPerSession: Math.round((firstData.avgPageviewsPerSession + secondData.avgPageviewsPerSession + thirdData.avgPageviewsPerSession ) / 3 * 1000) / 1000,
-    avgSessionDuration: Math.round((firstData.avgSessionDuration + secondData.avgSessionDuration + thirdData.avgSessionDuration ) / 3 * 1000) / 1000,
-    avgPageLoadTime: Math.round((firstData.avgPageLoadTime + secondData.avgPageLoadTime + thirdData.avgPageLoadTime ) / 3 * 1000) / 1000,
-    bounceRate: Math.round((firstData.bounceRate + secondData.bounceRate + thirdData.bounceRate ) / 3 * 1000) / 1000,
-  }
-}
-
 
 const summary = extendType( {
   type: "Query",
@@ -102,33 +130,26 @@ const summary = extendType( {
       
     resolve: async (parent, args : any, ctx, info) => {
             
-      //let periodRange : Period[] = await ctx.reportingPrisma.periods().$fragment(summaryFragment); 
+      let periodRange : Period[] = await ctx.reportingPrisma.periods().$fragment(summaryFragment); 
       
       
-      //periodRange = sortPeriods(periodRange); //Just in case they aren't sorted by month, as adding orderBy isn't working
-      
-      
-      /*const results = {
-        startPeriod: periodRange[0], 
-        endPeriod: periodRange[2], 
-        
-        gcAccountSummary: accountSummary(firstPeriod.gcAccount, secondPeriod.gcAccount, thirdPeriod.gcAccount),
-        gcCollabSummary: collabSummary(firstPeriod.gcCollab, secondPeriod.gcCollab, thirdPeriod.gcCollab),
-        gcConnexSummary: connexSummary(firstPeriod.gcConnex, secondPeriod.gcConnex, thirdPeriod.gcConnex),
-        gcMessageSummary: messageSummary(firstPeriod.gcMessage, secondPeriod.gcMessage, thirdPeriod.gcMessage),
-        gcPediaSummary: pediaSummary(firstPeriod.gcPedia, secondPeriod.gcPedia, thirdPeriod.gcPedia),
-        gcWikiSummary: wikiSummary(firstPeriod.gcWiki, secondPeriod.gcWiki, thirdPeriod.gcWiki),
-      };*/
+
       const results = {
-        startPeriod: null,
-        endPeriod: null, 
+        startPeriod: {
+          month: periodRange[0].date.substr(5),
+          year: periodRange[0].date.substr(0,4),
+        },
+        endPeriod: {
+          month: periodRange[periodRange.length - 1].date.substr(5),
+          year: periodRange[periodRange.length - 1].date.substr(0,4),
+        },
         
-        gcAccountSummary: null,
-        gcCollabSummary: null,
-        gcConnexSummary: null,
-        gcMessageSummary: null,
-        gcPediaSummary: null,
-        gcWikiSummary: null,
+        gcAccountSummary: accountSummary(periodRange),
+        gcCollabSummary: collabSummary(periodRange),
+        gcConnexSummary: connexSummary(periodRange),
+        gcMessageSummary: messageSummary(periodRange),
+        gcPediaSummary: pediaSummary(periodRange),
+        gcWikiSummary: wikiSummary(periodRange),
       };
       
       //console.log(results);

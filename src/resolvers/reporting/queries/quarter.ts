@@ -5,19 +5,6 @@ import gcCollabData from "./gcCollabData";
 
 
 import quarterFragment from "./fragments/quarterFragment";
-import { start } from "repl";
-/*
-function sortPeriods(periods : Period[]) {
-  periods.sort(
-    (n1, n2) => 
-      {if (n1.month > n2.month) return 1; 
-      else if (n1.month == n2.month) return 0;
-      else return -1;
-      }
-  )
-  return periods;
-}*/
-
 
 function accountSummary(firstAccount, secondAccount, thirdAccount){
   return {
@@ -105,60 +92,30 @@ const quarter = extendType( {
       },
     resolve: async (parent, args : any, ctx, info) => {
        
-      //TODO fix!
-
       if (args.quarterNum < 1 || args.quarterNum > 4 ) throw Error ("Invalid quarter number. Must be a whole number from 1-4");
       
-      let month = args.month.toString();
-      console.log(month);
-      month = (args.month < 10) ? "0" + args.month.toString() : month;         
+      //Argument set up for where
       let year = args.year.toString();
-    
       const startMonth = 1 + (args.quarterNum - 1) * 3;
       var months : string[] = null;
-      if (startMonth < 10){
-        months = [ "0" + (startMonth).toString(), "0" + (startMonth + 1).toString(), "0" + (startMonth + 2).toString() ];
-      }
-      else {
-        months = [ (startMonth).toString(), (startMonth + 1).toString(), (startMonth + 2).toString(),];
-      }
-      console.log(months);
+      if (startMonth < 10){ months = [ "0" + (startMonth).toString(), "0" + (startMonth + 1).toString(), "0" + (startMonth + 2).toString() ]; }
+      else { months = [ (startMonth).toString(), (startMonth + 1).toString(), (startMonth + 2).toString(),]; }
       let range : string[] = [year + "-"  + months[0], year + "-" + months[1], year + "-" + months[2] ];
       
-      let periodRange : Period[] = await ctx.reportingPrisma.periods({where: { date_in: range } } ).$fragment(quarterFragment); 
-      
-      /*
-      if (periodRange.length != 3){ //Missing months needed for quarter
-        periodRange.forEach( element => {
-          let x = range.indexOf(element.month);
-          if (x > -1) {
-            range.splice(x, 1);
-          }
-        });
-        throw Error ("Incomplete period. Missing months " + range.toString() );
-      };*/
-
-      //periodRange = sortPeriods(periodRange); //Just in case they aren't sorted by month, as adding orderBy isn't working
-      
-      let firstPeriod, secondPeriod, thirdPeriod = null;
-      firstPeriod = periodRange[0]; secondPeriod = periodRange[1]; thirdPeriod = periodRange[2];
+      let periods = await ctx.reportingPrisma.periods({where: { date_in: range }, orderBy: "date_ASC" } ).$fragment(quarterFragment); 
       
       const results = {
-        //startPeriod: periodRange[0], 
-        //endPeriod: periodRange[2], 
-        startPeriod: null, 
-        endPeriod: null, 
+        startPeriod: {year: year, month: startMonth}, 
+        endPeriod: {year: year, month: startMonth + 2}, 
         
-        gcAccountSummary: accountSummary(firstPeriod.gcAccount, secondPeriod.gcAccount, thirdPeriod.gcAccount),
-        gcCollabSummary: collabSummary(firstPeriod.gcCollab, secondPeriod.gcCollab, thirdPeriod.gcCollab),
-        gcConnexSummary: connexSummary(firstPeriod.gcConnex, secondPeriod.gcConnex, thirdPeriod.gcConnex),
-        gcMessageSummary: messageSummary(firstPeriod.gcMessage, secondPeriod.gcMessage, thirdPeriod.gcMessage),
-        gcPediaSummary: pediaSummary(firstPeriod.gcPedia, secondPeriod.gcPedia, thirdPeriod.gcPedia),
-        gcWikiSummary: wikiSummary(firstPeriod.gcWiki, secondPeriod.gcWiki, thirdPeriod.gcWiki),
+        gcAccountSummary: accountSummary(periods[0].gcAccount, periods[1].gcAccount, periods[2].gcAccount),
+        gcCollabSummary: collabSummary(periods[0].gcCollab, periods[1].gcCollab, periods[2].gcCollab),
+        gcConnexSummary: connexSummary(periods[0].gcConnex, periods[1].gcConnex, periods[2].gcConnex),
+        gcMessageSummary: messageSummary(periods[0].gcMessage, periods[1].gcMessage, periods[2].gcMessage),
+        gcPediaSummary: pediaSummary(periods[0].gcPedia, periods[1].gcPedia, periods[2].gcPedia),
+        gcWikiSummary: wikiSummary(periods[0].gcWiki, periods[1].gcWiki, periods[2].gcWiki),
       };
       
-      //console.log(results);
-
       return results;
       },
     })
